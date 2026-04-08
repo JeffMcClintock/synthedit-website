@@ -1,0 +1,26 @@
+/* SynthEdit custom theme */
+:root {
+	--sl-color-accent-low: #1a1a2e;
+	--sl-color-accent: #4a6cf7;
+	--sl-color-accent-high: #c5d0ff;
+	--sl-color-white: #ffffff;
+	--sl-color-gray-1: #eceef2;
+	--sl-color-gray-2: #c0c2c7;
+	--sl-color-gray-3: #888b96;
+	--sl-color-gray-4: #545861;
+	--sl-color-gray-5: #353841;
+	--sl-color-gray-6: #24272f;
+	--sl-color-black: #17181c;
+	--sl-font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+:root[data-theme='light'] {
+	--sl-color-accent-low: #dde3ff;
+	--sl-color-accent: #3451b2;
+	--sl-color-accent-high: #182449;
+}
+
+/* Hero section styling */
+.hero {
+	padding-block: 3rem;
+}
