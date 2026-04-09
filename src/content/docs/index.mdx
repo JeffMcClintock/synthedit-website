@@ -1,14 +1,16 @@
 ---
-title: SynthEdit - Build Your Own Synth
-description: SynthEdit is a visual, modular synthesizer editor for creating VST plugins and virtual instruments.
+title: SynthEdit — Build Your Own Synth
+description: SynthEdit is a visual modular environment for building synthesizers and VST plugins.
 template: splash
 hero:
-  tagline: The visual, modular environment for building synthesizers and audio plugins. Create professional VST instruments and effects — no licensing restrictions on what you create.
+  tagline: The visual modular environment for creating professional VST instruments and effects. Drag, connect, design — then export as a plugin. No coding required.
+  image:
+    file: ../../assets/se-hero.jpg
   actions:
-    - text: Download Demo
+    - text: Download Free Demo
       link: /guides/installation/
       icon: right-arrow
-    - text: Documentation
+    - text: Read the Docs
       link: /guides/introduction/
       icon: open-book
       variant: minimal
@@ -16,29 +18,144 @@ hero:
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Why SynthEdit?
+{/* ── Stats ── */}
+<div class="se-stats">
+  <div>
+    <div class="se-stat-number">20+</div>
+    <div class="se-stat-label">Years of Development</div>
+  </div>
+  <div>
+    <div class="se-stat-number">1000s</div>
+    <div class="se-stat-label">Plugins Created</div>
+  </div>
+  <div>
+    <div class="se-stat-number">300+</div>
+    <div class="se-stat-label">Built-in Modules</div>
+  </div>
+  <div>
+    <div class="se-stat-number">$0</div>
+    <div class="se-stat-label">Royalties on Your Plugins</div>
+  </div>
+</div>
 
-<CardGrid stagger>
-  <Card title="Visual Modular Design" icon="pencil">
-    Build synthesizers by connecting modules together visually. No coding required — just drag, drop, and connect.
-  </Card>
-  <Card title="Create VST Plugins" icon="setting">
-    Export your creations as VST3 plugins that work in any major DAW — Cubase, Ableton Live, FL Studio, and more.
-  </Card>
+{/* ── Feature rows — alternating image/text ── */}
+<div class="se-section">
+  <div class="se-feature-row">
+    <div>
+      <img src="/images/se-modular.jpg" alt="SynthEdit modular canvas" />
+    </div>
+    <div>
+      <div class="se-feature-label">Visual Patching</div>
+      <div class="se-feature-title">Build Synths by Connecting Modules</div>
+      <div class="se-feature-text">
+        Drag oscillators, filters, envelopes, and effects onto the canvas.
+        Connect them with virtual patch cables. Hear the results instantly.
+        No programming knowledge needed — just creativity.
+      </div>
+    </div>
+  </div>
+
+  <div class="se-feature-row reverse">
+    <div>
+      <img src="/images/se-vintage.jpg" alt="Vintage synth hardware that inspired SynthEdit" />
+    </div>
+    <div>
+      <div class="se-feature-label">Professional Output</div>
+      <div class="se-feature-title">Export as VST3 Plugins</div>
+      <div class="se-feature-text">
+        Turn your creations into standalone VST3 plugins.
+        Design a custom GUI with knobs, sliders, and graphics.
+        Your plugins work in every major DAW — Cubase, Ableton Live,
+        FL Studio, Reaper, and more.
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="se-divider" />
+
+{/* ── Core features grid ── */}
+<div class="se-section">
+  <div class="se-section-title">Everything You Need</div>
+  <div class="se-section-subtitle">
+    From learning synthesis to shipping commercial plugins,
+    SynthEdit covers the full journey.
+  </div>
+</div>
+
+<CardGrid>
   <Card title="No Licensing Restrictions" icon="approve-check-circle">
-    You own what you create. Sell your plugins commercially with no royalties or licensing fees.
-  </Card>
-  <Card title="Learn Synthesis" icon="open-book">
-    Perfect for learning how synthesizers work. See the signal flow, experiment with modules, and hear results instantly.
+    You own what you create. Sell your plugins commercially, give them away,
+    or bundle them in products — no royalties, no fees.
   </Card>
   <Card title="Huge Module Library" icon="list-format">
-    Hundreds of built-in modules — oscillators, filters, envelopes, effects, MIDI processors, and more.
+    Over 300 built-in modules covering oscillators, filters, effects,
+    MIDI, math, logic, UI controls, and more.
   </Card>
-  <Card title="Third-Party Modules" icon="add-document">
-    Extend SynthEdit with community-created modules, or build your own using the C++ SDK.
+  <Card title="Custom GUI Designer" icon="pencil">
+    Design professional plugin interfaces with a built-in visual editor.
+    Use knobs, sliders, switches, graphs, and custom bitmap graphics.
+  </Card>
+  <Card title="Learn Synthesis" icon="open-book">
+    See how synthesizers work from the inside. Perfect for students,
+    educators, and anyone curious about sound design.
+  </Card>
+  <Card title="C++ SDK" icon="setting">
+    Need more power? Build your own modules in C++ and use them
+    alongside built-in modules in any project.
+  </Card>
+  <Card title="Community Modules" icon="add-document">
+    Extend SynthEdit with third-party modules created by the community.
+    Or share your own creations with other users.
   </Card>
 </CardGrid>
 
-## Used by Plugin Developers Worldwide
+<hr class="se-divider" />
 
-SynthEdit has been used to create thousands of commercial and free VST plugins, including award-winning instruments and effects used in professional music production.
+{/* ── Showcase ── */}
+<div class="se-section">
+  <div class="se-section-title">Built with SynthEdit</div>
+  <div class="se-section-subtitle">
+    Thousands of commercial and free VST plugins have been created with SynthEdit,
+    including award-winning instruments used in professional music production.
+  </div>
+
+  <div class="se-showcase-grid">
+    <div class="se-showcase-card">
+      <img src="/images/showcase-phasm.jpg" alt="Phasm plugin" />
+      <div class="se-showcase-info">
+        <h3>Phasm</h3>
+        <p>A phase distortion synthesizer with a unique approach to waveform manipulation.</p>
+      </div>
+    </div>
+    <div class="se-showcase-card">
+      <img src="/images/showcase-kx16.png" alt="Kx Synth X16 plugin" />
+      <div class="se-showcase-info">
+        <h3>Kx Synth X16</h3>
+        <p>A powerful polyphonic synthesizer with extensive modulation capabilities.</p>
+      </div>
+    </div>
+    <div class="se-showcase-card">
+      <img src="/images/showcase-phenome.jpg" alt="Phenome plugin" />
+      <div class="se-showcase-info">
+        <h3>Phenome</h3>
+        <p>An innovative vocal synthesizer that generates realistic singing voices.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="se-divider" />
+
+{/* ── CTA ── */}
+<div class="se-cta">
+  <h2>Ready to Build Your Own Synth?</h2>
+  <p>
+    Download the free demo and start creating. No time limit, no restrictions
+    on learning — just a full-featured environment to explore.
+  </p>
+  <div class="se-cta-buttons">
+    <a href="/guides/installation/" class="se-btn se-btn-primary">Download Free Demo</a>
+    <a href="/guides/introduction/" class="se-btn se-btn-secondary">Read the Docs</a>
+  </div>
+</div>

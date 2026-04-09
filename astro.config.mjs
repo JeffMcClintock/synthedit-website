@@ -9,8 +9,8 @@ export default defineConfig({
 			title: 'SynthEdit',
 			logo: {
 				alt: 'SynthEdit',
-				src: './src/assets/synthedit-logo.png',
-				replacesTitle: false,
+				src: './src/assets/synthedit-logo.svg',
+				replacesTitle: true,
 			},
 			social: [
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/JeffMcClintock/SynthEdit' },
