@@ -3,6 +3,11 @@ title: Comparator
 description: Outputs high or low based on comparing two signals.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="/images/modules/comparator.png" alt="Comparator module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
 The **Comparator** outputs a high voltage if Input A is greater than Input B, otherwise outputs a low voltage.
 
 ## Inputs

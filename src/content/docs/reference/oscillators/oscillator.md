@@ -3,6 +3,11 @@ title: Oscillator
 description: Generates basic waveforms and noise for synthesis.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="/images/modules/oscillator.png" alt="Oscillator module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
 The **Oscillator** generates simple waveforms (sawtooth, pulse, sine, triangle) and noise (white/pink). It also supports Yamaha DX-style frequency modulation synthesis via its phase modulation input.
 
 ## Inputs

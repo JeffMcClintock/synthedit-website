@@ -3,6 +3,11 @@ title: Peak Follower
 description: Tracks the amplitude envelope of an audio signal.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="/images/modules/peak-follower.png" alt="Peak Follower module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
 The **Peak Follower** outputs a control voltage that tracks the level (amplitude envelope) of the input signal. Useful for envelope following, ducking, and dynamics processing.
 
 ## Inputs

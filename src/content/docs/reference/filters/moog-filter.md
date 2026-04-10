@@ -3,6 +3,11 @@ title: Moog Filter
 description: 4-pole low-pass filter with classic analog character and overdrive.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="/images/modules/moog-filter.png" alt="Moog Filter module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
 The **Moog Filter** is a 4-pole (24 dB/octave) low-pass filter with a built-in overdrive stage. It produces the classic "fat" analog filter sound but uses more CPU than the SV Filter.
 
 ## Inputs

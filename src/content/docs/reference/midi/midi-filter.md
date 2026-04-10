@@ -3,6 +3,11 @@ title: MIDI Filter
 description: Filters MIDI data by channel, velocity, and note range.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="/images/modules/midi-filter.png" alt="MIDI Filter module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
 The **MIDI Filter** selectively passes MIDI data based on channel, note range, and velocity range. Useful for keyboard splits, velocity switching, and channel routing.
 
 ## Inputs

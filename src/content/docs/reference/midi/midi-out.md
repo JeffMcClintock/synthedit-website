@@ -3,6 +3,11 @@ title: MIDI Out
 description: Sends MIDI data to a physical MIDI output port.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="/images/modules/midi-out.png" alt="MIDI Out module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
 The **MIDI Out** module sends MIDI data to a physical MIDI output port on your computer.
 
 ## Inputs

@@ -3,6 +3,11 @@ title: SV Filter (State Variable)
 description: Versatile 2-pole filter with four simultaneous output types.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="/images/modules/sv-filter.png" alt="SV Filter module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
 The **SV Filter** (State Variable Filter) is a versatile 2-pole filter providing four simultaneous outputs. It offers 12 dB/octave rolloff for low-pass and high-pass, and 6 dB/octave for band-pass and band-reject modes.
 
 ## Inputs

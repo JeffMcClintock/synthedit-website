@@ -3,6 +3,11 @@ title: Sample and Hold
 description: Captures and holds an input voltage on a trigger.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="/images/modules/sample-and-hold.png" alt="Sample And Hold module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
 The **Sample and Hold** captures the input voltage at the moment it receives a trigger and holds that value until the next trigger.
 
 ## Inputs

@@ -3,6 +3,11 @@ title: Fixed Values
 description: Provides constant voltage sources.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="/images/modules/fixed-values.png" alt="Fixed Values (Volts) module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
 The **Fixed Values** module provides one or more constant voltage outputs. Set the voltage in the module's properties dialog.
 
 ## Outputs

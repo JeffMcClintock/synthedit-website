@@ -3,6 +3,11 @@ title: Wave Player
 description: Plays WAV audio files from disk with pitch control.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="/images/modules/wave-player.png" alt="Wave Player module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
 The **Wave Player** streams WAV files from disk, supporting files of any size. It can play back samples with pitch shifting and supports loop points defined in external wave editors.
 
 ## Inputs

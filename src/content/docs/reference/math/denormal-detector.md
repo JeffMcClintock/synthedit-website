@@ -3,6 +3,11 @@ title: Denormal Detector
 description: Diagnostic tool to detect denormal numbers in a signal.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="/images/modules/denormal-detector.png" alt="Denormal Detector module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
 The **Denormal Detector** indicates whether denormal numbers are present in the input signal. Connect its output to an LED Indicator for visual detection.
 
 ## Inputs

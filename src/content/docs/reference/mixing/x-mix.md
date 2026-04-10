@@ -3,6 +3,11 @@ title: X-Mix (Crossfade)
 description: Crossfades between two input signals.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="/images/modules/x-mix.png" alt="X-Mix module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
 The **X-Mix** (Cross Mix) smoothly blends between two input signals.
 
 ## Inputs

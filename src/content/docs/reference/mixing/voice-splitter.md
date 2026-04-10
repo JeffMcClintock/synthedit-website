@@ -3,6 +3,11 @@ title: Voice Splitter
 description: Splits a polyphonic signal into individual voice outputs.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="/images/modules/voicesplitter.png" alt="Voice Splitter module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
 The **Voice Splitter** separates a polyphonic signal into individual voice outputs. This is primarily a diagnostic tool for analyzing individual voices in a polyphonic patch.
 
 ## Usage

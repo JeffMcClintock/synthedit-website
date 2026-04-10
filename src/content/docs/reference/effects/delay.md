@@ -3,6 +3,11 @@ title: Delay
 description: Audio delay/echo effect with modulation and feedback.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="/images/modules/delay.png" alt="Delay module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
 The **Delay** module creates delay and echo effects with adjustable delay time, feedback, and optional time modulation for chorus and flanger effects.
 
 ## Inputs

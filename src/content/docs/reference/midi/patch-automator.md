@@ -3,6 +3,11 @@ title: Patch Automator
 description: Enables MIDI automation of container controls.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="/images/modules/se-patch-automator.png" alt="Patch Automator module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
 The **Patch Automator** makes all controls in a container automatable via MIDI controllers. It also sends MIDI messages when controls change, useful for controlling external MIDI hardware.
 
 ## Inputs

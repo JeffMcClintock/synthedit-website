@@ -3,6 +3,11 @@ title: Monostable
 description: Produces a fixed-length pulse when triggered.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="/images/modules/monostable.png" alt="Monostable module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
 The **Monostable** produces a single pulse of a fixed duration each time it is triggered. Also known as a "one-shot."
 
 ## Inputs

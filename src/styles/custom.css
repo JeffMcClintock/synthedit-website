@@ -372,3 +372,27 @@ nav.sidebar .top-level > li > details > summary {
 	font-size: 0.8rem;
 	letter-spacing: 0.05em;
 }
+
+/* ===== Module reference: hero screenshot ===== */
+/* Placed automatically by install_module_screenshots.py just below the
+   page heading.  PNGs are 4× DPI for crisp display on retina screens —
+   render at half their natural size and float right so the description
+   text wraps alongside on wider viewports. */
+.se-module-screenshot {
+	display: block;
+	max-width: min(360px, 100%);
+	height: auto;
+	margin: 0 0 1.5rem 1.5rem;
+	float: right;
+	background: #ffffff;
+	padding: 0.5rem;
+	border-radius: 6px;
+	border: 1px solid var(--sl-color-gray-4);
+}
+
+@media (max-width: 720px) {
+	.se-module-screenshot {
+		float: none;
+		margin: 0 auto 1.5rem;
+	}
+}
