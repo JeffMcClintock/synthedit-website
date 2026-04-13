@@ -8,6 +8,7 @@ description: Voltage Controlled Amplifier for volume and amplitude control.
 <img src="/images/modules/vca.png" alt="VCA module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
+
 The **VCA** (Voltage Controlled Amplifier) controls the volume of an audio signal. It is a core module in nearly every synthesizer patch, typically paired with an ADSR envelope.
 
 ## Inputs

@@ -8,6 +8,7 @@ description: Subtracts one signal from another.
 <img src="/images/modules/subtract.png" alt="Subtract module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
+
 The **Subtract** module outputs the difference of two input signals.
 
 ## Inputs

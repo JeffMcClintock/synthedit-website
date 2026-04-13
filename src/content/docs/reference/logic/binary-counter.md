@@ -8,6 +8,7 @@ description: Steps through a binary count sequence on each clock pulse.
 <img src="/images/modules/binary-counter.png" alt="Binary Counter module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
+
 The **Binary Counter** increments a binary count on each clock pulse, providing 8 individual binary outputs.
 
 ## Inputs

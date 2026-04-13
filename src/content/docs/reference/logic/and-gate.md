@@ -8,6 +8,7 @@ description: Output goes high only when all inputs are high.
 <img src="/images/modules/and-gate.png" alt="AND Gate module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
+
 The **AND Gate** outputs 5V (high) only when **all** inputs are above the logic threshold (3.33V). If any input is low, the output is 0V.
 
 ## Inputs

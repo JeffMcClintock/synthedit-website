@@ -8,6 +8,7 @@ description: Output goes high when one or more inputs are low.
 <img src="/images/modules/nand-gate.png" alt="NAND Gate module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
+
 The **NAND Gate** outputs 5V when **any** input is low. Output is 0V only when all inputs are high. It is the inverse of the AND gate.
 
 ## Inputs

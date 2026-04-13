@@ -8,6 +8,7 @@ description: Inverts a logic signal.
 <img src="/images/modules/not-gate.png" alt="NOT Gate module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
+
 The **NOT Gate** inverts the logic state of the input. If the input is high (above 3.33V), the output is 0V. If the input is low (below 1.66V), the output is 5V.
 
 ## Inputs

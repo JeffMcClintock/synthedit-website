@@ -8,6 +8,7 @@ description: Virtual connections in and out of containers.
 <img src="/images/modules/io-mod.png" alt="IO Mod module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
+
 The **IO Mod** provides virtual connections between modules inside a container and modules outside it. When you connect a patch cord across a container boundary, an IO Mod is automatically created.
 
 ## Usage Notes

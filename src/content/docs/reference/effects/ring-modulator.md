@@ -8,6 +8,7 @@ description: Multiplies two signals together with normalization.
 <img src="/images/modules/ring-modulator.png" alt="Ring Modulator module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
+
 The **Ring Modulator** multiplies two input signals and normalizes the result. This produces sum and difference frequencies, creating metallic, bell-like, and inharmonic timbres.
 
 ## Inputs

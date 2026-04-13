@@ -8,6 +8,7 @@ description: Removes denormal numbers to prevent CPU spikes.
 <img src="/images/modules/denormal-cleaner.png" alt="Denormal Cleaner module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
+
 The **Denormal Cleaner** removes denormal numbers (extremely small floating-point values) from audio signals. Denormal values are inaudible but cause the CPU to switch to a slower processing mode, resulting in spikes and glitchy audio.
 
 ## Inputs

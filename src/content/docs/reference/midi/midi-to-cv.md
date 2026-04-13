@@ -8,6 +8,7 @@ description: Converts MIDI data to control voltages and gate signals.
 <img src="/images/modules/midi-to-cv.png" alt="MIDI to CV module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
+
 The **MIDI to CV** module converts incoming MIDI note data into control voltages (CV) and gate signals, forming the bridge between MIDI input and the analog-style modular synthesis engine.
 
 ## Inputs

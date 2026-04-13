@@ -8,6 +8,7 @@ description: Standard four-stage envelope generator.
 <img src="/images/modules/adsr.png" alt="ADSR module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
+
 The **ADSR** is a standard four-stage envelope generator (Attack, Decay, Sustain, Release) used to shape how a sound evolves over time.
 
 ## Inputs

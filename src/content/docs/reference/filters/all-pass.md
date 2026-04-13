@@ -8,6 +8,7 @@ description: Two-pole all-pass filter for phase manipulation effects.
 <img src="/images/modules/all-pass.png" alt="All Pass module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
+
 The **All Pass Filter** passes all frequencies at equal amplitude but shifts the phase of the signal. This is useful for building phaser effects and other phase-based processing.
 
 ## Inputs

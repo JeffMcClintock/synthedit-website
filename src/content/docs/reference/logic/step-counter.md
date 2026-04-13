@@ -8,6 +8,7 @@ description: Sequential counter that activates outputs one at a time.
 <img src="/images/modules/step-counter.png" alt="Step Counter (old?) module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
+
 The **Step Counter** activates each output in sequence on every clock pulse. Only one output is active (5V) at a time.
 
 ## Inputs

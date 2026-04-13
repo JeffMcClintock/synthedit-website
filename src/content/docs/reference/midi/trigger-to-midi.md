@@ -8,6 +8,7 @@ description: Converts gate and pitch voltages to MIDI note messages.
 <img src="/images/modules/trigger-to-midi.png" alt="Trigger To MIDI module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
+
 The **Trigger to MIDI** module converts gate and pitch control voltages back into MIDI note-on and note-off messages.
 
 ## Inputs

@@ -8,6 +8,7 @@ description: Merges polyphonic voices into a single monophonic signal.
 <img src="/images/modules/voice-combiner.png" alt="Voice Combiner module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
+
 The **Voice Combiner** sums all polyphonic voices into a single monophonic signal. Place it at the boundary between your polyphonic voice chain and monophonic effects (reverb, delay, chorus).
 
 ## Usage

@@ -8,6 +8,7 @@ description: Measures audio signal level and converts to a parameter value.
 <img src="/images/modules/voltstofloat.png" alt="Volts to Float module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
+
 The **Volts to Float** module measures the level of an audio signal and converts it to a control parameter value. Used internally in VU meters and similar display modules.
 
 ## Usage Notes

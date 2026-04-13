@@ -8,6 +8,7 @@ description: Constrains a signal to discrete voltage steps.
 <img src="/images/modules/quantiser.png" alt="Quantizer module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
+
 The **Quantizer** rounds the input signal to the nearest discrete step, producing a staircase-like output. Useful for creating stepped sequences from smooth signals or quantizing pitch to semitones.
 
 ## Inputs

@@ -8,6 +8,7 @@ description: Digital delay line that shifts data across stages on each clock pul
 <img src="/images/modules/shift-register.png" alt="Shift Register module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
+
 The **Shift Register** is a digital delay line for binary data. On each clock pulse, data shifts from one stage to the next across 10 outputs.
 
 ## Inputs

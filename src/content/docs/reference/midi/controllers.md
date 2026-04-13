@@ -8,6 +8,7 @@ description: Converts MIDI controller messages to control voltages.
 <img src="/images/modules/controllers.png" alt="Controllers module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
+
 The **Controllers** module converts MIDI Continuous Controller (CC) messages — such as mod wheel, joystick, and expression pedal — into control voltages.
 
 ## Inputs

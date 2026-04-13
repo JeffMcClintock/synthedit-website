@@ -8,6 +8,7 @@ description: Captures audio from the soundcard input.
 <img src="/images/modules/sound-in.png" alt="Sound In module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
+
 The **Sound In** module captures audio from your soundcard's input (line in, microphone, etc., as configured in Preferences).
 
 ## Outputs

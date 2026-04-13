@@ -8,6 +8,7 @@ description: Divides one signal by another.
 <img src="/images/modules/divide.png" alt="Divide module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
+
 The **Divide** module outputs the quotient of two input signals.
 
 ## Inputs
