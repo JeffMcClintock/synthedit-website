@@ -31,62 +31,84 @@ Recent changes and fixes. <a href="https://synthedit.com/release_1_6/changelog.h
 
 <div class="se-changelog-scroll">
 
-**v1.5.662** — 2026-03-05
-- Fix: patch cables display incorrectly on containers
-- Fix: patch cable issue on overloaded pins
+**Unreleased**
+- pan/zoomed notification improvement
+- compatible window positions when going from SE 1.5 to 1.6 or back
+- SE command-line can now capture screenshots
 
-**v1.5.661** — 2026-03-03
-- Fix: disappearing lines on structure view
+**v1.6.57** — 2026-04-10
+- mac - fix skin scanning
+- crash on close (mac)
+- added _fallback skin for your custom skin assets
 
-**v1.5.660** — 2026-02-02
-- Fix: keyboard module issue
-- Fix: wav file writing
+**v1.6.55** — 2026-04-10
+- mac - &apos;show skin files&apos; working, removed junk &apos;&amp;&apos; symbols from popup menus
+- hide app symbols so plugins use their own SynthEditLib copy
 
-**v1.5.659** — 2026-01-09
-- Fix: pin renaming
+**v1.6.54** — 2026-04-10
+- fix properties browser screwing up skin filenames
+- fix &quot;can&apos;t load:YES&quot; message
+- Se macOS codesigns exported plugins for local use
 
-**v1.5.658** — 2025-12-19
-- Fix: menu update issue
+**v1.6.53** — 2026-04-09
+- command-line exporting working on macOS
+- Au validation passing
 
-**v1.5.657** — 2025-12-16
-- Fix: snap-to-grid setting
+**v1.6.52** — 2026-04-08
+- fix export AU
 
-**v1.5.656** — 2025-12-12
-- Fix: fast-math compilation
-- Fix: container coordinates
+**v1.6.48** — 2026-04-03
+- se mac recalls window position
 
-**v1.5.655** — 2025-11-26
-- Fix: FFT analyzer
+**v1.6.47** — 2026-04-03
+- win - theme restores correctly on startup
+- mac - light/dark themes
+- mac - browser text invisible due to theme change race
 
-**v1.5.654** — 2025-11-25
-- Fix: pins functionality
+**v1.6.45** — 2026-03-31
+- Fix view refresh when setting GUI pin default
 
-**v1.5.652** — 2025-11-24
-- Fix: dB pins
+**v1.6.43** — 2026-03-30
+- mac - cursor changes when dragging new modules
+- fix possible assert in add connector
+- fix crash on dragging Line from Module Browser debug category
 
-**v1.5.651** — 2025-10-14
-- Fix: soundfont looping
+**v1.6.41** — 2026-03-26
+- vie coded icons (need fixing)
+- se amc has correct version number
+- scroll bar too high
+- fix crash on hover &apos;spare&apos; pin
+- HC_PROCESSOR_OFFLINE init correctly to true
 
-**v1.5.650** — 2025-10-13
-- Fix: MIDI automation
+**v1.6.40** — 2026-03-26
+- strip trailing zero from pin defaults in XML project file.
+- less false update &apos;noise&apos; notifications from Properties Browser
+- fixed-values - now saving value of pins 
+- fix doubled up mouse move events
+- fix default values being written to project file for output pins.
+- fix SDK3 invalidateMeasure() behaviour
 
-**v1.5.648** — 2025-09-26
-- Fix: plugin settings
-- Fix: settings persistence
+**v1.6.39** — 2026-03-24
+- win pipeline runs frst, mac pipeline consumes windows vst3 artifact
+- win VST3 now releases containerview when editor closed
+- win - export dialog triggers &apos;save change&apos; if it had generate a unique ID
+- vibe coded SynthEdit Mac
+- fixed several invalidation rect errors
+- fix race-condition preventing DSP &quot;done&quot; message reaching UI.
+- build now code-signs sems and template plugins
+- Fix assert on exit (timers)
+- Added support for WASAPI audio drivers
+- ALT-click now picks up wires
+- 'open last project' working
 
-**v1.5.647** — 2025-09-23
-- Improvement: code skeleton generation
-- Improvement: module template updates
-- Improvement: SDK improvements
+**v1.6.38** — 2026-03-12
+- hoverscopes working on GUI modules
+- better interactivity on pins and lines
 
-**v1.5.646** — 2025-09-22
-- Fix: sample rate handling
-- Fix: crash on startup
-- Fix: parameter smoothing
-- New modules added
+**v1.6.37** — 2026-03-05
+- fix modules path
 
 </div>
-
 ## Demo vs Full Version
 
 | Feature | Demo | Full Version |
