@@ -108,6 +108,22 @@ Banding is caused by 8-bit-per-channel color limitations combined with no dither
 
 No. Dropdown menus are drawn by the operating system, not by SynthEdit, so their appearance cannot be customized.
 
+### How do project-specific skin folders work?
+
+SynthEdit supports a **project-specific skin folder** that lets you keep skin resources alongside your project file. If your project is named `MySynth.synthedit`, create a folder named `MySynth.skin` in the same directory. Resources in this folder are searched **before** the global skins folder.
+
+**Search order for skin resources:**
+1. `MySynth.skin/` (project-specific folder, if it exists)
+2. `skins/<current-skin>/` (e.g., `skins/Blue/`)
+3. `skins/default/`
+4. `skins/_fallback/`
+
+This allows you to override specific images for a single project without modifying the global skins folder.
+
+### What is the `_fallback` skin folder for?
+
+The `_fallback` folder is the last location searched for skin resources. It's useful for providing default graphics that all projects can use, without cluttering the `default` skin folder (which is typically meant for user content).
+
 ---
 
 ## Audio & Signal Processing
