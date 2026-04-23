@@ -31,11 +31,30 @@ Recent changes and fixes. <a href="https://synthedit.com/release_1_6/changelog.h
 
 <div class="se-changelog-scroll">
 
+**v1.6.74** — 2026-04-23
+- loading .syntheditprefab directly working
+- fewer spurious notifications from properties-browser
+- VST3 resizing mac working
+- VST mac resizing working
+- AU mac plugin resize support
+- &apos;Show Controls on Module&apos; working
+
 **v1.6.73** — 2026-04-22
+- mac - less sensitive scrollwheel
 - mac - less sensitive mousewheel
 - VST3 - refresh DPI state in-place on HC_PLUGIN_UI_SCALE change
+- GUI modules now support pin info
+- Freq Analyser - text no longer flipped
+- Added IListPins support for GUI pins
+
+**v1.6.71** — 2026-04-21
+- sub-view hit testing working correctly
+- fix spurious invalidation on first hover of ResizeAdorner
+- fix repaint when sub-view shows/unshows
 
 **v1.6.70** — 2026-04-21
+- fix slider text height
+- PSS skin working on export
 - PSS skin working on export
 
 **v1.6.69** — 2026-04-21
@@ -43,6 +62,7 @@ Recent changes and fixes. <a href="https://synthedit.com/release_1_6/changelog.h
 
 **v1.6.68** — 2026-04-20
 - poll OS cursor during drag to unfreeze outside swapchain
+- autoscroll now works when dragging wires/cables
 
 **v1.6.67** — 2026-04-20
 - suppress Debug CRT assertion dialogs in the dsp_tests harness
@@ -50,28 +70,46 @@ Recent changes and fixes. <a href="https://synthedit.com/release_1_6/changelog.h
 - mac - fix missing modules from export-plugins
 
 **v1.6.66** — 2026-04-17
+- fixed HC_OFFLINE failing when user hit &apos;Play&apos; right after loading app.
 - fix pin direction screwup on containerize
+- fix VST3 plugin viewport (mac)
 - SynthEdit mac reloads project after export
+- Hoverscopes now work on IO Modules
 - Hoverscopes now work on IO Modules
 
 **v1.6.65** — 2026-04-16
+- panel ResizeAdorner repaint - getClipArea coord space
 - no error from missing MIDI driver when you arn&apos;t using MIDI modules
 - mitigate bug when clicking image with file &quot;arrow_right&quot; causing a spurious change notifications to &quot;arrow_right.bmp&quot;
 - mac - shift toolbar left
+- fix subviews mouse handling
+- fix drag hit test lines with tiny hitbox
+- fix crash when hovering IO Mod pins while audio on
 - fix crash after pasting BPM module from another project then starting audio.
 - better cancellation workflow
+- better cancellation workflow
+- Wave Recorder better error messages
+- VST3 panel now panned correctly
+
+**v1.6.64** — 2026-04-15
+- better dragbox discernment of lines
 
 **v1.6.63** — 2026-04-15
 - se rescan modules on first run after updating
 - fix processor watchdog in editor
+- fix processor watchdog in editor
+- CPU display now in front of other modules
 
 **v1.6.61** — 2026-04-14
 - support for new yes/no/cancel dialogs
+- new module &quot;Dialog&quot; for yes/no/cancel dialogs
 - exclude &apos;_fallback&apos; from skin menu
 - Skin Manager now searches project-specific skin first for fonts.
 
 **v1.6.60** — 2026-04-14
 - properties panel uses panelBackground for contrast, widen browse button
+- project file names can now contain a dot and skin file name will ignore subsequent characters. e.g. &quot;myproject.version23.synthedit&quot; =&gt; skin folder is &quot;myproject&quot;
+- fix resize dot placement on structure view modules
 - filebrowser better support for project-specific-skin
 - Containerise now pastes to canvas center (no top-left)
 
@@ -80,24 +118,15 @@ Recent changes and fixes. <a href="https://synthedit.com/release_1_6/changelog.h
 
 **v1.6.58** — 2026-04-13
 - pan/zoomed notification improvement
+- pan/zoom retained correctly. 
+- no blue highlight over hovered modules in exported plugins
 - mac textedit now respects &lt;ESC&gt; and losing focus.
+- fix view centering annoyingly when inserting modules
 - compatible window positions when going from SE 1.5 to 1.6 or back
+- blue highlight not shown on modules in plugins
+- SE now searches for skins in project-specific folder next to project file first. e.g. mysynth.skin
 - SE now searches for skins in project-specific folder next to project file first. e.g. mysynth.skin
 - SE command-line can now capture screenshots
-
-**v1.6.57** — 2026-04-10
-- mac - fix skin scanning
-- crash on close (mac)
-- added _fallback skin for your custom skin assets
-
-**v1.6.55** — 2026-04-10
-- mac - &apos;show skin files&apos; working, removed junk &apos;&amp;&apos; symbols from popup menus
-- hide app symbols so plugins use their own SynthEditLib copy
-
-**v1.6.54** — 2026-04-10
-- fix properties browser screwing up skin filenames
-- fix &quot;can&apos;t load:YES&quot; message
-- Se macOS codesigns exported plugins for local use
 
 </div>
 ## Demo vs Full Version
