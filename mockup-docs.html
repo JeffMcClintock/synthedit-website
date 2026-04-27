@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SynthEdit Docs — Light Palette Comparison</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #1c1d22;
+  color: #f5f3ee;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  padding: 24px;
+}
+
+.intro {
+  max-width: 1280px;
+  margin: 0 auto 32px;
+  padding: 24px 32px;
+  background: #14141a;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+}
+.intro h1 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.intro p {
+  color: #a8a8ae;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+/* The grid of three docs samples */
+.compare {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.sample {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.sample-head {
+  padding: 16px 20px;
+  background: #111114;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sample-head h2 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+.sample-head .badge {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #ffb000;
+  border: 1px solid rgba(255,176,0,0.3);
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+.swatches {
+  display: flex;
+  padding: 10px 20px;
+  gap: 8px;
+  background: #111114;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.05em;
+  color: #6a6a72;
+  flex-wrap: wrap;
+}
+.swatch {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.swatch-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.18);
+}
+
+/* The docs content area — gets palette-specific overrides via per-sample classes */
+.doc {
+  padding: 32px 28px 36px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14.5px;
+  line-height: 1.65;
+}
+
+/* Common doc element styling — values that come from CSS vars per palette */
+.doc h1 {
+  font-family: 'Inter', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+.doc .sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: var(--ink-3);
+  margin-bottom: 28px;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.04em;
+}
+.doc h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  margin: 28px 0 12px;
+  color: var(--ink);
+}
+.doc p {
+  color: var(--ink-2);
+  margin-bottom: 14px;
+  line-height: 1.7;
+}
+.doc a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  font-weight: 500;
+}
+.doc a:hover { color: var(--accent-deep); }
+.doc code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.86em;
+  background: var(--code-bg);
+  border: 1px solid var(--rule);
+  padding: 1px 6px;
+  border-radius: 4px;
+  color: var(--ink);
+}
+.doc pre {
+  background: var(--code-bg);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin: 12px 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--ink);
+  overflow-x: auto;
+}
+.doc pre .kw  { color: var(--accent-deep); font-weight: 500; }
+.doc pre .num { color: var(--num); }
+.doc pre .com { color: var(--ink-3); font-style: italic; }
+.doc pre .str { color: var(--str); }
+.doc ul {
+  margin: 8px 0 18px;
+  padding-left: 22px;
+}
+.doc ul li {
+  color: var(--ink-2);
+  margin-bottom: 5px;
+  line-height: 1.6;
+}
+.doc ul li::marker { color: var(--accent); }
+.doc .callout {
+  background: var(--callout-bg);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  padding: 14px 16px;
+  margin: 16px 0;
+}
+.doc .callout-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.doc .callout p {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--ink-2);
+}
+.doc table {
+  border-collapse: collapse;
+  margin: 12px 0;
+  width: 100%;
+  font-size: 13px;
+}
+.doc th, .doc td {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink-2);
+}
+.doc th {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  font-weight: 500;
+  border-bottom: 1.5px solid var(--rule-strong);
+}
+.doc th:last-child, .doc td:last-child { text-align: right; }
+
+/* ============================================================
+   PALETTE A — LINEN
+   ============================================================ */
+.linen {
+  --bg:           #f8f4ec;
+  --surface:      #fdfaf2;
+  --code-bg:      #f0eadc;
+  --callout-bg:   #f0eadc;
+  --ink:          #1f1c17;
+  --ink-2:        #4a443b;
+  --ink-3:        #857e72;
+  --rule:         rgba(31,28,23,0.10);
+  --rule-strong:  rgba(31,28,23,0.20);
+  --accent:       #a85a00;
+  --accent-deep:  #8b4500;
+  --num:          #6b7c00;
+  --str:          #5a3a8a;
+}
+.linen .doc { background: var(--bg); }
+
+/* ============================================================
+   PALETTE B — PAPER
+   ============================================================ */
+.paper {
+  --bg:           #f5f1e8;
+  --surface:      #faf6ec;
+  --code-bg:      #ece6d3;
+  --callout-bg:   #ece6d3;
+  --ink:          #1a1814;
+  --ink-2:        #5c574d;
+  --ink-3:        #8a8475;
+  --rule:         rgba(26,24,20,0.10);
+  --rule-strong:  rgba(26,24,20,0.22);
+  --accent:       #a85a00;
+  --accent-deep:  #7a3f00;
+  --num:          #5a6e00;
+  --str:          #4a3580;
+}
+.paper .doc { background: var(--bg); }
+
+/* ============================================================
+   PALETTE C — STONE
+   ============================================================ */
+.stone {
+  --bg:           #fafaf8;
+  --surface:      #ffffff;
+  --code-bg:      #f0f0ee;
+  --callout-bg:   #f4f4f2;
+  --ink:          #27272a;
+  --ink-2:        #52525b;
+  --ink-3:        #8a8a93;
+  --rule:         rgba(39,39,42,0.10);
+  --rule-strong:  rgba(39,39,42,0.20);
+  --accent:       #b75a00;
+  --accent-deep:  #944600;
+  --num:          #4a7e1c;
+  --str:          #6940a8;
+}
+.stone .doc { background: var(--bg); }
+
+/* Responsive: single column on narrow */
+@media (max-width: 1100px) {
+  .compare { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="intro">
+  <h1>Documentation — Light Palette Comparison</h1>
+  <p>The same docs content rendered in three light palettes. Same typography, same content, same structure — only background and ink colours change. Recommendation: <strong style="color:#ffb000">Linen (Option A)</strong>.</p>
+</div>
+
+<div class="compare">
+
+  {/* ============= LINEN ============= */}
+  <div class="sample linen">
+    <div class="sample-head">
+      <h2>Option A — Linen</h2>
+      <span class="badge">Recommended</span>
+    </div>
+    <div class="swatches">
+      <span class="swatch"><span class="swatch-dot" style="background:#f8f4ec"></span>#f8f4ec</span>
+      <span class="swatch"><span class="swatch-dot" style="background:#1f1c17"></span>#1f1c17</span>
+      <span class="swatch"><span class="swatch-dot" style="background:#a85a00"></span>#a85a00</span>
+    </div>
+    <div class="doc">
+      <h1>Working with Modules</h1>
+      <div class="sub">Guides / Modules</div>
+
+      <p>
+        SynthEdit's modular canvas is built around <a href="#">connectable modules</a> —
+        oscillators, filters, envelopes, effects and dozens of utilities. You assemble
+        a synth by dragging modules onto the canvas and connecting them with virtual
+        patch cables.
+      </p>
+
+      <h2>Adding a module</h2>
+      <p>
+        Right-click on the canvas to open the module browser, or press <code>Cmd+M</code>
+        on macOS / <code>Ctrl+M</code> on Windows. Modules are organised by category in
+        the left-hand panel.
+      </p>
+
+      <pre><span class="com">// Example: a simple oscillator + filter chain</span>
+<span class="kw">module</span> <span class="str">"OSC_A"</span> {
+  type:  <span class="str">"Oscillator HD"</span>;
+  pitch: <span class="num">440</span>;
+  shape: <span class="str">"saw"</span>;
+}
+
+<span class="kw">module</span> <span class="str">"FILTER_1"</span> {
+  type:    <span class="str">"State Variable Filter"</span>;
+  cutoff:  <span class="num">2000</span>;
+  reso:    <span class="num">0.4</span>;
+}</pre>
+
+      <div class="callout">
+        <div class="callout-label">Note</div>
+        <p>Polyphonic modules require an explicit Voice Combiner before they can drive monophonic outputs like the VCA or the audio output.</p>
+      </div>
+
+      <h2>Module categories</h2>
+      <ul>
+        <li>Oscillators &amp; sound sources</li>
+        <li>Filters (LP, HP, BP, SVF, comb)</li>
+        <li>Envelopes &amp; dynamics (ADSR, AHDSR, slew)</li>
+        <li>Effects (reverb, delay, distortion, chorus)</li>
+      </ul>
+
+      <table>
+        <thead>
+          <tr><th>Module</th><th>CPU</th><th>Voices</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Oscillator HD</td><td>0.4%</td><td>16</td></tr>
+          <tr><td>SVF Filter</td><td>0.2%</td><td>16</td></tr>
+          <tr><td>ADSR</td><td>0.1%</td><td>16</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  {/* ============= PAPER ============= */}
+  <div class="sample paper">
+    <div class="sample-head">
+      <h2>Option B — Paper</h2>
+    </div>
+    <div class="swatches">
+      <span class="swatch"><span class="swatch-dot" style="background:#f5f1e8"></span>#f5f1e8</span>
+      <span class="swatch"><span class="swatch-dot" style="background:#1a1814"></span>#1a1814</span>
+      <span class="swatch"><span class="swatch-dot" style="background:#a85a00"></span>#a85a00</span>
+    </div>
+    <div class="doc">
+      <h1>Working with Modules</h1>
+      <div class="sub">Guides / Modules</div>
+
+      <p>
+        SynthEdit's modular canvas is built around <a href="#">connectable modules</a> —
+        oscillators, filters, envelopes, effects and dozens of utilities. You assemble
+        a synth by dragging modules onto the canvas and connecting them with virtual
+        patch cables.
+      </p>
+
+      <h2>Adding a module</h2>
+      <p>
+        Right-click on the canvas to open the module browser, or press <code>Cmd+M</code>
+        on macOS / <code>Ctrl+M</code> on Windows. Modules are organised by category in
+        the left-hand panel.
+      </p>
+
+      <pre><span class="com">// Example: a simple oscillator + filter chain</span>
+<span class="kw">module</span> <span class="str">"OSC_A"</span> {
+  type:  <span class="str">"Oscillator HD"</span>;
+  pitch: <span class="num">440</span>;
+  shape: <span class="str">"saw"</span>;
+}
+
+<span class="kw">module</span> <span class="str">"FILTER_1"</span> {
+  type:    <span class="str">"State Variable Filter"</span>;
+  cutoff:  <span class="num">2000</span>;
+  reso:    <span class="num">0.4</span>;
+}</pre>
+
+      <div class="callout">
+        <div class="callout-label">Note</div>
+        <p>Polyphonic modules require an explicit Voice Combiner before they can drive monophonic outputs like the VCA or the audio output.</p>
+      </div>
+
+      <h2>Module categories</h2>
+      <ul>
+        <li>Oscillators &amp; sound sources</li>
+        <li>Filters (LP, HP, BP, SVF, comb)</li>
+        <li>Envelopes &amp; dynamics (ADSR, AHDSR, slew)</li>
+        <li>Effects (reverb, delay, distortion, chorus)</li>
+      </ul>
+
+      <table>
+        <thead>
+          <tr><th>Module</th><th>CPU</th><th>Voices</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Oscillator HD</td><td>0.4%</td><td>16</td></tr>
+          <tr><td>SVF Filter</td><td>0.2%</td><td>16</td></tr>
+          <tr><td>ADSR</td><td>0.1%</td><td>16</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  {/* ============= STONE ============= */}
+  <div class="sample stone">
+    <div class="sample-head">
+      <h2>Option C — Stone</h2>
+    </div>
+    <div class="swatches">
+      <span class="swatch"><span class="swatch-dot" style="background:#fafaf8"></span>#fafaf8</span>
+      <span class="swatch"><span class="swatch-dot" style="background:#27272a"></span>#27272a</span>
+      <span class="swatch"><span class="swatch-dot" style="background:#b75a00"></span>#b75a00</span>
+    </div>
+    <div class="doc">
+      <h1>Working with Modules</h1>
+      <div class="sub">Guides / Modules</div>
+
+      <p>
+        SynthEdit's modular canvas is built around <a href="#">connectable modules</a> —
+        oscillators, filters, envelopes, effects and dozens of utilities. You assemble
+        a synth by dragging modules onto the canvas and connecting them with virtual
+        patch cables.
+      </p>
+
+      <h2>Adding a module</h2>
+      <p>
+        Right-click on the canvas to open the module browser, or press <code>Cmd+M</code>
+        on macOS / <code>Ctrl+M</code> on Windows. Modules are organised by category in
+        the left-hand panel.
+      </p>
+
+      <pre><span class="com">// Example: a simple oscillator + filter chain</span>
+<span class="kw">module</span> <span class="str">"OSC_A"</span> {
+  type:  <span class="str">"Oscillator HD"</span>;
+  pitch: <span class="num">440</span>;
+  shape: <span class="str">"saw"</span>;
+}
+
+<span class="kw">module</span> <span class="str">"FILTER_1"</span> {
+  type:    <span class="str">"State Variable Filter"</span>;
+  cutoff:  <span class="num">2000</span>;
+  reso:    <span class="num">0.4</span>;
+}</pre>
+
+      <div class="callout">
+        <div class="callout-label">Note</div>
+        <p>Polyphonic modules require an explicit Voice Combiner before they can drive monophonic outputs like the VCA or the audio output.</p>
+      </div>
+
+      <h2>Module categories</h2>
+      <ul>
+        <li>Oscillators &amp; sound sources</li>
+        <li>Filters (LP, HP, BP, SVF, comb)</li>
+        <li>Envelopes &amp; dynamics (ADSR, AHDSR, slew)</li>
+        <li>Effects (reverb, delay, distortion, chorus)</li>
+      </ul>
+
+      <table>
+        <thead>
+          <tr><th>Module</th><th>CPU</th><th>Voices</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Oscillator HD</td><td>0.4%</td><td>16</td></tr>
+          <tr><td>SVF Filter</td><td>0.2%</td><td>16</td></tr>
+          <tr><td>ADSR</td><td>0.1%</td><td>16</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -36,51 +36,99 @@
 	--se-font-mono:    'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
 }
 
-/* ===== Map to Starlight tokens (used on docs pages) ===== */
+/* ===== Map to Starlight tokens — DARK (default) ===== */
 :root {
-	--sl-color-accent-low:  rgba(255,176,0,0.12);
-	--sl-color-accent:      #ffb000;
-	--sl-color-accent-high: #ffd06a;
-	--sl-color-white:       #f5f3ee;
-	--sl-color-gray-1:      #d4d2cc;
-	--sl-color-gray-2:      #a8a8ae;
-	--sl-color-gray-3:      #6a6a72;
-	--sl-color-gray-4:      #404048;
-	--sl-color-gray-5:      #222227;
-	--sl-color-gray-6:      #18181c;
-	--sl-color-gray-7:      #111114;
-	--sl-color-black:       #0a0a0b;
-	--sl-font:              'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-	--sl-font-system-mono:  'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+	--sl-color-accent-low:    rgba(255,176,0,0.12);
+	--sl-color-accent:        #ffb000;
+	--sl-color-accent-high:   #ffd06a;
+	--sl-color-white:         #f5f3ee;
+	--sl-color-gray-1:        #d4d2cc;
+	--sl-color-gray-2:        #a8a8ae;
+	--sl-color-gray-3:        #6a6a72;
+	--sl-color-gray-4:        #404048;
+	--sl-color-gray-5:        #222227;
+	--sl-color-gray-6:        #18181c;
+	--sl-color-gray-7:        #111114;
+	--sl-color-black:         #0a0a0b;
+	--sl-color-bg:            #0a0a0b;
+	--sl-color-bg-nav:        #0a0a0b;
+	--sl-color-bg-sidebar:    #111114;
+	--sl-color-bg-inline-code: #18181c;
+	--sl-color-text:          #f5f3ee;
+	--sl-color-text-accent:   #ffb000;
+	--sl-color-hairline-light: rgba(255,253,240,0.05);
+	--sl-color-hairline:      rgba(255,253,240,0.10);
+	--sl-color-hairline-shade: rgba(255,253,240,0.16);
+	--sl-color-shadow:        rgba(0,0,0,0.5);
+	--sl-font:                'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	--sl-font-system-mono:    'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
 }
 
-/* Light theme overrides (Starlight ships a toggle) */
+/* ===== LIGHT — Linen palette (docs default in light mode) ===== */
 :root[data-theme='light'] {
-	--sl-color-accent-low:  rgba(214,136,0,0.12);
-	--sl-color-accent:      #c87800;
-	--sl-color-accent-high: #6b3f00;
+	--sl-color-accent-low:    rgba(168,90,0,0.13);
+	--sl-color-accent:        #a85a00;
+	--sl-color-accent-high:   #5a3000;
+	--sl-color-white:         #1f1c17;            /* Starlight uses "white" as highest-contrast text */
+	--sl-color-gray-1:        #2c2820;
+	--sl-color-gray-2:        #4a443b;
+	--sl-color-gray-3:        #6e685c;
+	--sl-color-gray-4:        #857e72;
+	--sl-color-gray-5:        #c8c0ad;
+	--sl-color-gray-6:        #e5dec9;
+	--sl-color-gray-7:        #efe8d4;
+	--sl-color-black:         #f8f4ec;            /* Starlight uses "black" as the page bg */
+	--sl-color-bg:            #f8f4ec;
+	--sl-color-bg-nav:        #f8f4ec;
+	--sl-color-bg-sidebar:    #f4eede;
+	--sl-color-bg-inline-code: #f0eadc;
+	--sl-color-text:          #1f1c17;
+	--sl-color-text-accent:   #a85a00;
+	--sl-color-hairline-light: rgba(31,28,23,0.06);
+	--sl-color-hairline:      rgba(31,28,23,0.10);
+	--sl-color-hairline-shade: rgba(31,28,23,0.20);
+	--sl-color-shadow:        rgba(31,28,23,0.16);
 }
 
 /* ===== Global ===== */
 html { scroll-behavior: smooth; }
 
 body {
+	background: var(--sl-color-bg);
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Splash page is always dark — pinned regardless of theme toggle */
+body[data-page-type="splash"] {
 	background: var(--se-bg);
 	background-image:
 		radial-gradient(circle at 15% 0%, rgba(255,176,0,0.04) 0%, transparent 45%),
 		radial-gradient(circle at 85% 100%, rgba(255,176,0,0.025) 0%, transparent 45%);
 	background-attachment: fixed;
-	-webkit-font-smoothing: antialiased;
+	color: var(--se-fg);
 }
 
 /* ============================================================
-   STARLIGHT HEADER — adapt to dark amber palette
+   STARLIGHT HEADER — glassy bar, adapts to theme
    ============================================================ */
 
+/* Default (dark theme): dark glass */
 header.header {
 	background: rgba(10,10,11,0.78);
 	backdrop-filter: blur(14px) saturate(140%);
 	border-bottom: 1px solid var(--se-rule);
+}
+
+/* Light theme docs: linen glass */
+:root[data-theme='light'] header.header {
+	background: rgba(248,244,236,0.82);
+	border-bottom-color: rgba(31,28,23,0.10);
+}
+
+/* Splash always uses dark glass even when theme is light */
+:root[data-theme='light'] body[data-page-type="splash"] header.header {
+	background: rgba(10,10,11,0.78);
+	border-bottom-color: var(--se-rule);
 }
 
 /* ============================================================
@@ -819,10 +867,10 @@ nav.sidebar .top-level > li > details > summary {
 .se-changelog-scroll {
 	max-height: 400px;
 	overflow-y: auto;
-	border: 1px solid var(--sl-color-gray-5);
+	border: 1px solid var(--sl-color-hairline-shade);
 	border-radius: 8px;
 	padding: 1rem 1.25rem;
-	background: var(--sl-color-black);
+	background: var(--sl-color-bg-inline-code);
 	font-size: 0.9rem;
 	line-height: 1.7;
 }
