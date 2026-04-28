@@ -98,8 +98,39 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
-/* Splash page is always dark — pinned regardless of theme toggle */
-body[data-page-type="splash"] {
+/* ============================================================
+   SPLASH PAGE — pin to dark palette regardless of theme toggle
+   Detected via absence of [data-has-sidebar] on <html>.
+   This re-binds every Starlight token to its dark value AND
+   sets the body background, so even if the user toggles to
+   light theme the homepage stays fully dark.
+   ============================================================ */
+html:not([data-has-sidebar]) {
+	--sl-color-accent-low:    rgba(255,176,0,0.12);
+	--sl-color-accent:        #ffb000;
+	--sl-color-accent-high:   #ffd06a;
+	--sl-color-white:         #f5f3ee;
+	--sl-color-gray-1:        #d4d2cc;
+	--sl-color-gray-2:        #a8a8ae;
+	--sl-color-gray-3:        #6a6a72;
+	--sl-color-gray-4:        #404048;
+	--sl-color-gray-5:        #222227;
+	--sl-color-gray-6:        #18181c;
+	--sl-color-gray-7:        #111114;
+	--sl-color-black:         #0a0a0b;
+	--sl-color-bg:            #0a0a0b;
+	--sl-color-bg-nav:        #0a0a0b;
+	--sl-color-bg-sidebar:    #111114;
+	--sl-color-bg-inline-code: #18181c;
+	--sl-color-text:          #f5f3ee;
+	--sl-color-text-accent:   #ffb000;
+	--sl-color-hairline-light: rgba(255,253,240,0.05);
+	--sl-color-hairline:      rgba(255,253,240,0.10);
+	--sl-color-hairline-shade: rgba(255,253,240,0.16);
+	--sl-color-shadow:        rgba(0,0,0,0.5);
+}
+
+html:not([data-has-sidebar]) body {
 	background: var(--se-bg);
 	background-image:
 		radial-gradient(circle at 15% 0%, rgba(255,176,0,0.04) 0%, transparent 45%),
@@ -120,30 +151,24 @@ header.header {
 }
 
 /* Light theme docs: linen glass */
-:root[data-theme='light'] header.header {
+:root[data-theme='light'][data-has-sidebar] header.header {
 	background: rgba(248,244,236,0.82);
 	border-bottom-color: rgba(31,28,23,0.10);
-}
-
-/* Splash always uses dark glass even when theme is light */
-:root[data-theme='light'] body[data-page-type="splash"] header.header {
-	background: rgba(10,10,11,0.78);
-	border-bottom-color: var(--se-rule);
 }
 
 /* ============================================================
    SPLASH PAGE — widen content area
    ============================================================ */
-[data-page-type="splash"] .sl-container {
+html:not([data-has-sidebar]) .sl-container {
 	max-width: 1280px;
 }
 
-[data-page-type="splash"] main {
+html:not([data-has-sidebar]) main {
 	padding-top: 0 !important;
 }
 
 /* Hide Starlight's default hero — we render our own */
-[data-page-type="splash"] .hero { display: none; }
+html:not([data-has-sidebar]) .hero { display: none; }
 
 /* ============================================================
    HOMEPAGE — Studio Rack design
