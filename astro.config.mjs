@@ -14,7 +14,7 @@ export default defineConfig({
 				replacesTitle: true,
 			},
 			social: [
-				{ icon: 'github', label: 'GitHub', href: 'https://github.com/JeffMcClintock/SynthEdit' },
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/JeffMcClintock/SynthEdit-Tracking' },
 			],
 			customCss: ['./src/styles/custom.css'],
 			sidebar: [
