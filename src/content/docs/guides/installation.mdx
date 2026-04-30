@@ -31,6 +31,22 @@ Recent changes and fixes. <a href="https://synthedit.com/release_1_6/changelog.h
 
 <div class="se-changelog-scroll">
 
+- panel modules no longer grow on each view re-open
+- add Label module (GmpiUi)
+- SubView measure consults persistedRect for stale child bounds
+- Resource Manager now searches all skins for global.txt
+
+**v1.6.81** — 2026-04-30
+- isNull centering uses absolute SetModuleRect
+- isNull centering respects user-positioned modules
+- implement GetModuleRect for stale-JSON detection
+- highlight dragged module in browser list
+- fix build errors with GUI code-skeleton
+- double-click in browser inserts module at view centre
+- crash when clicking tab of deleted container
+- add OM_INSERT_MODULE_AT_VIEW_CENTER notification
+- add MfcDocPresenterBase::SetModuleRect
+
 **v1.6.80** — 2026-04-29
 - insert-on-struct-view no longer mis-positions on panel
 - fix crash when containerising a selected module
@@ -126,23 +142,6 @@ Recent changes and fixes. <a href="https://synthedit.com/release_1_6/changelog.h
 - SynthEdit mac reloads project after export
 - Hoverscopes now work on IO Modules
 - Hoverscopes now work on IO Modules
-
-**v1.6.65** — 2026-04-16
-- panel ResizeAdorner repaint - getClipArea coord space
-- no error from missing MIDI driver when you arn&apos;t using MIDI modules
-- mitigate bug when clicking image with file &quot;arrow_right&quot; causing a spurious change notifications to &quot;arrow_right.bmp&quot;
-- mac - shift toolbar left
-- fix subviews mouse handling
-- fix drag hit test lines with tiny hitbox
-- fix crash when hovering IO Mod pins while audio on
-- fix crash after pasting BPM module from another project then starting audio.
-- better cancellation workflow
-- better cancellation workflow
-- Wave Recorder better error messages
-- VST3 panel now panned correctly
-
-**v1.6.64** — 2026-04-15
-- better dragbox discernment of lines
 
 </div>
 ## Demo vs Full Version
