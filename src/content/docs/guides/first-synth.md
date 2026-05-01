@@ -36,7 +36,7 @@ The first thing every synthesiser needs is a sound source. We'll add an **Oscill
 
 - Right-click on an empty area of the Structure View and choose **Insert → Waveform → Oscillator**, or drag the module in from the **Module Browser** on the left.
 
-![Oscillator module in the structure view](/images/tutorials/first-synth/01-oscillator.png)
+<img src="../../images/tutorials/first-synth/01-oscillator.png" alt="Oscillator module in the structure view" />
 
 The oscillator has several plugs. The most important ones for now are:
 
@@ -53,7 +53,7 @@ The oscillator produces a waveform, but to actually hear it you need a **Sound O
 
 Tip: turn on **Edit → Snap to Grid** to keep things tidy.
 
-![Oscillator and Sound Out side by side](/images/tutorials/first-synth/02-osc-and-soundout.png)
+<img src="../../images/tutorials/first-synth/02-osc-and-soundout.png" alt="Oscillator and Sound Out side by side" />
 
 ## 5. Connect them with a patch cord
 
@@ -64,7 +64,7 @@ Now we'll wire the oscillator's audio into the sound out.
 
 A blue **patch cord** is drawn between them. The cord follows the modules if you drag them around.
 
-![Oscillator connected to Sound Out](/images/tutorials/first-synth/03-connected.png)
+<img src="../../images/tutorials/first-synth/03-connected.png" alt="Oscillator connected to Sound Out" />
 
 As you drag a cord across plugs, SynthEdit highlights the ones it can legally connect to. It will refuse to connect two inputs together or two outputs together. The Sound Out module also automatically grows a new spare input pin once you've wired one — handy when you want to mix several sources together.
 
@@ -88,7 +88,7 @@ To change the oscillator's pitch while it plays, we need a **control** module. S
 - Right-click just to the left of the oscillator and choose **Insert → Controls → Slider**
 - Connect the slider's **Signal Out** plug to the oscillator's **Pitch** input
 
-![Slider connected to the oscillator's pitch input](/images/tutorials/first-synth/04-with-slider.png)
+<img src="../../images/tutorials/first-synth/04-with-slider.png" alt="Slider connected to the oscillator's pitch input" />
 
 - Press **Play** (or **Spacebar**)
 - Click the slider's knob and drag it up and down while the sound plays
@@ -120,7 +120,7 @@ Setting the waveform from the properties panel is fine for a fixed value, but it
 - Insert a List Entry module: **Insert → Controls → List Entry**
 - Connect the list entry's **Choice** output to the oscillator's **Waveform** input
 
-![List Entry connected to the oscillator's waveform input](/images/tutorials/first-synth/05-with-list-entry.png)
+<img src="../../images/tutorials/first-synth/05-with-list-entry.png" alt="List Entry connected to the oscillator's waveform input" />
 
 You can now pick the waveform from a drop-down. If the module is too small, drag its bottom-right corner to resize it.
 
@@ -136,7 +136,7 @@ The oscillator on its own is a bit raw. A **filter** sits between the oscillator
 - Wire the filter's **Low Pass** output → Sound Out's input
 - Add a second slider and wire it to the filter's **Pitch** input so you can sweep the cutoff
 
-![Oscillator into SV Filter into Sound Out](/images/tutorials/first-synth/06-with-filter.png)
+<img src="../../images/tutorials/first-synth/06-with-filter.png" alt="Oscillator into SV Filter into Sound Out" />
 
 Press **Play** and experiment. As you move the cutoff slider, the filter sweeps through the harmonic content of the oscillator — that classic synthesiser sound. Try different waveforms with the list entry too.
 
