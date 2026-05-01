@@ -31,7 +31,30 @@ Recent changes and fixes. <a href="https://synthedit.com/release_1_6/changelog.h
 
 <div class="se-changelog-scroll">
 
+**Unreleased**
+- tests/CMakeLists skips synth_ui_tests when gimpi_ui_tests absent
+- stereo render-audio, case-insensitive pin names, version MCP config
+- new vector knob color pins renamed
+- fix crash with &apos;selection to prefab&apos; (win)
+- fix crash in save-as-prefab
+- SynthEditCL never displays modal dialogs
+- PatchMem modules now expose &quot;Hint&quot; pin
+- Hint GUI pins for all PatchMemory modules
+
+**v1.6.84** — 2026-05-01
+- symbolic handle aliases ($name, $$, \$N) in SynthEditCL scripts
+- keep loadFile/autoSaveType/autoRender on SynthEditConfig
+- clone gimpi_ui_tests and pass GMPI_UI_TESTS_FOLDER to cmake
+- address pins by name + register synthedit MCP server
+- add --list-modules verb to SynthEditCL
+- SynthEditCL script-mode for agent-driven editor sessions
+- MCP server wrapping SynthEditCL as native agent tools
+- --set-pin, --render-audio, drop DSP stdout noise from MCP results
+- --rate &lt;Hz&gt; sub-arg for --render-audio / --autorender
+
+**v1.6.83** — 2026-04-30
 - panel modules no longer grow on each view re-open
+- in-process layout regression tests
 - add Label module (GmpiUi)
 - SubView measure consults persistedRect for stale child bounds
 - Resource Manager now searches all skins for global.txt
@@ -129,19 +152,6 @@ Recent changes and fixes. <a href="https://synthedit.com/release_1_6/changelog.h
 **v1.6.68** — 2026-04-20
 - poll OS cursor during drag to unfreeze outside swapchain
 - autoscroll now works when dragging wires/cables
-
-**v1.6.67** — 2026-04-20
-- suppress Debug CRT assertion dialogs in the dsp_tests harness
-- suppress Debug CRT assertion dialogs in SynthEditCL
-- mac - fix missing modules from export-plugins
-
-**v1.6.66** — 2026-04-17
-- fixed HC_OFFLINE failing when user hit &apos;Play&apos; right after loading app.
-- fix pin direction screwup on containerize
-- fix VST3 plugin viewport (mac)
-- SynthEdit mac reloads project after export
-- Hoverscopes now work on IO Modules
-- Hoverscopes now work on IO Modules
 
 </div>
 ## Demo vs Full Version
