@@ -42,6 +42,7 @@ export default defineConfig({
 						{ label: 'Feedback Paths', slug: 'guides/feedback-paths' },
 						{ label: 'FM Synthesis', slug: 'guides/fm-synthesis' },
 						{ label: 'Phase Distortion Synthesis', slug: 'guides/phase-distortion-synthesis' },
+						{ label: 'AI Assistant (MCP Connector)', slug: 'guides/ai-mcp-connector' },
 					],
 				},
 				{
