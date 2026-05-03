@@ -5,7 +5,7 @@ Marketing site and documentation for [SynthEdit](https://www.synthedit.com), a v
 ## Tech Stack
 
 - **Astro + Starlight** — static site generator with built-in docs support
-- **Netlify** — hosting (free tier), auto-deploys on push to `main`
+- **GitHub Actions → FTP** — `.github/workflows/deploy.yml` builds on every push to `main` and uploads `dist/` to `ftp.synthedit.com:/domains/synthedit.com/public_html/new/`
 - **Node.js** — required for local dev (`npm run dev`)
 
 ## Project Structure
@@ -53,4 +53,6 @@ npm run build   # production build to dist/
 
 ## Deployment
 
-Push to `main` — Netlify auto-builds and deploys. No manual steps needed.
+Push to `main` — the `Deploy to synthedit.com/new` GitHub Actions workflow runs `npm run build` and FTPs `dist/` to the server. Site lives at `https://synthedit.com/new/`. The FTP password is stored as the repo secret `FTP_PASSWORD`. No manual steps needed.
+
+When ready to move from `/new/` to the site root, remove `base: '/new/'` from `astro.config.mjs` and update the workflow's `server-dir` to `/domains/synthedit.com/public_html/`.

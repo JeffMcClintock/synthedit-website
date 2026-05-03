@@ -11,24 +11,36 @@ LOCAL DEVELOPMENT
 
 DEPLOYING TO SYNTHEDIT.COM/NEW/
 --------------------------------
-1. Build the site:
+Just push to main. The GitHub Actions workflow
+(.github/workflows/deploy.yml) builds the site and FTPs dist/
+to the server automatically:
+
+   git add <files>
+   git commit -m "..."
+   git push
+
+Live within a minute or two at https://synthedit.com/new/.
+Watch the build at https://github.com/JeffMcClintock/synthedit-website/actions.
+
+If you want to verify the build locally before pushing:
    npm run build
-
-2. Upload the contents of the dist/ folder to your server at /new/
-   (All files and folders inside dist/ go into the /new/ directory)
-
-3. That's it! The changes will be live at www.synthedit.com/new/
+   (output goes to dist/, same as CI does)
 
 COMMON UPDATES
 --------------
 - Add/edit a guide page: Create/edit .md file in src/content/docs/guides/
 - Add/edit module reference: Create/edit .md file in src/content/docs/reference/
-- Update images: Place in public/images/ and reference as /images/filename.jpg
+- Update images: Place in public/images/ and reference with a relative
+  HTML img tag, e.g. <img src="../../images/foo.png"> -- this works
+  regardless of the site's base path. Markdown ![](/path) absolute refs
+  do NOT get the /new/ base prepended and will 404.
 - Update changelog: Edit src/content/docs/guides/installation.mdx
 
-BEFORE GOING LIVE
------------------
-When ready to move to www.synthedit.com (root):
+BEFORE GOING LIVE AT THE SITE ROOT
+----------------------------------
+When ready to move from synthedit.com/new/ to www.synthedit.com:
 1. Remove base: '/new/' from astro.config.mjs
-2. Rebuild: npm run build
-3. Upload dist/ contents to the root directory
+2. In .github/workflows/deploy.yml, change server-dir from
+   /domains/synthedit.com/public_html/new/ to
+   /domains/synthedit.com/public_html/
+3. Push -- CI handles the rest
