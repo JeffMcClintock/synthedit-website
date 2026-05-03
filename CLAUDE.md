@@ -34,6 +34,7 @@ netlify.toml               # Netlify build settings
 ## Key Patterns
 
 - **Adding a new doc page**: Create a `.md` file in the appropriate `guides/` or `reference/` folder. Reference pages auto-appear in the sidebar. Guide pages need a manual entry in `astro.config.mjs` sidebar config.
+- **Cross-page links**: use **relative paths** like `[Foo](./foo/)` or `[Bar](../guides/bar/)`. Markdown absolute paths like `[Foo](/guides/foo/)` do NOT get the `/new/` base prepended and will 404 while the site is hosted under `/new/`. Starlight's auto-generated sidebar links work fine; this is only a concern for inline links inside `.md`/`.mdx` content.
 - **Images in MDX HTML blocks**: Must go in `public/images/` and be referenced as `/images/filename.jpg`. Astro-imported images (hero, logo) go in `src/assets/`.
 - **Changelog**: Recent entries are manually listed in `installation.mdx` inside a `<div class="se-changelog-scroll">` container. Full changelog links to `https://synthedit.com/release_1_6/changelog.html`.
 - **Styling**: All custom CSS is in `src/styles/custom.css`. Uses CSS custom properties from Starlight's theming system (`--sl-color-*`).
