@@ -20,11 +20,15 @@ SynthEdit's oscillator uses **phase modulation** (PM) rather than true frequency
 
 ### Simple Two-Operator FM
 
+The smallest useful FM patch chains a modulator into a carrier's **Phase Mod** input:
+
+<img src="../../images/guides/fm-synthesis/01-two-operator.png" alt="Two-operator FM: modulator oscillator's Audio Out into the carrier's Phase Mod input, carrier's Audio Out into Sound Out" />
+
 1. Insert two **Oscillator** modules
-2. Connect **MIDI-to-CV** pitch output to both oscillators' Pitch inputs
-3. Connect the modulator oscillator's output to the carrier's **Phase Mod** input
-4. Use a control (slider or envelope) to adjust the carrier's **PM Depth** input
-5. Connect the carrier's output to your VCA and audio output
+2. Connect the **modulator**'s **Audio Out** to the **carrier**'s **Phase Mod** input
+3. Connect the **carrier**'s **Audio Out** to a **Sound Out** module
+4. (Optional) connect a **MIDI to CV** module's **Pitch** output to both oscillators' **Pitch** inputs so the patch tracks your keyboard
+5. (Optional) connect a slider or envelope to the carrier's **PM Depth** input — this is the brightness/timbre control. With nothing connected, PM Depth defaults to its mid value, so you'll already hear the modulation
 
 ### Adjusting the Sound
 
@@ -34,13 +38,23 @@ SynthEdit's oscillator uses **phase modulation** (PM) rather than true frequency
 
 ## Operator Configurations
 
-FM synthesizers typically chain multiple oscillators (called "operators") in various arrangements called **algorithms**:
+FM synthesizers typically chain multiple oscillators (called "operators") in various arrangements called **algorithms**. SynthEdit doesn't lock you into a fixed algorithm — you wire whatever topology you want.
 
-- **Stack** — Modulator > Modulator > Carrier (increasingly complex spectra)
-- **Parallel** — Multiple modulators feeding one carrier (additive-like complexity)
-- **Branch** — Combinations of stacked and parallel paths
+### Stack — modulator → modulator → carrier
 
-In SynthEdit, you build these configurations by connecting oscillators together. There's no fixed algorithm structure — you have complete freedom to design your own operator topologies.
+Each modulator modulates the next operator down the chain. The deeper the stack, the more complex the spectrum.
+
+<img src="../../images/guides/fm-synthesis/02-stack.png" alt="Three oscillators chained: each one's Audio Out drives the next oscillator's Phase Mod input, with the final oscillator going to Sound Out" />
+
+### Parallel — multiple modulators feeding one carrier
+
+Two (or more) modulators both drive the same carrier's **Phase Mod** input. SynthEdit sums the modulator signals automatically, so you can route several Audio Outs into a single Phase Mod input. The result is an additive-like richness on top of the carrier.
+
+<img src="../../images/guides/fm-synthesis/03-parallel.png" alt="Two modulator oscillators both connected into a single carrier's Phase Mod input, carrier's Audio Out into Sound Out" />
+
+### Branch
+
+Combine stack and parallel paths — for example, one operator modulating two carriers, or a stack whose output is then summed in parallel with a second modulator. There's no fixed structure; you have complete freedom to design your own operator topologies.
 
 ## Tips
 
