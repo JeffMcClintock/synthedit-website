@@ -118,7 +118,7 @@ Press **Spacebar** to play. The oscillator now produces a pulse wave, which has 
 Setting the waveform from the properties panel is fine for a fixed value, but it would be nicer to switch waveforms while the synth plays. A **List Entry** module gives you a drop-down menu on the panel.
 
 - Insert a List Entry module: **Insert → Controls → List Entry**
-- Connect the list entry's **Choice** output to the oscillator's **Waveform** input
+- Connect the list entry's **Value Out** output to the oscillator's **Waveform** input
 
 <img src="../../images/tutorials/first-synth/05-with-list-entry.png" alt="List Entry connected to the oscillator's waveform input" />
 
