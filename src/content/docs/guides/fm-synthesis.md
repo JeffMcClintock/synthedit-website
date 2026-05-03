@@ -20,15 +20,16 @@ SynthEdit's oscillator uses **phase modulation** (PM) rather than true frequency
 
 ### Simple Two-Operator FM
 
-The smallest useful FM patch chains a modulator into a carrier's **Phase Mod** input:
+The smallest useful FM patch chains a modulator into a carrier's **Phase Mod** input, with a slider on **PM Depth** for brightness/timbre control:
 
-<img src="../../images/guides/fm-synthesis/01-two-operator.png" alt="Two-operator FM: modulator oscillator's Audio Out into the carrier's Phase Mod input, carrier's Audio Out into Sound Out" />
+<img src="../../images/guides/fm-synthesis/01-two-operator.png" alt="Two-operator FM: modulator oscillator's Audio Out into the carrier's Phase Mod input, a slider into the carrier's PM Depth, and the carrier's Audio Out into Sound Out" />
 
 1. Insert two **Oscillator** modules
 2. Connect the **modulator**'s **Audio Out** to the **carrier**'s **Phase Mod** input
-3. Connect the **carrier**'s **Audio Out** to a **Sound Out** module
-4. (Optional) connect a **MIDI to CV** module's **Pitch** output to both oscillators' **Pitch** inputs so the patch tracks your keyboard
-5. (Optional) connect a slider or envelope to the carrier's **PM Depth** input — this is the brightness/timbre control. With nothing connected, PM Depth defaults to its mid value, so you'll already hear the modulation
+3. Add a **Slider** and connect its **Signal Out** to the **carrier**'s **PM Depth** input (this is the timbre control — more depth = more harmonics)
+4. Connect the **carrier**'s **Audio Out** to a **Sound Out** module
+5. (Optional) connect a **MIDI to CV** module's **Pitch** output to both oscillators' **Pitch** inputs so the patch tracks your keyboard
+6. (Optional) replace the slider with an ADSR envelope for a time-varying timbre — high modulation on the attack that fades produces classic FM percussion and bell sounds
 
 ### Adjusting the Sound
 
