@@ -3,6 +3,12 @@ title: Image
 description: Displays a static or animated image on the panel.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="../../../images/modules/image.png" alt="Image module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
+
 The **Image** module displays a bitmap image (.bmp or .png) on the panel. It can display animated sequences by selecting frames based on a control voltage.
 
 ## Inputs

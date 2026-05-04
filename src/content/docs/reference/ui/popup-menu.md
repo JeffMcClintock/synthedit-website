@@ -3,6 +3,12 @@ title: Popup Menu
 description: Pop-up menu selection control.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="../../../images/modules/popup-menu.png" alt="Popup Menu module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
+
 The **Popup Menu** provides a pop-up menu for selecting from a list of options.
 
 ## Pins

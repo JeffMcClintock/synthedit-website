@@ -3,6 +3,12 @@ title: Volt Meter
 description: Displays input voltage for debugging.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="../../../images/modules/volt-meter.png" alt="Volt Meter module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
+
 The **Volt Meter** shows the current voltage of the input signal as a numeric readout. Primarily a debugging tool.
 
 ## Inputs

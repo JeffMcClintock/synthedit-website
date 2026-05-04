@@ -3,6 +3,12 @@ title: Slider
 description: Adjustable slider control for direct voltage output.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="../../../images/modules/slider.png" alt="Slider module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
+
 The **Slider** provides a draggable control for setting a voltage value directly. It can be configured for different visual appearances and can send MIDI controller messages.
 
 ## Outputs

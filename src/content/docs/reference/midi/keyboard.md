@@ -3,6 +3,12 @@ title: Keyboard
 description: On-screen MIDI keyboard playable with mouse or computer keyboard.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="../../../images/modules/keyboard.png" alt="Keyboard module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
+
 The **Keyboard** module provides an on-screen piano keyboard that can be played with the mouse or computer keyboard.
 
 ## Inputs

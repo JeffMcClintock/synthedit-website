@@ -3,6 +3,12 @@ title: Step Sequencer
 description: Simple MIDI pattern sequencer.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="../../../images/modules/step-sequencer.png" alt="Step Sequencer module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
+
 The **Step Sequencer** provides a simple step-based pattern sequencer that outputs MIDI data.
 
 ## Inputs

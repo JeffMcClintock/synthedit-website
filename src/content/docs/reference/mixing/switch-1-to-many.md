@@ -3,6 +3,12 @@ title: Switch (1 to Many)
 description: Routes a single input to one of multiple outputs.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="../../../images/modules/switch-1-many.png" alt="Switch (1 to Many) module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
+
 The **Switch (1 to Many)** routes a single input signal to one of several outputs based on a selection voltage.
 
 ## Inputs

@@ -3,6 +3,12 @@ title: Tinted Image
 description: Image with colorization capability for reusable colored controls.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="../../../images/modules/tinted-image.png" alt="Tinted Image module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
+
 The **Tinted Image** works like the Image module but adds a colorization layer. This lets you reuse the same image file in different colors — for example, creating LEDs that change color.
 
 ## Usage Notes

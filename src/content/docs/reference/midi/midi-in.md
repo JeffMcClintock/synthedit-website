@@ -3,6 +3,12 @@ title: MIDI In
 description: Receives MIDI data from a physical MIDI input port.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="../../../images/modules/midi-in.png" alt="MIDI In module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
+
 The **MIDI In** module connects to a physical MIDI input port on your computer, receiving data from external keyboards, drum pads, or sequencers.
 
 ## Outputs

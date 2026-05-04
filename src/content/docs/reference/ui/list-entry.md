@@ -3,6 +3,12 @@ title: List Entry
 description: Drop-down selection for list-type signal plugs.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="../../../images/modules/list-entry.png" alt="List Entry module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
+
 The **List Entry** module provides a drop-down control for selecting a value from a list (e.g., oscillator waveform selection). It connects to list-type signal plugs on other modules.
 
 ## Outputs

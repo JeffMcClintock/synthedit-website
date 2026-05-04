@@ -3,6 +3,12 @@ title: Phase Distortion Oscillator
 description: Oscillator using phase distortion synthesis for complex timbres.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="../../../images/modules/phase-dist-osc.png" alt="Phase Distortion Oscillator module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
+
 The **Phase Distortion Oscillator** generates complex tones by modulating the playback phase of a waveform, producing filter-like timbral sweeps without a separate filter module.
 
 ## Inputs

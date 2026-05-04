@@ -3,6 +3,12 @@ title: MIDI Player
 description: Plays MIDI files with high-resolution timing.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="../../../images/modules/midi-player.png" alt="MIDI Player module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
+
 The **MIDI Player** loads and plays standard MIDI files (.mid) with high-resolution timing accuracy, better than routing through external software.
 
 ## Inputs

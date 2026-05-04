@@ -3,6 +3,12 @@ title: LED Indicator
 description: Visual LED light with threshold trigger.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="../../../images/modules/led-indicator.png" alt="LED Indicator module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
+
 The **LED Indicator** displays a visual LED that lights up when the input voltage exceeds a threshold.
 
 ## Inputs

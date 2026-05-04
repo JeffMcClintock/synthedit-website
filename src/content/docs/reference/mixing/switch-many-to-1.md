@@ -3,6 +3,12 @@ title: Switch (Many to 1)
 description: Selects one of multiple inputs to route to a single output.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="../../../images/modules/switch-many-1.png" alt="Switch (Many to 1) module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
+
 The **Switch (Many to 1)** selects one of several input signals and routes it to a single output.
 
 ## Inputs
