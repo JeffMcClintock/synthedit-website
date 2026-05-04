@@ -3,6 +3,12 @@ title: Waveshaper
 description: Custom transfer function for distortion and waveform modification.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="../../../images/modules/waveshaper.png" alt="Waveshaper module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
+
 The **Waveshaper** applies a custom transfer function to the input signal using draggable control points. It maps each input voltage to an output voltage according to the curve you define.
 
 ## Inputs

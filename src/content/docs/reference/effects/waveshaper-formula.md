@@ -3,6 +3,12 @@ title: Waveshaper (Formula)
 description: Math formula-based waveshaper for precise transfer functions.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="../../../images/modules/waveshaper-formula.png" alt="Waveshaper (Formula) module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
+
 The **Waveshaper (Formula)** applies a mathematical formula as a transfer function. The input signal value is substituted into the formula, and the result becomes the output. Internally, the formula is computed as a 512-point lookup table for efficiency.
 
 ## Inputs
