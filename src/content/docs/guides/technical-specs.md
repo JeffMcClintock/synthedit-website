@@ -51,7 +51,7 @@ Feedback loops are not directly supported due to the block-based processing arch
 
 | Format | Extension | Use |
 |--------|-----------|-----|
-| SynthEdit Project | `.se1` | Native project files |
+| SynthEdit Project | `.synthedit` | Native project files |
 | VST Plugin | `.vst3` | Exported plugins |
 | Wave Audio | `.wav` | Audio rendering output |
 | MIDI | `.mid` | Sequence input |
