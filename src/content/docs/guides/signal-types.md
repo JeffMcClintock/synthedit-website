@@ -5,6 +5,8 @@ description: Understanding signal types, color coding, and voltage conventions i
 
 SynthEdit uses color-coded patch cords and plugs to distinguish between different signal types. Understanding these types is essential for building patches correctly.
 
+<img src="../../images/guides/signal-types/01-cable-colors.png" alt="A patch showing all three cable colors: yellow MIDI from a MIDI Player into a MIDI to CV module, blue audio from MIDI to CV's Pitch into the oscillator and from the oscillator into Sound Out, and a green list cable from a List Entry into the oscillator's Waveform input" />
+
 ## Signal Types
 
 | Color | Type | Description |

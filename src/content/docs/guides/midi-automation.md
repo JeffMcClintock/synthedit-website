@@ -15,6 +15,10 @@ The **Patch Automator** module is the primary way to enable MIDI control of your
 2. Connect its MIDI input to your MIDI source
 3. Open its configuration dialog to assign controllers
 
+<img src="../../images/guides/midi-automation/01-patch-automator.png" alt="MIDI flows through the Patch Automator inline: MIDI Player to Patch Automator's MIDI In, Patch Automator's MIDI Out to a MIDI to CV module, then on to the oscillator and Sound Out" />
+
+The Patch Automator sits **inline** in the MIDI chain — incoming MIDI passes through it, and assigned CC messages get translated into parameter changes for any controls within the same container.
+
 ### Assigning Controllers
 
 The Patch Automator's configuration dialog provides:

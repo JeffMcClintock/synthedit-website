@@ -21,6 +21,8 @@ Rendering to disk lets you create Wave files without real-time playback constrai
    - **Format** — Audio bit depth
 4. Press **Play** to begin rendering
 
+<img src="../../images/guides/rendering-to-disk/01-render-setup.png" alt="A minimal render setup: a MIDI Player (with a yellow MIDI cable into a MIDI to CV module) drives the oscillator's pitch, and the oscillator's Audio Out goes to a Wave Recorder instead of a Sound Out" />
+
 A progress bar shows the rendering status. The audio is processed as fast as your CPU allows, not limited to real-time speed.
 
 ## Wave Recorder Properties

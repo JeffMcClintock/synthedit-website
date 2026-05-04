@@ -15,6 +15,10 @@ To create feedback effects (such as echo, flanging, or resonant feedback), use t
 2. Route the signal from later in the chain back through the Feedback Delay to an earlier point
 3. The module introduces a one-block delay, allowing the feedback loop to function
 
+<img src="../../images/guides/feedback-paths/01-feedback-loop.png" alt="An SV Filter wired as a resonant feedback path: Sound In feeds the filter, the filter's Low Pass output goes to Sound Out, and a second cable from Low Pass returns through a Feedback - Volts module back to the filter's Signal input, closing the loop" />
+
+In this example the SV Filter's output is fed back into its own input via the **Feedback - Volts** module, creating a resonant feedback path. Without the Feedback Delay, SynthEdit would refuse to make the backwards connection because it can't resolve the dependency within a single processing block.
+
 The Feedback Delay module also provides a **Delay Time Out** pin that reports the exact delay in milliseconds, which is useful for tuning delay-based effects.
 
 ## Limitations

@@ -19,6 +19,10 @@ SynthEdit analyzes the signal flow within a container and only clones the module
 
 The MIDI-to-CV module acts as the "voice allocator" — it receives MIDI notes and distributes them across the available voices.
 
+<img src="../../images/guides/polyphony/01-polyphonic-voice.png" alt="A polyphonic voice: MIDI to CV's Pitch drives the oscillator, its Gate drives the ADSR; the oscillator goes into a VCA whose Volume is controlled by the ADSR; the VCA's output passes through a Voice Combiner before reaching Sound Out" />
+
+Everything to the **left** of the **Voice Combiner** (oscillator, filter, envelope, VCA) gets cloned per voice. Everything to the **right** (typically effects like reverb and chorus) stays monophonic — that's the per-voice / global split.
+
 ## Voice Count
 
 Configure the number of voices in the container's properties:

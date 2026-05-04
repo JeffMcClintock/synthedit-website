@@ -27,6 +27,10 @@ Consider a VCA controlled by an ADSR envelope:
 - **Avoid Level Adj for volume envelopes** — while functionally similar, the VCA is specifically optimized for sleep detection
 - Place the VCA early in the signal chain so that upstream modules also sleep
 
+<img src="../../images/guides/optimizing-cpu/01-vca-placement.png" alt="A sleep-friendly voice: Oscillator into SV Filter into VCA into Sound Out, with the ADSR's Signal Out driving the VCA's Volume input. When the envelope ends, the VCA's output flatlines and every upstream module enters sleep mode" />
+
+When the ADSR's release phase ends, the VCA's output flatlines at zero. The VCA detects the flat-line input and goes to sleep — and because the oscillator and filter are upstream of the VCA, they sleep too. CPU for that voice drops to near zero until the next note arrives.
+
 ## Reducing Module Count
 
 - Use the simplest module that does the job — a **1 Pole LP** filter uses less CPU than an **SV Filter**
