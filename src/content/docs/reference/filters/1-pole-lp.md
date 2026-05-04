@@ -5,7 +5,7 @@ description: Simple, efficient 6 dB/octave low-pass filter.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/1-pole-lp.png" alt="1 Pole LP module" class="se-module-screenshot" />
+<img src="../../../images/modules/1-pole-lp.png" alt="1 Pole LP module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

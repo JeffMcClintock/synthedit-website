@@ -5,7 +5,7 @@ description: Enables feedback paths between modules by introducing a small delay
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/feedback-delay.png" alt="Feedback - Volts module" class="se-module-screenshot" />
+<img src="../../../images/modules/feedback-delay.png" alt="Feedback - Volts module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

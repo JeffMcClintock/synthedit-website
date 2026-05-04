@@ -5,7 +5,7 @@ description: Multiplies and normalizes two signals for amplitude modulation.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/level-adj.png" alt="Level Adj module" class="se-module-screenshot" />
+<img src="../../../images/modules/level-adj.png" alt="Level Adj module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

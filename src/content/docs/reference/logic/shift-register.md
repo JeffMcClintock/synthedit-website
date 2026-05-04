@@ -5,7 +5,7 @@ description: Digital delay line that shifts data across stages on each clock pul
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/shift-register.png" alt="Shift Register module" class="se-module-screenshot" />
+<img src="../../../images/modules/shift-register.png" alt="Shift Register module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

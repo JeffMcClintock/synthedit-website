@@ -5,7 +5,7 @@ description: Rounds down to the next whole voltage value.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/floor.png" alt="Floor module" class="se-module-screenshot" />
+<img src="../../../images/modules/floor.png" alt="Floor module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

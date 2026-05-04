@@ -5,7 +5,7 @@ description: Outputs high or low based on comparing two signals.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/comparator.png" alt="Comparator module" class="se-module-screenshot" />
+<img src="../../../images/modules/comparator.png" alt="Comparator module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

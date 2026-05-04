@@ -5,7 +5,7 @@ description: Crossfades between two input signals.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/x-mix.png" alt="X-Mix module" class="se-module-screenshot" />
+<img src="../../../images/modules/x-mix.png" alt="X-Mix module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

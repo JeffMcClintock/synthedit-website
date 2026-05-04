@@ -5,7 +5,7 @@ description: Diagnostic tool to detect denormal numbers in a signal.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/denormal-detector.png" alt="Denormal Detector module" class="se-module-screenshot" />
+<img src="../../../images/modules/denormal-detector.png" alt="Denormal Detector module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

@@ -5,7 +5,7 @@ description: Sends MIDI data to a physical MIDI output port.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/midi-out.png" alt="MIDI Out module" class="se-module-screenshot" />
+<img src="../../../images/modules/midi-out.png" alt="MIDI Out module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

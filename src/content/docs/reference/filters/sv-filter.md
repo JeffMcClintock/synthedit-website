@@ -5,7 +5,7 @@ description: Versatile 2-pole filter with four simultaneous output types.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/sv-filter.png" alt="SV Filter module" class="se-module-screenshot" />
+<img src="../../../images/modules/sv-filter.png" alt="SV Filter module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

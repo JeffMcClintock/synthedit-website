@@ -5,7 +5,7 @@ description: Stereo panning and volume control.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/pan.png" alt="Pan module" class="se-module-screenshot" />
+<img src="../../../images/modules/pan.png" alt="Pan module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

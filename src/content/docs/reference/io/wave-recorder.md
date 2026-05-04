@@ -5,7 +5,7 @@ description: Records audio output to WAV files.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/wave-recorder.png" alt="Wave Recorder module" class="se-module-screenshot" />
+<img src="../../../images/modules/wave-recorder.png" alt="Wave Recorder module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

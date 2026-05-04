@@ -5,7 +5,7 @@ description: Two-pole all-pass filter for phase manipulation effects.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/all-pass.png" alt="All Pass module" class="se-module-screenshot" />
+<img src="../../../images/modules/all-pass.png" alt="All Pass module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

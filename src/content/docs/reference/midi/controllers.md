@@ -5,7 +5,7 @@ description: Converts MIDI controller messages to control voltages.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/controllers.png" alt="Controllers module" class="se-module-screenshot" />
+<img src="../../../images/modules/controllers.png" alt="Controllers module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

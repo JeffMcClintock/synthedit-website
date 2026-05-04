@@ -5,7 +5,7 @@ description: Output goes high only when all inputs are high.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/and-gate.png" alt="AND Gate module" class="se-module-screenshot" />
+<img src="../../../images/modules/and-gate.png" alt="AND Gate module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

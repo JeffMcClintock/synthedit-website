@@ -5,7 +5,7 @@ description: Generates a random voltage on each trigger.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/random.png" alt="Random Voltage module" class="se-module-screenshot" />
+<img src="../../../images/modules/random.png" alt="Random Voltage module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

@@ -5,7 +5,7 @@ description: Merges polyphonic voices into a single monophonic signal.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/voice-combiner.png" alt="Voice Combiner module" class="se-module-screenshot" />
+<img src="../../../images/modules/voice-combiner.png" alt="Voice Combiner module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

@@ -5,7 +5,7 @@ description: Tracks the amplitude envelope of an audio signal.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/peak-follower.png" alt="Peak Follower module" class="se-module-screenshot" />
+<img src="../../../images/modules/peak-follower.png" alt="Peak Follower module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

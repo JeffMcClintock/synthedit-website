@@ -5,7 +5,7 @@ description: Voltage Controlled Amplifier for volume and amplitude control.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/vca.png" alt="VCA module" class="se-module-screenshot" />
+<img src="../../../images/modules/vca.png" alt="VCA module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

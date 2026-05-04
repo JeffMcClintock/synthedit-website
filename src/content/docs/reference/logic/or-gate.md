@@ -5,7 +5,7 @@ description: Output goes high when any input is high.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/or-gate.png" alt="OR Gate module" class="se-module-screenshot" />
+<img src="../../../images/modules/or-gate.png" alt="OR Gate module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

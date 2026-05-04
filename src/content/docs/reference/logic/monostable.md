@@ -5,7 +5,7 @@ description: Produces a fixed-length pulse when triggered.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/monostable.png" alt="Monostable module" class="se-module-screenshot" />
+<img src="../../../images/modules/monostable.png" alt="Monostable module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

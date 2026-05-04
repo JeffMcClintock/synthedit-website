@@ -5,7 +5,7 @@ description: Measures audio signal level and converts to a parameter value.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/voltstofloat.png" alt="Volts to Float module" class="se-module-screenshot" />
+<img src="../../../images/modules/voltstofloat.png" alt="Volts to Float module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

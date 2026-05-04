@@ -5,7 +5,7 @@ description: Enables MIDI automation of container controls.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/se-patch-automator.png" alt="Patch Automator module" class="se-module-screenshot" />
+<img src="../../../images/modules/se-patch-automator.png" alt="Patch Automator module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

@@ -5,7 +5,7 @@ description: Smoothly converts parameter values to audio-rate signals.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/floattovolts.png" alt="Float to Volts module" class="se-module-screenshot" />
+<img src="../../../images/modules/floattovolts.png" alt="Float to Volts module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

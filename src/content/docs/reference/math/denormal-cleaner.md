@@ -5,7 +5,7 @@ description: Removes denormal numbers to prevent CPU spikes.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/denormal-cleaner.png" alt="Denormal Cleaner module" class="se-module-screenshot" />
+<img src="../../../images/modules/denormal-cleaner.png" alt="Denormal Cleaner module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

@@ -5,7 +5,7 @@ description: Audio delay/echo effect with modulation and feedback.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/delay.png" alt="Delay module" class="se-module-screenshot" />
+<img src="../../../images/modules/delay.png" alt="Delay module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

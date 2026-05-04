@@ -5,7 +5,7 @@ description: Output goes high when one or more inputs are low.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/nand-gate.png" alt="NAND Gate module" class="se-module-screenshot" />
+<img src="../../../images/modules/nand-gate.png" alt="NAND Gate module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

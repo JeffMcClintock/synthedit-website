@@ -5,7 +5,7 @@ description: Rounds up to the next whole voltage value.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/ceil.png" alt="Ceil module" class="se-module-screenshot" />
+<img src="../../../images/modules/ceil.png" alt="Ceil module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

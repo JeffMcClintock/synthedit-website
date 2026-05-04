@@ -5,7 +5,7 @@ description: Simple, efficient 6 dB/octave high-pass filter.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/1-pole-hp.png" alt="1 Pole HP module" class="se-module-screenshot" />
+<img src="../../../images/modules/1-pole-hp.png" alt="1 Pole HP module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

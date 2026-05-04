@@ -5,7 +5,7 @@ description: Converts gate and pitch voltages to MIDI note messages.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/trigger-to-midi.png" alt="Trigger To MIDI module" class="se-module-screenshot" />
+<img src="../../../images/modules/trigger-to-midi.png" alt="Trigger To MIDI module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

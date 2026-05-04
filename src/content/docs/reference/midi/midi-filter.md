@@ -5,7 +5,7 @@ description: Filters MIDI data by channel, velocity, and note range.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/midi-filter.png" alt="MIDI Filter module" class="se-module-screenshot" />
+<img src="../../../images/modules/midi-filter.png" alt="MIDI Filter module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

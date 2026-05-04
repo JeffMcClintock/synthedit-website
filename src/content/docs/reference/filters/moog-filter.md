@@ -5,7 +5,7 @@ description: 4-pole low-pass filter with classic analog character and overdrive.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/moog-filter.png" alt="Moog Filter module" class="se-module-screenshot" />
+<img src="../../../images/modules/moog-filter.png" alt="Moog Filter module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

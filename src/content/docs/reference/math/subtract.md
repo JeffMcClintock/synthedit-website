@@ -5,7 +5,7 @@ description: Subtracts one signal from another.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/subtract.png" alt="Subtract module" class="se-module-screenshot" />
+<img src="../../../images/modules/subtract.png" alt="Subtract module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

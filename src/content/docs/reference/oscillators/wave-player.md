@@ -5,7 +5,7 @@ description: Plays WAV audio files from disk with pitch control.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/wave-player.png" alt="Wave Player module" class="se-module-screenshot" />
+<img src="../../../images/modules/wave-player.png" alt="Wave Player module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

@@ -5,7 +5,7 @@ description: Converts negative voltages to positive (half-wave rectification).
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/rectifier.png" alt="Rectifier module" class="se-module-screenshot" />
+<img src="../../../images/modules/rectifier.png" alt="Rectifier module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

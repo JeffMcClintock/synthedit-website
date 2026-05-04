@@ -5,7 +5,7 @@ description: Divides one signal by another.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/divide.png" alt="Divide module" class="se-module-screenshot" />
+<img src="../../../images/modules/divide.png" alt="Divide module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

@@ -5,7 +5,7 @@ description: Multiplies two signals together.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/multiply.png" alt="Multiply module" class="se-module-screenshot" />
+<img src="../../../images/modules/multiply.png" alt="Multiply module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

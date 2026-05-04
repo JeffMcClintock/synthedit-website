@@ -5,7 +5,7 @@ description: Virtual connections in and out of containers.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/io-mod.png" alt="IO Mod module" class="se-module-screenshot" />
+<img src="../../../images/modules/io-mod.png" alt="IO Mod module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

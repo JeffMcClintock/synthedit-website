@@ -5,7 +5,7 @@ description: Sequential counter that activates outputs one at a time.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/step-counter.png" alt="Step Counter (old?) module" class="se-module-screenshot" />
+<img src="../../../images/modules/step-counter.png" alt="Step Counter (old?) module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

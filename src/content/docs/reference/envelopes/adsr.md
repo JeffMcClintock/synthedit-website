@@ -5,7 +5,7 @@ description: Standard four-stage envelope generator.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/adsr.png" alt="ADSR module" class="se-module-screenshot" />
+<img src="../../../images/modules/adsr.png" alt="ADSR module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

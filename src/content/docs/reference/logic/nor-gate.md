@@ -5,7 +5,7 @@ description: Output goes high only when all inputs are low.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/nor-gate.png" alt="NOR Gate module" class="se-module-screenshot" />
+<img src="../../../images/modules/nor-gate.png" alt="NOR Gate module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

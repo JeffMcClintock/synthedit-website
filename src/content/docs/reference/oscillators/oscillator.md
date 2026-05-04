@@ -5,7 +5,7 @@ description: Generates basic waveforms and noise for synthesis.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/oscillator.png" alt="Oscillator module" class="se-module-screenshot" />
+<img src="../../../images/modules/oscillator.png" alt="Oscillator module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

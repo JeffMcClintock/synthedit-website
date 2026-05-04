@@ -5,7 +5,7 @@ description: Output goes high when exactly one input is high.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/xor-gate.png" alt="XOR Gate module" class="se-module-screenshot" />
+<img src="../../../images/modules/xor-gate.png" alt="XOR Gate module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

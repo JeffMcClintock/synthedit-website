@@ -5,7 +5,7 @@ description: Captures and holds an input voltage on a trigger.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/sample-and-hold.png" alt="Sample And Hold module" class="se-module-screenshot" />
+<img src="../../../images/modules/sample-and-hold.png" alt="Sample And Hold module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

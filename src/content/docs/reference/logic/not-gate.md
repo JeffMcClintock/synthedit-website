@@ -5,7 +5,7 @@ description: Inverts a logic signal.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/not-gate.png" alt="NOT Gate module" class="se-module-screenshot" />
+<img src="../../../images/modules/not-gate.png" alt="NOT Gate module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

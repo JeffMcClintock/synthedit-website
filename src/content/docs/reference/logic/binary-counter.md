@@ -5,7 +5,7 @@ description: Steps through a binary count sequence on each clock pulse.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/binary-counter.png" alt="Binary Counter module" class="se-module-screenshot" />
+<img src="../../../images/modules/binary-counter.png" alt="Binary Counter module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 

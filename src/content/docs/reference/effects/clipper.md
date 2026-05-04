@@ -5,7 +5,7 @@ description: Restricts signal voltage to a defined range.
 
 
 <!-- module-screenshot:begin -->
-<img src="/images/modules/clipper.png" alt="Clipper module" class="se-module-screenshot" />
+<img src="../../../images/modules/clipper.png" alt="Clipper module" class="se-module-screenshot" />
 <!-- module-screenshot:end -->
 
 
