@@ -30,6 +30,10 @@ This wraps the selected modules into a new container, automatically creating the
 
 When you connect a patch cord to a module inside a container from outside (or vice versa), SynthEdit automatically creates an **IO Mod** (virtual connection point). These IO Mods appear as plugs on the container's exterior and use no CPU.
 
+<img src="../../images/guides/containers/01-container-module.png" alt="A Container module shown as a single block with auto-generated input and output pins on its exterior: Visible, Out, Gate, Pitch on the left, Output and Spare on the right" />
+
+Once containerised, the modules inside collapse into a single block at the parent level — the auto-generated input/output pins on its exterior are exactly the connections that crossed the container boundary.
+
 ### Container Properties
 
 | Property | Description |

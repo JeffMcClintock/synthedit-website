@@ -5,6 +5,10 @@ description: An overview of SynthEdit and what you can do with it.
 
 SynthEdit is a visual, modular synthesizer editor that lets you design and build your own virtual instruments and audio effects. By connecting modules together on a virtual canvas, you can create anything from simple synthesizers to complex audio processors — and export them as VST plugins.
 
+<img src="../../images/guides/introduction/01-modular-patch.png" alt="A complete subtractive synth in SynthEdit's Structure View: MIDI to CV feeds an Oscillator's Pitch and an ADSR envelope's Gate; the oscillator runs through an SV Filter into a VCA whose Volume is driven by the envelope; the VCA's output goes to Sound Out" />
+
+This is what a working synthesiser looks like in SynthEdit — modules wired together with patch cords. Each box is a module that does one job (generate a tone, shape a note, control volume), and the cords show signal flowing from one module's output into another's input.
+
 ## What Can You Build?
 
 - **Virtual synthesizers** — subtractive, additive, FM, wavetable, and hybrid designs

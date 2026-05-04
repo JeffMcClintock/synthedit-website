@@ -5,6 +5,10 @@ description: How to use modules in SynthEdit — inserting, connecting, and conf
 
 Modules are the building blocks of every SynthEdit project. Each module performs a specific function — generating sound, processing audio, handling MIDI, or providing user interface controls.
 
+<img src="../../images/guides/modules/01-pins-and-cables.png" alt="A small patch showing a Slider and List Entry feeding an Oscillator's Pitch and Waveform pins; the Oscillator's Audio Out runs through a 1 Pole LP filter into Sound Out. Audio cables are blue, the list cable from List Entry's Choice output to the Oscillator's Waveform input is green" />
+
+Each module shows its **pins** as coloured labels — inputs on the left, outputs on the right. The colour of the cable matches the signal type: blue is audio, green is a list (enum) value, yellow is MIDI.
+
 ## Inserting Modules
 
 Right-click on an empty area of the canvas and select **Insert Module** to open the module browser. You can:

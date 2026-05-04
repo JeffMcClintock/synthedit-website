@@ -5,6 +5,10 @@ description: Designing the user interface for your synthesizer or VST plugin.
 
 The **Panel View** is where you design the user interface of your synthesizer or plugin. It shows only the controls (sliders, knobs, buttons, menus) without the underlying patch cords and processing modules.
 
+<img src="../../images/guides/panel-design/01-panel-view.png" alt="A simple panel layout: three sliders labelled Cutoff, Resonance, and Drive showing readouts of 5.000, 2.000, and 3.000, with a Waveform drop-down to the right" />
+
+The Panel View is what your end-user actually sees — only the control modules (sliders, knobs, drop-downs, buttons) are visible here, laid out the way you want them. Everything else (oscillators, filters, MIDI plumbing) lives behind the scenes in Structure View.
+
 ## Accessing Panel View
 
 Right-click a container and select **Panel Edit**, or use the toolbar button to switch between Structure View and Panel View.

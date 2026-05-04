@@ -15,6 +15,8 @@ Load a MIDI file directly into SynthEdit using the **MIDI Player** module:
 2. Set its **File Name** property to your `.mid` file
 3. Connect its MIDI output to your synth
 
+<img src="../../images/guides/using-with-daw/01-midi-player-setup.png" alt="A patch with a MIDI Player module on the left, its yellow MIDI Out cable feeding into a MIDI to CV module, which drives an Oscillator's Pitch and an ADSR's Gate. The oscillator runs into a VCA whose Volume is controlled by the envelope, and the VCA's output goes to Sound Out" />
+
 **Advantages:**
 - Rock-solid timing — no latency between the sequencer and SynthEdit
 - Consistent playback results
