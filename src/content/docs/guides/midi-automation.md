@@ -44,10 +44,6 @@ For advanced MIDI hardware, the Patch Automator supports SYSEX messages with spe
 
 When your patch is exported as a VST plugin, the Patch Automator's assignments become VST automation parameters. The DAW can then automate these parameters through its own automation lanes.
 
-## Patch Memory
-
-The **Patch Select** module stores and recalls up to 128 patches (preset configurations). It responds to MIDI Program Change messages, allowing you to switch presets from your MIDI controller or DAW.
-
 ## Important Notes
 
 - **Avoid feedback loops:** Don't connect controls or Patch Memory modules back into the Patch Automator's MIDI input — this creates a feedback loop.
