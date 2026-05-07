@@ -43,8 +43,21 @@ Recent changes and fixes. <a href="https://synthedit.com/release_1_6/changelog.h
 
 <div class="se-changelog-scroll">
 
+**v1.6.91** — 2026-05-07
+- resizing module triggers &apos;save changes&apos; on close
+- remove annoying &quot;no MIDI in device&quot; message (mac)
+- rectangle selector ignores bottom part of structure group
+- new LED ignores mouse clicks
+- fix new lines connecting to wrong pin
+- SynthEditGui caps measure at 800x600, SynthEditController guards null host
+- Panel edit only highlights module bounds when mouse &apos;hits&apos; actual graphics (not only bounds)
+- Changing plug default now triggers &apos;save changes?&apos; on exit
+
 **Unreleased**
 - link UniformTypeIdentifiers in plugin targets
+- enable SynthEditSem and rewire it as a GMPI-UI editor host
+- container view render composes viewTransform first
+- ModuleView pluginParameters_GMPI assignment leaked plugin refs
 
 **v1.6.90** — 2026-05-06
 - undo/redo for line node insert/delete/straighten
@@ -145,22 +158,6 @@ Recent changes and fixes. <a href="https://synthedit.com/release_1_6/changelog.h
 - crash after rescanning when document is open
 - Keyboard (MIDI) on-screen keyboard working. (KeyBoard-CV keyboard removed)
 - &apos;Browse to Project skin&apos;
-
-**v1.6.75** — 2026-04-24
-- report subview clip bounds including child shadows
-- render module outline under plugin shadow layer
-- prevent shadow layer smearing in subviews&quot;
-- prevent shadow layer smearing in subviews
-- paste with mouse position fixed
-- only draw panel grid in editor mode; thicker debug cross
-- mac app can now open .syntheditprefab projects
-- hit testing on new Panel Group
-- correct coord spaces in SubView clip-area propagation
-- containerized modules center on panel view
-- autoscroll now works during wire pickup on Mac
-- arrow keys nudge selected modules on Mac
-- Sdk3Helper file and ok/cancel dialogs working
-- MIDI-out selector no longer overlaps MIDI-in list in Preferences dialog
 
 </div>
 ## Demo vs Full Version
