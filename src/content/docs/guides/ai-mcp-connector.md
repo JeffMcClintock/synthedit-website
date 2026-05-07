@@ -19,7 +19,9 @@ It's a thin wrapper around the headless `SynthEditCL` command-line tool, exposin
 
 You need three things, all installed normally — **no source checkout, no compilation**:
 
-1. **SynthEdit** — any 1.6.x build, installed via the regular installer. The headless `SynthEditCL` tool ships inside the installer alongside the editor.
+1. **SynthEdit + the headless `SynthEditCL` tool** — any 1.6.x build.
+   - **macOS:** `SynthEditCL` ships inside `SynthEdit.app`. Just install SynthEdit and you're done — no extra step.
+   - **Windows:** install the separate [SynthEditCL Installer](https://synthedit.com/release_1_6/SynthEditCL-Installer.exe) (small, standalone). See the [installation guide](../installation/#ai-assistant-support) for details.
 2. **[Node.js 18 or later](https://nodejs.org/)** — needed to run the MCP server. The LTS download is fine.
 3. **An MCP host** — e.g. [Claude Code](https://claude.com/claude-code) or [Claude Desktop](https://claude.ai/download).
 
@@ -62,7 +64,7 @@ Any MCP-compatible host accepts the same `command` / `args` shape. Consult the h
 The MCP server auto-detects your installed SynthEdit. You don't need to point it at anything in the common case:
 
 - **macOS**: `/Applications/SynthEdit.app/Contents/MacOS/SynthEditCL`
-- **Windows**: `%ProgramFiles%\SynthEdit\SynthEditCL.exe`
+- **Windows**: `%ProgramFiles%\SynthEdit\SynthEditCL.exe` or `%ProgramFiles%\SynthEditCL\SynthEditCL.exe` (whichever the SynthEditCL installer used). Also tries `(x86)` variants.
 
 If your install lives somewhere unusual — a portable copy, a development build, an MSIX-sandboxed install on Windows, etc. — set the `SE_CLI` environment variable in the host config with the full path:
 
