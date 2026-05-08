@@ -204,7 +204,7 @@ html:not([data-has-sidebar]) main > div:first-child { display: none; }
 /* ===== HERO ===== */
 
 .se-hero {
-	padding: 64px 0 80px;
+	padding: 32px 0 80px;
 	position: relative;
 	overflow: hidden;
 }
