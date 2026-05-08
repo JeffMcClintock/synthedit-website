@@ -167,8 +167,9 @@ html:not([data-has-sidebar]) main {
 	padding-top: 0 !important;
 }
 
-/* Hide Starlight's default hero — we render our own */
+/* Hide Starlight's default hero and page title — we render our own */
 html:not([data-has-sidebar]) .hero { display: none; }
+html:not([data-has-sidebar]) main > div:first-child { display: none; }
 
 /* ============================================================
    HOMEPAGE — Studio Rack design
