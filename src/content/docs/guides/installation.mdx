@@ -45,21 +45,61 @@ Recent changes and fixes. <a href="https://synthedit.com/release_1_6/changelog.h
 
 <div class="se-changelog-scroll">
 
+**v1.6.93** — 2026-05-11
+- renaming pins working again
+- preserve relative positions when containerizing panel-view modules
+- observe container in EditorWindowHelper, not just the presenter
+- mac MIDI Controller assignment dialog working
+- fix LED hit testing
+- close container views when container is deleted
+
+**v1.6.92** — 2026-05-09
+- walk up from exe to find dev-tree SynthEdit2/PlugIns/
+- translate IDialogHost + IDrawingHost coords for TIDE side panes
+- three-pane editor for the TIDE in-plugin SynthEdit
+- surface screenshot failures via JSONL error field
+- screenshot v-table collision crashing Scope3 / TrigScope3
+- refresh TIDE scrollbar spec while dragging the thumb
+- prepare for npm publish (MIT, README, package.json)
+- per-override Plugin-Cache; OnNewUG guards null GetById
+- isSemFolderOverridden flag for per-override Plugin-Cache
+- initialize pluginGraphics modules on load
+- initialise TIDE scrollbar spec on first arrange
+- implement DrawingFrameBase2 createTextEdit via shared factory
+- implement DrawingFrameBase2 createFileDialog and createStockDialog
+- forward OM_DRAG_NEW_MODULE so TIDE drop-on-view works
+- force-invalidate the plugin host on OM_SHOW_PROPERTIES
+- enable wheel zoom/scroll in the TIDE editor
+- drop legacy &lt;home&gt;/modules64/ overrides in CL apps
+- draw editor scrollbars in TIDE three-pane layout
+- double-click a Module Browser entry to drop the module
+- cross cursor for TIDE drag-from-browser (Win32)
+- copy factory plugins into SynthEditCL.app on build
+- compose transform + wire drag-and-drop into TIDE editor
+- auto-scroll refreshes the scrollbar spec each tick
+- auto-scroll bounds use drawingBounds.left/right, not just width
+- auto-detect SynthEditCL location, zero-config .mcp.json
+- arrange TIDE side panes with origin-rooted rects
+- also probe %ProgramFiles%\SynthEditCL\ on Windows
+- Properties Browser screenshots (--view properties, --include-properties)
+- HostedView CreateSwapPanel uses universalFactory
+- 4a build fixes â'' IDialogHost diamond, getFullDirtyRect, factory
+- --view browser renders Module Browser headlessly (Phase 1)
+- --include-browser composite render (Phase 2)
+
 **v1.6.91** — 2026-05-07
 - resizing module triggers &apos;save changes&apos; on close
 - remove annoying &quot;no MIDI in device&quot; message (mac)
 - rectangle selector ignores bottom part of structure group
 - new LED ignores mouse clicks
-- fix new lines connecting to wrong pin
-- SynthEditGui caps measure at 800x600, SynthEditController guards null host
-- Panel edit only highlights module bounds when mouse &apos;hits&apos; actual graphics (not only bounds)
-- Changing plug default now triggers &apos;save changes?&apos; on exit
-
-**Unreleased**
 - link UniformTypeIdentifiers in plugin targets
+- fix new lines connecting to wrong pin
 - enable SynthEditSem and rewire it as a GMPI-UI editor host
 - container view render composes viewTransform first
+- SynthEditGui caps measure at 800x600, SynthEditController guards null host
+- Panel edit only highlights module bounds when mouse &apos;hits&apos; actual graphics (not only bounds)
 - ModuleView pluginParameters_GMPI assignment leaked plugin refs
+- Changing plug default now triggers &apos;save changes?&apos; on exit
 
 **v1.6.90** — 2026-05-06
 - undo/redo for line node insert/delete/straighten
@@ -149,17 +189,6 @@ Recent changes and fixes. <a href="https://synthedit.com/release_1_6/changelog.h
 - fix crash after scanning modules (mac)
 - better hit testing on Panel Group
 - Scope3 now drawing correct colors
-
-**v1.6.76** — 2026-04-27
-- stop audio on document close and app exit
-- save/load prefabs working (mac)
-- privacy and community page links working (mac)
-- prefabs now installed on first launch (mac)
-- new menu to explor to project-skin folder
-- find/replace working on mac
-- crash after rescanning when document is open
-- Keyboard (MIDI) on-screen keyboard working. (KeyBoard-CV keyboard removed)
-- &apos;Browse to Project skin&apos;
 
 </div>
 ## Demo vs Full Version
