@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document file_format="150000" vst_latencyCompensation="1" vst_preset_count="64">
+    <master_container type="Container" handle="1944067296" name="Main" ViewOpenFlags="256" skin="default2">
+        <plugs>
+            <plug idx="7"/>
+        </plugs>
+        <structRect l="0" r="0" t="0" b="0"/>
+        <PatchManager>
+            <ProgramNames/>
+            <Parameters>
+                <param type="10" handle="1332038610" private="true" hostControl="49">
+                    <patch-list>
+                        <s>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPENhYmxlcz4KICAgIDxDYWJsZSBmbT0iMTA4ODU0MTkyNCIgdG09IjM3NzMzODYwOCIgZnA9IjEiIHRwPSIwIiBjPSIyIi8+CiAgICA8Q2FibGUgZm09IjM2MjI3NDY3MCIgdG09IjE2NDIzNjAzIiBmcD0iMSIgdHA9IjAiIGM9IjIiLz4KICAgIDxDYWJsZSBmbT0iMTM4NTE0MzY2OCIgdG09IjE2NDIzNjAzIiBmcD0iMSIgdHA9IjAiIGM9IjIiLz4KPC9DYWJsZXM+CgA=</s>
+                        <s repeat="127"></s>
+                    </patch-list>
+                </param>
+            </Parameters>
+        </PatchManager>
+        <modules>
+            <module type="Container" handle="1027868483" ViewOpenFlags="384" skin="default2">
+                <plugs>
+                    <plug idx="7"/>
+                </plugs>
+                <structRect l="156" r="216" t="120" b="144"/>
+                <modules>
+                    <module type="SE Patch Point out" handle="1385143668">
+                        <structRect l="528" r="588" t="444" b="480"/>
+                        <panelRect l="464" r="484" t="272" b="292"/>
+                    </module>
+                    <module type="SE Patch Point in" handle="16423603">
+                        <structRect l="660" r="720" t="396" b="432"/>
+                        <panelRect l="328" r="348" t="248" b="268"/>
+                    </module>
+                    <module type="SE Patch Point out" handle="362274670">
+                        <structRect l="468" r="528" t="396" b="432"/>
+                        <panelRect l="432" r="452" t="272" b="292"/>
+                    </module>
+                    <module type="SE Patch Point in" handle="377338608">
+                        <structRect l="408" r="468" t="264" b="300"/>
+                        <panelRect l="152" r="172" t="232" b="252"/>
+                    </module>
+                    <module type="SE Patch Point out" handle="1088541924">
+                        <structRect l="216" r="276" t="264" b="300"/>
+                        <panelRect l="256" r="276" t="256" b="276"/>
+                    </module>
+                    <module type="IO Mod" handle="777362605">
+                        <plugs>
+                            <plug/>
+                        </plugs>
+                        <structRect l="20" r="80" t="20" b="32"/>
+                    </module>
+                </modules>
+                <lines/>
+                <PanelWndPosition l="264" r="264" t="152" b="152"/>
+                <PanelLocation l="696" r="1478" t="234" b="746"/>
+                <StructLocation l="164" r="1102" t="108" b="814"/>
+                <PanelScroll x="0" y="0"/>
+                <StructScroll x="0" y="0"/>
+                <PanelWndOffset cx="-99999" cy="-99999"/>
+                <panel_rect l="16" r="488" t="16" b="392"/>
+            </module>
+        </modules>
+        <lines/>
+        <PanelWndPosition l="0" r="0" t="0" b="0"/>
+        <PanelLocation l="30" r="530" t="30" b="330"/>
+        <StructLocation l="0" r="866" t="0" b="593"/>
+        <PanelScroll x="0" y="0"/>
+        <StructScroll x="0" y="0"/>
+        <PanelWndOffset cx="-99999" cy="-99999"/>
+        <panel_rect l="16" r="312" t="16" b="216"/>
+    </master_container>
+    <PluginList>
+        <Plugin id="Container" class="1" name="Container" flags="384" category="">
+            <Audio>
+                <Pin name="Spare" datatype="float" rate="audio" autoRename="true" autoDuplicate="true" isContainerIoPlug="true"/>
+                <Pin name="Polyphony" datatype="enum" default="6" private="true" isMinimised="true" metadata="range 1,128"/>
+                <Pin name="MIDI Automation" datatype="bool" private="true" isMinimised="true"/>
+                <Pin name="Show Controls" datatype="enum" private="true" isMinimised="true" metadata="Off,On Panel,On Module"/>
+            </Audio>
+            <GUI>
+                <Pin name="Controls on Parent" datatype="bool" direction="out" isMinimised="true"/>
+                <Pin name="Controls on Module" datatype="bool" noAutomation="true"/>
+                <Pin name="Visible" datatype="bool"/>
+                <Pin name="Ignore Program Change" datatype="bool" noAutomation="true"/>
+            </GUI>
+        </Plugin>
+        <Plugin id="IO Mod" class="1" name="IO Mod" flags="4356" category="">
+            <Audio>
+                <Pin name="Spare" datatype="float" rate="audio" autoRename="true" autoDuplicate="true" isContainerIoPlug="true"/>
+            </Audio>
+        </Plugin>
+        <Plugin id="SE Patch Point in" class="2" name="Patch Point&lt;-" flags="384" category="Flow Control" simdOverwritesBufferEnd="true">
+            <Audio>
+                <Pin name="Input" datatype="float" rate="audio" linearInput="true" isMinimised="true"/>
+                <Pin name="Output" datatype="float" rate="audio" direction="out"/>
+            </Audio>
+            <GUI graphicsApi="GmpiGui"/>
+            <PatchPoints>
+                <PatchPoint pinId="0" center="10,10" radius="5"/>
+            </PatchPoints>
+        </Plugin>
+        <Plugin id="SE Patch Point out" class="2" name="Patch Point-&gt;" flags="384" category="Flow Control" simdOverwritesBufferEnd="true">
+            <Audio>
+                <Pin name="Input" datatype="float" rate="audio" linearInput="true"/>
+                <Pin name="Output" datatype="float" rate="audio" direction="out" isMinimised="true"/>
+            </Audio>
+            <GUI graphicsApi="GmpiGui"/>
+            <PatchPoints>
+                <PatchPoint pinId="1" center="10,10" radius="5"/>
+            </PatchPoints>
+        </Plugin>
+    </PluginList>
+</Document>

@@ -1,0 +1,135 @@
+;other skin settings
+
+; Fonts
+; http://www.w3.org/TR/REC-CSS1#font-variant
+; font-color  - BBGGRR Blue-Green-Red mix, hexadecimal numbers
+; background-color  SAME. default (no entry) is transparent.
+; font-size   - Height in pixels
+; font-family - Searches available fonts, left to right. Specific font name, or generic...
+;   'serif' (e.g. Times) 
+;   'sans-serif' (e.g. Helvetica) 
+;   'cursive' (e.g. Zapf-Chancery) 
+;   'fantasy' (e.g. Western) 
+;   'monospace' (e.g. Courier New). Dosn't seem to go smaller than 12
+;    Arial, Times New Roman, and Courier New are core fonts to Windows 
+;
+; text-decoration underline    (overline, line-through, blink not supported)
+; font-style normal |italic    (oblique not supported)
+
+; font-weight :  normal | bold | light | 100 | 200 | 300 | 400
+;                                      | 500 | 600 | 700 | 800 | 900
+; following not supported at present: bolder | lighter
+; text-align center | left | right
+; vst3-vertical-offset nn   (specify an offset in pixels for drawing text to compensate for new graphics API, as used in exported 64-bit plugins)
+; legacy-vertical-offset 0  (Enables improvements to consistant font rendering on macOS and Windows). Overides vst3-vertical-offset.
+
+FONT_CATEGORY module_title
+font-family Arial, Helvetica, "sans-Serif"
+font-size 12
+font-color #FFFFFF
+legacy-vertical-offset 0
+
+FONT_CATEGORY panel_group
+font-family Arial, Helvetica, "sans-Serif"
+font-size 14
+font-weight bold
+font-color #FFFFFF
+legacy-vertical-offset 0
+
+FONT_CATEGORY control_label
+font-family Arial, Helvetica, "sans-Serif"
+font-size 14
+font-weight bold
+font-color #FFFFFF
+legacy-vertical-offset 0
+
+FONT_CATEGORY control_edit
+font-family Arial, Helvetica, "sans-Serif"
+font-size 14
+font-weight bold
+;font-color #000000 - don't apply to edit boxs
+legacy-vertical-offset 0
+
+; this category is for LED Stack item labels and rotary switch labels
+FONT_CATEGORY switch_label
+font-family Arial, Helvetica, "sans-Serif"
+font-size 10
+font-color #F5F5F5
+legacy-vertical-offset 0
+
+FONT_CATEGORY selector_text
+font-family Arial, Helvetica, "sans-Serif"
+font-size 14
+font-weight bold
+font-color #ff0000
+legacy-vertical-offset 0
+
+; the writing on container and VST plugin displays
+FONT_CATEGORY tty
+font-family terminal, monospace, Courier New
+font-size 10
+font-color #00f000
+background-color #000000
+legacy-vertical-offset 0
+
+; Heading on properties screen
+FONT_CATEGORY "properties_heading"
+font-family Arial, Helvetica, "sans-Serif"
+font-size 14
+font-weight bold
+font-color #000000
+background-color #ffffff
+legacy-vertical-offset 0
+
+; plugs
+FONT_CATEGORY plug
+font-family Arial, Helvetica, "sans-Serif"
+font-size 10
+font-color #000000
+legacy-vertical-offset 0
+
+FONT_CATEGORY "Normal"
+font-family Arial, Helvetica, "sans-Serif"
+font-size 12
+font-color #000000
+background-color  #ffffff
+text-align center
+legacy-vertical-offset 0
+
+FONT_CATEGORY "Heading 1"
+font-family Arial, Helvetica, "sans-Serif"
+font-size 28
+font-color #fff7f7
+text-align center
+text-decoration underline
+;font-style italic
+font-weight 900 
+legacy-vertical-offset 0
+
+FONT_CATEGORY "Heading 2"
+text-align center
+font-family Arial, Helvetica, "sans-Serif"
+font-size 18
+legacy-vertical-offset 0
+
+FONT_CATEGORY "Heading 3"
+text-align center
+font-family Arial, Helvetica, "sans-Serif"
+font-size 14
+legacy-vertical-offset 0
+
+FONT_CATEGORY "User 1"
+font-family Arial, Helvetica, "sans-Serif"
+font-size 14
+font-color #000000
+background-color  #ffffff
+text-align left
+legacy-vertical-offset 0
+
+FONT_CATEGORY "User 2"
+font-family Courier
+legacy-vertical-offset 0
+
+FONT_CATEGORY "User 3"
+font-family Fixedsys
+legacy-vertical-offset 0
