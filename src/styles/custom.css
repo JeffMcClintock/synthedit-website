@@ -394,6 +394,13 @@ html:not([data-has-sidebar]) main > div:first-child { display: none; }
 	font-weight: 600;
 }
 .se-rack-svg { width: 100%; display: block; position: relative; z-index: 1; }
+.se-hero-shot {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 10px;
+	box-shadow: 0 30px 80px -20px rgba(0,0,0,0.7);
+}
 .se-rack-spec {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
