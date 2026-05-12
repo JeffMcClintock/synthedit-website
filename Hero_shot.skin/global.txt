@@ -110,7 +110,7 @@ FONT_CATEGORY "Heading 2"
 text-align center
 font-family Arial, Helvetica, "sans-Serif"
 font-size 18
-legacy-vertical-offset 0
+font-color #808080
 
 FONT_CATEGORY "Heading 3"
 text-align center
