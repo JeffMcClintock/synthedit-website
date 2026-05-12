@@ -5,7 +5,7 @@ template: splash
 ---
 
 import { Image } from 'astro:assets';
-import Hero from '../../assets/hero.png';
+import Hero from '../../assets/hero.gif';
 import Screenshot1 from '../../assets/Screenshot1.png';
 import Screenshot2 from '../../assets/Screenshot2.png';
 
@@ -34,7 +34,7 @@ import Screenshot2 from '../../assets/Screenshot2.png';
       </div>
     </div>
 
-    <Image class="se-hero-shot" src={Hero} alt="SynthEdit screenshot showing a modular synthesizer patch with oscillators, filter and output modules" />
+    <img class="se-hero-shot" src={Hero.src} width={Hero.width} height={Hero.height} alt="SynthEdit screenshot showing a modular synthesizer patch with oscillators, filter and output modules" />
   </div>
 </section>
 
