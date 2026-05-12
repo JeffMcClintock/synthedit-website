@@ -8,6 +8,7 @@
         <PatchManager>
             <ProgramNames/>
             <Parameters>
+                <param type="6" handle="6112201" ignorePC="true" stateful="false" module="2137978297" moduleParamId="0"/>
                 <param type="6" handle="99876090" ignorePC="true" stateful="false" module="1981278285" moduleParamId="0"/>
                 <param type="6" handle="313550430" vstParameterNumber="5" module="2132223300" moduleParamId="0">
                     <patch-list>
@@ -21,6 +22,7 @@
                         <s repeat="127">0</s>
                     </patch-list>
                 </param>
+                <param type="4" handle="1127554738" shortName="polyDetect" ignorePC="true" private="true" stateful="false" module="1552623086" moduleParamId="2"/>
                 <param type="6" handle="1139635031" vstParameterNumber="1" module="1381479849" moduleParamId="0">
                     <patch-list>
                         <s>3.52174</s>
@@ -33,12 +35,20 @@
                         <s repeat="127">0</s>
                     </patch-list>
                 </param>
+                <param type="10" handle="1286988363" shortName="Capture Data A" ignorePC="true" private="true" stateful="false" isPolyphonic="true" module="1552623086" moduleParamId="0"/>
                 <param type="10" handle="1332038610" private="true" hostControl="49">
                     <patch-list>
                         <s>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPENhYmxlcz4KICAgIDxDYWJsZSBmbT0iMzYyMjc0NjcwIiB0bT0iMTY0MjM2MDMiIGZwPSIxIiB0cD0iMCIgYz0iMiIvPgogICAgPENhYmxlIGZtPSIxMzg1MTQzNjY4IiB0bT0iMTY0MjM2MDMiIGZwPSIxIiB0cD0iMCIgYz0iMiIvPgo8L0NhYmxlcz4KAA==</s>
                         <s repeat="127"></s>
                     </patch-list>
                 </param>
+                <param type="6" handle="1355976527" shortName="Oscillator Pitch" vstParameterNumber="7" module="1645285911" moduleParamId="0" RangeMaximum="0.60000002">
+                    <patch-list>
+                        <s>0.532573</s>
+                        <s repeat="127">-2</s>
+                    </patch-list>
+                </param>
+                <param type="10" handle="1808329957" shortName="Capture Data B" ignorePC="true" private="true" stateful="false" isPolyphonic="true" module="1552623086" moduleParamId="1"/>
                 <param type="6" handle="1890294502" vstParameterNumber="3" module="230919551" moduleParamId="0">
                     <patch-list>
                         <s>6.8087</s>
@@ -47,7 +57,7 @@
                 </param>
                 <param type="6" handle="2102164531" vstParameterNumber="6" module="1231586508" moduleParamId="0">
                     <patch-list>
-                        <s>0.704351</s>
+                        <s>0.721493</s>
                         <s repeat="127">0</s>
                     </patch-list>
                 </param>
@@ -60,23 +70,136 @@
             </Parameters>
         </PatchManager>
         <modules>
-            <module type="Container" handle="1027868483" PanelLocationZoom="1.953125" StructLocationZoom="1.4551915" ViewOpenFlags="384" m_locked="true" skin="default2">
+            <module type="Container" handle="1027868483" PanelLocationZoom="1.1641532" StructLocationZoom="1.1641532" ViewOpenFlags="384" skin="default2">
                 <plugs>
                     <plug idx="7"/>
                 </plugs>
                 <structRect l="156" r="204" t="120" b="144"/>
                 <modules>
+                    <module type="SE Bar LED Meter" handle="1854952469">
+                        <plugs>
+                            <plug default="1" idx="1"/>
+                            <plug default="1"/>
+                            <plug default="0"/>
+                            <plug default="1"/>
+                            <plug default="2"/>
+                        </plugs>
+                        <structRect l="4116" r="4224" t="3492" b="3576"/>
+                        <panelRect l="376" r="464" t="138" b="146"/>
+                    </module>
+                    <module type="SE Scope3 XP" handle="1552623086">
+                        <structRect l="3660" r="3768" t="3324" b="3424"/>
+                        <panelRect l="752" r="852" t="256" b="356"/>
+                    </module>
+                    <module type="1 Pole LP" handle="17952875">
+                        <plugs>
+                            <plug default="2" idx="1"/>
+                        </plugs>
+                        <structRect l="3492" r="3540" t="3324" b="3360"/>
+                    </module>
+                    <module type="Slider" handle="1645285911">
+                        <plugs>
+                            <plug parameterId="-1" idx="13"/>
+                            <plug parameterId="-1"/>
+                        </plugs>
+                        <structRect l="3384" r="3456" t="3516" b="3600"/>
+                        <panelRect l="777" r="827" t="40" b="108"/>
+                    </module>
+                    <module type="Comparator" handle="2017360161">
+                        <plugs>
+                            <plug default="10" idx="3"/>
+                            <plug default="0"/>
+                        </plugs>
+                        <structRect l="3492" r="3564" t="3396" b="3456"/>
+                    </module>
+                    <module type="Oscillator" handle="1315501955">
+                        <plugs>
+                            <plug default="-2"/>
+                            <plug default="5" idx="2"/>
+                        </plugs>
+                        <structRect l="3384" r="3456" t="3348" b="3432"/>
+                    </module>
+                    <module type="SynthEdit ADSR" handle="1738460908">
+                        <plugs>
+                            <plug default="1" idx="2"/>
+                            <plug default="7"/>
+                            <plug default="2"/>
+                            <plug default="8"/>
+                        </plugs>
+                        <structRect l="3588" r="3672" t="3456" b="3552"/>
+                        <panelRect l="0" r="0" t="0" b="0"/>
+                    </module>
+                    <module type="SE PatchMemory Float Out" handle="2137978297">
+                        <structRect l="3780" r="3888" t="3420" b="3504"/>
+                        <panelRect l="232" r="232" t="216" b="216"/>
+                    </module>
+                    <module type="SE Bar LED Meter" handle="1065270422">
+                        <plugs>
+                            <plug default="0" idx="1"/>
+                            <plug default="1"/>
+                            <plug default="1"/>
+                            <plug default="1"/>
+                            <plug default="2"/>
+                        </plugs>
+                        <structRect l="3972" r="4080" t="3408" b="3492"/>
+                        <panelRect l="376" r="464" t="128" b="136"/>
+                    </module>
+                    <module type="SE PatchMemory Float" handle="1231586508">
+                        <structRect l="3204" r="3312" t="3852" b="3948"/>
+                        <panelRect l="264" r="264" t="208" b="208"/>
+                    </module>
+                    <module type="SE PatchMemory Float" handle="2132223300">
+                        <structRect l="3216" r="3324" t="3732" b="3828"/>
+                        <panelRect l="272" r="272" t="216" b="216"/>
+                    </module>
+                    <module type="SE PatchMemory Float Out" handle="1981278285">
+                        <structRect l="3780" r="3888" t="3648" b="3732"/>
+                        <panelRect l="0" r="0" t="0" b="0"/>
+                    </module>
+                    <module type="SE BPM Clock4" handle="1462254810">
+                        <plugs>
+                            <plug default="1536" idx="6"/>
+                        </plugs>
+                        <structRect l="3660" r="3732" t="3672" b="3720"/>
+                        <panelRect l="0" r="0" t="0" b="0"/>
+                    </module>
+                    <module type="SE PatchMemory Float" handle="230919551">
+                        <structRect l="3600" r="3708" t="4020" b="4116"/>
+                        <panelRect l="208" r="208" t="144" b="144"/>
+                    </module>
+                    <module type="SE PatchMemory Float" handle="703024946">
+                        <structRect l="3588" r="3696" t="3852" b="3948"/>
+                        <panelRect l="0" r="0" t="0" b="0"/>
+                    </module>
+                    <module type="SE PatchMemory Float" handle="1381479849">
+                        <structRect l="264" r="372" t="624" b="720"/>
+                        <panelRect l="192" r="192" t="104" b="104"/>
+                    </module>
+                    <module type="SE PatchMemory Float" handle="245675689">
+                        <structRect l="72" r="180" t="456" b="552"/>
+                        <panelRect l="240" r="240" t="128" b="128"/>
+                    </module>
+                    <module type="SE PatchMemory Float" handle="172612947">
+                        <structRect l="72" r="180" t="336" b="432"/>
+                        <panelRect l="0" r="0" t="0" b="0"/>
+                    </module>
+                    <module type="IO Mod" handle="777362605">
+                        <plugs>
+                            <plug/>
+                        </plugs>
+                        <structRect l="20" r="68" t="20" b="32"/>
+                    </module>
                     <module type="SE Bump" handle="1820862943">
                         <plugs>
                             <plug default="0"/>
-                            <plug default="0"/>
                             <plug default="1"/>
                             <plug default="0"/>
+                            <plug default="1"/>
                             <plug default="0"/>
                             <plug default="3" idx="8"/>
                         </plugs>
                         <structRect l="3480" r="3600" t="3756" b="3968"/>
-                        <panelRect l="-88" r="592" t="0" b="416"/>
+                        <panelRect l="0" r="504" t="0" b="344"/>
                     </module>
                     <module type="SE Bump" handle="994642243">
                         <plugs>
@@ -88,19 +211,11 @@
                             <plug default="3" idx="8"/>
                         </plugs>
                         <structRect l="3924" r="4044" t="3878" b="4090"/>
-                        <panelRect l="8" r="496" t="8" b="72"/>
+                        <panelRect l="16" r="488" t="8" b="56"/>
                     </module>
                     <module type="SE Patch Point out" handle="512406186">
                         <structRect l="3564" r="3612" t="3744" b="3780"/>
-                        <panelRect l="200" r="220" t="240" b="260"/>
-                    </module>
-                    <module type="SE PatchMemory Float" handle="1231586508">
-                        <structRect l="3204" r="3312" t="3852" b="3948"/>
-                        <panelRect l="264" r="264" t="208" b="208"/>
-                    </module>
-                    <module type="SE PatchMemory Float" handle="2132223300">
-                        <structRect l="3216" r="3324" t="3732" b="3828"/>
-                        <panelRect l="272" r="272" t="216" b="216"/>
+                        <panelRect l="198" r="218" t="256" b="276"/>
                     </module>
                     <module type="SE Label" handle="966420167">
                         <plugs>
@@ -115,7 +230,7 @@
                             <plug default="EDA502"/>
                         </plugs>
                         <structRect l="3360" r="3468" t="3960" b="4060"/>
-                        <panelRect l="80" r="112" t="144" b="176"/>
+                        <panelRect l="86" r="118" t="144" b="176"/>
                     </module>
                     <module type="SE Label" handle="1105455137">
                         <plugs>
@@ -137,7 +252,7 @@
                             <plug default="IN"/>
                         </plugs>
                         <structRect l="4044" r="4152" t="3996" b="4096"/>
-                        <panelRect l="198" r="222" t="267" b="275"/>
+                        <panelRect l="192" r="224" t="280" b="288"/>
                     </module>
                     <module type="SE Label" handle="2089092854">
                         <plugs>
@@ -163,38 +278,19 @@
                         <structRect l="3732" r="3840" t="3888" b="3948"/>
                         <panelRect l="200" r="280" t="104" b="112"/>
                     </module>
-                    <module type="SE PatchMemory Float Out" handle="1981278285">
-                        <structRect l="3780" r="3888" t="3648" b="3732"/>
-                        <panelRect l="0" r="0" t="0" b="0"/>
-                    </module>
-                    <module type="SE BPM Clock4" handle="1462254810">
-                        <plugs>
-                            <plug default="1536" idx="6"/>
-                        </plugs>
-                        <structRect l="3660" r="3732" t="3672" b="3720"/>
-                        <panelRect l="0" r="0" t="0" b="0"/>
-                    </module>
                     <module type="SE LED" handle="198874769">
                         <plugs>
                             <plug default="1" idx="2"/>
                         </plugs>
                         <structRect l="3924" r="4032" t="3708" b="3808"/>
-                        <panelRect l="128" r="152" t="35" b="43"/>
+                        <panelRect l="456" r="480" t="32" b="40"/>
                     </module>
                     <module type="SE Label" handle="1650911662">
                         <plugs>
                             <plug default="SE • POLY1"/>
                         </plugs>
                         <structRect l="3780" r="3888" t="3852" b="3912"/>
-                        <panelRect l="32" r="112" t="32" b="44"/>
-                    </module>
-                    <module type="SE PatchMemory Float" handle="230919551">
-                        <structRect l="3600" r="3708" t="4020" b="4116"/>
-                        <panelRect l="208" r="208" t="144" b="144"/>
-                    </module>
-                    <module type="SE PatchMemory Float" handle="703024946">
-                        <structRect l="3588" r="3696" t="3852" b="3948"/>
-                        <panelRect l="0" r="0" t="0" b="0"/>
+                        <panelRect l="32" r="112" t="30" b="42"/>
                     </module>
                     <module type="SE Label" handle="28016249">
                         <plugs>
@@ -209,18 +305,6 @@
                         </plugs>
                         <structRect l="588" r="696" t="336" b="396"/>
                         <panelRect l="376" r="456" t="80" b="92"/>
-                    </module>
-                    <module type="SE PatchMemory Float" handle="1381479849">
-                        <structRect l="264" r="372" t="624" b="720"/>
-                        <panelRect l="192" r="192" t="104" b="104"/>
-                    </module>
-                    <module type="SE PatchMemory Float" handle="245675689">
-                        <structRect l="72" r="180" t="456" b="552"/>
-                        <panelRect l="240" r="240" t="128" b="128"/>
-                    </module>
-                    <module type="SE PatchMemory Float" handle="172612947">
-                        <structRect l="72" r="180" t="336" b="432"/>
-                        <panelRect l="0" r="0" t="0" b="0"/>
                     </module>
                     <module type="SE Knob" handle="1641877593">
                         <plugs>
@@ -264,35 +348,35 @@
                             <plug default="OUT"/>
                         </plugs>
                         <structRect l="1020" r="1128" t="528" b="628"/>
-                        <panelRect l="110" r="134" t="259" b="267"/>
+                        <panelRect l="109" r="133" t="256" b="264"/>
                     </module>
                     <module type="SE Label" handle="1730994779">
                         <plugs>
                             <plug default="CV"/>
                         </plugs>
                         <structRect l="756" r="864" t="552" b="624"/>
-                        <panelRect l="256" r="280" t="288" b="296"/>
+                        <panelRect l="256" r="280" t="280" b="288"/>
                     </module>
                     <module type="SE Label" handle="732585325">
                         <plugs>
                             <plug default="OUT"/>
                         </plugs>
                         <structRect l="756" r="864" t="504" b="576"/>
-                        <panelRect l="328" r="352" t="280" b="288"/>
+                        <panelRect l="326" r="350" t="280" b="288"/>
                     </module>
                     <module type="SE Label" handle="1714709055">
                         <plugs>
                             <plug default="R"/>
                         </plugs>
                         <structRect l="756" r="864" t="396" b="468"/>
-                        <panelRect l="464" r="488" t="296" b="304"/>
+                        <panelRect l="424" r="448" t="280" b="288"/>
                     </module>
                     <module type="SE Label" handle="2064520790">
                         <plugs>
                             <plug default="L"/>
                         </plugs>
                         <structRect l="612" r="720" t="120" b="192"/>
-                        <panelRect l="432" r="456" t="296" b="304"/>
+                        <panelRect l="384" r="408" t="280" b="288"/>
                     </module>
                     <module type="SE Knob" handle="34702161">
                         <plugs>
@@ -318,7 +402,7 @@
                             <plug default="LEVEL"/>
                         </plugs>
                         <structRect l="3924" r="4032" t="3936" b="3996"/>
-                        <panelRect l="416" r="496" t="248" b="256"/>
+                        <panelRect l="376" r="456" t="232" b="240"/>
                     </module>
                     <module type="SE Knob" handle="190616161">
                         <plugs>
@@ -326,11 +410,11 @@
                             <plug default="EDA502"/>
                         </plugs>
                         <structRect l="3756" r="3864" t="3912" b="4012"/>
-                        <panelRect l="408" r="456" t="152" b="216"/>
+                        <panelRect l="392" r="440" t="160" b="224"/>
                     </module>
                     <module type="SE Patch Point out" handle="1385143668">
                         <structRect l="528" r="576" t="444" b="480"/>
-                        <panelRect l="464" r="484" t="272" b="292"/>
+                        <panelRect l="424" r="444" t="256" b="276"/>
                     </module>
                     <module type="SE Patch Point in" handle="16423603">
                         <structRect l="660" r="708" t="396" b="432"/>
@@ -338,7 +422,7 @@
                     </module>
                     <module type="SE Patch Point out" handle="362274670">
                         <structRect l="468" r="516" t="396" b="432"/>
-                        <panelRect l="424" r="444" t="264" b="284"/>
+                        <panelRect l="384" r="404" t="256" b="276"/>
                     </module>
                     <module type="SE Patch Point in" handle="377338608">
                         <structRect l="408" r="456" t="264" b="300"/>
@@ -346,13 +430,7 @@
                     </module>
                     <module type="SE Patch Point out" handle="1088541924">
                         <structRect l="216" r="264" t="264" b="300"/>
-                        <panelRect l="256" r="276" t="256" b="276"/>
-                    </module>
-                    <module type="IO Mod" handle="777362605">
-                        <plugs>
-                            <plug/>
-                        </plugs>
-                        <structRect l="20" r="68" t="20" b="32"/>
+                        <panelRect l="258" r="278" t="256" b="276"/>
                     </module>
                 </modules>
                 <lines>
@@ -365,14 +443,23 @@
                     <line type="Line" handle="1998055078" lineType="1" fMod="1981278285" tMod="198874769" fPlg="8"/>
                     <line type="Line" handle="1122527767" lineType="1" fMod="2132223300" tMod="751257471" fPlg="8"/>
                     <line type="Line" handle="230459753" lineType="1" fMod="1231586508" tMod="280617476" fPlg="8"/>
+                    <line type="Line" handle="1009423914" lineType="1" fMod="2017360161" tMod="1738460908" fPlg="2"/>
+                    <line type="Line" handle="154385203" lineType="1" fMod="1645285911" tMod="2017360161" fPlg="6" tPlg="1"/>
+                    <line type="Line" handle="559878923" lineType="1" fMod="2017360161" tMod="1738460908" fPlg="2" tPlg="1"/>
+                    <line type="Line" handle="331116074" lineType="1" fMod="1315501955" tMod="17952875" fPlg="3"/>
+                    <line type="Line" handle="1730707080" lineType="1" fMod="17952875" tMod="2017360161" fPlg="2"/>
+                    <line type="Line" handle="717900455" lineType="1" fMod="2017360161" tMod="1552623086" fPlg="2" tPlg="6"/>
+                    <line type="Line" handle="551353567" lineType="1" fMod="1738460908" tMod="2137978297" fPlg="7" tPlg="13"/>
+                    <line type="Line" handle="1106310900" lineType="1" fMod="2137978297" tMod="1065270422" fPlg="8"/>
+                    <line type="Line" handle="13007926" lineType="1" fMod="2137978297" tMod="1854952469" fPlg="8"/>
                 </lines>
-                <PanelLocationCenter x="268.20004" y="226.71436"/>
-                <StructLocationCenter x="3641.1868" y="3908.802"/>
+                <PanelLocationCenter x="484.68134" y="116.68131"/>
+                <StructLocationCenter x="3923.2271" y="3653.2271"/>
                 <PanelWndPosition l="264" r="264" t="152" b="152"/>
                 <PanelLocation l="0" r="500" t="0" b="500"/>
                 <StructLocation l="0" r="500" t="0" b="500"/>
-                <PanelScroll x="18" y="-23"/>
-                <StructScroll x="3391" y="3658"/>
+                <PanelScroll x="234" y="-133"/>
+                <StructScroll x="3673" y="3403"/>
                 <PanelWndOffset cx="-99999" cy="-99999"/>
                 <panel_rect l="16" r="488" t="16" b="392"/>
             </module>
@@ -389,6 +476,23 @@
         <panel_rect l="16" r="312" t="16" b="216"/>
     </master_container>
     <PluginList>
+        <Plugin id="1 Pole LP" class="1" name="1 Pole LP" flags="4352" category="Filters">
+            <Audio>
+                <Pin name="Signal" datatype="float" rate="audio" linearInput="true"/>
+                <Pin name="Pitch" datatype="float" rate="audio" default="0.5"/>
+                <Pin name="Output" datatype="float" rate="audio" direction="out"/>
+                <Pin name="Freq Scale" datatype="enum" isMinimised="true" metadata="1 Volt/Octave, 1 Volt/kHz "/>
+            </Audio>
+        </Plugin>
+        <Plugin id="Comparator" class="1" name="Comparator" flags="4352" category="Modifiers">
+            <Audio>
+                <Pin name="Input A" datatype="float" rate="audio" default="0.8"/>
+                <Pin name="Input B" datatype="float" rate="audio" default="0.8"/>
+                <Pin name="Output" datatype="float" rate="audio" direction="out"/>
+                <Pin name="Hi Out Val" datatype="float" default="5"/>
+                <Pin name="Lo Out Val" datatype="float" default="-5"/>
+            </Audio>
+        </Plugin>
         <Plugin id="Container" class="1" name="Container" flags="384" category="">
             <Audio>
                 <Pin name="Spare" datatype="float" rate="audio" autoRename="true" autoDuplicate="true" isContainerIoPlug="true"/>
@@ -408,6 +512,20 @@
                 <Pin name="Spare" datatype="float" rate="audio" autoRename="true" autoDuplicate="true" isContainerIoPlug="true"/>
             </Audio>
         </Plugin>
+        <Plugin id="Oscillator" class="1" name="Oscillator" flags="4352" category="Waveform">
+            <Audio>
+                <Pin name="Pitch" datatype="float" rate="audio" default="0.5" metadata="100, 0, 10, 0"/>
+                <Pin name="Pulse Width" datatype="float" rate="audio" default="0.5"/>
+                <Pin name="Waveform" datatype="enum" default="1" metadata="Sine, Saw, Ramp, Triangle, Pulse,White Noise,Pink Noise"/>
+                <Pin name="Audio Out" datatype="float" rate="audio" direction="out"/>
+                <Pin name="Sync" datatype="float" rate="audio" metadata="100, 0, 5, -5"/>
+                <Pin name="Phase Mod" datatype="float" rate="audio" metadata="100, 0, 10, 0"/>
+                <Pin name="Freq Scale" datatype="enum" isMinimised="true" metadata="1 Volt/Octave, 1 Volt/kHz "/>
+                <Pin name="PM Depth" datatype="float" rate="audio" default="0.5" metadata="100, 0, 10, 0"/>
+                <Pin name="Smooth Peaks (Gibbs Effect)" datatype="bool" default="1" isMinimised="true"/>
+                <Pin name="Sync X-Fade (Anti Alias)" datatype="bool" default="1" isMinimised="true"/>
+            </Audio>
+        </Plugin>
         <Plugin id="SE BPM Clock4" name="BPM Clock4" flags="256" category="Special" helpUrl="BpmClock3.htm">
             <Audio>
                 <Pin name="Host BPM" datatype="float" private="true" hostConnect="Time/BPM"/>
@@ -421,6 +539,16 @@
                 <Pin name="Pulse Width" datatype="float" default="5"/>
                 <Pin name="Pulse Out" datatype="float" rate="audio" direction="out"/>
             </Audio>
+        </Plugin>
+        <Plugin id="SE Bar LED Meter" name="Bar LED Meter" flags="384" category="Sub-Controls">
+            <GUI graphicsApi="GmpiGui">
+                <Pin name="Normalized" datatype="float"/>
+                <Pin name="Red" datatype="bool"/>
+                <Pin name="Green" datatype="bool"/>
+                <Pin name="Blue" datatype="bool"/>
+                <Pin name="Radius" datatype="float" default="2"/>
+                <Pin name="Brightness" datatype="float" default="8"/>
+            </GUI>
         </Plugin>
         <Plugin id="SE Bump" name="Bump" flags="384" category="Sub-Controls">
             <GUI graphicsApi="GmpiGui">
@@ -524,6 +652,64 @@
                 <Pin name="PM Hint In" datatype="string" private="true" parameterId="0" parameterField="Hint"/>
                 <Pin name="Hint" datatype="string" direction="out"/>
             </GUI>
+        </Plugin>
+        <Plugin id="SE Scope3 XP" name="Scope3" flags="384" category="Controls">
+            <Parameters>
+                <Parameter id="0" datatype="blob" name="Capture Data A" private="true" ignorePatchChange="true" isPolyphonic="true" persistant="false"/>
+                <Parameter id="1" datatype="blob" name="Capture Data B" private="true" ignorePatchChange="true" isPolyphonic="true" persistant="false"/>
+                <Parameter id="2" datatype="bool" name="polyDetect" private="true" ignorePatchChange="true" persistant="false"/>
+            </Parameters>
+            <Audio>
+                <Pin name="Capture Data A" datatype="blob" direction="out" private="true" isPolyphonic="true" parameterId="0"/>
+                <Pin name="Capture Data B" datatype="blob" direction="out" private="true" isPolyphonic="true" parameterId="1"/>
+                <Pin name="Signal A" datatype="float" rate="audio"/>
+                <Pin name="Signal B" datatype="float" rate="audio"/>
+                <Pin name="VoiceActive" datatype="float" private="true" isPolyphonic="true" hostConnect="Voice/Active"/>
+                <Pin name="polydetect" datatype="bool" direction="out" private="true" parameterId="2"/>
+            </Audio>
+            <GUI graphicsApi="GmpiGui">
+                <Pin name="Capture Data A" datatype="blob" private="true" isPolyphonic="true" parameterId="0"/>
+                <Pin name="Capture Data B" datatype="blob" private="true" isPolyphonic="true" parameterId="1"/>
+                <Pin id="3" name="VoiceGate" datatype="float" private="true" isPolyphonic="true" hostConnect="Voice/Gate"/>
+                <Pin name="polydetect" datatype="bool" private="true" parameterId="2"/>
+            </GUI>
+        </Plugin>
+        <Plugin id="Slider" class="1" name="Slider" flags="4480" category="Controls">
+            <Parameters>
+                <Parameter id="0" datatype="float" name="patchValue"/>
+            </Parameters>
+            <Audio>
+                <Pin name="Channel" datatype="enum" default="-1" private="true" ignorePatchChange="true"/>
+                <Pin name="MIDI In" datatype="midi" private="true"/>
+                <Pin name="MIDI Out" datatype="midi" direction="out" private="true"/>
+                <Pin name="MIDI Controller ID" datatype="enum" default="-1" private="true"/>
+                <Pin name="Ignore Program Change" datatype="bool" private="true"/>
+                <Pin name="MIDI NRPN" datatype="enum" private="true" metadata="range 0,16255"/>
+                <Pin name="Signal Out" datatype="float" rate="audio" direction="out" autoConfigureParameter="true"/>
+                <Pin name="Lo Value" datatype="float" private="true"/>
+                <Pin name="Hi Value" datatype="float" default="10" private="true"/>
+                <Pin name="Appearance" datatype="enum" default="1" isMinimised="true" metadata="None=-1,Plain Slider, Vert Slider, Horiz Slider, Knob, Button, Button (toggle),Plain Button, Small Knob, Small Button, Small Button (Toggle)"/>
+                <Pin name="Show Readout" datatype="bool" default="1" isMinimised="true"/>
+                <Pin name="Show Title On Panel" datatype="bool" default="1" isMinimised="true"/>
+                <Pin name="patchValue" datatype="float" private="true" parameterId="0"/>
+            </Audio>
+            <GUI>
+                <Pin id="13" name="patchValue" datatype="float" direction="out" private="true" parameterId="0"/>
+                <Pin name="Hint" datatype="string" direction="out" isMinimised="true"/>
+            </GUI>
+        </Plugin>
+        <Plugin id="SynthEdit ADSR" name="ADSR2" flags="256" category="Waveform" helpUrl="EnveloperAdsr.htm">
+            <Audio>
+                <Pin name="Trigger" datatype="float" rate="audio" default="0.1"/>
+                <Pin name="Gate" datatype="float" rate="audio" default="0.1"/>
+                <Pin name="Attack" datatype="float" rate="audio"/>
+                <Pin name="Decay" datatype="float" rate="audio" default="0.5"/>
+                <Pin name="Sustain" datatype="float" rate="audio" default="0.7"/>
+                <Pin name="Release" datatype="float" rate="audio" default="0.4"/>
+                <Pin name="Overall Level" datatype="float" rate="audio" default="1"/>
+                <Pin name="Signal Out" datatype="float" rate="audio" direction="out"/>
+                <Pin name="VoiceReset" datatype="float" private="true" isPolyphonic="true" hostConnect="Voice/Active"/>
+            </Audio>
         </Plugin>
     </PluginList>
 </Document>
