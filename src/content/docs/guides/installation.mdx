@@ -45,15 +45,24 @@ Recent changes and fixes. <a href="https://synthedit.com/release_1_6/changelog.h
 
 <div class="se-changelog-scroll">
 
+**Unreleased**
+- Patch Cables working again
+
+**v1.6.97** — 2026-05-13
+- updating pins on property pane propagates to audio processor
+- new Button now accepts double-clicks (without opening the container)
+- embedded subview no longer duplicates Cut/Copy/Paste in menu
+- dragging new modules working (when mouse held down)
+- New Control prebabs: Slider2, colored LEDs, Button2, Knob2
+- Better fine control of new sliders
+
 **v1.6.96** — 2026-05-13
+- wire up edit &gt; move to front/back menu items
+- tweaks to new sub-controls
 - removed close icon from main view
 - mac app icon now ships in bundle (was generic placeholder)
 - Properties Browser now resizes correctly (mac)
 - &apos;Additional Files&apos; dialog layout fixed
-
-**Unreleased**
-- wire up edit &gt; move to front/back menu items
-- tweaks to new sub-controls
 
 **v1.6.95** — 2026-05-12
 - right-click on panel module shows context menu again
@@ -165,13 +174,6 @@ Recent changes and fixes. <a href="https://synthedit.com/release_1_6/changelog.h
 - MCP server wrapping SynthEditCL as native agent tools
 - --set-pin, --render-audio, drop DSP stdout noise from MCP results
 - --rate &lt;Hz&gt; sub-arg for --render-audio / --autorender
-
-**v1.6.83** — 2026-04-30
-- panel modules no longer grow on each view re-open
-- in-process layout regression tests
-- add Label module (GmpiUi)
-- SubView measure consults persistedRect for stale child bounds
-- Resource Manager now searches all skins for global.txt
 
 </div>
 ## Demo vs Full Version
