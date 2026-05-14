@@ -45,6 +45,14 @@ Recent changes and fixes. <a href="https://synthedit.com/release_1_6/changelog.h
 
 <div class="se-changelog-scroll">
 
+**v1.6.98** — 2026-05-14
+- un-containerise leaves modules on the panel where they were before
+- restore SynthEditIcon.icon in Copy Bundle Resources
+- properties browser layout corrupted in release mode
+- export prefab working
+- empty plugin bundles fail codesign due to build race
+- add factory_modules aggregate to gate plugin-copy steps
+
 **Unreleased**
 - Patch Cables working again
 
@@ -57,7 +65,6 @@ Recent changes and fixes. <a href="https://synthedit.com/release_1_6/changelog.h
 - Better fine control of new sliders
 
 **v1.6.96** — 2026-05-13
-- wire up edit &gt; move to front/back menu items
 - tweaks to new sub-controls
 - removed close icon from main view
 - mac app icon now ships in bundle (was generic placeholder)
@@ -65,6 +72,7 @@ Recent changes and fixes. <a href="https://synthedit.com/release_1_6/changelog.h
 - &apos;Additional Files&apos; dialog layout fixed
 
 **v1.6.95** — 2026-05-12
+- wire up edit &gt; move to front/back menu items
 - right-click on panel module shows context menu again
 
 **v1.6.94** — 2026-05-12
@@ -163,17 +171,6 @@ Recent changes and fixes. <a href="https://synthedit.com/release_1_6/changelog.h
 - SynthEditCL never displays modal dialogs
 - PatchMem modules now expose &quot;Hint&quot; pin
 - Hint GUI pins for all PatchMemory modules
-
-**v1.6.84** — 2026-05-01
-- symbolic handle aliases ($name, $$, \$N) in SynthEditCL scripts
-- keep loadFile/autoSaveType/autoRender on SynthEditConfig
-- clone gimpi_ui_tests and pass GMPI_UI_TESTS_FOLDER to cmake
-- address pins by name + register synthedit MCP server
-- add --list-modules verb to SynthEditCL
-- SynthEditCL script-mode for agent-driven editor sessions
-- MCP server wrapping SynthEditCL as native agent tools
-- --set-pin, --render-audio, drop DSP stdout noise from MCP results
-- --rate &lt;Hz&gt; sub-arg for --render-audio / --autorender
 
 </div>
 ## Demo vs Full Version
