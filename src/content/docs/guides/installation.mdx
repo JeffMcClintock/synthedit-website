@@ -45,6 +45,16 @@ Recent changes and fixes. <a href="https://synthedit.com/release_1_6/changelog.h
 
 <div class="se-changelog-scroll">
 
+**Unreleased**
+- unregister presenter observer on destruction
+- properties pane - file browser now working for 8-bit string parameters
+- fix sliders not adapting to range of destination pin on first connection when range specified as 2 numbers (not 4)
+
+**v1.6.99** — 2026-05-14
+- ship pre-built .icns instead of Icon Composer .icon
+- fixes for hot-reloading modules
+- Added &apos;USE_STAGING&apos; flag to SDK for enabling hot-reload on module
+
 **v1.6.98** — 2026-05-14
 - un-containerise leaves modules on the panel where they were before
 - restore SynthEditIcon.icon in Copy Bundle Resources
@@ -52,8 +62,6 @@ Recent changes and fixes. <a href="https://synthedit.com/release_1_6/changelog.h
 - export prefab working
 - empty plugin bundles fail codesign due to build race
 - add factory_modules aggregate to gate plugin-copy steps
-
-**Unreleased**
 - Patch Cables working again
 
 **v1.6.97** — 2026-05-13
@@ -65,6 +73,7 @@ Recent changes and fixes. <a href="https://synthedit.com/release_1_6/changelog.h
 - Better fine control of new sliders
 
 **v1.6.96** — 2026-05-13
+- wire up edit &gt; move to front/back menu items
 - tweaks to new sub-controls
 - removed close icon from main view
 - mac app icon now ships in bundle (was generic placeholder)
@@ -72,7 +81,6 @@ Recent changes and fixes. <a href="https://synthedit.com/release_1_6/changelog.h
 - &apos;Additional Files&apos; dialog layout fixed
 
 **v1.6.95** — 2026-05-12
-- wire up edit &gt; move to front/back menu items
 - right-click on panel module shows context menu again
 
 **v1.6.94** — 2026-05-12
@@ -161,16 +169,6 @@ Recent changes and fixes. <a href="https://synthedit.com/release_1_6/changelog.h
 
 **v1.6.86** — 2026-05-03
 - auto-conversion for GUI pins
-
-**v1.6.85** — 2026-05-01
-- tests/CMakeLists skips synth_ui_tests when gimpi_ui_tests absent
-- stereo render-audio, case-insensitive pin names, version MCP config
-- new vector knob color pins renamed
-- fix crash with &apos;selection to prefab&apos; (win)
-- fix crash in save-as-prefab
-- SynthEditCL never displays modal dialogs
-- PatchMem modules now expose &quot;Hint&quot; pin
-- Hint GUI pins for all PatchMemory modules
 
 </div>
 ## Demo vs Full Version
