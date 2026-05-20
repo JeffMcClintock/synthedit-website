@@ -45,6 +45,20 @@ Recent changes and fixes. [View full changelog](../changelog/)
 
 <div class="se-changelog-scroll">
 
+**v1.6.104** — 2026-05-20
+- snap stroke width to whole pixels
+- snap node positions to 0.25 DIP grid
+- odd-width strokes snap to pixel centres, not origins
+- cubic closing segments + handle z-order fix
+- add Snap to Pixels pin
+- add Path Editor + Path Render
+- accumulate sub-quantum mouse movement during drag
+- Windows Installer now available
+- GmpiHelper::getRasterizationScale forwards to drawing host
+
+**Unreleased**
+- WT Osc - silent mip at top end so above-Nyquist pitches don't alias
+
 **v1.6.103** — 2026-05-19
 - copy user resource files to vst3 bundle on export
 - Wavetable Osc now supports built-in test waveforms [\{Saw\}, \{Ramp\}, \{Sine\}, \{Triangle\}, \{Pulse15\}, \{Square\}, \{Pulse85\}, \{Noise\}, \{Silence\} ,\{DC\}]
@@ -70,7 +84,7 @@ Recent changes and fixes. [View full changelog](../changelog/)
 **v1.6.99** — 2026-05-14
 - ship pre-built .icns instead of Icon Composer .icon
 - fixes for hot-reloading modules
-- Added &apos;USE_STAGING&apos; flag to SDK for enabling hot-reload on module
+- Added 'USE_STAGING' flag to SDK for enabling hot-reload on module
 
 **v1.6.98** — 2026-05-14
 - un-containerise leaves modules on the panel where they were before
@@ -90,14 +104,14 @@ Recent changes and fixes. [View full changelog](../changelog/)
 - Better fine control of new sliders
 
 **v1.6.96** — 2026-05-13
-- wire up edit &gt; move to front/back menu items
 - tweaks to new sub-controls
 - removed close icon from main view
 - mac app icon now ships in bundle (was generic placeholder)
 - Properties Browser now resizes correctly (mac)
-- &apos;Additional Files&apos; dialog layout fixed
+- 'Additional Files' dialog layout fixed
 
 **v1.6.95** — 2026-05-12
+- wire up edit > move to front/back menu items
 - right-click on panel module shows context menu again
 
 **v1.6.94** — 2026-05-12
@@ -129,7 +143,7 @@ Recent changes and fixes. [View full changelog](../changelog/)
 - forward OM_DRAG_NEW_MODULE so TIDE drop-on-view works
 - force-invalidate the plugin host on OM_SHOW_PROPERTIES
 - enable wheel zoom/scroll in the TIDE editor
-- drop legacy &lt;home&gt;/modules64/ overrides in CL apps
+- drop legacy \<home>/modules64/ overrides in CL apps
 - draw editor scrollbars in TIDE three-pane layout
 - double-click a Module Browser entry to drop the module
 - cross cursor for TIDE drag-from-browser (Win32)
@@ -142,13 +156,13 @@ Recent changes and fixes. [View full changelog](../changelog/)
 - also probe %ProgramFiles%\SynthEditCL\ on Windows
 - Properties Browser screenshots (--view properties, --include-properties)
 - HostedView CreateSwapPanel uses universalFactory
-- 4a build fixes â'' IDialogHost diamond, getFullDirtyRect, factory
+- 4a build fixes â€” IDialogHost diamond, getFullDirtyRect, factory
 - --view browser renders Module Browser headlessly (Phase 1)
 - --include-browser composite render (Phase 2)
 
 **v1.6.91** — 2026-05-07
-- resizing module triggers &apos;save changes&apos; on close
-- remove annoying &quot;no MIDI in device&quot; message (mac)
+- resizing module triggers 'save changes' on close
+- remove annoying "no MIDI in device" message (mac)
 - rectangle selector ignores bottom part of structure group
 - new LED ignores mouse clicks
 - link UniformTypeIdentifiers in plugin targets
@@ -156,24 +170,9 @@ Recent changes and fixes. [View full changelog](../changelog/)
 - enable SynthEditSem and rewire it as a GMPI-UI editor host
 - container view render composes viewTransform first
 - SynthEditGui caps measure at 800x600, SynthEditController guards null host
-- Panel edit only highlights module bounds when mouse &apos;hits&apos; actual graphics (not only bounds)
+- Panel edit only highlights module bounds when mouse 'hits' actual graphics (not only bounds)
 - ModuleView pluginParameters_GMPI assignment leaked plugin refs
-- Changing plug default now triggers &apos;save changes?&apos; on exit
-
-**v1.6.90** — 2026-05-06
-- undo/redo for line node insert/delete/straighten
-- more accurate pin hit detection
-- line invalidation rect includes full node circle
-- line hit-test ignores end-zone except for direct node hits
-- keep connector geometry in sync with nodes on model update
-- better hit testing on outline nodes
-- better hit testing on lines
-- add close &apos;X&apos; button to view tabs
-- Removed annoying &quot;MIDI In disabled popup&quot;
-
-**v1.6.89** — 2026-05-06
-- now need a deliberate pause to trigger auto line highlight
-- Structure Group ignores mouse in bottom half (less intrusive)
+- Changing plug default now triggers 'save changes?' on exit
 
 </div>
 ## Demo vs Full Version
