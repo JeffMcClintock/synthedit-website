@@ -96,6 +96,7 @@ export default defineConfig({
 					items: [
 						{ label: 'Technical Specifications', slug: 'guides/technical-specs' },
 						{ label: 'FAQ', slug: 'guides/faq' },
+						{ label: 'Changelog', slug: 'changelog' },
 					],
 				},
 			],
