@@ -42,6 +42,22 @@ Yes. A single license covers all current versions.
 
 ---
 
+## Releases & Versions
+
+### How do SynthEdit's Release and beta versions work?
+
+SynthEdit runs on two parallel tracks: a **Release** (stable) version and a **beta** version. **Version 1.5 is the current Release version** — it has exited beta, so no new features are being added to it. New features now go into the current beta, **SynthEdit 1.6**. This split lets you choose what suits you: stay on the Release version for the fewest disruptions and bugs, or opt in to the beta if you're happy to encounter the occasional bug in exchange for the latest features.
+
+### Which version receives bug fixes, and why?
+
+The Release version (currently 1.5) receives **only important bug fixes** — not new features or other potentially destabilising changes. Many plugin developers have asked that the Release version stay as stable as possible, because unexpected bugs and regressions can cause stress and reputational damage for people who ship plugins built with SynthEdit. The most reliable way to keep software stable is not to change it without a good reason, so 1.5 is deliberately left alone apart from essential fixes. This is normal practice for a "stable" release.
+
+### When are new features and feature requests implemented?
+
+New features are added to the **next beta version** — currently SynthEdit 1.6. Routing them through the beta means only users who are prepared to encounter the occasional bug opt in to them, while everyone who wants minimal disruption can stay on the stable Release version. On the [issue tracker](https://github.com/JeffMcClintock/SynthEdit-Tracking), feature requests are tagged **enhancement**, and a voting system is planned so you can help influence which enhancements are prioritised.
+
+---
+
 ## VST Plugin Creation & Distribution
 
 ### Can SynthEdit make effect plugins, not just synthesizers?
