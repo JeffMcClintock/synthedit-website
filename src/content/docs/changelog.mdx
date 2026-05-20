@@ -5,6 +5,20 @@ description: Full version history of SynthEdit changes and fixes.
 
 Every release in the v1.6 line. The most recent entries are also embedded on the [installation page](./guides/installation/).
 
+**v1.6.104** — 2026-05-20
+- snap stroke width to whole pixels
+- snap node positions to 0.25 DIP grid
+- odd-width strokes snap to pixel centres, not origins
+- cubic closing segments + handle z-order fix
+- add Snap to Pixels pin
+- add Path Editor + Path Render
+- accumulate sub-quantum mouse movement during drag
+- Windows Installer now available
+- GmpiHelper::getRasterizationScale forwards to drawing host
+
+**Unreleased**
+- WT Osc - silent mip at top end so above-Nyquist pitches don't alias
+
 **v1.6.103** — 2026-05-19
 - copy user resource files to vst3 bundle on export
 - Wavetable Osc now supports built-in test waveforms [\{Saw\}, \{Ramp\}, \{Sine\}, \{Triangle\}, \{Pulse15\}, \{Square\}, \{Pulse85\}, \{Noise\}, \{Silence\} ,\{DC\}]
@@ -30,7 +44,7 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 **v1.6.99** — 2026-05-14
 - ship pre-built .icns instead of Icon Composer .icon
 - fixes for hot-reloading modules
-- Added &apos;USE_STAGING&apos; flag to SDK for enabling hot-reload on module
+- Added 'USE_STAGING' flag to SDK for enabling hot-reload on module
 
 **v1.6.98** — 2026-05-14
 - un-containerise leaves modules on the panel where they were before
@@ -50,14 +64,14 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - Better fine control of new sliders
 
 **v1.6.96** — 2026-05-13
-- wire up edit &gt; move to front/back menu items
 - tweaks to new sub-controls
 - removed close icon from main view
 - mac app icon now ships in bundle (was generic placeholder)
 - Properties Browser now resizes correctly (mac)
-- &apos;Additional Files&apos; dialog layout fixed
+- 'Additional Files' dialog layout fixed
 
 **v1.6.95** — 2026-05-12
+- wire up edit > move to front/back menu items
 - right-click on panel module shows context menu again
 
 **v1.6.94** — 2026-05-12
@@ -89,7 +103,7 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - forward OM_DRAG_NEW_MODULE so TIDE drop-on-view works
 - force-invalidate the plugin host on OM_SHOW_PROPERTIES
 - enable wheel zoom/scroll in the TIDE editor
-- drop legacy &lt;home&gt;/modules64/ overrides in CL apps
+- drop legacy \<home>/modules64/ overrides in CL apps
 - draw editor scrollbars in TIDE three-pane layout
 - double-click a Module Browser entry to drop the module
 - cross cursor for TIDE drag-from-browser (Win32)
@@ -102,13 +116,13 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - also probe %ProgramFiles%\SynthEditCL\ on Windows
 - Properties Browser screenshots (--view properties, --include-properties)
 - HostedView CreateSwapPanel uses universalFactory
-- 4a build fixes â'' IDialogHost diamond, getFullDirtyRect, factory
+- 4a build fixes â€” IDialogHost diamond, getFullDirtyRect, factory
 - --view browser renders Module Browser headlessly (Phase 1)
 - --include-browser composite render (Phase 2)
 
 **v1.6.91** — 2026-05-07
-- resizing module triggers &apos;save changes&apos; on close
-- remove annoying &quot;no MIDI in device&quot; message (mac)
+- resizing module triggers 'save changes' on close
+- remove annoying "no MIDI in device" message (mac)
 - rectangle selector ignores bottom part of structure group
 - new LED ignores mouse clicks
 - link UniformTypeIdentifiers in plugin targets
@@ -116,9 +130,9 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - enable SynthEditSem and rewire it as a GMPI-UI editor host
 - container view render composes viewTransform first
 - SynthEditGui caps measure at 800x600, SynthEditController guards null host
-- Panel edit only highlights module bounds when mouse &apos;hits&apos; actual graphics (not only bounds)
+- Panel edit only highlights module bounds when mouse 'hits' actual graphics (not only bounds)
 - ModuleView pluginParameters_GMPI assignment leaked plugin refs
-- Changing plug default now triggers &apos;save changes?&apos; on exit
+- Changing plug default now triggers 'save changes?' on exit
 
 **v1.6.90** — 2026-05-06
 - undo/redo for line node insert/delete/straighten
@@ -128,9 +142,429 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - keep connector geometry in sync with nodes on model update
 - better hit testing on outline nodes
 - better hit testing on lines
-- add close &apos;X&apos; button to view tabs
-- Removed annoying &quot;MIDI In disabled popup&quot;
+- add close 'X' button to view tabs
+- Removed annoying "MIDI In disabled popup"
 
 **v1.6.89** — 2026-05-06
 - now need a deliberate pause to trigger auto line highlight
 - Structure Group ignores mouse in bottom half (less intrusive)
+
+**v1.6.88** — 2026-05-04
+- fix inspector showing wrong module after paste
+- fix crash when screenshotting panel in secl
+- fix IO-Mod getting shifted right after containerise
+- emit relative image paths for /new/ base
+
+**v1.6.87** — 2026-05-04
+- new GUI converters for wide string to string
+
+**v1.6.86** — 2026-05-03
+- auto-conversion for GUI pins
+
+**v1.6.85** — 2026-05-01
+- tests/CMakeLists skips synth_ui_tests when gimpi_ui_tests absent
+- stereo render-audio, case-insensitive pin names, version MCP config
+- new vector knob color pins renamed
+- fix crash with 'selection to prefab' (win)
+- fix crash in save-as-prefab
+- SynthEditCL never displays modal dialogs
+- PatchMem modules now expose "Hint" pin
+- Hint GUI pins for all PatchMemory modules
+
+**v1.6.84** — 2026-05-01
+- symbolic handle aliases ($name, $$, \$N) in SynthEditCL scripts
+- keep loadFile/autoSaveType/autoRender on SynthEditConfig
+- clone gimpi_ui_tests and pass GMPI_UI_TESTS_FOLDER to cmake
+- address pins by name + register synthedit MCP server
+- add --list-modules verb to SynthEditCL
+- SynthEditCL script-mode for agent-driven editor sessions
+- MCP server wrapping SynthEditCL as native agent tools
+- --set-pin, --render-audio, drop DSP stdout noise from MCP results
+- --rate \<Hz> sub-arg for --render-audio / --autorender
+
+**v1.6.83** — 2026-04-30
+- panel modules no longer grow on each view re-open
+- in-process layout regression tests
+- add Label module (GmpiUi)
+- SubView measure consults persistedRect for stale child bounds
+- Resource Manager now searches all skins for global.txt
+
+**v1.6.81** — 2026-04-30
+- isNull centering uses absolute SetModuleRect
+- isNull centering respects user-positioned modules
+- implement GetModuleRect for stale-JSON detection
+- highlight dragged module in browser list
+- fix build errors with GUI code-skeleton
+- double-click in browser inserts module at view centre
+- crash when clicking tab of deleted container
+- add OM_INSERT_MODULE_AT_VIEW_CENTER notification
+- add MfcDocPresenterBase::SetModuleRect
+
+**v1.6.80** — 2026-04-29
+- insert-on-struct-view no longer mis-positions on panel
+- fix crash when containerising a selected module
+
+**v1.6.79** — 2026-04-29
+- pasted module now shown in properties view (not original)
+- paste subview weirdness
+- only \<SHIFT> applies flag, not \<CAPS-LOCK>
+- mouse clicks working again
+- improved hit-testing on knob
+- fix for possible crash on exit
+- containerise now shows containers properties in properties browser
+- MIDI keyboard unplugged no longer prevents running audio
+
+**v1.6.77** — 2026-04-28
+- new find/replace dialog (win)
+- mac - double click to open container working
+- larger default panel area
+- fix menus ignoring clicks (win)
+- fix crash after scanning modules (mac)
+- better hit testing on Panel Group
+- Scope3 now drawing correct colors
+
+**v1.6.76** — 2026-04-27
+- stop audio on document close and app exit
+- save/load prefabs working (mac)
+- privacy and community page links working (mac)
+- prefabs now installed on first launch (mac)
+- new menu to explor to project-skin folder
+- find/replace working on mac
+- crash after rescanning when document is open
+- Keyboard (MIDI) on-screen keyboard working. (KeyBoard-CV keyboard removed)
+- 'Browse to Project skin'
+
+**v1.6.75** — 2026-04-24
+- report subview clip bounds including child shadows
+- render module outline under plugin shadow layer
+- prevent shadow layer smearing in subviews"
+- prevent shadow layer smearing in subviews
+- paste with mouse position fixed
+- only draw panel grid in editor mode; thicker debug cross
+- mac app can now open .syntheditprefab projects
+- hit testing on new Panel Group
+- correct coord spaces in SubView clip-area propagation
+- containerized modules center on panel view
+- autoscroll now works during wire pickup on Mac
+- arrow keys nudge selected modules on Mac
+- Sdk3Helper file and ok/cancel dialogs working
+- MIDI-out selector no longer overlaps MIDI-in list in Preferences dialog
+
+**v1.6.74** — 2026-04-23
+- loading .syntheditprefab directly working
+- fewer spurious notifications from properties-browser
+- VST3 resizing mac working
+- VST mac resizing working
+- AU mac plugin resize support
+- 'Show Controls on Module' working
+
+**v1.6.73** — 2026-04-22
+- mac - less sensitive scrollwheel
+- mac - less sensitive mousewheel
+- VST3 - refresh DPI state in-place on HC_PLUGIN_UI_SCALE change
+- GUI modules now support pin info
+- Freq Analyser - text no longer flipped
+- Added IListPins support for GUI pins
+
+**v1.6.71** — 2026-04-21
+- sub-view hit testing working correctly
+- fix spurious invalidation on first hover of ResizeAdorner
+- fix repaint when sub-view shows/unshows
+
+**v1.6.70** — 2026-04-21
+- fix slider text height
+- PSS skin working on export
+- PSS skin working on export
+
+**v1.6.69** — 2026-04-21
+- mac now export font names correctl
+
+**v1.6.68** — 2026-04-20
+- poll OS cursor during drag to unfreeze outside swapchain
+- autoscroll now works when dragging wires/cables
+
+**v1.6.67** — 2026-04-20
+- suppress Debug CRT assertion dialogs in the dsp_tests harness
+- suppress Debug CRT assertion dialogs in SynthEditCL
+- mac - fix missing modules from export-plugins
+
+**v1.6.66** — 2026-04-17
+- fixed HC_OFFLINE failing when user hit 'Play' right after loading app.
+- fix pin direction screwup on containerize
+- fix VST3 plugin viewport (mac)
+- SynthEdit mac reloads project after export
+- Hoverscopes now work on IO Modules
+- Hoverscopes now work on IO Modules
+
+**v1.6.65** — 2026-04-16
+- panel ResizeAdorner repaint - getClipArea coord space
+- no error from missing MIDI driver when you arn't using MIDI modules
+- mitigate bug when clicking image with file "arrow_right" causing a spurious change notifications to "arrow_right.bmp"
+- mac - shift toolbar left
+- fix subviews mouse handling
+- fix drag hit test lines with tiny hitbox
+- fix crash when hovering IO Mod pins while audio on
+- fix crash after pasting BPM module from another project then starting audio.
+- better cancellation workflow
+- better cancellation workflow
+- Wave Recorder better error messages
+- VST3 panel now panned correctly
+
+**v1.6.64** — 2026-04-15
+- better dragbox discernment of lines
+
+**v1.6.63** — 2026-04-15
+- se rescan modules on first run after updating
+- fix processor watchdog in editor
+- fix processor watchdog in editor
+- CPU display now in front of other modules
+
+**v1.6.61** — 2026-04-14
+- support for new yes/no/cancel dialogs
+- new module "Dialog" for yes/no/cancel dialogs
+- exclude '_fallback' from skin menu
+- Skin Manager now searches project-specific skin first for fonts.
+
+**v1.6.60** — 2026-04-14
+- properties panel uses panelBackground for contrast, widen browse button
+- project file names can now contain a dot and skin file name will ignore subsequent characters. e.g. "myproject.version23.synthedit" => skin folder is "myproject"
+- fix resize dot placement on structure view modules
+- filebrowser better support for project-specific-skin
+- Containerise now pastes to canvas center (no top-left)
+
+**v1.6.59** — 2026-04-13
+- mac - \<DEL> key works in text-entry boxes
+
+**v1.6.58** — 2026-04-13
+- pan/zoomed notification improvement
+- pan/zoom retained correctly. 
+- no blue highlight over hovered modules in exported plugins
+- mac textedit now respects \<ESC> and losing focus.
+- fix view centering annoyingly when inserting modules
+- compatible window positions when going from SE 1.5 to 1.6 or back
+- blue highlight not shown on modules in plugins
+- SE now searches for skins in project-specific folder next to project file first. e.g. mysynth.skin
+- SE now searches for skins in project-specific folder next to project file first. e.g. mysynth.skin
+- SE command-line can now capture screenshots
+
+**v1.6.57** — 2026-04-10
+- mac - fix skin scanning
+- crash on close (mac)
+- added _fallback skin for your custom skin assets
+
+**v1.6.55** — 2026-04-10
+- mac - 'show skin files' working, removed junk '\&' symbols from popup menus
+- hide app symbols so plugins use their own SynthEditLib copy
+
+**v1.6.54** — 2026-04-10
+- fix properties browser screwing up skin filenames
+- fix hit testing going for line under module
+- fix "can't load:YES" message
+- Se macOS codesigns exported plugins for local use
+
+**v1.6.53** — 2026-04-09
+- fix plugins drawing top-left at view center
+- fix crashing playing on-screen keyboard
+- fix WaveTableLoad.cpp build errors on macOS
+- command-line exporting working on macOS
+- Au validation passing
+
+**v1.6.52** — 2026-04-08
+- fix export AU
+
+**v1.6.50** — 2026-04-06
+- 'background' layer support (-2)
+
+**v1.6.48** — 2026-04-03
+- se mac recalls window position
+- fix hover scope clip rect invalidation.
+- Structure modules without pins now draw without borders. e.g. PostIt!
+
+**v1.6.47** — 2026-04-03
+- win - theme restores correctly on startup
+- pass both radii to RoundedRect for shadow shape
+- mac - light/dark themes
+- mac - browser text invisible due to theme change race
+- implemented layered rendering (shadow, widget,glow)
+- hoverscopes working again
+
+**Unreleased**
+- new module Bar LED Meter
+
+**v1.6.45** — 2026-03-31
+- fix invalidation of adorners
+- Fix view refresh when setting GUI pin default
+
+**v1.6.44** — 2026-03-30
+- selection box invalidation when scrolled
+- more robust dropping new modules
+
+**v1.6.43** — 2026-03-30
+- new module glowey LED
+- mac - cursor changes when dragging new modules
+- fix selected modules ignoring mouse
+- fix possible assert in add connector
+- fix module browser details view not redrawing
+- fix crash when dragging modules
+- fix crash on dragging Line from Module Browser debug category
+- fix assert when stress testing module browser
+
+**v1.6.41** — 2026-03-26
+- vie coded icons (need fixing)
+- se amc has correct version number
+- scroll bar too high
+- new function 'stripRedundantTrailingZeros'
+- less hoverscope redraw glitches
+- fix crash on hover 'spare' pin
+- HC_PROCESSOR_OFFLINE init correctly to true
+
+**v1.6.40** — 2026-03-26
+- strip trailing zero from pin defaults in XML project file.
+- more robust list-entry bounds invalidation (fixes 'missed first click' in editor)
+- less false update 'noise' notifications from Properties Browser
+- implemented Sdk3Helper::invalidateMeasure() 
+- hover outlines working in GUI
+- fixed-values - now saving value of pins 
+- fix for expression evaluator on macOS
+- fix doubled up mouse move events
+- fix default values being written to project file for output pins.
+- fix crash in List Entry
+- fix SDK3 invalidateMeasure() behaviour
+- PlainImage module fixed recursion on mac
+
+**v1.6.39** — 2026-03-24
+- â€œopen last projectâ€ working
+- win pipeline runs frst, mac pipeline consumes windows vst3 artifact
+- win VST3 now releases containerview when editor closed
+- win - export dialog triggers 'save change' if it had generate a unique ID
+- vibe coded SynthEdit Mac
+- modules cmake now copies official modules to correct folder
+- fixed several invalidation rect errors
+- fix transform of invalid rects by view
+- fix race-condition preventing DSP "done" message reaching UI.
+- fix loading modules from plugin
+- fix invalidateRect from sub-view
+- fix hit testing on slider
+- build now code-signs sems and template plugins
+- Fix assert on exit (timers)
+- Drawing working in plugins again
+- Added support for WASAPI audio drivers
+- ALT-click picks up the end of an existing wire
+- ALT-click now picks up wires
+
+**v1.6.38** — 2026-03-12
+- pins now highlight when hovered
+- modules show hover state
+- however-scopes on GUI pins update live
+- hoverscopes working on GUI modules
+- hoverscopes working on GUI modules
+- better interactivity on pins and lines
+- better interactivity on pins and lines
+- better hit-testing on pins
+- [0164] Patch-cables disappearing when others added/removed.
+
+**v1.6.37** — 2026-03-05
+- fix modules path
+
+**v1.6.36** — 2026-03-03
+- fuzzy hit testing
+- fuzzy hit testing
+- crash clicking line
+- [0193] fix lines disappearing when nodes overlap.
+- [0192] Patch Cable Diag drawing outside bounds 
+- Added 'Export' toolbar item
+
+**v1.6.35** — 2026-02-27
+- tickbox in parameter browser working properly on bool param values
+- fix for scroll bars going wring direction
+- fix crash when deleting containerising connected modules
+- filebrowser on filename pins now shortens filenames as appropriate (e.g. skin files)
+
+**v1.6.34** — 2026-02-16
+- prefabs showing on browser
+- fix duplicate notify msg IDs
+- factory prefabs working
+- export now notifies success via a 'toast' popup. (no more dialog to click)
+- export VST3 mostly working
+
+**v1.6.33** — 2026-02-13
+- limit number of recent files saved
+
+**v1.6.32** — 2026-02-13
+- Added system SEMs to layout via wildcards in synthedit2.vcxproj and .filters
+
+**v1.6.28** — 2026-02-12
+- fix hang on exit after changing tab
+- SE-CL fix dialog boxes showing when in 'quiet' mode.
+
+**v1.6.26** — 2026-02-11
+- wider PB
+- when running on Jeffs machine, scans SEMs from SE16/mac_assets folder (which is where they are built now)
+- typing in properties browser don't affect structure view
+- removed use of std::regex, had compile error on Azure pipelines
+- refactor to simplify plugin file paths
+- refactor to simplify plugin file paths
+- new module - Operating System Detect
+- new DSP text module "First Non Empty" 
+- made ModuleFactory_RegisterModule function visibility hidden on macOS. Prevents SE plugins incorrectly calling this function in their host.
+- incorrect indexes from it_enum_list2()
+- implement dark mode
+- fix possible assert on destruction of SE2JUCE_Controller
+- fix plugin cache filename
+- fix patches not saving (bug due to earlier refactor)
+- fix keystrokes escaping text-edit boxes
+- fix from SDK3 SEMs with file-browsers
+- fix freeze/slowdown when resizing main window
+- fix for nested plugins on macOS
+- fix for nested plugins on macOS
+- fix for nested instantiation on macOS
+- fix for module scanning
+- fix for macOS where no audio drivers availalbe
+- fix for cut/copy/paste affecting structure when in textbox
+- fix for \<tab> key in text edits
+- fix for SEM caching on macOS
+- fix for SEM cache on macOS
+- fix for ResolveFilename with short names on macOS
+- fix for GMPI string pins on mac
+- fix for CreatePluginBundleRef() when it's not a bundle
+- fix erroneous duplicate module messages.
+- fix entering text defaults
+- fix crash when resizing editor (hanging pointer)
+- fix crash in wav_file.cpp writing files with more than 2 channels
+- fix SEMs not loading paths from cache
+- fix 'module not found" message when pasting
+- feedback modules are now deactivated during cancellation
+- extended content onto title bar
+- drop new module working again
+- disable module cut/paste while cut/pasting in a focused textbox
+- correct macOS sysmem plugins folder
+- command line args now parsed correctly
+- cancellation - _DEBUG properly defined in debug mode
+- better diagnostics from cancellation util
+- avoid double console output
+- [0189] pin renaming not working on auto-rename but not auto-duplicate pins.
+- [0136] Loss of "Snap To Grid" Setting After Crash
+- [0017] Use plain ASCII Hex format in properties browser for BLOB pins
+- WIP mac compat
+- SynthEditCL now hides itâ€™s symbols on macOS to prevent child plugins from accedentally linking against the host functions (becuase they both use SynthEditlib statically)
+- SynthEditCL now accepts flags with minus sign like -quiet to avoid misinterpreting macOS filename with leading slash as a flag
+- SynthEditCL - Added -factorysemsfolder override flag
+- SECL now scans system modules from itâ€™s own bundle
+- SECL macOS now scans modules from within own bundle
+- Run button working without glitches
+- Run button working without glitches
+- Recent Files menu now updated when Saving a project during export as plugin.
+- Properties browser file dialogs working
+- Properties Browser - more robust change detection on floating point values
+- Properties Browser - better float formatting and more tickboxes for BOOLs not combos
+- Parameter Browser - MIDI field working
+- PB - no file browser on non-filename text parameters
+- PB - iPC, Private, Stateful all using checkboxes
+- PB - bool properties leave room for wider label
+- Keyboard - fix not sending trigger pulses (updated unit test)
+- Ensure caption buttons are visible on dark backgrounds
+- Document name show on title bar
+- Added "Disable Deep Colour" option
+- Added "Analyse Cancellation" menu (DEBUG only)
+- Add toolbar
+
