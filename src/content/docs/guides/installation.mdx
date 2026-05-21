@@ -105,6 +105,20 @@ Recent changes and fixes. [View full changelog](../changelog/)
 
 <div class="se-changelog-scroll">
 
+**v1.6.106** — 2026-05-21
+- trackpad horizontal scroll ignored in patch view
+- track installation.mdx heading rename for changelog update
+- find CI sideload layout by Dependencies/x64 path
+- explicitly source framework MSIXes for sideload zip
+- draggable pane dividers with persisted widths
+
+**v1.6.105** — 2026-05-21
+- ship Windows installer as zip with bundled framework deps
+- fix build number in about box (win)
+- Wavetable Viewer working on mac
+- SetRegistrationInfo dropped vendor on empty serial
+- Mac Preferences orphan General-tab controls (mac)
+
 **v1.6.104** — 2026-05-20
 - snap stroke width to whole pixels
 - snap node positions to 0.25 DIP grid
@@ -114,10 +128,8 @@ Recent changes and fixes. [View full changelog](../changelog/)
 - add Path Editor + Path Render
 - accumulate sub-quantum mouse movement during drag
 - Windows Installer now available
-- GmpiHelper::getRasterizationScale forwards to drawing host
-
-**Unreleased**
 - WT Osc - silent mip at top end so above-Nyquist pitches don't alias
+- GmpiHelper::getRasterizationScale forwards to drawing host
 
 **v1.6.103** — 2026-05-19
 - copy user resource files to vst3 bundle on export
@@ -164,6 +176,7 @@ Recent changes and fixes. [View full changelog](../changelog/)
 - Better fine control of new sliders
 
 **v1.6.96** — 2026-05-13
+- wire up edit > move to front/back menu items
 - tweaks to new sub-controls
 - removed close icon from main view
 - mac app icon now ships in bundle (was generic placeholder)
@@ -171,7 +184,6 @@ Recent changes and fixes. [View full changelog](../changelog/)
 - 'Additional Files' dialog layout fixed
 
 **v1.6.95** — 2026-05-12
-- wire up edit > move to front/back menu items
 - right-click on panel module shows context menu again
 
 **v1.6.94** — 2026-05-12
@@ -219,20 +231,6 @@ Recent changes and fixes. [View full changelog](../changelog/)
 - 4a build fixes â€” IDialogHost diamond, getFullDirtyRect, factory
 - --view browser renders Module Browser headlessly (Phase 1)
 - --include-browser composite render (Phase 2)
-
-**v1.6.91** — 2026-05-07
-- resizing module triggers 'save changes' on close
-- remove annoying "no MIDI in device" message (mac)
-- rectangle selector ignores bottom part of structure group
-- new LED ignores mouse clicks
-- link UniformTypeIdentifiers in plugin targets
-- fix new lines connecting to wrong pin
-- enable SynthEditSem and rewire it as a GMPI-UI editor host
-- container view render composes viewTransform first
-- SynthEditGui caps measure at 800x600, SynthEditController guards null host
-- Panel edit only highlights module bounds when mouse 'hits' actual graphics (not only bounds)
-- ModuleView pluginParameters_GMPI assignment leaked plugin refs
-- Changing plug default now triggers 'save changes?' on exit
 
 </div>
 ## Demo vs Full Version
