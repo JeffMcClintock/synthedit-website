@@ -5,6 +5,19 @@ description: Full version history of SynthEdit changes and fixes.
 
 Every release in the v1.6 line. The most recent entries are also embedded on the [installation page](./guides/installation/).
 
+**Unreleased**
+- trackpad horizontal scroll ignored in patch view
+- find CI sideload layout by Dependencies/x64 path
+- explicitly source framework MSIXes for sideload zip
+- draggable pane dividers with persisted widths
+
+**v1.6.105** — 2026-05-21
+- ship Windows installer as zip with bundled framework deps
+- fix build number in about box (win)
+- Wavetable Viewer working on mac
+- SetRegistrationInfo dropped vendor on empty serial
+- Mac Preferences orphan General-tab controls (mac)
+
 **v1.6.104** — 2026-05-20
 - snap stroke width to whole pixels
 - snap node positions to 0.25 DIP grid
@@ -14,10 +27,8 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - add Path Editor + Path Render
 - accumulate sub-quantum mouse movement during drag
 - Windows Installer now available
-- GmpiHelper::getRasterizationScale forwards to drawing host
-
-**Unreleased**
 - WT Osc - silent mip at top end so above-Nyquist pitches don't alias
+- GmpiHelper::getRasterizationScale forwards to drawing host
 
 **v1.6.103** — 2026-05-19
 - copy user resource files to vst3 bundle on export
@@ -64,6 +75,7 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - Better fine control of new sliders
 
 **v1.6.96** — 2026-05-13
+- wire up edit > move to front/back menu items
 - tweaks to new sub-controls
 - removed close icon from main view
 - mac app icon now ships in bundle (was generic placeholder)
@@ -71,7 +83,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - 'Additional Files' dialog layout fixed
 
 **v1.6.95** — 2026-05-12
-- wire up edit > move to front/back menu items
 - right-click on panel module shows context menu again
 
 **v1.6.94** — 2026-05-12
