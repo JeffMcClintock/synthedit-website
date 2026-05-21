@@ -17,13 +17,36 @@ A **free 60-day demo** is available that lets you explore the full feature set, 
 
 ### Windows
 
-<a href="https://synthedit.com/release_1_6/SynthEdit.msix" class="se-btn se-btn-primary" style="display:inline-block; margin: 0.5rem 0 1rem;">Download for Windows (.msix)</a>
+<a href="https://synthedit.com/release_1_6/SynthEdit.zip" class="se-btn se-btn-primary" style="display:inline-block; margin: 0.5rem 0 1rem;">Download for Windows (.zip)</a>
 
-*Coming soon*
+Requires Windows 10 version 1809 (build 17763) or newer, 64-bit.
 
-1. Run the `.msix` installer
-2. Follow the prompts to install
-3. Launch SynthEdit from the Start menu
+1. Save and **extract** the zip (right-click → Extract All, or drag the
+   `SynthEdit` folder out onto your Desktop). Don't try to install from
+   inside the zip — Windows can't see the dependency files until they
+   are extracted.
+2. Open the extracted `SynthEdit` folder and **double-click `Install.cmd`**.
+   A console window walks through installing the Windows App SDK runtime,
+   then SynthEdit itself. No administrator prompts; no certificate to trust.
+3. SynthEdit launches automatically when the install finishes. Next time,
+   launch it from the **Start menu** (search "Synth Edit").
+
+<details>
+<summary>Why a zip and not a single installer?</summary>
+
+SynthEdit on Windows is an MSIX package, which Windows installs natively
+once its framework dependencies are present. The dependencies (Windows
+App SDK 1.8 and the VC++ runtime) aren't on every Windows install and
+there's no single Microsoft-hosted download that satisfies the exact
+versions the app needs. The zip ships SynthEdit alongside the matching
+framework `.msix` files, and `Install.cmd` installs them in the right
+order. Once installed, SynthEdit behaves like any other Store app —
+updates, uninstall via Settings, sandboxed file access, etc.
+
+To install by hand: open PowerShell in the extracted folder and run
+`Add-AppxPackage` on each file in `Dependencies\x64\`, then on
+`SynthEdit2_*.msix`.
+</details>
 
 ### AI Assistant Support
 
@@ -186,6 +209,18 @@ Recent changes and fixes. [View full changelog](../changelog/)
 | Time limit           | 60 days  | None         |
 
 The demo is fully featured — you can build synths, save projects, and export commercial-quality VST or AU plugins for the full 60 days. After that, a license keeps everything working with no further restrictions.
+
+## Activation
+
+Licenses are handled through **Moonbase**, our new licensing partner (the previous provider, ShareIt, has closed down).
+
+To activate your copy:
+
+1. In SynthEdit, open the registration settings and click the **Activate** button
+2. This launches the Moonbase website in your browser
+3. Create a Moonbase account using the email address associated with your SynthEdit license
+
+Most existing customers' email addresses have already been imported into Moonbase, so activation should work straight away. If you hit any trouble, email [jef@synthedit.com](mailto:jef@synthedit.com) and Jeff will sort it out.
 
 ## Next Steps
 
