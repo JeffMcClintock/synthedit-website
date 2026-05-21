@@ -105,6 +105,13 @@ Recent changes and fixes. [View full changelog](../changelog/)
 
 <div class="se-changelog-scroll">
 
+**Unreleased**
+- persist Mac pane widths across launches (mac)
+
+**v1.6.107** — 2026-05-22
+- pass -ForceApplicationShutdown when installing framework deps
+- [0005] When creating pre-fab "modules" I give the container is used as the file name for the prefab
+
 **v1.6.106** — 2026-05-21
 - trackpad horizontal scroll ignored in patch view
 - track installation.mdx heading rename for changelog update
@@ -189,48 +196,6 @@ Recent changes and fixes. [View full changelog](../changelog/)
 **v1.6.94** — 2026-05-12
 - fix crash on insterting knob
 - add vector-drawn ModWheel sub-control
-
-**v1.6.93** — 2026-05-11
-- renaming pins working again
-- preserve relative positions when containerizing panel-view modules
-- observe container in EditorWindowHelper, not just the presenter
-- mac MIDI Controller assignment dialog working
-- fix LED hit testing
-- close container views when container is deleted
-
-**v1.6.92** — 2026-05-09
-- walk up from exe to find dev-tree SynthEdit2/PlugIns/
-- translate IDialogHost + IDrawingHost coords for TIDE side panes
-- three-pane editor for the TIDE in-plugin SynthEdit
-- surface screenshot failures via JSONL error field
-- screenshot v-table collision crashing Scope3 / TrigScope3
-- refresh TIDE scrollbar spec while dragging the thumb
-- prepare for npm publish (MIT, README, package.json)
-- per-override Plugin-Cache; OnNewUG guards null GetById
-- isSemFolderOverridden flag for per-override Plugin-Cache
-- initialize pluginGraphics modules on load
-- initialise TIDE scrollbar spec on first arrange
-- implement DrawingFrameBase2 createTextEdit via shared factory
-- implement DrawingFrameBase2 createFileDialog and createStockDialog
-- forward OM_DRAG_NEW_MODULE so TIDE drop-on-view works
-- force-invalidate the plugin host on OM_SHOW_PROPERTIES
-- enable wheel zoom/scroll in the TIDE editor
-- drop legacy \<home>/modules64/ overrides in CL apps
-- draw editor scrollbars in TIDE three-pane layout
-- double-click a Module Browser entry to drop the module
-- cross cursor for TIDE drag-from-browser (Win32)
-- copy factory plugins into SynthEditCL.app on build
-- compose transform + wire drag-and-drop into TIDE editor
-- auto-scroll refreshes the scrollbar spec each tick
-- auto-scroll bounds use drawingBounds.left/right, not just width
-- auto-detect SynthEditCL location, zero-config .mcp.json
-- arrange TIDE side panes with origin-rooted rects
-- also probe %ProgramFiles%\SynthEditCL\ on Windows
-- Properties Browser screenshots (--view properties, --include-properties)
-- HostedView CreateSwapPanel uses universalFactory
-- 4a build fixes â€” IDialogHost diamond, getFullDirtyRect, factory
-- --view browser renders Module Browser headlessly (Phase 1)
-- --include-browser composite render (Phase 2)
 
 </div>
 ## Demo vs Full Version
