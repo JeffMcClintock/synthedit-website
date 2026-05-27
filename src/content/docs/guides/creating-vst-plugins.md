@@ -27,6 +27,18 @@ Before exporting, you'll want to create a user interface for your plugin:
 
 SynthEdit generates a `.vst3` file that you can install in your DAW's plugin folder.
 
+## Including Audio, MIDI and SoundFont Files
+
+If your project uses external files — a sample loaded by a Wave Player, a MIDI file driving a MIDI Player, a SoundFont — those files need to ship inside the exported plugin too. SynthEdit looks for them in a folder next to your project named **`<project-name>.resources`**.
+
+For example, if your project is `MySynth.synthedit`, create a folder called `MySynth.resources` alongside it and drop your `.wav`, `.mid`, `.sf2`, etc. files in there. When you pick one of those files in a module's File Name pin, SynthEdit will find it in `.resources/` first, then fall back to your global Audio / MIDI / SoundFont folders set in Preferences.
+
+On export, the entire `.resources` folder is copied verbatim into the exported VST3 / AU bundle's Resources folder. The plugin finds the files at runtime by the same short filename, so the patch just works in any DAW on any machine.
+
+### Why a dedicated folder?
+
+Skin images and font assets get exported automatically — SynthEdit displays your GUI during export, which forces every panel control to register the images it needs. Audio, MIDI and SoundFont files can't be discovered the same way (the audio engine doesn't necessarily run during export), so putting them in `.resources` is the reliable way to make sure they travel with the plugin.
+
 ## Testing Your Plugin
 
 1. Copy the `.vst3` file to your system's VST3 folder
