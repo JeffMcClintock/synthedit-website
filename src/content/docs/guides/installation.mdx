@@ -85,6 +85,21 @@ Recent changes and fixes. [View full changelog](../changelog/)
 
 <div class="se-changelog-scroll">
 
+**Unreleased**
+- align module browser scrollbar flush with resize gripper
+
+**v1.6.112** — 2026-05-27
+- support multiple simultaneous MIDI input drivers
+- resize grippers don't extend into tab-bar
+- project-specific resources folder, parallel to .skin
+- pass -DependencyPath to main msix install
+- module browser tree-view scrolls when content overflows
+- cycle audio engine when preferences are applied
+- bundle project-resources folder into VST3/AU on export
+- better message when attempting to import incompatible prefabs
+- add rescan vsts button to preferences locations tab
+- [0217] Text Entry 4 popup has wrong alignment.
+
 **v1.6.111** — 2026-05-26
 - stage mac vst3/au into resources (github actions store build)
 - [0216] Manufacturer ID in 'Export Plugins' dialog box not saving
@@ -181,23 +196,6 @@ Recent changes and fixes. [View full changelog](../changelog/)
 - ship pre-built .icns instead of Icon Composer .icon
 - fixes for hot-reloading modules
 - Added 'USE_STAGING' flag to SDK for enabling hot-reload on module
-
-**v1.6.98** — 2026-05-14
-- un-containerise leaves modules on the panel where they were before
-- restore SynthEditIcon.icon in Copy Bundle Resources
-- properties browser layout corrupted in release mode
-- export prefab working
-- empty plugin bundles fail codesign due to build race
-- add factory_modules aggregate to gate plugin-copy steps
-- Patch Cables working again
-
-**v1.6.97** — 2026-05-13
-- updating pins on property pane propagates to audio processor
-- new Button now accepts double-clicks (without opening the container)
-- embedded subview no longer duplicates Cut/Copy/Paste in menu
-- dragging new modules working (when mouse held down)
-- New Control prebabs: Slider2, colored LEDs, Button2, Knob2
-- Better fine control of new sliders
 
 </div>
 ## Demo vs Full Version
