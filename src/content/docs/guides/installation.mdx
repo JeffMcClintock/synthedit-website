@@ -81,22 +81,27 @@ To drive SynthEdit from Claude Code, Cursor, or any other [MCP-compatible](../ai
 
 ## Recent Releases
 
-Recent changes and fixes. [View full changelog](../../changelog/)
+Recent changes and fixes. [View full changelog](../changelog/)
 
 <div class="se-changelog-scroll">
+
+**v1.6.114** — 2026-05-29
+- better alignment of text-edit on properties-browser fields
+- SynthEdit can now use SynthEdit 1.5 (build 669+) to automatically upgrade older prefab files.
+
+**Unreleased**
+- add -rescanvsts CL flag; CancellationRunner opts in
 
 **v1.6.113** — 2026-05-28
 - seed view pan/zoom before setDocument so new modules center on visible area
 - only default fonts displayed, ignoring skin setting.
 - improved compatibility with SynthEdit 1.5 font-heights
+- align module browser scrollbar flush with resize gripper
 - ViewBase::arrange centers new modules on the view's visible center
 - VU Meter prefab now calibrated to match Cubase (as +18 dB high)
-- BpmClock4 init macro; document module-adding gotchas
-
-**Unreleased**
-- align module browser scrollbar flush with resize gripper
 - SampleOscillator2 - stitch loop boundary for interpolator taps
 - SampleOscillator2 - guard against malformed SF2 loop bounds
+- BpmClock4 init macro; document module-adding gotchas
 
 **v1.6.112** — 2026-05-27
 - support multiple simultaneous MIDI input drivers
@@ -198,9 +203,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - properties pane - file browser now working for 8-bit string parameters
 - fix sliders not adapting to range of destination pin on first connection when range specified as 2 numbers (not 4)
 - fix properties browser layout
-
-**v1.6.101** — 2026-05-15
-- unregister presenter observer on destruction
 
 </div>
 ## Demo vs Full Version
