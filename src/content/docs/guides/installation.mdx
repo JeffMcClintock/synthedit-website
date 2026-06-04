@@ -81,21 +81,25 @@ To drive SynthEdit from Claude Code, Cursor, or any other [MCP-compatible](../ai
 
 ## Recent Releases
 
-Recent changes and fixes. [View full changelog](../../changelog/)
+Recent changes and fixes. [View full changelog](../changelog/)
 
 <div class="se-changelog-scroll">
 
+**v1.6.119** — 2026-06-04
+- module browser fills full height after window resize
+- install skins and prefabs under All-Users documents, not per-user
+- crash-guard 'load last file' against startup doom loop
+- add getCommonDocumentFolder() for shared skins/prefabs location
+
 **v1.6.118** — 2026-06-03
+- wire tooltip path through HostedView (WinUI3)
+- dispatch getToolTip through ViewBase to hit-tested children
 - add stereo Low Pass (6dB), use multi-output FilterBase
 - add TPT one-pole low-pass and high-pass examples
 - add TPT equaliser filters (low shelf, high shelf, bell)
 - add TPT State Variable Filter example
 - add Low Pass (6dB) filter module
 - accept multiline text-edit on Enter, Shift+Enter inserts newline (WinUI3)
-
-**Unreleased**
-- wire tooltip path through HostedView (WinUI3)
-- dispatch getToolTip through ViewBase to hit-tested children
 
 **v1.6.117** — 2026-06-02
 - fix PatchMem BLOB pin values getting scrambled.
