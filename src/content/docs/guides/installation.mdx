@@ -85,6 +85,18 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
+**v1.6.118** — 2026-06-03
+- add stereo Low Pass (6dB), use multi-output FilterBase
+- add TPT one-pole low-pass and high-pass examples
+- add TPT equaliser filters (low shelf, high shelf, bell)
+- add TPT State Variable Filter example
+- add Low Pass (6dB) filter module
+- accept multiline text-edit on Enter, Shift+Enter inserts newline (WinUI3)
+
+**Unreleased**
+- wire tooltip path through HostedView (WinUI3)
+- dispatch getToolTip through ViewBase to hit-tested children
+
 **v1.6.117** — 2026-06-02
 - fix PatchMem BLOB pin values getting scrambled.
 - All prefabs now scanned into module browser, including .seprefab
@@ -180,25 +192,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - Wavetable Viewer working on mac
 - SetRegistrationInfo dropped vendor on empty serial
 - Mac Preferences orphan General-tab controls (mac)
-
-**v1.6.104** — 2026-05-20
-- snap stroke width to whole pixels
-- snap node positions to 0.25 DIP grid
-- odd-width strokes snap to pixel centres, not origins
-- cubic closing segments + handle z-order fix
-- add Snap to Pixels pin
-- add Path Editor + Path Render
-- accumulate sub-quantum mouse movement during drag
-- Windows Installer now available
-- WT Osc - silent mip at top end so above-Nyquist pitches don't alias
-- GmpiHelper::getRasterizationScale forwards to drawing host
-
-**v1.6.103** — 2026-05-19
-- copy user resource files to vst3 bundle on export
-- Wavetable Osc now supports built-in test waveforms [\{Saw\}, \{Ramp\}, \{Sine\}, \{Triangle\}, \{Pulse15\}, \{Square\}, \{Pulse85\}, \{Noise\}, \{Silence\} ,\{DC\}]
-- WT Osc - restore grain-phase * 0.5 (drops sidebands ~57 dB)
-- WT Osc - preserve phase for asymmetric waveforms
-- Open web page example working again
 
 </div>
 ## Demo vs Full Version
