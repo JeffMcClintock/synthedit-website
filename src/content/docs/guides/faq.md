@@ -136,6 +136,15 @@ SynthEdit supports a **project-specific skin folder** that lets you keep skin re
 
 This allows you to override specific images for a single project without modifying the global skins folder.
 
+### Where are the global skins and prefabs folders located?
+
+On Windows, SynthEdit keeps its shared skins and prefabs in the **All Users** documents folder, so every account on the machine uses the same set:
+
+- Skins: `C:\Users\Public\Documents\SynthEdit Projects\skins`
+- Prefabs: `C:\Users\Public\Documents\SynthEdit Projects\Prefabs`
+
+SynthEdit creates and populates these folders on first run, and refreshes them whenever you install a new version. On macOS they live under `~/SynthEdit Projects/` instead.
+
 ### What is the `_fallback` skin folder for?
 
 The `_fallback` folder is the last location searched for skin resources. It's useful for providing default graphics that all projects can use, without cluttering the `default` skin folder (which is typically meant for user content).
