@@ -5,6 +5,18 @@ description: Full version history of SynthEdit changes and fixes.
 
 Every release in the v1.6 line. The most recent entries are also embedded on the [installation page](./guides/installation/).
 
+**v1.6.120** — 2026-06-05
+- ok/cancel dialog crash in vst3, and restore the cancel button
+- more careful to avoid updating host-controls when loading a preset
+- memory overwrite in saveNativePreset
+- loading a preset with missing parameters sets those parameters to default value (in editor)
+- fix crash when closing editor in Reaper Windows
+- crash when closing main window with a tab torn out
+- cleaner module outlines
+- Save preset bank working
+- Panel Group - clip long heading text
+- Loading a bank now loads preset categories too
+
 **v1.6.119** — 2026-06-04
 - module browser fills full height after window resize
 - install skins and prefabs under All-Users documents, not per-user
@@ -174,7 +186,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - Better fine control of new sliders
 
 **v1.6.96** — 2026-05-13
-- wire up edit > move to front/back menu items
 - tweaks to new sub-controls
 - removed close icon from main view
 - mac app icon now ships in bundle (was generic placeholder)
@@ -182,6 +193,7 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - 'Additional Files' dialog layout fixed
 
 **v1.6.95** — 2026-05-12
+- wire up edit > move to front/back menu items
 - right-click on panel module shows context menu again
 
 **v1.6.94** — 2026-05-12

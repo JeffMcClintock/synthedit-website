@@ -85,6 +85,18 @@ Recent changes and fixes. [View full changelog](../changelog/)
 
 <div class="se-changelog-scroll">
 
+**v1.6.120** — 2026-06-05
+- ok/cancel dialog crash in vst3, and restore the cancel button
+- more careful to avoid updating host-controls when loading a preset
+- memory overwrite in saveNativePreset
+- loading a preset with missing parameters sets those parameters to default value (in editor)
+- fix crash when closing editor in Reaper Windows
+- crash when closing main window with a tab torn out
+- cleaner module outlines
+- Save preset bank working
+- Panel Group - clip long heading text
+- Loading a bank now loads preset categories too
+
 **v1.6.119** — 2026-06-04
 - module browser fills full height after window resize
 - install skins and prefabs under All-Users documents, not per-user
@@ -189,13 +201,6 @@ Recent changes and fixes. [View full changelog](../changelog/)
 - find CI sideload layout by Dependencies/x64 path
 - explicitly source framework MSIXes for sideload zip
 - draggable pane dividers with persisted widths
-
-**v1.6.105** — 2026-05-21
-- ship Windows installer as zip with bundled framework deps
-- fix build number in about box (win)
-- Wavetable Viewer working on mac
-- SetRegistrationInfo dropped vendor on empty serial
-- Mac Preferences orphan General-tab controls (mac)
 
 </div>
 ## Demo vs Full Version
