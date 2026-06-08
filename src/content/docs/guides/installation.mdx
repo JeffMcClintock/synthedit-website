@@ -85,6 +85,22 @@ Recent changes and fixes. [View full changelog](../changelog/)
 
 <div class="se-changelog-scroll">
 
+**v1.6.122** — 2026-06-08
+- correct odd-order Butterworth high-pass polarity inversion
+- Impulse Response2 captures full symmetric (linear-phase) response
+
+**v1.6.121** — 2026-06-08
+- patch points on structure view draw the thick cables when connecting
+- make 'load last file' crash-guard reinstate timer actually fire
+- fix smears on moving patch-cables
+- fix hovering over patch-cable not fully redrawing
+- fix fresh patch cables drawing one end off screen
+- default IO Modules not so far apart
+- correct Sinc Filter passband gain + dedupe header guards
+
+**Unreleased**
+- recover installer from stale msix package blocking registration
+
 **v1.6.120** — 2026-06-05
 - ok/cancel dialog crash in vst3, and restore the cancel button
 - more careful to avoid updating host-controls when loading a preset
@@ -174,33 +190,6 @@ Recent changes and fixes. [View full changelog](../changelog/)
 - clicks miss bottom-half of resize-nodes at top row of panel-view
 - SynthEdit now ships as an exe installer
 - Save As picker now accepts .syntheditprefab without appending .synthedit
-
-**v1.6.108** — 2026-05-22
-- tear-out tabs via "Open in New Window" (mac)
-- sostenuto pedal (CC 66) in legacy MIDI-CV module
-- silence WMC1506 OneWay binding warnings in ParameterDetailsDialog
-- reject WinUI3 PointerPressed re-dispatch as fake double-click
-- persist Mac pane widths across launches (mac)
-- new modules 'String Concat'
-- new module 'String Concat'
-- more reliable cross-hair when insetting modules
-- fix for GUI modules with autoduplicating pins
-- embed version, copyright and website in exported plugin metadata
-- better feedback during activation (win)
-- better feedback during activation (mac)
-- Mute menu now toggles all selected modules
-- MIDI sostenuto pedal (CC 66)
-
-**v1.6.107** — 2026-05-22
-- pass -ForceApplicationShutdown when installing framework deps
-- [0005] When creating pre-fab "modules" I give the container is used as the file name for the prefab
-
-**v1.6.106** — 2026-05-21
-- trackpad horizontal scroll ignored in patch view
-- track installation.mdx heading rename for changelog update
-- find CI sideload layout by Dependencies/x64 path
-- explicitly source framework MSIXes for sideload zip
-- draggable pane dividers with persisted widths
 
 </div>
 ## Demo vs Full Version
