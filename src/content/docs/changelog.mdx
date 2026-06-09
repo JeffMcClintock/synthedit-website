@@ -5,11 +5,22 @@ description: Full version history of SynthEdit changes and fixes.
 
 Every release in the v1.6 line. The most recent entries are also embedded on the [installation page](./guides/installation/).
 
+**v1.6.123** — 2026-06-09
+- tokenize GUI command line with CommandLineToArgvW
+- register .synthedit/.syntheditprefab file association so projects open in 1.6
+- make CPM.cmake bootstrap self-healing (hash-verify + retry)
+- keep CPM.cmake in build dir so reconfigure doesn't trip its guard
+- in-place text-editor follows swap-chain panel margin
+- differentiate active tab and icon-bar shade per theme
+- add --container screenshot target; emit JSONL for load/screenshot
+- accept only hyphen-prefixed CLI flags, not Windows /slash
+
 **v1.6.122** — 2026-06-08
 - correct odd-order Butterworth high-pass polarity inversion
 - Impulse Response2 captures full symmetric (linear-phase) response
 
 **v1.6.121** — 2026-06-08
+- recover installer from stale msix package blocking registration
 - patch points on structure view draw the thick cables when connecting
 - make 'load last file' crash-guard reinstate timer actually fire
 - fix smears on moving patch-cables
@@ -17,9 +28,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - fix fresh patch cables drawing one end off screen
 - default IO Modules not so far apart
 - correct Sinc Filter passband gain + dedupe header guards
-
-**Unreleased**
-- recover installer from stale msix package blocking registration
 
 **v1.6.120** — 2026-06-05
 - ok/cancel dialog crash in vst3, and restore the cancel button
