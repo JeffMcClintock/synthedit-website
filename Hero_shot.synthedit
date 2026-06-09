@@ -295,7 +295,7 @@
                             <plug default="1" idx="2"/>
                         </plugs>
                         <structRect l="3924" r="4032" t="3708" b="3808"/>
-                        <panelRect l="472" r="480" t="32" b="40"/>
+                        <panelRect l="461" r="469" t="33" b="41"/>
                     </module>
                     <module type="SE Label" handle="1650911662">
                         <plugs>
