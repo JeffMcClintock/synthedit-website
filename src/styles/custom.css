@@ -939,3 +939,9 @@ nav.sidebar .top-level > li > details > summary {
 	.se-whatsnew { grid-template-columns: 1fr; }
 	.se-whatsnew .se-card:last-child:nth-child(odd) { grid-column: auto; }
 }
+
+/* Common Issues — smaller sub-headers so each entry reads as a compact FAQ
+   item rather than a full-size section heading (default h3 is 24–29px). */
+.se-common-issues h3 {
+	font-size: 1.25rem;
+}
