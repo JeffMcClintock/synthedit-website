@@ -21,7 +21,7 @@ If you can build it from existing modules and a [container](./containers/), do t
 ## Prerequisites
 
 - **A C++ compiler.** Visual Studio 2015 through 2022 on Windows (Community edition is fine), Xcode on macOS, or GCC. The SDK ships solution files for Visual Studio and an Xcode workspace for Mac.
-- **CMake** if you want to build cross-platform or use the cloud build service.
+- **CMake and Git** — the [Build Code Skeleton workflow](#bootstrapping-a-new-module) below builds with CMake, which also covers cross-platform builds and the cloud build service.
 - **A licensed copy of SynthEdit** installed locally — you'll be loading your module into it constantly while developing.
 - **Working C++ knowledge.** The SDK is small and clean, but it's still C++ — pointers, headers, templates, the usual.
 
@@ -60,11 +60,79 @@ See [Signal Types & Levels](./signal-types/) for a refresher on how those types 
 
 Rather than write XML and C++ from scratch, let SynthEdit do it for you:
 
-1. In the editor, right-click any existing module.
-2. Pick **More → Build Code Skeleton**.
-3. SynthEdit writes a starter project into `Documents\new_module\` containing the XML, a header, a `.cpp` file, and (for GUI modules) a GUI class — already wired up and compiling.
+1. In the editor, right-click the existing module that most resembles what you want to build — the skeleton copies its pin list, so right-clicking an **Inverter** gives you a one-audio-in, one-audio-out starter ready to repurpose.
+2. Pick **More → Build Code Skeleton...**
+3. Type a name for your module and click **Build**.
 
-From there, you rename pins, add pins, fill in the processing function, and rebuild. The skeleton is the fastest path from "I have an idea" to "I'm changing C++ and hearing the result."
+<img src="../../images/guides/sdk/02-build-skeleton-menu.png" alt="The structure-view right-click menu with the More submenu open; Build Code Skeleton... is the bottom item" />
+
+<img src="../../images/guides/sdk/03-skeleton-name-dialog.png" alt="The Build Code Skeleton dialog with a Module name field and Build and Cancel buttons" />
+
+SynthEdit writes a starter project into `Documents\new_module\` and opens the folder. For a module named *Inverter2* it looks like this:
+
+```
+Documents\new_module\
+│   CMakeLists.txt        ← master build recipe — point CMake at THIS folder
+│
+└───Inverter2\
+        CMakeLists.txt    ← the module's own file list (not buildable by itself)
+        Inverter2.cpp     ← pins, processing loop, and module XML, ready to edit
+        Inverter2.htm     ← the module's help page
+```
+
+(GUI modules also get an `Inverter2Gui.cpp`.) The `.cpp` already compiles and already declares the same pins as the module you right-clicked. From here, development is: rename pins, add pins, fill in the processing loop, rebuild.
+
+### What CMake is
+
+The skeleton builds with **CMake**, so here's the one-paragraph version. CMake is not a compiler and not an IDE — it's a *project generator*. It reads a recipe file named `CMakeLists.txt` and writes out a normal Visual Studio solution (or Xcode project on Mac) with all the SDK paths, compiler settings, and source files filled in. You run CMake once; after that you work in Visual Studio as usual.
+
+You need three things, all free:
+
+- **CMake 3.30 or newer** — [cmake.org/download](https://cmake.org/download/)
+- **Git** — [git-scm.com](https://git-scm.com/) (CMake uses it behind the scenes)
+- **An internet connection for the first run** — the recipe downloads the SynthEdit and GMPI SDKs from GitHub automatically. For this workflow you don't need to clone or install any SDK by hand.
+
+### Point CMake at the parent folder — not the module's folder
+
+The skeleton contains **two** `CMakeLists.txt` files, and mixing them up is the most common reason a first build fails:
+
+- `new_module\CMakeLists.txt` — the **master recipe**. It downloads the two SDKs, sets up compiler flags and include paths, then pulls in every module subfolder. **This is the folder you give to CMake.**
+- `new_module\Inverter2\CMakeLists.txt` — the module's own ingredient list, just a few lines naming the source files. It is *not* a standalone project; it only means something as part of the parent.
+
+So in CMake:
+
+1. **Where is the source code:** `…\Documents\new_module` — the parent folder.
+2. **Where to build the binaries:** the same path plus `\build`.
+3. Press **Configure** and accept the Visual Studio version it offers. The first run takes a minute or two while the SDKs download, and finishes with *Configuring done*.
+4. Press **Generate**, then **Open Project** to launch Visual Studio.
+
+<img src="../../images/guides/sdk/01-cmake-gui-parent-folder.png" alt="cmake-gui with 'Where is the source code' set to Documents/new_module — the parent folder, not the module's own subfolder — 'Where to build the binaries' set to new_module/build, and the log pane showing Configuring done and Generating done" />
+
+Prefer the command line? From inside the `new_module` folder:
+
+```
+cmake -B build
+cmake --build build --config Release
+```
+
+> **Seeing `Unknown CMake command "gmpi_plugin"`?**
+> ```
+> CMake Error at CMakeLists.txt:5 (gmpi_plugin):
+>   Unknown CMake command "gmpi_plugin".
+> ```
+> This is exactly what happens when CMake is pointed at the module's subfolder (`new_module\Inverter2`) instead of the parent (`new_module`). The `gmpi_plugin` command is defined by the parent recipe, so the module's file alone means nothing to CMake. Set **Where is the source code** to the parent folder, choose **File → Delete Cache** in cmake-gui (or delete the half-made build folder), and Configure again.
+
+### Build it, load it
+
+Visual Studio opens a solution named **MyModules** — your module plus two CMake housekeeping targets (`ALL_BUILD`, `ZERO_CHECK`) you can ignore. Build it (set the toolbar dropdown to **Release**, then **Build Solution**) and the compiled module appears at:
+
+```
+new_module\build\Inverter2\Release\Inverter2.gmpi
+```
+
+Copy that file into `C:\Program Files\Common Files\SynthEdit\modules`, restart SynthEdit, and your module shows up in the **Insert** menu under the category its XML declares. For a tighter loop, drop builds into the staging folder instead and SynthEdit hot-reloads them while it's running — see [The live-coding loop](#the-live-coding-loop). Or tick **SE_LOCAL_BUILD** in CMake's values list and re-Generate, and every build copies itself into the modules folder automatically (if Windows blocks the copy, run Visual Studio as administrator).
+
+One skeleton, many modules: each **Build Code Skeleton** run adds a new subfolder, but the master `CMakeLists.txt` is written only once. When you add a second module, append a matching line at the bottom of `new_module\CMakeLists.txt` yourself — `add_subdirectory("MyFilter")` — and Configure again.
 
 ## The live-coding loop
 
