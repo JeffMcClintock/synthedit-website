@@ -5,7 +5,18 @@ description: Full version history of SynthEdit changes and fixes.
 
 Every release in the v1.6 line. The most recent entries are also embedded on the [installation page](./guides/installation/).
 
+- iir1-based Butterworth filters (GMPI); deprecate DspFilters gen-2
+- Chebyshev I/II and RBJ filters (iir1/GMPI)
+
+**v1.6.125** — 2026-06-10
+- standardize the default/reset preset name on "Init"
+- include xmlpreset in preset scan and cross-format load
+
+**Unreleased**
+- scan user and global preset folders, both VST3 and AU formats
+
 **v1.6.124** — 2026-06-09
+- save presets in both VST3 and AU formats
 - info notifications consistently show as toast, not intermittently as a dialog
 - frame the icon bar with a sunken 1px bevel
 - debug builds tolerate missing Windows vst3 template
