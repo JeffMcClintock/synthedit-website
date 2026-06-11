@@ -103,15 +103,28 @@ Recent changes and fixes. [View full changelog](../changelog/)
 
 <div class="se-changelog-scroll">
 
+**Unreleased**
+- give ExportFormatType an explicit underlying type (enables forward declaration)
+
+**v1.6.127** — 2026-06-11
+- suppress hover-scopes and connector highlights while dragging a module
+- forward-declare ExportFormatType with explicit underlying type (fixes macOS clang build)
+
+**v1.6.126** — 2026-06-11
+- selected module wins hit-test ties with unselected modules in front (figma-style)
+- prevent use-after-free crash when loading the SE SynthEdit SEM
+- mouse-wheel support for Vector Ring/Knob/Bar GUI controls
+- installer no longer launches the old Store SynthEdit 1.5 after install
 - iir1-based Butterworth filters (GMPI); deprecate DspFilters gen-2
+- fix 'build code skeleton' for GUI modules
 - Chebyshev I/II and RBJ filters (iir1/GMPI)
+- Bitmap holds a strong context ref for reliable device-loss detection
+- 'export plugin' now ensures that controls have a parameter index assigned (to give consistent automation behaviour in DAW)
 
 **v1.6.125** — 2026-06-10
 - standardize the default/reset preset name on "Init"
-- include xmlpreset in preset scan and cross-format load
-
-**Unreleased**
 - scan user and global preset folders, both VST3 and AU formats
+- include xmlpreset in preset scan and cross-format load
 
 **v1.6.124** — 2026-06-09
 - save presets in both VST3 and AU formats
@@ -186,17 +199,6 @@ Recent changes and fixes. [View full changelog](../changelog/)
 
 **v1.6.115** — 2026-05-29
 - add -rescanvsts CL flag; CancellationRunner opts in
-
-**v1.6.113** — 2026-05-28
-- seed view pan/zoom before setDocument so new modules center on visible area
-- only default fonts displayed, ignoring skin setting.
-- improved compatibility with SynthEdit 1.5 font-heights
-- align module browser scrollbar flush with resize gripper
-- ViewBase::arrange centers new modules on the view's visible center
-- VU Meter prefab now calibrated to match Cubase (as +18 dB high)
-- SampleOscillator2 - stitch loop boundary for interpolator taps
-- SampleOscillator2 - guard against malformed SF2 loop bounds
-- BpmClock4 init macro; document module-adding gotchas
 
 </div>
 ## Demo vs Full Version

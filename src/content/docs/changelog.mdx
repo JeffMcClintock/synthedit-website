@@ -5,15 +5,28 @@ description: Full version history of SynthEdit changes and fixes.
 
 Every release in the v1.6 line. The most recent entries are also embedded on the [installation page](./guides/installation/).
 
+**Unreleased**
+- give ExportFormatType an explicit underlying type (enables forward declaration)
+
+**v1.6.127** — 2026-06-11
+- suppress hover-scopes and connector highlights while dragging a module
+- forward-declare ExportFormatType with explicit underlying type (fixes macOS clang build)
+
+**v1.6.126** — 2026-06-11
+- selected module wins hit-test ties with unselected modules in front (figma-style)
+- prevent use-after-free crash when loading the SE SynthEdit SEM
+- mouse-wheel support for Vector Ring/Knob/Bar GUI controls
+- installer no longer launches the old Store SynthEdit 1.5 after install
 - iir1-based Butterworth filters (GMPI); deprecate DspFilters gen-2
+- fix 'build code skeleton' for GUI modules
 - Chebyshev I/II and RBJ filters (iir1/GMPI)
+- Bitmap holds a strong context ref for reliable device-loss detection
+- 'export plugin' now ensures that controls have a parameter index assigned (to give consistent automation behaviour in DAW)
 
 **v1.6.125** — 2026-06-10
 - standardize the default/reset preset name on "Init"
-- include xmlpreset in preset scan and cross-format load
-
-**Unreleased**
 - scan user and global preset folders, both VST3 and AU formats
+- include xmlpreset in preset scan and cross-format load
 
 **v1.6.124** — 2026-06-09
 - save presets in both VST3 and AU formats
