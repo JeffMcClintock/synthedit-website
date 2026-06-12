@@ -5,7 +5,7 @@ template: splash
 ---
 
 import { Image } from 'astro:assets';
-import Hero from '../../assets/hero.gif';
+import Hero from '../../assets/StructureView.png';
 import Screenshot1 from '../../assets/Screenshot1.png';
 import Screenshot2 from '../../assets/Screenshot2.png';
 
@@ -14,15 +14,14 @@ import Screenshot2 from '../../assets/Screenshot2.png';
     ============================================================ */}
 <section class="se-hero">
   <div class="se-hero-grid">
-    <div>
+    <div class="se-hero-copy">
       <div class="se-hero-meta">
         <span class="se-led"></span>
         <span>v1.6 — Now on macOS &amp; Windows</span>
       </div>
       <h1>Build your own<br/><span class="se-it">audio plugins</span></h1>
-      <p class="se-hero-tag">
-        A visual modular environment for designing professional VST3 and AU instruments and effects. Drag modules. Connect cables. Ship plugins.
-      </p>
+      {/* Keep text on one line inside styled <p> tags: MDX wraps multi-line text in a nested <p>, which the browser auto-closes, leaving the styled element empty */}
+      <p class="se-hero-tag">A visual modular environment for designing professional VST3 and AU instruments and effects. Drag modules. Connect cables. Ship plugins.</p>
       <div class="se-hero-actions">
         <a href="guides/installation/" class="se-btn se-btn-primary">Download Free Demo <span class="se-arrow">→</span></a>
         <a href="guides/introduction/" class="se-btn se-btn-ghost">Read the Docs</a>
@@ -34,7 +33,7 @@ import Screenshot2 from '../../assets/Screenshot2.png';
       </div>
     </div>
 
-    <img class="se-hero-shot" src={Hero.src} width={Hero.width} height={Hero.height} alt="SynthEdit screenshot showing a modular synthesizer patch with oscillators, filter and output modules" />
+    <img class="se-hero-shot" src={Hero.src} width={Hero.width} height={Hero.height} alt="SynthEdit structure view — a modular synthesizer patch with oscillators, filter, MIDI keyboard and output modules connected by signal cables" />
   </div>
 </section>
 
@@ -101,11 +100,7 @@ import Screenshot2 from '../../assets/Screenshot2.png';
     <div>
       <div class="se-feature-num">— 01 / Visual Patching</div>
       <h3 class="se-feature-title">Build synths by connecting <span class="se-it">modules.</span></h3>
-      <p class="se-feature-body">
-        Drag oscillators, filters, envelopes and effects onto the canvas.
-        Connect them with virtual patch cables. Hear the results instantly.
-        No programming knowledge needed — just curiosity.
-      </p>
+      <p class="se-feature-body">Drag oscillators, filters, envelopes and effects onto the canvas. Connect them with virtual patch cables. Hear the results instantly. No programming knowledge needed — just curiosity.</p>
       <a href="guides/first-synth/" class="se-feature-link">Learn the basics →</a>
     </div>
   </div>
@@ -121,11 +116,7 @@ import Screenshot2 from '../../assets/Screenshot2.png';
     <div>
       <div class="se-feature-num">— 02 / Professional Output</div>
       <h3 class="se-feature-title">Export as VST3 or AU <span class="se-it">plugins.</span></h3>
-      <p class="se-feature-body">
-        Turn your patches into standalone VST3 or AU plugins. Design custom interfaces
-        with knobs, sliders, switches and bitmap graphics. Your plugins work in
-        every major DAW on Windows and macOS.
-      </p>
+      <p class="se-feature-body">Turn your patches into standalone VST3 or AU plugins. Design custom interfaces with knobs, sliders, switches and bitmap graphics. Your plugins work in every major DAW on Windows and macOS.</p>
       <a href="guides/creating-vst-plugins/" class="se-feature-link">See export options →</a>
     </div>
   </div>

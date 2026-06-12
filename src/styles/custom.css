@@ -226,10 +226,14 @@ html:not([data-has-sidebar]) main > div:first-child { display: none; }
 	position: relative;
 	z-index: 1;
 	display: grid;
-	grid-template-columns: 1fr 1.05fr;
-	gap: 80px;
+	grid-template-columns: 1fr;
+	gap: 48px;
 	align-items: center;
 }
+.se-hero-copy { text-align: center; }
+.se-hero-copy .se-hero-tag { margin-inline: auto; max-width: 36em; }
+.se-hero-copy .se-hero-actions,
+.se-hero-copy .se-hero-fineprint { justify-content: center; }
 .se-hero-meta {
 	display: inline-flex;
 	align-items: center;
@@ -250,6 +254,7 @@ html:not([data-has-sidebar]) main > div:first-child { display: none; }
 	font-size: clamp(54px, 6.5vw, 88px);
 	line-height: 0.95;
 	letter-spacing: -0.04em;
+	margin-top: 0; /* Starlight's content styles add 1.5em (~130px) otherwise */
 	margin-bottom: 32px;
 	color: var(--se-fg);
 }
