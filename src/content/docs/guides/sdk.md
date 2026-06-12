@@ -187,6 +187,36 @@ setSleep(!active);
 
 A reverb signals `streaming = true` while its tail is decaying, then `false` once the level drops below silence, and SynthEdit reclaims the CPU.
 
+## Querying host services
+
+Pins connect a module to the rest of the patch; **host services** connect it to SynthEdit itself. Past the always-present basics — block size, sample rate — the host offers optional capabilities through small, independently-versioned interfaces. You ask for one by GUID: if the host supports it you get a pointer back, otherwise you get nothing and carry on. New services slot in this way without breaking existing modules or forcing a recompile.
+
+The host arrives in your processor's `open()`, and the base class keeps it in its `host` member. Request an extension with `as<>()`, which runs the GUID query and hands back a reference-counted pointer (or null):
+
+```cpp
+#include "Extensions/ElapsedTime.h"
+
+auto elapsedTime = host.as<synthedit::IElapsedTime>();
+if (elapsedTime) {
+    int64_t samples = elapsedTime->getElapsedTime();
+    // ...
+}
+```
+
+Always check the result before using it — not every host build implements every extension.
+
+### ElapsedTime — the render clock
+
+`synthedit::IElapsedTime` answers one question: how many samples has the engine rendered so far? `getElapsedTime()` returns that count as an `int64_t`, measured from when rendering began. Inside `process()` it reads as the sample position at the *start* of the current block — add your block offset if you need a finer position.
+
+Two things make it more useful than a counter of your own. First, **it survives sleep**: when a module [sleeps](#letting-unused-modules-sleep) to save CPU and later wakes, the host resyncs its clock to the present, so a free-running LFO resumes at the correct phase instead of drifting by however long it dozed. Second, **it stays in your module's own sample-rate domain**, so dividing by the host sample rate always yields elapsed seconds — even inside an oversampled container:
+
+```cpp
+double seconds = elapsedTime->getElapsedTime() / host->getSampleRate();
+```
+
+Reach for it when you need a monotonic, deterministic timeline: tempo-free timing, age-based modulation, or any effect whose state should follow absolute render position rather than the order events happen to arrive.
+
 ## DSP-to-GUI communication
 
 The recommended pattern is a **parameter with an output pin on the DSP side and an input pin on the GUI side**, both referencing the same `parameterId` in the XML. Write to the DSP-side pin like you would any output:
