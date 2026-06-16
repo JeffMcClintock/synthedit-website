@@ -103,6 +103,28 @@ Recent changes and fixes. [View full changelog](../changelog/)
 
 <div class="se-changelog-scroll">
 
+**Unreleased**
+- wire gmpi breadcrumb bar into the macOS editor (SynthEditBridge)
+
+**v1.6.132** — 2026-06-16
+- render breadcrumb bar with gmpi in editor swapchain (replaces XAML bar)
+- add gmpi BreadcrumbBar + TopStripLayout (cross-platform breadcrumb bar)
+- Slider/HSlider gain Slot Color + Tick Color pins and adaptive ticks
+
+**v1.6.131** — 2026-06-16
+- torn-out tab window is a secondary view, not a peer app
+- tint panel-view tab labels light blue
+- replace drag tab tear-out with right-click move/return-to-window
+- middle-button drag to pan document views on macOS
+- knobs respond to horizontal as well as vertical mouse drag
+- emit panel rect for sdk3/gmpi controls in gui-json export
+- declare graphicsApi on SE Button so its panel rect exports
+- allow mouse-wheel pan/zoom while dragging a module
+
+**v1.6.130** — 2026-06-15
+- remove non-functional add-tab (+) button from tab bars
+- add breadcrumb navigation bar with container thumbnails
+
 **v1.6.128** — 2026-06-12
 - rounded U-turns on doubled-back connector lines
 - middle-button drag to pan document views
@@ -113,11 +135,11 @@ Recent changes and fixes. [View full changelog](../changelog/)
 **Unreleased**
 - ug_gmpi implements IElapsedTime extension (elapsed render time in samples)
 - three-way connector line style (Default / Curvey / Straight)
-- give ExportFormatType an explicit underlying type (enables forward declaration)
 - close tabs reliably via Ctrl+W and middle-click
 
 **v1.6.127** — 2026-06-11
 - suppress hover-scopes and connector highlights while dragging a module
+- give ExportFormatType an explicit underlying type (enables forward declaration)
 - forward-declare ExportFormatType with explicit underlying type (fixes macOS clang build)
 
 **v1.6.126** — 2026-06-11
@@ -184,28 +206,6 @@ Recent changes and fixes. [View full changelog](../changelog/)
 - install skins and prefabs under All-Users documents, not per-user
 - crash-guard 'load last file' against startup doom loop
 - add getCommonDocumentFolder() for shared skins/prefabs location
-
-**v1.6.118** — 2026-06-03
-- wire tooltip path through HostedView (WinUI3)
-- dispatch getToolTip through ViewBase to hit-tested children
-- add stereo Low Pass (6dB), use multi-output FilterBase
-- add TPT one-pole low-pass and high-pass examples
-- add TPT equaliser filters (low shelf, high shelf, bell)
-- add TPT State Variable Filter example
-- add Low Pass (6dB) filter module
-- accept multiline text-edit on Enter, Shift+Enter inserts newline (WinUI3)
-
-**v1.6.117** — 2026-06-02
-- fix PatchMem BLOB pin values getting scrambled.
-- All prefabs now scanned into module browser, including .seprefab
-
-**v1.6.116** — 2026-06-01
-- vector Button - removed unused line-color pin
-- reset properties-browser scroll on module change
-
-**v1.6.114** — 2026-05-29
-- better alignment of text-edit on properties-browser fields
-- SynthEdit can now use SynthEdit 1.5 (build 669+) to automatically upgrade older prefab files.
 
 </div>
 ## Demo vs Full Version
