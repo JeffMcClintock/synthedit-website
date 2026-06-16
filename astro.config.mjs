@@ -36,6 +36,7 @@ export default defineConfig({
 						{ label: 'Panel Design', slug: 'guides/panel-design' },
 						{ label: 'MIDI Automation', slug: 'guides/midi-automation' },
 						{ label: 'Creating VST Plugins', slug: 'guides/creating-vst-plugins' },
+						{ label: 'Distributing with GitHub Actions', slug: 'guides/distributing-with-github-actions' },
 						{ label: 'C++ SDK', slug: 'guides/sdk' },
 						{ label: 'Using SynthEdit with a DAW', slug: 'guides/using-with-daw' },
 						{ label: 'Presets', slug: 'guides/presets' },
