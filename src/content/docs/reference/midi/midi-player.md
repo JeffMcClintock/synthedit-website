@@ -33,4 +33,4 @@ The **MIDI Player** loads and plays standard MIDI files (.mid) with high-resolut
 
 ## Usage
 
-The MIDI Player is recommended for [Rendering to Disk](/guides/rendering-to-disk/) workflows, providing rock-solid timing without any real-time latency issues.
+The MIDI Player is recommended for [Rendering to Disk](../../../guides/rendering-to-disk/) workflows, providing rock-solid timing without any real-time latency issues.

@@ -38,4 +38,4 @@ The **SV Filter** (State Variable Filter) is a versatile 2-pole filter providing
 
 All four outputs are available simultaneously — you can use different filter types from the same module without duplicating it. Connect the desired output to the next module in your signal chain.
 
-For a heavier, more "analog" filter sound, see the [Moog Filter](/reference/filters/moog-filter/).
+For a heavier, more "analog" filter sound, see the [Moog Filter](../../../reference/filters/moog-filter/).

@@ -33,5 +33,5 @@ SynthEdit uses a **modular patching** approach:
 
 ## Next Steps
 
-- [Install SynthEdit](/guides/installation/) to get started
-- [Build your first synth](/guides/first-synth/) with a step-by-step tutorial
+- [Install SynthEdit](../installation/) to get started
+- [Build your first synth](../first-synth/) with a step-by-step tutorial

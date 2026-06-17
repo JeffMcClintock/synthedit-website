@@ -38,4 +38,4 @@ At zero modulation depth, the output is a pure sine wave. Increasing modulation 
 
 The module is sensitive to sudden modulation changes — filter abrupt control signals to avoid clicks.
 
-See the [Phase Distortion Synthesis guide](/guides/phase-distortion-synthesis/) for detailed techniques.
+See the [Phase Distortion Synthesis guide](../../../guides/phase-distortion-synthesis/) for detailed techniques.

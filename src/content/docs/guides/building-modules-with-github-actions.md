@@ -21,10 +21,10 @@ You don't need a build server, and you **don't need a Mac** — GitHub provides 
 and CMake downloads the SDK for you. Everything below is a working example you can fork:
 **[github.com/JeffMcClintock/synthedit-module-example](https://github.com/JeffMcClintock/synthedit-module-example)**.
 
-> This is the module counterpart to [Distributing plugins with GitHub Actions](/guides/distributing-with-github-actions/).
+> This is the module counterpart to [Distributing plugins with GitHub Actions](../distributing-with-github-actions/).
 > That one exports a whole `.synthedit` *project* as a VST3; this one compiles a C++
 > *module* that other patches (and that exporter) can use. If you're new to writing modules,
-> read the [C++ SDK guide](/guides/sdk/) first.
+> read the [C++ SDK guide](../sdk/) first.
 
 ## What you'll need
 

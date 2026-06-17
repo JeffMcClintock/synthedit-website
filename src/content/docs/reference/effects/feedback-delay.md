@@ -28,4 +28,4 @@ The **Feedback Delay** module allows backward signal routing (feedback loops) th
 
 Use this module only when you need to create a feedback path between separate modules. The standard Delay module handles its own internal feedback without needing this module.
 
-See the [Feedback Paths guide](/guides/feedback-paths/) for details.
+See the [Feedback Paths guide](../../../guides/feedback-paths/) for details.

@@ -59,4 +59,4 @@ Plays back the sample at a given pitch.
 - **Velocity does not control volume by itself** — for amplitude shaping, follow the oscillator with a [VCA](../../envelopes/vca/) driven by an [ADSR](../../envelopes/adsr/) envelope.
 - **Bank** and **Patch** are only meaningful for SoundFont 2 files; for a single WAV/AIFF, leave them at their defaults.
 - Multiple Sample Oscillator2 modules can read from a single Sample Loader2 by sharing the Sample ID output — useful for polyphonic sample playback without re-loading the file.
-- For VST distribution, place sample files alongside the plugin and use relative paths in the Filename pin. See the [Creating VST Plugins guide](/guides/creating-vst-plugins/) for details.
+- For VST distribution, place sample files alongside the plugin and use relative paths in the Filename pin. See the [Creating VST Plugins guide](../../../guides/creating-vst-plugins/) for details.

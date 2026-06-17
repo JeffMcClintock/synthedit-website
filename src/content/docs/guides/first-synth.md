@@ -156,8 +156,8 @@ You now know how to:
 
 ## Next steps
 
-- Read [Working with Modules](/guides/modules/) for more on inserting, connecting, and configuring modules
-- Learn about [Signal Types & Levels](/guides/signal-types/) to understand SynthEdit's voltage conventions
-- Add an [envelope generator](/guides/modules/) so the filter sweep happens automatically with each note
-- When you're ready to play your synth from a MIDI keyboard, see [MIDI Automation](/guides/midi-automation/)
-- Once it sounds the way you want, [export it as a VST plugin](/guides/creating-vst-plugins/)
+- Read [Working with Modules](../modules/) for more on inserting, connecting, and configuring modules
+- Learn about [Signal Types & Levels](../signal-types/) to understand SynthEdit's voltage conventions
+- Add an [envelope generator](../modules/) so the filter sweep happens automatically with each note
+- When you're ready to play your synth from a MIDI keyboard, see [MIDI Automation](../midi-automation/)
+- Once it sounds the way you want, [export it as a VST plugin](../creating-vst-plugins/)

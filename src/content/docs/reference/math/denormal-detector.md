@@ -25,4 +25,4 @@ The **Denormal Detector** indicates whether denormal numbers are present in the 
 
 ## Usage
 
-Use this as a diagnostic tool to find modules that produce denormals, then apply a [Denormal Cleaner](/reference/math/denormal-cleaner/) at the source.
+Use this as a diagnostic tool to find modules that produce denormals, then apply a [Denormal Cleaner](../../../reference/math/denormal-cleaner/) at the source.

@@ -9,7 +9,7 @@ description: Records audio output to WAV files.
 <!-- module-screenshot:end -->
 
 
-The **Wave Recorder** records audio to WAV files on disk. It supports recording multiple tracks simultaneously and is essential for [Rendering to Disk](/guides/rendering-to-disk/).
+The **Wave Recorder** records audio to WAV files on disk. It supports recording multiple tracks simultaneously and is essential for [Rendering to Disk](../../../guides/rendering-to-disk/).
 
 ## Inputs
 

@@ -27,4 +27,4 @@ The **Denormal Cleaner** removes denormal numbers (extremely small floating-poin
 
 SynthEdit's built-in filters and delay modules already include denormal cleaning. This module is mainly needed when using third-party or custom modules that don't handle denormals internally.
 
-Use the [Denormal Detector](/reference/math/denormal-detector/) to identify where denormals occur in your patch.
+Use the [Denormal Detector](../../../reference/math/denormal-detector/) to identify where denormals occur in your patch.

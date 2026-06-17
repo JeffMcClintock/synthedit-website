@@ -56,7 +56,7 @@ You own full rights to the plugins you create with the licensed version of Synth
 
 No royalties or additional licensing fees apply.
 
-> **Automate your releases** — rather than exporting and packaging by hand each time, you can have GitHub Actions export the plugin and build Windows + macOS installers automatically whenever you push a version tag. See [Distributing plugins with GitHub Actions](/guides/distributing-with-github-actions/).
+> **Automate your releases** — rather than exporting and packaging by hand each time, you can have GitHub Actions export the plugin and build Windows + macOS installers automatically whenever you push a version tag. See [Distributing plugins with GitHub Actions](../distributing-with-github-actions/).
 
 ## Tips for Professional Plugins
 

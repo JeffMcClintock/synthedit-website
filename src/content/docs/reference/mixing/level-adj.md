@@ -26,4 +26,4 @@ The **Level Adj** multiplies two input signals with normalization, similar to th
 
 ## Usage Notes
 
-For amplitude envelopes (shaping note volume), use the [VCA](/reference/envelopes/vca/) instead — it's optimized for sleep mode detection and provides better CPU efficiency.
+For amplitude envelopes (shaping note volume), use the [VCA](../../../reference/envelopes/vca/) instead — it's optimized for sleep mode detection and provides better CPU efficiency.

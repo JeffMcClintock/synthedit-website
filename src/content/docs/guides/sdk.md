@@ -16,7 +16,7 @@ Reach for the SDK when:
 - **You want a custom GUI widget** — a waveform display, an XY pad with non-trivial drawing, a meter with a particular ballistic.
 - **Performance matters and a container of small modules is too slow** — a hand-rolled SEM avoids the per-module overhead.
 
-If you can build it from existing modules and a [container](./containers/), do that first — it's faster to iterate and works without recompiling. The SDK is for the cases where containers run out of road.
+If you can build it from existing modules and a [container](../containers/), do that first — it's faster to iterate and works without recompiling. The SDK is for the cases where containers run out of road.
 
 ## Prerequisites
 
@@ -54,7 +54,7 @@ Each module also has a small **XML definition** describing it — its unique ID,
 
 Pins are typed. The SDK supports `float`, `int`, `bool`, `text`, `enum`, `blob` and `midi` pin types, each with input or output direction, and each running at either **audio rate** (one value per sample, streaming) or **event rate** (a value when it changes). Audio cables in the editor map to streaming `float` pins; the green "list" cables map to `enum` pins; the yellow MIDI cables map to `midi` pins.
 
-See [Signal Types & Levels](./signal-types/) for a refresher on how those types appear in the editor.
+See [Signal Types & Levels](../signal-types/) for a refresher on how those types appear in the editor.
 
 ## Bootstrapping a new module
 
@@ -255,7 +255,7 @@ You don't need to own a Mac to ship Mac builds. The **Community Modules build se
 
 If you do have a Mac, the SDK's Xcode workspace builds Universal Binaries (Intel + Apple Silicon) directly.
 
-Better still, automate it: **[Building modules with GitHub Actions](./building-modules-with-github-actions/)** compiles your module on both Windows and macOS and publishes installers on every version tag — no Mac, and no build server, required.
+Better still, automate it: **[Building modules with GitHub Actions](../building-modules-with-github-actions/)** compiles your module on both Windows and macOS and publishes installers on every version tag — no Mac, and no build server, required.
 
 ## Distribution and licensing
 
@@ -272,6 +272,6 @@ The SDK's BSD license also lets you fork it, modify the headers, and ship the mo
 - **The SDK's example modules** — `examples/` in the [SynthEdit_SDK repo](https://github.com/JeffMcClintock/SynthEdit_SDK). Start by reading a small one (Gain), then a medium one (an oscillator), then a GUI module.
 - **The SEM v3 reference documentation** at [synthedit.com/software-development-kit](https://synthedit.com/software-development-kit/) — the full API surface, every XML attribute, every pin flag.
 - **The [mailing list](https://groups.io/g/synthedit)** — active community of module developers. Beginner questions are welcome; the people answering have shipped commercial plugins built on this SDK for over twenty years.
-- **The [FAQ section on SDK & Custom Modules](./faq/#sdk--custom-modules)** for short answers to common questions.
+- **The [FAQ section on SDK & Custom Modules](../faq/#sdk--custom-modules)** for short answers to common questions.
 
 For ideas, the [Music DSP archive](https://www.musicdsp.org/) is a goldmine of public-domain algorithms — many existing community modules started life as a Music DSP snippet pasted into a fresh SDK skeleton.

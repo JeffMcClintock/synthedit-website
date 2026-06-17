@@ -34,4 +34,4 @@ The **Patch Automator** makes all controls in a container automatable via MIDI c
 
 - Do **not** connect controls or Patch Memory modules back into the Patch Automator's MIDI input — this creates a feedback loop
 - Exception: a List Entry connected to the Channel pin is safe
-- See the [MIDI Automation guide](/guides/midi-automation/) for setup details
+- See the [MIDI Automation guide](../../../guides/midi-automation/) for setup details

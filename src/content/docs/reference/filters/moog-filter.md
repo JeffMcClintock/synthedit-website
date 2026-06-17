@@ -35,4 +35,4 @@ The **Moog Filter** is a 4-pole (24 dB/octave) low-pass filter with a built-in o
 
 The Moog Filter excels at bass sounds and leads where a thick, warm character is desired. The built-in overdrive adds saturation as input levels increase, contributing to the distinctive analog sound.
 
-For lower CPU usage or when you need multiple filter types simultaneously, use the [SV Filter](/reference/filters/sv-filter/) instead.
+For lower CPU usage or when you need multiple filter types simultaneously, use the [SV Filter](../../../reference/filters/sv-filter/) instead.

@@ -33,4 +33,4 @@ The **MIDI to CV** module converts incoming MIDI note data into control voltages
 
 This is an essential module for any playable synthesizer. Place it inside the container that holds your voice modules — it controls polyphonic voice allocation.
 
-See the [Polyphony guide](/guides/polyphony/) for details on voice management.
+See the [Polyphony guide](../../../guides/polyphony/) for details on voice management.

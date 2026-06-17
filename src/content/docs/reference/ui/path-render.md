@@ -9,7 +9,7 @@ description: Renders an SVG path string with configurable fill, stroke colour an
 <!-- module-screenshot:end -->
 
 
-The **Path Render** module takes an SVG-style path string and draws it on the panel using the fill colour, stroke colour, and stroke width you supply. It is purely a renderer — there is no editing. Wire it to a [Path Editor](./path-editor/) or any other source of a path string (a [Patch Memory](../../../guides/midi-automation/), a Text Entry, a List Entry, etc.) to display the shape.
+The **Path Render** module takes an SVG-style path string and draws it on the panel using the fill colour, stroke colour, and stroke width you supply. It is purely a renderer — there is no editing. Wire it to a [Path Editor](../path-editor/) or any other source of a path string (a [Patch Memory](../../../guides/midi-automation/), a Text Entry, a List Entry, etc.) to display the shape.
 
 Path Render and Path Editor share the same `d`-string format, so the same path can be edited in one and displayed in the other.
 

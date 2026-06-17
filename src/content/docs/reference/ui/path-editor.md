@@ -48,11 +48,11 @@ For example, a simple triangle is:
 M 20 20 L 80 20 L 50 80 Z
 ```
 
-Because **Path** is a plain text pin, you can also pipe an SVG path in from another module — for instance from a [Text Entry](./text-entry/) — or read the current drawing out of the **Path** pin to drive something else that takes a path string.
+Because **Path** is a plain text pin, you can also pipe an SVG path in from another module — for instance from a [Text Entry](../text-entry/) — or read the current drawing out of the **Path** pin to drive something else that takes a path string.
 
 ## Storing & Sharing the Path (Model-View Pattern)
 
-The Path Editor is one *view* of a path. To persist the drawing with your patch and share it with other views (such as a [Path Render](./path-render/) on the front panel of your VST), keep the path string in a separate **PatchMemory Text2** module that acts as the *model*:
+The Path Editor is one *view* of a path. To persist the drawing with your patch and share it with other views (such as a [Path Render](../path-render/) on the front panel of your VST), keep the path string in a separate **PatchMemory Text2** module that acts as the *model*:
 
 
 <img src="../../../images/modules/path-editor-wiring.png" alt="Path Editor and Path Render both wired to a PatchMemory Text2" class="se-module-screenshot" />

@@ -45,4 +45,4 @@ Click on a module to select it, then view its properties in the properties panel
 
 ## Next Steps
 
-- Learn about [Creating VST Plugins](/guides/creating-vst-plugins/) to export your work
+- Learn about [Creating VST Plugins](../creating-vst-plugins/) to export your work

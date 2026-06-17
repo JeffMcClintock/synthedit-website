@@ -7,7 +7,7 @@ description: Common questions and troubleshooting tips for SynthEdit.
 
 ### What platforms does SynthEdit run on?
 
-SynthEdit requires **Windows 10 or later** (64-bit). A **macOS** version is also available. See the [Installation](/guides/installation/) page for download links. Plugins exported from SynthEdit work on Windows 7+ (VST) and macOS 10.8+ (Audio Unit).
+SynthEdit requires **Windows 10 or later** (64-bit). A **macOS** version is also available. See the [Installation](../installation/) page for download links. Plugins exported from SynthEdit work on Windows 7+ (VST) and macOS 10.8+ (Audio Unit).
 
 ### Can I distribute plugins I create with SynthEdit?
 
@@ -266,7 +266,7 @@ The Volt Meter only displays one voice at a time. In a polyphonic container, set
 
 ### How can I reduce CPU usage?
 
-See the full [Optimizing CPU Usage](/guides/optimizing-cpu/) guide. Key tips:
+See the full [Optimizing CPU Usage](../optimizing-cpu/) guide. Key tips:
 - Minimize modules in the audio signal path
 - Place effects outside the polyphonic voice container
 - Use **VCA modules** for proper sleep mode activation

@@ -25,7 +25,7 @@ Everything below is a working, public example you can fork:
 **[github.com/JeffMcClintock/poly-synth-plugin](https://github.com/JeffMcClintock/poly-synth-plugin)**.
 
 > Writing your own C++ modules rather than exporting a finished project? See
-> [Building modules with GitHub Actions](/guides/building-modules-with-github-actions/).
+> [Building modules with GitHub Actions](../building-modules-with-github-actions/).
 
 ## What you'll need
 
@@ -63,7 +63,7 @@ and mod‑wheel routing:
 
 The identity is set once, in SynthEdit, and saved into the project. The important fields
 are the **plugin name**, the **developer name**, and the **VST3 ID** (SynthEdit can
-generate the ID for you). See [Creating VST Plugins](/guides/creating-vst-plugins/) for
+generate the ID for you). See [Creating VST Plugins](../creating-vst-plugins/) for
 where these live. Pinning them in the project matters: it means every automated build
 produces a plugin with the *same* identity, so updates replace the old version in a user's
 DAW instead of showing up as a duplicate.

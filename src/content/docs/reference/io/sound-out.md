@@ -22,4 +22,4 @@ The **Sound Out** module sends audio to your soundcard's output for monitoring.
 - Only one Sound Out module is allowed per project
 - Only functions in the SynthEdit editor — inactive when running as a VST plugin
 - Unregistered SynthEdit is limited to 2 output channels
-- For offline rendering, replace Sound Out with a [Wave Recorder](/reference/io/wave-recorder/)
+- For offline rendering, replace Sound Out with a [Wave Recorder](../../../reference/io/wave-recorder/)

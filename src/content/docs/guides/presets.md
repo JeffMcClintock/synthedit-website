@@ -88,4 +88,4 @@ Sub-folders inside a preset folder act as categories. For example, a preset save
 ~/Library/Audio/Presets/Acme/SuperSynth/Bass/Deep House.vstpreset
 ```
 
-appears under the **Bass** category in the browser. This is the recommended way to keep a large library tidy — see the related [FAQ entry](./faq/#for-vst3-plugins-why-are-presets-in-alphabetical-order-instead-of-my-saved-order).
+appears under the **Bass** category in the browser. This is the recommended way to keep a large library tidy — see the related [FAQ entry](../faq/#for-vst3-plugins-why-are-presets-in-alphabetical-order-instead-of-my-saved-order).
