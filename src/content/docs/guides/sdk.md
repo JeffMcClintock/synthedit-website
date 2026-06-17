@@ -255,6 +255,8 @@ You don't need to own a Mac to ship Mac builds. The **Community Modules build se
 
 If you do have a Mac, the SDK's Xcode workspace builds Universal Binaries (Intel + Apple Silicon) directly.
 
+Better still, automate it: **[Building modules with GitHub Actions](./building-modules-with-github-actions/)** compiles your module on both Windows and macOS and publishes installers on every version tag — no Mac, and no build server, required.
+
 ## Distribution and licensing
 
 Modules you write with the SDK are yours. There are no royalties, no per-copy fees, no "powered by" requirements. You can:

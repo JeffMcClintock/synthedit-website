@@ -24,6 +24,9 @@ runners. The whole thing is driven by one workflow file.
 Everything below is a working, public example you can fork:
 **[github.com/JeffMcClintock/poly-synth-plugin](https://github.com/JeffMcClintock/poly-synth-plugin)**.
 
+> Writing your own C++ modules rather than exporting a finished project? See
+> [Building modules with GitHub Actions](/guides/building-modules-with-github-actions/).
+
 ## What you'll need
 
 - A free **GitHub** account.
