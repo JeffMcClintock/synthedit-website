@@ -103,6 +103,13 @@ Recent changes and fixes. [View full changelog](../changelog/)
 
 <div class="se-changelog-scroll">
 
+- drag module more reliable when mouse near to pins
+- Int-to-bools GUI module back
+
+**v1.6.134** — 2026-06-17
+- round breadcrumb thumbnail corners via gmpi geometry clip
+- Properties browser - connected input pin defaults are now read-only
+
 **Unreleased**
 - wire gmpi breadcrumb bar into the macOS editor (SynthEditBridge)
 
@@ -188,24 +195,6 @@ Recent changes and fixes. [View full changelog](../changelog/)
 - fix fresh patch cables drawing one end off screen
 - default IO Modules not so far apart
 - correct Sinc Filter passband gain + dedupe header guards
-
-**v1.6.120** — 2026-06-05
-- ok/cancel dialog crash in vst3, and restore the cancel button
-- more careful to avoid updating host-controls when loading a preset
-- memory overwrite in saveNativePreset
-- loading a preset with missing parameters sets those parameters to default value (in editor)
-- fix crash when closing editor in Reaper Windows
-- crash when closing main window with a tab torn out
-- cleaner module outlines
-- Save preset bank working
-- Panel Group - clip long heading text
-- Loading a bank now loads preset categories too
-
-**v1.6.119** — 2026-06-04
-- module browser fills full height after window resize
-- install skins and prefabs under All-Users documents, not per-user
-- crash-guard 'load last file' against startup doom loop
-- add getCommonDocumentFolder() for shared skins/prefabs location
 
 </div>
 ## Demo vs Full Version
