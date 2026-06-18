@@ -103,6 +103,12 @@ Recent changes and fixes. [View full changelog](../changelog/)
 
 <div class="se-changelog-scroll">
 
+**v1.6.136** — 2026-06-19
+- fix for thumbnail crash
+
+**Unreleased**
+- post the built version's changelog block to Discord (not --limit 1)
+- disable USE_SIMD_UTF_CONVERSION (intermittent empty unicode conversion on CI)
 - compact breadcrumb crumbs â€” title overlaid on the thumbnail
 
 **v1.6.135** — 2026-06-18
@@ -110,13 +116,11 @@ Recent changes and fixes. [View full changelog](../changelog/)
 - render shadow layers before normal layers across sub-views
 - make top-level container tab non-closeable
 - make native text-entry box background opaque
+- lower vertical scroll bar top edge to bottom of breadcrumb bar
 - hit zone for pin text increased
+- drag module more reliable when mouse near to pins
 - default new-project save filename to "project"
 - apply breadcrumb strip offset to TopStripLayout dialog-host rects
-
-**Unreleased**
-- lower vertical scroll bar top edge to bottom of breadcrumb bar
-- drag module more reliable when mouse near to pins
 - Int-to-bools GUI module back
 
 **v1.6.134** — 2026-06-17
@@ -155,11 +159,11 @@ Recent changes and fixes. [View full changelog](../changelog/)
 **Unreleased**
 - ug_gmpi implements IElapsedTime extension (elapsed render time in samples)
 - three-way connector line style (Default / Curvey / Straight)
+- give ExportFormatType an explicit underlying type (enables forward declaration)
 - close tabs reliably via Ctrl+W and middle-click
 
 **v1.6.127** — 2026-06-11
 - suppress hover-scopes and connector highlights while dragging a module
-- give ExportFormatType an explicit underlying type (enables forward declaration)
 - forward-declare ExportFormatType with explicit underlying type (fixes macOS clang build)
 
 **v1.6.126** — 2026-06-11
