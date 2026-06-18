@@ -99,10 +99,23 @@ There is a slight delay when you adjust the size of the module browser. This is 
 
 ## Recent Releases
 
-Recent changes and fixes. [View full changelog](../../changelog/)
+Recent changes and fixes. [View full changelog](../changelog/)
 
 <div class="se-changelog-scroll">
 
+- compact breadcrumb crumbs â€” title overlaid on the thumbnail
+
+**v1.6.135** — 2026-06-18
+- suppress WinUI3 pointer re-dispatch after slow prefab insert
+- render shadow layers before normal layers across sub-views
+- make top-level container tab non-closeable
+- make native text-entry box background opaque
+- hit zone for pin text increased
+- default new-project save filename to "project"
+- apply breadcrumb strip offset to TopStripLayout dialog-host rects
+
+**Unreleased**
+- lower vertical scroll bar top edge to bottom of breadcrumb bar
 - drag module more reliable when mouse near to pins
 - Int-to-bools GUI module back
 
@@ -110,7 +123,7 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - round breadcrumb thumbnail corners via gmpi geometry clip
 - Properties browser - connected input pin defaults are now read-only
 
-**Unreleased**
+**v1.6.133** — 2026-06-17
 - wire gmpi breadcrumb bar into the macOS editor (SynthEditBridge)
 
 **v1.6.132** — 2026-06-16
@@ -181,20 +194,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - differentiate active tab and icon-bar shade per theme
 - add --container screenshot target; emit JSONL for load/screenshot
 - accept only hyphen-prefixed CLI flags, not Windows /slash
-
-**v1.6.122** — 2026-06-08
-- correct odd-order Butterworth high-pass polarity inversion
-- Impulse Response2 captures full symmetric (linear-phase) response
-
-**v1.6.121** — 2026-06-08
-- recover installer from stale msix package blocking registration
-- patch points on structure view draw the thick cables when connecting
-- make 'load last file' crash-guard reinstate timer actually fire
-- fix smears on moving patch-cables
-- fix hovering over patch-cable not fully redrawing
-- fix fresh patch cables drawing one end off screen
-- default IO Modules not so far apart
-- correct Sinc Filter passband gain + dedupe header guards
 
 </div>
 ## Demo vs Full Version
