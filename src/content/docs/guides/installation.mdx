@@ -103,6 +103,10 @@ Recent changes and fixes. [View full changelog](../changelog/)
 
 <div class="se-changelog-scroll">
 
+**v1.6.142** — 2026-06-23
+- stop bundling windowsappruntime msix in self-contained installer
+- 'Hint' working on new vector controls
+
 **v1.6.140** — 2026-06-22
 - better Slider tick marks
 
@@ -180,17 +184,6 @@ Recent changes and fixes. [View full changelog](../changelog/)
 - suppress hover-scopes and connector highlights while dragging a module
 - give ExportFormatType an explicit underlying type (enables forward declaration)
 - forward-declare ExportFormatType with explicit underlying type (fixes macOS clang build)
-
-**v1.6.126** — 2026-06-11
-- selected module wins hit-test ties with unselected modules in front (figma-style)
-- prevent use-after-free crash when loading the SE SynthEdit SEM
-- mouse-wheel support for Vector Ring/Knob/Bar GUI controls
-- installer no longer launches the old Store SynthEdit 1.5 after install
-- iir1-based Butterworth filters (GMPI); deprecate DspFilters gen-2
-- fix 'build code skeleton' for GUI modules
-- Chebyshev I/II and RBJ filters (iir1/GMPI)
-- Bitmap holds a strong context ref for reliable device-loss detection
-- 'export plugin' now ensures that controls have a parameter index assigned (to give consistent automation behaviour in DAW)
 
 </div>
 ## Demo vs Full Version
