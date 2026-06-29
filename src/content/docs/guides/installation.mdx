@@ -103,6 +103,24 @@ Recent changes and fixes. [View full changelog](../changelog/)
 
 <div class="se-changelog-scroll">
 
+- scope 4 auto-brightness
+- per-instance variation (ScaleXY + CombineEach)
+- give CircleGeometry a Radius pin (size baked into geometry)
+- fix resolveFilename function returning patch with wrong type of slash character
+
+**Unreleased**
+- upgrade GmpiUiTest prototypes to typed object pins
+- unit-circle template + composable Transform Each
+- add transform producer modules (Rotation/Translation/Scale/Combine)
+- add modernised Object-pin example modules
+- add instancing renderer proof-of-concept
+- add generic layout spine (numberlist + Series + NumberMath + TranslateXY)
+- add IStyle style-bundle pin + StyleBuilder module
+- add Color(RGBA) module + fill/stroke colour pins on RenderGeometry
+
+**v1.6.144** — 2026-06-27
+- object pin subtype connection check + struct/object export
+
 **v1.6.143** — 2026-06-24
 - fix hit-testing on sliders with padding
 
@@ -166,23 +184,6 @@ Recent changes and fixes. [View full changelog](../changelog/)
 - emit panel rect for sdk3/gmpi controls in gui-json export
 - declare graphicsApi on SE Button so its panel rect exports
 - allow mouse-wheel pan/zoom while dragging a module
-
-**v1.6.130** — 2026-06-15
-- remove non-functional add-tab (+) button from tab bars
-- add breadcrumb navigation bar with container thumbnails
-
-**v1.6.128** — 2026-06-12
-- rounded U-turns on doubled-back connector lines
-- middle-button drag to pan document views
-- middle-button drag to pan document views
-- hide the Ctrl+W key-tip that followed the mouse
-- ModWheel shadow fused to the wheel outline (real sheared-silhouette geometry, not a detached blob); squarer slot corners
-
-**Unreleased**
-- ug_gmpi implements IElapsedTime extension (elapsed render time in samples)
-- three-way connector line style (Default / Curvey / Straight)
-- give ExportFormatType an explicit underlying type (enables forward declaration)
-- close tabs reliably via Ctrl+W and middle-click
 
 </div>
 ## Demo vs Full Version
