@@ -103,10 +103,16 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
+**v1.6.146** — 2026-06-29
+- emit ../../changelog/ in website changelog template
+
+**v1.6.145** — 2026-06-29
 - scope 4 auto-brightness
 - per-instance variation (ScaleXY + CombineEach)
+- per-instance geometry (Circles + RenderEach) for constant stroke
 - give CircleGeometry a Radius pin (size baked into geometry)
 - fix resolveFilename function returning patch with wrong type of slash character
+- [0011] Separate VST3 Export for Windows and macOS
 
 **Unreleased**
 - upgrade GmpiUiTest prototypes to typed object pins
@@ -174,16 +180,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - render breadcrumb bar with gmpi in editor swapchain (replaces XAML bar)
 - add gmpi BreadcrumbBar + TopStripLayout (cross-platform breadcrumb bar)
 - Slider/HSlider gain Slot Color + Tick Color pins and adaptive ticks
-
-**v1.6.131** — 2026-06-16
-- torn-out tab window is a secondary view, not a peer app
-- tint panel-view tab labels light blue
-- replace drag tab tear-out with right-click move/return-to-window
-- middle-button drag to pan document views on macOS
-- knobs respond to horizontal as well as vertical mouse drag
-- emit panel rect for sdk3/gmpi controls in gui-json export
-- declare graphicsApi on SE Button so its panel rect exports
-- allow mouse-wheel pan/zoom while dragging a module
 
 </div>
 ## Demo vs Full Version
