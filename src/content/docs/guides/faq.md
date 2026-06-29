@@ -136,6 +136,14 @@ SynthEdit supports a **project-specific skin folder** that lets you keep skin re
 
 This allows you to override specific images for a single project without modifying the global skins folder.
 
+### How does the project-specific `.resources` folder work?
+
+Alongside the project-specific skin folder, SynthEdit supports a **project-specific resources folder** for the external audio assets your patch loads — samples, MIDI files, and SoundFonts. If your project is named `MySynth.synthedit`, create a folder named `MySynth.resources` in the same directory and drop your `.wav`, `.mid`, `.sf2`, etc. files in there.
+
+When you pick one of those files in a module's File Name pin, SynthEdit searches the `.resources` folder **before** the global Audio / MIDI / SoundFont folders set in Preferences.
+
+The key reason to use it: on export, the entire `.resources` folder is copied verbatim into the exported VST3 / AU bundle, so the files travel with the plugin and the patch works on any machine. See [Creating VST Plugins](../creating-vst-plugins/#including-audio-midi-and-soundfont-files) for the full export details.
+
 ### Where are the global skins and prefabs folders located?
 
 On Windows, SynthEdit keeps its shared skins and prefabs in the **All Users** documents folder, so every account on the machine uses the same set:
