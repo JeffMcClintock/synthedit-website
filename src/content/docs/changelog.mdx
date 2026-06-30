@@ -5,26 +5,44 @@ description: Full version history of SynthEdit changes and fixes.
 
 Every release in the v1.6 line. The most recent entries are also embedded on the [installation page](./guides/installation/).
 
+- click to position the caret while editing a NumberEntry
+
+**Unreleased**
+- migrate Mac MIDI automation dialog to RawView SetValue
+- NumberEntry edits in-place in the control's own style
+
+**v1.6.147** — 2026-06-30
+- reopen projects on the editor tab that was active when saved
+- physical-pixel glow (BlurBitmap) + centered RenderBitmap
+- physical-pixel RenderText2Bitmap (centred, colour-tinted)
+- drop dead setAnimationPos() in Image4Gui; pins are In\<T>
+- cull orphaned host-control parameters on delete and save
+- add stroke cap-style to IStyle (Flat/Square/Round)
+- add NumberEntry module (click-to-edit value + Units)
+- add ArcGeometry (value-arc) + centre RenderGeometry
+- TopStripLayout forwards preGraphicsRedraw to children
+- TextEntry4Gui takes a Style (transparent bg, styled text)
+- NumberEntry stays mono-directional (output -> Value Set)
+- Number Entry edits now stick (kill the write-fight)
+
 **v1.6.146** — 2026-06-29
 - emit ../../changelog/ in website changelog template
 
 **v1.6.145** — 2026-06-29
+- upgrade GmpiUiTest prototypes to typed object pins
+- unit-circle template + composable Transform Each
 - scope 4 auto-brightness
 - per-instance variation (ScaleXY + CombineEach)
 - per-instance geometry (Circles + RenderEach) for constant stroke
 - give CircleGeometry a Radius pin (size baked into geometry)
 - fix resolveFilename function returning patch with wrong type of slash character
-- [0011] Separate VST3 Export for Windows and macOS
-
-**Unreleased**
-- upgrade GmpiUiTest prototypes to typed object pins
-- unit-circle template + composable Transform Each
 - add transform producer modules (Rotation/Translation/Scale/Combine)
 - add modernised Object-pin example modules
 - add instancing renderer proof-of-concept
 - add generic layout spine (numberlist + Series + NumberMath + TranslateXY)
 - add IStyle style-bundle pin + StyleBuilder module
 - add Color(RGBA) module + fill/stroke colour pins on RenderGeometry
+- [0011] Separate VST3 Export for Windows and macOS
 
 **v1.6.144** — 2026-06-27
 - object pin subtype connection check + struct/object export
@@ -52,10 +70,8 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - consolidate module upgrade warnings into a single dialog
 
 **v1.6.136** — 2026-06-19
-- fix for thumbnail crash
-
-**v1.6.137** — 2026-06-18
 - post the built version's changelog block to Discord (not --limit 1)
+- fix for thumbnail crash
 - disable USE_SIMD_UTF_CONVERSION (intermittent empty unicode conversion on CI)
 - compact breadcrumb crumbs â€” title overlaid on the thumbnail
 
@@ -98,20 +114,18 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - add breadcrumb navigation bar with container thumbnails
 
 **v1.6.128** — 2026-06-12
+- ug_gmpi implements IElapsedTime extension (elapsed render time in samples)
+- three-way connector line style (Default / Curvey / Straight)
 - rounded U-turns on doubled-back connector lines
 - middle-button drag to pan document views
 - middle-button drag to pan document views
 - hide the Ctrl+W key-tip that followed the mouse
-- ModWheel shadow fused to the wheel outline (real sheared-silhouette geometry, not a detached blob); squarer slot corners
-
-**Unreleased**
-- ug_gmpi implements IElapsedTime extension (elapsed render time in samples)
-- three-way connector line style (Default / Curvey / Straight)
+- give ExportFormatType an explicit underlying type (enables forward declaration)
 - close tabs reliably via Ctrl+W and middle-click
+- ModWheel shadow fused to the wheel outline (real sheared-silhouette geometry, not a detached blob); squarer slot corners
 
 **v1.6.127** — 2026-06-11
 - suppress hover-scopes and connector highlights while dragging a module
-- give ExportFormatType an explicit underlying type (enables forward declaration)
 - forward-declare ExportFormatType with explicit underlying type (fixes macOS clang build)
 
 **v1.6.126** — 2026-06-11
@@ -199,10 +213,8 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 
 **v1.6.114** — 2026-05-29
 - better alignment of text-edit on properties-browser fields
-- SynthEdit can now use SynthEdit 1.5 (build 669+) to automatically upgrade older prefab files.
-
-**v1.6.115** — 2026-05-29
 - add -rescanvsts CL flag; CancellationRunner opts in
+- SynthEdit can now use SynthEdit 1.5 (build 669+) to automatically upgrade older prefab files.
 
 **v1.6.113** — 2026-05-28
 - seed view pan/zoom before setDocument so new modules center on visible area
@@ -312,12 +324,10 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - Fix plain image not tiling consistantly on macOS
 
 **v1.6.100** — 2026-05-15
+- unregister presenter observer on destruction
 - properties pane - file browser now working for 8-bit string parameters
 - fix sliders not adapting to range of destination pin on first connection when range specified as 2 numbers (not 4)
 - fix properties browser layout
-
-**v1.6.101** — 2026-05-15
-- unregister presenter observer on destruction
 
 **v1.6.99** — 2026-05-14
 - ship pre-built .icns instead of Icon Composer .icon
@@ -342,6 +352,7 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - Better fine control of new sliders
 
 **v1.6.96** — 2026-05-13
+- wire up edit > move to front/back menu items
 - tweaks to new sub-controls
 - removed close icon from main view
 - mac app icon now ships in bundle (was generic placeholder)
@@ -349,7 +360,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - 'Additional Files' dialog layout fixed
 
 **v1.6.95** — 2026-05-12
-- wire up edit > move to front/back menu items
 - right-click on panel module shows context menu again
 
 **v1.6.94** — 2026-05-12
@@ -461,8 +471,10 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - --rate \<Hz> sub-arg for --render-audio / --autorender
 
 **v1.6.83** — 2026-04-30
-- panel modules no longer grow on each view re-open
 - in-process layout regression tests
+
+**v1.6.82** — 2026-04-30
+- panel modules no longer grow on each view re-open
 - add Label module (GmpiUi)
 - SubView measure consults persistedRect for stale child bounds
 - Resource Manager now searches all skins for global.txt
@@ -661,13 +673,11 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 **v1.6.47** — 2026-04-03
 - win - theme restores correctly on startup
 - pass both radii to RoundedRect for shadow shape
+- new module Bar LED Meter
 - mac - light/dark themes
 - mac - browser text invisible due to theme change race
 - implemented layered rendering (shadow, widget,glow)
 - hoverscopes working again
-
-**Unreleased**
-- new module Bar LED Meter
 
 **v1.6.45** — 2026-03-31
 - fix invalidation of adorners
@@ -768,7 +778,7 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 **v1.6.33** — 2026-02-13
 - limit number of recent files saved
 
-**v1.6.32** — 2026-02-13
+**v1.6.29** — 2026-02-13
 - Added system SEMs to layout via wildcards in synthedit2.vcxproj and .filters
 
 **v1.6.28** — 2026-02-12

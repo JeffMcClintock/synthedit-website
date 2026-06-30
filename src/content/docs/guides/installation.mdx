@@ -103,26 +103,44 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
+- click to position the caret while editing a NumberEntry
+
+**Unreleased**
+- migrate Mac MIDI automation dialog to RawView SetValue
+- NumberEntry edits in-place in the control's own style
+
+**v1.6.147** — 2026-06-30
+- reopen projects on the editor tab that was active when saved
+- physical-pixel glow (BlurBitmap) + centered RenderBitmap
+- physical-pixel RenderText2Bitmap (centred, colour-tinted)
+- drop dead setAnimationPos() in Image4Gui; pins are In\<T>
+- cull orphaned host-control parameters on delete and save
+- add stroke cap-style to IStyle (Flat/Square/Round)
+- add NumberEntry module (click-to-edit value + Units)
+- add ArcGeometry (value-arc) + centre RenderGeometry
+- TopStripLayout forwards preGraphicsRedraw to children
+- TextEntry4Gui takes a Style (transparent bg, styled text)
+- NumberEntry stays mono-directional (output -> Value Set)
+- Number Entry edits now stick (kill the write-fight)
+
 **v1.6.146** — 2026-06-29
 - emit ../../changelog/ in website changelog template
 
 **v1.6.145** — 2026-06-29
+- upgrade GmpiUiTest prototypes to typed object pins
+- unit-circle template + composable Transform Each
 - scope 4 auto-brightness
 - per-instance variation (ScaleXY + CombineEach)
 - per-instance geometry (Circles + RenderEach) for constant stroke
 - give CircleGeometry a Radius pin (size baked into geometry)
 - fix resolveFilename function returning patch with wrong type of slash character
-- [0011] Separate VST3 Export for Windows and macOS
-
-**Unreleased**
-- upgrade GmpiUiTest prototypes to typed object pins
-- unit-circle template + composable Transform Each
 - add transform producer modules (Rotation/Translation/Scale/Combine)
 - add modernised Object-pin example modules
 - add instancing renderer proof-of-concept
 - add generic layout spine (numberlist + Series + NumberMath + TranslateXY)
 - add IStyle style-bundle pin + StyleBuilder module
 - add Color(RGBA) module + fill/stroke colour pins on RenderGeometry
+- [0011] Separate VST3 Export for Windows and macOS
 
 **v1.6.144** — 2026-06-27
 - object pin subtype connection check + struct/object export
@@ -150,10 +168,8 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - consolidate module upgrade warnings into a single dialog
 
 **v1.6.136** — 2026-06-19
-- fix for thumbnail crash
-
-**v1.6.137** — 2026-06-18
 - post the built version's changelog block to Discord (not --limit 1)
+- fix for thumbnail crash
 - disable USE_SIMD_UTF_CONVERSION (intermittent empty unicode conversion on CI)
 - compact breadcrumb crumbs â€” title overlaid on the thumbnail
 
@@ -175,11 +191,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 **v1.6.133** — 2026-06-17
 - wire gmpi breadcrumb bar into the macOS editor (SynthEditBridge)
-
-**v1.6.132** — 2026-06-16
-- render breadcrumb bar with gmpi in editor swapchain (replaces XAML bar)
-- add gmpi BreadcrumbBar + TopStripLayout (cross-platform breadcrumb bar)
-- Slider/HSlider gain Slot Color + Tick Color pins and adaptive ticks
 
 </div>
 ## Demo vs Full Version
