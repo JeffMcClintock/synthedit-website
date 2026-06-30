@@ -37,6 +37,7 @@ export default defineConfig({
 						{ label: 'MIDI Automation', slug: 'guides/midi-automation' },
 						{ label: 'Creating VST Plugins', slug: 'guides/creating-vst-plugins' },
 						{ label: 'Distributing with GitHub Actions', slug: 'guides/distributing-with-github-actions' },
+						{ label: 'Registration System for your Plugins', slug: 'guides/plugin-registration' },
 						{ label: 'C++ SDK', slug: 'guides/sdk' },
 						{ label: 'Building Modules with GitHub Actions', slug: 'guides/building-modules-with-github-actions' },
 						{ label: 'Using SynthEdit with a DAW', slug: 'guides/using-with-daw' },
