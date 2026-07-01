@@ -103,11 +103,21 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
-- click to position the caret while editing a NumberEntry
-
 **Unreleased**
+- keep in-place edit alive across a caret-reposition click
+- headless mouse + keyboard injection for panel GUI testing
+
+**v1.6.148** — 2026-07-01
+- suppress leading context-menu separator in WinUI menu
 - migrate Mac MIDI automation dialog to RawView SetValue
+- fix crash when attempting to open non-wav file in waveplayer
+- double-click a MouseTarget to edit the NumberEntry beneath it
+- click to position the caret while editing a NumberEntry
+- NumberEntry units get their own (smaller) Style
 - NumberEntry edits in-place in the control's own style
+- NumberEntry auto decimal places (-1)
+- NumberEntry auto -1 uses 2 dp below 0.1 (was 3)
+- NumberEntry -2 auto-decimals (one extra digit per tier)
 
 **v1.6.147** — 2026-06-30
 - reopen projects on the editor tab that was active when saved
