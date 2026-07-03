@@ -105,21 +105,30 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
+**v1.6.150** — 2026-07-03
+- remove simdutf entirely; deterministic UTF conversion
+- pick pin colours from a native colour picker in the Properties Browser
+- hide the value editor for connected pins in the Properties Browser
+- forward colour-picker dialog creation through the module host chain
+- edit struct:color pins in the Properties Browser (hex + swatch)
+- draw Object-pin connectors purple on structure view
+- deliver struct:color pin defaults to In\<Color> on view creation
+
 **v1.6.149** — 2026-07-02
 - soften the Properties Browser divider highlight to grey
 - set HostedView isCaptured unconditionally so the OS-cursor poll runs for no-button drags
 - right-click context menu now works on panel-view modules
 - resize the Properties Browser columns by dragging the divider
 - left-align all value fields and tick boxes in Properties Browser
+- keep in-place edit alive across a caret-reposition click
 - keep TopStripLayout routing in sync with logical capture (pickup-drag auto-scroll)
 - highlight the hovered row in the Properties Browser
+- headless mouse + keyboard injection for panel GUI testing
 - add a Layout section (X/Y/W/H) to the Properties Browser in panel view
 
 **v1.6.148** — 2026-07-01
 - suppress leading context-menu separator in WinUI menu
 - migrate Mac MIDI automation dialog to RawView SetValue
-- keep in-place edit alive across a caret-reposition click
-- headless mouse + keyboard injection for panel GUI testing
 - fix crash when attempting to open non-wav file in waveplayer
 - double-click a MouseTarget to edit the NumberEntry beneath it
 - click to position the caret while editing a NumberEntry
@@ -208,9 +217,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 **v1.6.134** — 2026-06-17
 - round breadcrumb thumbnail corners via gmpi geometry clip
 - Properties browser - connected input pin defaults are now read-only
-
-**v1.6.133** — 2026-06-17
-- wire gmpi breadcrumb bar into the macOS editor (SynthEditBridge)
 
 </div>
 ## Demo vs Full Version
