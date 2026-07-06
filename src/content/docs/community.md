@@ -8,7 +8,7 @@ SynthEdit has an active community of plugin builders, module developers, and syn
 ## Forums & Chat
 
 - **[SynthEdit@groups.io](https://groups.io/g/synthedit)** — the main discussion group for support, collaboration, and bug reports.
-- **[SynthEdit Discord](https://discord.gg/eErPWDZnsC)** — real-time chat about plugin building.
+- **[SynthEdit Discord](https://discord.gg/2q5aMnzvfE)** — real-time chat about plugin building.
 - **[SynthEdit on Facebook](https://www.facebook.com/groups/129301030415489/)** — Facebook group for SynthEdit users.
 - **[SynthEdit Forum](http://syntheditforum.boards.net/)** — message board.
 - **[KVR Modular Synthesis forum](http://www.kvraudio.com/forum/viewforum.php?f=23)** — general modular synth discussion on KVR Audio.
