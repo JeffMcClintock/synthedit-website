@@ -105,7 +105,9 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
-**Unreleased**
+**v1.6.152** — 2026-07-07
+- plugin export no longer drops parameters from upgraded PatchMemory modules
+- find dialog focuses find field on open, not replace
 - BlurBitmap Mode enum â€” Glow / Drop Shadow / Outer Glow / Inner Shadow
 
 **v1.6.151** — 2026-07-06
@@ -128,15 +130,15 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - right-click context menu now works on panel-view modules
 - resize the Properties Browser columns by dragging the divider
 - left-align all value fields and tick boxes in Properties Browser
+- keep in-place edit alive across a caret-reposition click
 - keep TopStripLayout routing in sync with logical capture (pickup-drag auto-scroll)
 - highlight the hovered row in the Properties Browser
+- headless mouse + keyboard injection for panel GUI testing
 - add a Layout section (X/Y/W/H) to the Properties Browser in panel view
 
 **v1.6.148** — 2026-07-01
 - suppress leading context-menu separator in WinUI menu
 - migrate Mac MIDI automation dialog to RawView SetValue
-- keep in-place edit alive across a caret-reposition click
-- headless mouse + keyboard injection for panel GUI testing
 - fix crash when attempting to open non-wav file in waveplayer
 - double-click a MouseTarget to edit the NumberEntry beneath it
 - click to position the caret while editing a NumberEntry
