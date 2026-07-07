@@ -105,6 +105,14 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
+**Unreleased**
+- BlurBitmap Mode enum â€” Glow / Drop Shadow / Outer Glow / Inner Shadow
+
+**v1.6.151** — 2026-07-06
+- allow editing default of connected editable output pins
+- General prefs tab too short, Vendor Name field was clipped
+- BlurBitmap Fill mode + RenderBitmap Offset X/Y (neumorphic drop-shadows)
+
 **v1.6.150** — 2026-07-03
 - remove simdutf entirely; deterministic UTF conversion
 - pick pin colours from a native colour picker in the Properties Browser
@@ -120,15 +128,15 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - right-click context menu now works on panel-view modules
 - resize the Properties Browser columns by dragging the divider
 - left-align all value fields and tick boxes in Properties Browser
-- keep in-place edit alive across a caret-reposition click
 - keep TopStripLayout routing in sync with logical capture (pickup-drag auto-scroll)
 - highlight the hovered row in the Properties Browser
-- headless mouse + keyboard injection for panel GUI testing
 - add a Layout section (X/Y/W/H) to the Properties Browser in panel view
 
 **v1.6.148** — 2026-07-01
 - suppress leading context-menu separator in WinUI menu
 - migrate Mac MIDI automation dialog to RawView SetValue
+- keep in-place edit alive across a caret-reposition click
+- headless mouse + keyboard injection for panel GUI testing
 - fix crash when attempting to open non-wav file in waveplayer
 - double-click a MouseTarget to edit the NumberEntry beneath it
 - click to position the caret while editing a NumberEntry
@@ -201,22 +209,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - fix for thumbnail crash
 - disable USE_SIMD_UTF_CONVERSION (intermittent empty unicode conversion on CI)
 - compact breadcrumb crumbs â€” title overlaid on the thumbnail
-
-**v1.6.135** — 2026-06-18
-- suppress WinUI3 pointer re-dispatch after slow prefab insert
-- render shadow layers before normal layers across sub-views
-- make top-level container tab non-closeable
-- make native text-entry box background opaque
-- lower vertical scroll bar top edge to bottom of breadcrumb bar
-- hit zone for pin text increased
-- drag module more reliable when mouse near to pins
-- default new-project save filename to "project"
-- apply breadcrumb strip offset to TopStripLayout dialog-host rects
-- Int-to-bools GUI module back
-
-**v1.6.134** — 2026-06-17
-- round breadcrumb thumbnail corners via gmpi geometry clip
-- Properties browser - connected input pin defaults are now read-only
 
 </div>
 ## Demo vs Full Version
