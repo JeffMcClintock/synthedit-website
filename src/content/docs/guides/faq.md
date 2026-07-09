@@ -322,7 +322,9 @@ The SDK uses an API closely based on **Microsoft Direct2D**. The same graphics c
 
 ### How can I get custom modules compiled for Mac without owning one?
 
-The Community Modules build system on Azure DevOps can compile Windows and macOS modules in the cloud for free. You provide the source code and a CMake file.
+You don't need a Mac — you can build both Windows and macOS modules in the cloud for free using **GitHub Actions**. Push a version tag and GitHub compiles your C++ module on its own Windows and macOS runners, then publishes the installers to a Release. See [Building modules with GitHub Actions](../building-modules-with-github-actions/) for a working, forkable example.
+
+(An older approach used the Community Modules build system on Azure DevOps; the GitHub Actions workflow above is the current recommendation.)
 
 ### What compiler should I use for building SEMs?
 

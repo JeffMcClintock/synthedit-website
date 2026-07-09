@@ -251,11 +251,11 @@ If you've used Direct2D directly, the API will feel familiar; if you haven't, th
 
 ## Building for Mac without a Mac
 
-You don't need to own a Mac to ship Mac builds. The **Community Modules build service** on Azure DevOps compiles both Windows and macOS targets in the cloud for free. You hand it a CMake project and source, and it returns built `.sem` and `.bundle` artifacts.
+You don't need to own a Mac to ship Mac builds. The recommended approach is **[Building modules with GitHub Actions](../building-modules-with-github-actions/)**: push a version tag and GitHub compiles your module on both Windows and macOS runners in the cloud for free, then publishes installers to a Release — no Mac, and no build server, required.
 
 If you do have a Mac, the SDK's Xcode workspace builds Universal Binaries (Intel + Apple Silicon) directly.
 
-Better still, automate it: **[Building modules with GitHub Actions](../building-modules-with-github-actions/)** compiles your module on both Windows and macOS and publishes installers on every version tag — no Mac, and no build server, required.
+(An older approach used the **Community Modules build service** on Azure DevOps, which returns built `.sem` and `.bundle` artifacts from a CMake project; the GitHub Actions workflow above is now preferred.)
 
 ## Distribution and licensing
 
