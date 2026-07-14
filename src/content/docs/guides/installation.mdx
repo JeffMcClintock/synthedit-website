@@ -105,9 +105,13 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
-**Unreleased**
+**v1.6.155** — 2026-07-14
+- Compensated Delay module + decoupled reported-latency pass
+
+**v1.6.154** — 2026-07-14
 - port Oscillator HD to GMPI SDK
 - new module Lookahead2, adds lookahead without restarting Processor (when 'ms' pin not connected).
+- fix possible crash on closing a document
 
 **v1.6.153** — 2026-07-10
 - recent-files menu showed duplicate entries differing only by slash style
@@ -140,12 +144,12 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - keep in-place edit alive across a caret-reposition click
 - keep TopStripLayout routing in sync with logical capture (pickup-drag auto-scroll)
 - highlight the hovered row in the Properties Browser
+- headless mouse + keyboard injection for panel GUI testing
 - add a Layout section (X/Y/W/H) to the Properties Browser in panel view
 
 **v1.6.148** — 2026-07-01
 - suppress leading context-menu separator in WinUI menu
 - migrate Mac MIDI automation dialog to RawView SetValue
-- headless mouse + keyboard injection for panel GUI testing
 - fix crash when attempting to open non-wav file in waveplayer
 - double-click a MouseTarget to edit the NumberEntry beneath it
 - click to position the caret while editing a NumberEntry
@@ -200,11 +204,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 **v1.6.140** — 2026-06-22
 - better Slider tick marks
-
-**v1.6.139** — 2026-06-22
-- fix mouse-flags when holding shift
-- build filesystem code on macOS \< 10.15 via ghc::filesystem
-- FastUnicode::Utf8ToWstring corrupted astral codepoints
 
 </div>
 ## Demo vs Full Version
