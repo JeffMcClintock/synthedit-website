@@ -5,6 +5,13 @@ description: Full version history of SynthEdit changes and fixes.
 
 Every release in the v1.6 line. The most recent entries are also embedded on the [installation page](./guides/installation/).
 
+**Unreleased**
+- port Oscillator HD to GMPI SDK
+- new module Lookahead2, adds lookahead without restarting Processor (when 'ms' pin not connected).
+
+**v1.6.153** — 2026-07-10
+- recent-files menu showed duplicate entries differing only by slash style
+
 **v1.6.152** — 2026-07-07
 - plugin export no longer drops parameters from upgraded PatchMemory modules
 - find dialog focuses find field on open, not replace
@@ -33,12 +40,12 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - keep in-place edit alive across a caret-reposition click
 - keep TopStripLayout routing in sync with logical capture (pickup-drag auto-scroll)
 - highlight the hovered row in the Properties Browser
-- headless mouse + keyboard injection for panel GUI testing
 - add a Layout section (X/Y/W/H) to the Properties Browser in panel view
 
 **v1.6.148** — 2026-07-01
 - suppress leading context-menu separator in WinUI menu
 - migrate Mac MIDI automation dialog to RawView SetValue
+- headless mouse + keyboard injection for panel GUI testing
 - fix crash when attempting to open non-wav file in waveplayer
 - double-click a MouseTarget to edit the NumberEntry beneath it
 - click to position the caret while editing a NumberEntry
@@ -389,6 +396,7 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - Better fine control of new sliders
 
 **v1.6.96** — 2026-05-13
+- wire up edit > move to front/back menu items
 - tweaks to new sub-controls
 - removed close icon from main view
 - mac app icon now ships in bundle (was generic placeholder)
@@ -396,7 +404,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - 'Additional Files' dialog layout fixed
 
 **v1.6.95** — 2026-05-12
-- wire up edit > move to front/back menu items
 - right-click on panel module shows context menu again
 
 **v1.6.94** — 2026-05-12
