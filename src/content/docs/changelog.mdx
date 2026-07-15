@@ -5,8 +5,15 @@ description: Full version history of SynthEdit changes and fixes.
 
 Every release in the v1.6 line. The most recent entries are also embedded on the [installation page](./guides/installation/).
 
-**Unreleased**
+**v1.6.157** — 2026-07-16
+- simplify Compensated Delay to a pure latency fixer
+- round-trip module latency through ExportModuleInfo
+- round the oversampler's inner->outer report conversion
+- keep calcReportedLatency in step with calcDelayCompensation overrides
 - fix crash deleting a container the breadcrumb trail remembers
+- add Delay3 - modernised GMPI echo delay
+- Compensated Delay over-reported latency at some sample rates
+- Compensated Delay latches its report at compensation time and snaps it to the delay line's tap count
 
 **v1.6.156** — 2026-07-15
 - add Ctrl+D presenter command to toggle debugger on selection
@@ -175,12 +182,12 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - middle-button drag to pan document views
 - middle-button drag to pan document views
 - hide the Ctrl+W key-tip that followed the mouse
+- give ExportFormatType an explicit underlying type (enables forward declaration)
 - close tabs reliably via Ctrl+W and middle-click
 - ModWheel shadow fused to the wheel outline (real sheared-silhouette geometry, not a detached blob); squarer slot corners
 
 **v1.6.127** — 2026-06-11
 - suppress hover-scopes and connector highlights while dragging a module
-- give ExportFormatType an explicit underlying type (enables forward declaration)
 - forward-declare ExportFormatType with explicit underlying type (fixes macOS clang build)
 
 **v1.6.126** — 2026-06-11

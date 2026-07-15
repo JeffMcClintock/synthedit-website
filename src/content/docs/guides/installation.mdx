@@ -105,8 +105,15 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
-**Unreleased**
+**v1.6.157** — 2026-07-16
+- simplify Compensated Delay to a pure latency fixer
+- round-trip module latency through ExportModuleInfo
+- round the oversampler's inner->outer report conversion
+- keep calcReportedLatency in step with calcDelayCompensation overrides
 - fix crash deleting a container the breadcrumb trail remembers
+- add Delay3 - modernised GMPI echo delay
+- Compensated Delay over-reported latency at some sample rates
+- Compensated Delay latches its report at compensation time and snaps it to the delay line's tap count
 
 **v1.6.156** — 2026-07-15
 - add Ctrl+D presenter command to toggle debugger on selection
