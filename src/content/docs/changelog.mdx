@@ -5,6 +5,14 @@ description: Full version history of SynthEdit changes and fixes.
 
 Every release in the v1.6 line. The most recent entries are also embedded on the [installation page](../guides/installation/).
 
+**v1.6.159** — 2026-07-17
+- restyled Wavetable Osc Display
+- native MIDI-assignment 'Edit...' dialog for Windows plugins
+- native MIDI-assignment 'Edit...' dialog for Mac plugins
+- add 'Load MIDI' / 'Save MIDI' patch commands
+- add 'Load MIDI' / 'Save MIDI' patch commands
+- ALT + middle-button passes the event to the module under the mouse
+
 **v1.6.158** — 2026-07-16
 - load a wavetable's real slots instead of padding to a fixed 64
 - FFT-resample wavetable frames both ways, drop linear fallback
@@ -186,12 +194,12 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - middle-button drag to pan document views
 - middle-button drag to pan document views
 - hide the Ctrl+W key-tip that followed the mouse
-- give ExportFormatType an explicit underlying type (enables forward declaration)
 - close tabs reliably via Ctrl+W and middle-click
 - ModWheel shadow fused to the wheel outline (real sheared-silhouette geometry, not a detached blob); squarer slot corners
 
 **v1.6.127** — 2026-06-11
 - suppress hover-scopes and connector highlights while dragging a module
+- give ExportFormatType an explicit underlying type (enables forward declaration)
 - forward-declare ExportFormatType with explicit underlying type (fixes macOS clang build)
 
 **v1.6.126** — 2026-06-11
@@ -418,6 +426,7 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - Better fine control of new sliders
 
 **v1.6.96** — 2026-05-13
+- wire up edit > move to front/back menu items
 - tweaks to new sub-controls
 - removed close icon from main view
 - mac app icon now ships in bundle (was generic placeholder)
@@ -425,7 +434,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - 'Additional Files' dialog layout fixed
 
 **v1.6.95** — 2026-05-12
-- wire up edit > move to front/back menu items
 - right-click on panel module shows context menu again
 
 **v1.6.94** — 2026-05-12
