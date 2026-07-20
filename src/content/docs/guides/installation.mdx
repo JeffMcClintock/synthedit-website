@@ -105,6 +105,9 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
+**Unreleased**
+- load wavetables on a background thread in Wavetable Osc
+
 **v1.6.159** — 2026-07-17
 - restyled Wavetable Osc Display
 - native MIDI-assignment 'Edit...' dialog for Windows plugins
@@ -167,15 +170,15 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - right-click context menu now works on panel-view modules
 - resize the Properties Browser columns by dragging the divider
 - left-align all value fields and tick boxes in Properties Browser
-- keep in-place edit alive across a caret-reposition click
 - keep TopStripLayout routing in sync with logical capture (pickup-drag auto-scroll)
 - highlight the hovered row in the Properties Browser
-- headless mouse + keyboard injection for panel GUI testing
 - add a Layout section (X/Y/W/H) to the Properties Browser in panel view
 
 **v1.6.148** — 2026-07-01
 - suppress leading context-menu separator in WinUI menu
 - migrate Mac MIDI automation dialog to RawView SetValue
+- keep in-place edit alive across a caret-reposition click
+- headless mouse + keyboard injection for panel GUI testing
 - fix crash when attempting to open non-wav file in waveplayer
 - double-click a MouseTarget to edit the NumberEntry beneath it
 - click to position the caret while editing a NumberEntry
@@ -201,22 +204,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 **v1.6.146** — 2026-06-29
 - emit ../../changelog/ in website changelog template
-
-**v1.6.145** — 2026-06-29
-- upgrade GmpiUiTest prototypes to typed object pins
-- unit-circle template + composable Transform Each
-- scope 4 auto-brightness
-- per-instance variation (ScaleXY + CombineEach)
-- per-instance geometry (Circles + RenderEach) for constant stroke
-- give CircleGeometry a Radius pin (size baked into geometry)
-- fix resolveFilename function returning patch with wrong type of slash character
-- add transform producer modules (Rotation/Translation/Scale/Combine)
-- add modernised Object-pin example modules
-- add instancing renderer proof-of-concept
-- add generic layout spine (numberlist + Series + NumberMath + TranslateXY)
-- add IStyle style-bundle pin + StyleBuilder module
-- add Color(RGBA) module + fill/stroke colour pins on RenderGeometry
-- [0011] Separate VST3 Export for Windows and macOS
 
 </div>
 ## Demo vs Full Version
