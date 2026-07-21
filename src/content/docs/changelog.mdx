@@ -6,7 +6,15 @@ description: Full version history of SynthEdit changes and fixes.
 Every release in the v1.6 line. The most recent entries are also embedded on the [installation page](../guides/installation/).
 
 **Unreleased**
+- new modules "Sample and Hold2' fixes issue with missing a 'hold' at time zero
+
+**v1.6.161** — 2026-07-21
 - load wavetables on a background thread in Wavetable Osc
+- limit Wavetable Osc display to 32 evenly-spaced slots
+- hot-reloaded modules now rescan their module description, so pin/parameter changes are picked up
+- fix for possible MIDI driver crash on exit
+- fix a crash in module hot-reloading.
+- change delay 3 default interpolation
 
 **v1.6.159** — 2026-07-17
 - restyled Wavetable Osc Display
@@ -70,15 +78,15 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - right-click context menu now works on panel-view modules
 - resize the Properties Browser columns by dragging the divider
 - left-align all value fields and tick boxes in Properties Browser
+- keep in-place edit alive across a caret-reposition click
 - keep TopStripLayout routing in sync with logical capture (pickup-drag auto-scroll)
 - highlight the hovered row in the Properties Browser
+- headless mouse + keyboard injection for panel GUI testing
 - add a Layout section (X/Y/W/H) to the Properties Browser in panel view
 
 **v1.6.148** — 2026-07-01
 - suppress leading context-menu separator in WinUI menu
 - migrate Mac MIDI automation dialog to RawView SetValue
-- keep in-place edit alive across a caret-reposition click
-- headless mouse + keyboard injection for panel GUI testing
 - fix crash when attempting to open non-wav file in waveplayer
 - double-click a MouseTarget to edit the NumberEntry beneath it
 - click to position the caret while editing a NumberEntry
