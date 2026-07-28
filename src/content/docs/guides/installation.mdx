@@ -105,6 +105,12 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
+**v1.6.164** — 2026-07-28
+- properties pane live-updates pin names, wire changes and midi learn status
+- layout inspection works in realtime now
+- fix possible crash when hovering audio pins
+- [0236] 'Poly to Mono' fails second time the same voice is allocated
+
 **v1.6.162** — 2026-07-27
 - new modules "Sample and Hold2' fixes issue with missing a 'hold' at time zero
 - crash hovering the spare pin of an autoduplicating module after project load
@@ -196,20 +202,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - NumberEntry auto decimal places (-1)
 - NumberEntry auto -1 uses 2 dp below 0.1 (was 3)
 - NumberEntry -2 auto-decimals (one extra digit per tier)
-
-**v1.6.147** — 2026-06-30
-- reopen projects on the editor tab that was active when saved
-- physical-pixel glow (BlurBitmap) + centered RenderBitmap
-- physical-pixel RenderText2Bitmap (centred, colour-tinted)
-- drop dead setAnimationPos() in Image4Gui; pins are In\<T>
-- cull orphaned host-control parameters on delete and save
-- add stroke cap-style to IStyle (Flat/Square/Round)
-- add NumberEntry module (click-to-edit value + Units)
-- add ArcGeometry (value-arc) + centre RenderGeometry
-- TopStripLayout forwards preGraphicsRedraw to children
-- TextEntry4Gui takes a Style (transparent bg, styled text)
-- NumberEntry stays mono-directional (output -> Value Set)
-- Number Entry edits now stick (kill the write-fight)
 
 </div>
 ## Demo vs Full Version
