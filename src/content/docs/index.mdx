@@ -5,7 +5,6 @@ template: splash
 ---
 
 import { Image } from 'astro:assets';
-import Hero from '../../assets/StructureView.png';
 import Screenshot1 from '../../assets/Screenshot1.png';
 import Screenshot2 from '../../assets/Screenshot2.png';
 
@@ -33,9 +32,14 @@ import Screenshot2 from '../../assets/Screenshot2.png';
       </div>
     </div>
 
-    <img class="se-hero-shot" src={Hero.src} width={Hero.width} height={Hero.height} alt="SynthEdit structure view — a modular synthesizer patch with oscillators, filter, MIDI keyboard and output modules connected by signal cables" />
+    <video class="se-hero-shot" autoplay muted loop playsinline preload="metadata" poster="videos/hero-poster.jpg" width="1786" height="798" aria-label="SynthEdit structure view — a live modular synthesizer patch with oscillators, filter, MIDI keyboard and animated oscilloscopes connected by signal cables">
+      <source src="videos/hero-structure.webm" type="video/webm" />
+      <source src="videos/hero-structure.mp4" type="video/mp4" />
+    </video>
   </div>
 </section>
+
+<script>{`(function(){var v=document.querySelector('.se-hero-shot');if(v&&v.tagName==='VIDEO'&&window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();}})();`}</script>
 
 {/* ============================================================
     LOGO BAR — DAW compatibility
