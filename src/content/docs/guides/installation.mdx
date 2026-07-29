@@ -67,6 +67,42 @@ Requires Windows 10 version 1809 (build 17763) or newer, 64-bit.
 3. SynthEdit launches automatically when the install finishes. Next time,
    launch it from the **Start menu** (search "Synth Edit").
 
+### Linux (experimental)
+
+:::caution[Experimental preview]
+The Linux build is an early, **experimental** port and is **not feature-complete**.
+It's free to try while in preview, but expect rough edges — see the limitations below.
+:::
+
+<a href="https://synthedit.com/release_1_6/SynthEdit-linux-x64.tar.gz" class="se-btn se-btn-primary" style="display:inline-block; margin: 0.5rem 0 1rem;">Download for Linux (.tar.gz)</a>
+
+**Requirements**
+
+- 64-bit x86 Linux with **glibc 2.39 or newer** — e.g. **Ubuntu 24.04+**, Fedora 40+, or equivalent
+- An **X11 or XWayland** desktop session
+- Standard desktop libraries (X11, freetype, fontconfig, ALSA) — preinstalled on any normal desktop distro
+
+**Install and run**
+
+```bash
+tar -xzf SynthEdit-linux-x64.tar.gz
+cd SynthEdit
+./SynthEdit
+```
+
+The `PlugIns/` folder next to the executable holds the factory modules; third-party
+modules are scanned from `~/.local/share/SynthEdit/modules`.
+
+**Not working yet**
+
+- Audio and MIDI I/O — the editor runs **silent** for now
+- Plugin (VST3/AU) export
+- Drag-and-drop from the module browser
+- Tabs, scrollbars, multiple windows
+
+You can open, edit, and save projects, and the full structure view renders natively.
+Feedback to [jef@synthedit.com](mailto:jef@synthedit.com) is very welcome.
+
 ### AI Assistant Support
 
 To drive SynthEdit from Claude Code, Cursor, or any other [MCP-compatible](../ai-mcp-connector/) AI assistant, you need the headless `SynthEditCL` command-line tool. The setup differs slightly by platform:
