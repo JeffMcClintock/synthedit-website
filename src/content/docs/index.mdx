@@ -119,8 +119,8 @@ import Screenshot2 from '../../assets/Screenshot2.png';
     </div>
     <div>
       <div class="se-feature-num">— 02 / Professional Output</div>
-      <h3 class="se-feature-title">Export as VST3 or AU <span class="se-it">plugins.</span></h3>
-      <p class="se-feature-body">Turn your patches into standalone VST3 or AU plugins. Design custom interfaces with knobs, sliders, switches and bitmap graphics. Your plugins work in every major DAW on Windows and macOS.</p>
+      <h3 class="se-feature-title">Export as VST3, AU <span class="se-it">and beyond.</span></h3>
+      <p class="se-feature-body">Turn your patches into 64-bit VST3 and AU plugins that run in every major DAW on Windows and macOS — or go further with SE2JUCE and build AAX, CLAP and standalone apps from JUCE-compatible C++ source. Design custom interfaces with knobs, sliders, switches and bitmap graphics.</p>
       <a href="guides/creating-vst-plugins/" class="se-feature-link">See export options →</a>
     </div>
   </div>
@@ -172,6 +172,32 @@ import Screenshot2 from '../../assets/Screenshot2.png';
       <h3 class="se-card-title">Community Modules</h3>
       <p class="se-card-body">Extend SynthEdit with hundreds of third-party modules from the community — or share your own creations back.</p>
     </div>
+  </div>
+</section>
+
+{/* ============================================================
+    SPEC SNAPSHOT
+    ============================================================ */}
+<section class="se-section" style="padding-top: 0">
+  <div class="se-section-head">
+    <div class="se-eyebrow">— Under the hood</div>
+    <h2 class="se-section-title">Built for audio <span class="se-it">developers.</span></h2>
+    <p class="se-section-sub">Real DSP under the hood — and when you outgrow the canvas, the C++ and JUCE paths are waiting. <a href="guides/technical-specs/">Full technical specifications →</a></p>
+  </div>
+  <div class="se-spec-scroll">
+    <table class="se-spec-table">
+      <thead>
+        <tr><th>Capability</th><th>Visual patching</th><th>Going deeper</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Plugin formats</td><td>Built-in export to 64-bit VST3 (Windows &amp; macOS) and Audio Unit (macOS)</td><td>AAX, CLAP and standalone apps via <a href="guides/faq/#what-is-se2juce">SE2JUCE</a> — exports your whole project as JUCE-compatible C++ source</td></tr>
+        <tr><td>Audio engine</td><td>32-bit floating-point DSP at any sample rate</td><td>Every signal — audio, control voltages, envelopes — runs at full sample rate. No zipper noise</td></tr>
+        <tr><td>Polyphony</td><td>Up to 128 voices per instrument</td><td>Idle voices sleep automatically to spare the CPU</td></tr>
+        <tr><td>Modules</td><td>300+ built-in modules</td><td>Write your own DSP in C++ with the <a href="guides/sdk/">open SDK</a>, or draw on hundreds of community modules</td></tr>
+        <tr><td>Interfaces</td><td>Drag-and-drop panel designer</td><td>Custom knobs, sliders, switches and bitmap art</td></tr>
+        <tr><td>Distribution</td><td>Royalty-free — sell what you build</td><td>Automate builds and releases with <a href="guides/distributing-with-github-actions/">GitHub Actions</a></td></tr>
+      </tbody>
+    </table>
   </div>
 </section>
 

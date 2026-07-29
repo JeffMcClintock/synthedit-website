@@ -676,6 +676,48 @@ html:not([data-has-sidebar]) main > div:first-child { display: none; }
 	margin: 0;
 }
 
+/* ===== SPEC SNAPSHOT ===== */
+.se-spec-scroll { overflow-x: auto; }
+table.se-spec-table {
+	display: table;
+	width: 100%;
+	min-width: 680px;
+	margin: 0;
+	border-collapse: collapse;
+	border: 1px solid var(--se-rule-strong);
+}
+.se-spec-table th,
+.se-spec-table td {
+	padding: 16px 20px;
+	border: 1px solid var(--se-rule);
+	vertical-align: top;
+	text-align: left;
+}
+.se-spec-table thead th {
+	font-family: var(--se-font-mono);
+	font-size: 11px;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--se-fg-3);
+	background: var(--se-bg-2);
+}
+.se-spec-table thead th:last-child { color: var(--se-amber); }
+.se-spec-table td {
+	font-size: 15px;
+	line-height: 1.55;
+	color: var(--se-fg-2);
+}
+.se-spec-table td:first-child {
+	font-family: var(--se-font-mono);
+	font-size: 12px;
+	letter-spacing: 0.04em;
+	color: var(--se-fg-3);
+	white-space: nowrap;
+}
+.se-spec-table td:nth-child(2),
+.se-spec-table td:nth-child(3) { width: 42%; }
+
 /* ===== SHOWCASE ===== */
 .se-showcase {
 	display: grid;
