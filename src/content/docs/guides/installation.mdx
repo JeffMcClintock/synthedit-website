@@ -93,9 +93,16 @@ cd SynthEdit
 The `PlugIns/` folder next to the executable holds the factory modules; third-party
 modules are scanned from `~/.local/share/SynthEdit/modules`.
 
+**Audio and MIDI**
+
+Audio plays through the system default output (ALSA, or JACK when a JACK
+server is running) and the engine starts automatically — toggle it with
+**Audio > Run**. All connected MIDI input devices are opened automatically,
+so a plugged-in keyboard just works.
+
 **Not working yet**
 
-- Audio and MIDI I/O — the editor runs **silent** for now
+- Audio/MIDI device selection UI (default output device, all MIDI inputs)
 - Plugin (VST3/AU) export
 - Drag-and-drop from the module browser
 - Tabs, scrollbars, multiple windows
