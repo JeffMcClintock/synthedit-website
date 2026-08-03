@@ -114,7 +114,7 @@ import Screenshot2 from '../../assets/Screenshot2.png';
   <div class="se-section-head">
     <div class="se-eyebrow">Under it</div>
     <h2 class="se-section-title">Real DSP, and a way out</h2>
-    <p class="se-section-sub">The visual canvas isn't a toy layer over something simpler — it's the whole program. And when you outgrow it, C++ and JUCE are both waiting. <a href="guides/technical-specs/">Full technical specifications →</a></p>
+    <p class="se-section-sub">The visual canvas isn't a toy layer over something simpler — it's the whole program. Exporting a VST3 or Audio Unit takes one step. Going further than that takes real C++ experience, and I'd rather be straight about which is which. <a href="guides/technical-specs/">Full technical specifications →</a></p>
   </div>
   <div class="se-spec-scroll">
     <table class="se-spec-table">
@@ -122,7 +122,7 @@ import Screenshot2 from '../../assets/Screenshot2.png';
         <tr><th>Capability</th><th>Visual patching</th><th>Going deeper</th></tr>
       </thead>
       <tbody>
-        <tr><td>Plugin formats</td><td>Built-in export to 64-bit VST3 (Windows &amp; macOS) and Audio Unit (macOS)</td><td><a href="guides/faq/#what-is-se2juce">SE2JUCE</a> exports your whole project as JUCE-compatible C++ source</td></tr>
+        <tr><td>Plugin formats</td><td>One-step export to 64-bit VST3 (Windows &amp; macOS) and Audio Unit (macOS). No extra tooling, no build system to learn</td><td>Experienced C++ developers can take a third route: <a href="guides/faq/#what-is-se2juce">SE2JUCE</a> exports the project as JUCE-compatible source, and JUCE reaches further formats. This is real software development, not a checkbox</td></tr>
         <tr><td>Audio engine</td><td>32-bit floating-point DSP at any sample rate</td><td>Every signal — audio, control voltages, envelopes — runs at full sample rate. No zipper noise</td></tr>
         <tr><td>Polyphony</td><td>Up to 128 voices per instrument</td><td>Idle voices sleep automatically to spare the CPU</td></tr>
         <tr><td>Modules</td><td>300+ built in</td><td>Write your own DSP in C++ with the <a href="guides/sdk/">open SDK</a>, or draw on hundreds of community modules</td></tr>
@@ -160,8 +160,8 @@ import Screenshot2 from '../../assets/Screenshot2.png';
       <dd>This changed, so I'd rather say it plainly. The editor authorises over the internet, with offline activation available if you work disconnected.</dd>
     </div>
     <div class="se-own-row">
-      <dt>There's an unlocked door</dt>
-      <dd>If you ever outgrow SynthEdit — or you simply don't want to depend on it — SE2JUCE hands you your entire project as JUCE-compatible C++ source that you can take anywhere.</dd>
+      <dt>The door is unlocked, but it isn't automatic</dt>
+      <dd>If you outgrow SynthEdit — or simply don't want to depend on it — SE2JUCE exports your whole project as JUCE-compatible C++ source. Walking through that door takes genuine software development experience, so I won't pretend it's seamless. It does mean your work isn't trapped in my file format.</dd>
     </div>
   </dl>
 </section>
