@@ -3,7 +3,7 @@
    Palette: deep graphite + warm amber LED
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
 
 /* ===== Custom design tokens ===== */
 :root {
@@ -31,9 +31,9 @@
 	--se-amber-glow:   rgba(255,176,0,0.42);
 
 	/* Type */
-	--se-font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-	--se-font-italic:  'Instrument Serif', Georgia, serif;
-	--se-font-mono:    'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+	--se-font-display: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	--se-font-italic:  'IBM Plex Mono', ui-monospace, monospace;
+	--se-font-mono:    'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
 }
 
 /* ===== Map to Starlight tokens — DARK (default) ===== */
@@ -60,8 +60,8 @@
 	--sl-color-hairline:      rgba(255,253,240,0.10);
 	--sl-color-hairline-shade: rgba(255,253,240,0.16);
 	--sl-color-shadow:        rgba(0,0,0,0.5);
-	--sl-font:                'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-	--sl-font-system-mono:    'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+	--sl-font:                'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	--sl-font-system-mono:    'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
 }
 
 /* ===== LIGHT — Linen palette (docs default in light mode) ===== */
@@ -230,10 +230,9 @@ html:not([data-has-sidebar]) main > div:first-child { display: none; }
 	gap: 48px;
 	align-items: center;
 }
-.se-hero-copy { text-align: center; }
-.se-hero-copy .se-hero-tag { margin-inline: auto; max-width: 36em; }
-.se-hero-copy .se-hero-actions,
-.se-hero-copy .se-hero-fineprint { justify-content: center; }
+/* Left-aligned, ragged right — a manual page, not a centred landing hero. */
+.se-hero-copy { text-align: left; }
+.se-hero-copy .se-hero-tag { max-width: 34em; }
 .se-hero-meta {
 	display: inline-flex;
 	align-items: center;
@@ -250,20 +249,22 @@ html:not([data-has-sidebar]) main > div:first-child { display: none; }
 }
 .se-hero h1 {
 	font-family: var(--se-font-display);
-	font-weight: 800;
-	font-size: clamp(54px, 6.5vw, 88px);
-	line-height: 0.95;
-	letter-spacing: -0.04em;
+	font-weight: 600;
+	font-size: clamp(38px, 5vw, 64px);
+	line-height: 1.06;
+	letter-spacing: -0.03em;
 	margin-top: 0; /* Starlight's content styles add 1.5em (~130px) otherwise */
-	margin-bottom: 32px;
+	margin-bottom: 28px;
 	color: var(--se-fg);
 }
-.se-hero h1 .se-it {
-	font-family: var(--se-font-italic);
-	font-style: italic;
-	font-weight: 400;
-	letter-spacing: -0.02em;
+/* The year reads as an LED readout rather than a decorative flourish */
+.se-hero h1 .se-year {
+	font-family: var(--se-font-mono);
+	font-weight: 500;
+	font-size: 0.86em;
+	letter-spacing: 0.01em;
 	color: var(--se-amber);
+	text-shadow: 0 0 22px var(--se-amber-glow);
 }
 .se-hero-tag {
 	font-size: 19px;
@@ -497,14 +498,16 @@ html:not([data-has-sidebar]) main > div:first-child { display: none; }
 
 /* ===== SECTION HEADS ===== */
 .se-section { padding: 64px 0 96px; }
-.se-section-head { margin-bottom: 64px; max-width: 36em; }
+/* Wide enough for a display-size title to set on one line; the sub-paragraph
+   is re-narrowed below so measure stays readable. */
+.se-section-head { margin-bottom: 64px; max-width: 50em; }
 .se-section-head .se-eyebrow { margin-bottom: 20px; display: inline-block; }
 .se-section-title {
 	font-family: var(--se-font-display);
 	font-weight: 700;
-	font-size: clamp(36px, 4.5vw, 60px);
-	line-height: 1.02;
-	letter-spacing: -0.035em;
+	font-size: clamp(32px, 3.8vw, 50px);
+	line-height: 1.08;
+	letter-spacing: -0.03em;
 	color: var(--se-fg);
 	margin: 0;
 }
@@ -519,6 +522,7 @@ html:not([data-has-sidebar]) main > div:first-child { display: none; }
 	color: var(--se-fg-2);
 	margin-top: 24px;
 	line-height: 1.55;
+	max-width: 38em;
 }
 
 /* ===== FEATURE ROWS ===== */
@@ -991,4 +995,286 @@ nav.sidebar .top-level > li > details > summary {
    item rather than a full-size section heading (default h3 is 24–29px). */
 .se-common-issues h3 {
 	font-size: 1.25rem;
+}
+
+/* ============================================================
+   HOMEPAGE — service-manual components
+   Hairline rules, mono legends and status readouts. The register
+   is deliberately plain: this audience reads restraint as candour.
+   ============================================================ */
+
+/* Starlight's markdown content styles add a top margin to adjacent siblings,
+   which knocks grid children out of alignment. Reset it on our own lists —
+   two-class selectors so these win over Starlight's single-class rules. */
+.se-platform-list > .se-platform,
+.se-limits > .se-limit,
+.se-own > .se-own-row {
+	margin: 0;
+}
+
+/* ===== Hero: the macOS line ===== */
+.se-hero-news {
+	display: inline-flex;
+	align-items: center;
+	text-align: left;
+	font-family: var(--se-font-mono);
+	font-size: 13px;
+	letter-spacing: 0.02em;
+	color: var(--se-fg);
+	background: var(--se-amber-soft);
+	border: 1px solid rgba(255, 176, 0, 0.28);
+	border-radius: 4px;
+	padding: 9px 15px;
+	margin: 0 0 34px;
+}
+.se-hero-news .se-led { flex: none; }
+
+/* ===== Platform status ===== */
+.se-platforms {
+	border-top: 1px solid var(--se-rule);
+	border-bottom: 1px solid var(--se-rule);
+	padding: 34px 0;
+	margin-bottom: 24px;
+}
+.se-platforms-inner {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 22px;
+}
+.se-platforms-label {
+	font-family: var(--se-font-mono);
+	font-size: 11px;
+	font-weight: 500;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+	color: var(--se-fg-3);
+}
+.se-platform-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+	gap: 1px;
+	background: var(--se-rule);
+	border: 1px solid var(--se-rule);
+}
+/* Explicit grid rather than a wrapping baseline flex row: the dot column and
+   the two text rows then line up identically across all three cells. */
+.se-platform {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	column-gap: 10px;
+	row-gap: 7px;
+	align-content: start;
+	background: var(--se-bg);
+	padding: 16px 18px;
+}
+.se-platform-dot {
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	grid-column: 1;
+	grid-row: 1;
+	align-self: center;
+}
+.se-platform.is-ready .se-platform-dot {
+	background: var(--se-amber);
+	box-shadow: 0 0 10px var(--se-amber-glow);
+}
+/* Unlit dot: an honest readout, not a warning */
+.se-platform.is-rough .se-platform-dot {
+	background: transparent;
+	border: 1px solid var(--se-fg-4);
+}
+.se-platform-name {
+	font-family: var(--se-font-display);
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--se-fg);
+	letter-spacing: -0.01em;
+	grid-column: 2;
+	grid-row: 1;
+	line-height: 1.2;
+}
+.se-platform.is-rough .se-platform-name { color: var(--se-fg-2); }
+.se-platform-state {
+	font-family: var(--se-font-mono);
+	font-size: 11.5px;
+	letter-spacing: 0.03em;
+	color: var(--se-fg-3);
+	grid-column: 2;
+	grid-row: 2;
+	line-height: 1.4;
+}
+.se-platforms-note {
+	font-size: 14.5px;
+	line-height: 1.6;
+	color: var(--se-fg-2);
+	max-width: 46em;
+	margin: 0;
+}
+
+/* ===== Figures ===== */
+.se-fig {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 34px;
+	align-items: center;
+	margin: 0 0 72px;
+}
+.se-fig:last-child { margin-bottom: 0; }
+.se-fig-frame {
+	border: 1px solid var(--se-rule-strong);
+	border-radius: 6px;
+	overflow: hidden;
+	background: var(--se-bg-1);
+}
+.se-fig-frame img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.se-fig-strip {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	padding: 10px 14px;
+	border-bottom: 1px solid var(--se-rule);
+	background: var(--se-bg-2);
+	font-family: var(--se-font-mono);
+	font-size: 11px;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--se-fg-3);
+}
+.se-fig-strip .live {
+	display: inline-flex;
+	align-items: center;
+	color: var(--se-fg-2);
+}
+.se-fig-cap h3 {
+	font-family: var(--se-font-display);
+	font-size: clamp(24px, 2.6vw, 31px);
+	font-weight: 600;
+	letter-spacing: -0.02em;
+	line-height: 1.15;
+	color: var(--se-fg);
+	margin: 0 0 18px;
+}
+.se-fig-cap p {
+	font-size: 16.5px;
+	line-height: 1.65;
+	color: var(--se-fg-2);
+	margin: 0 0 16px;
+}
+.se-fig-link {
+	font-family: var(--se-font-mono);
+	font-size: 13px;
+	letter-spacing: 0.04em;
+	color: var(--se-amber);
+	text-decoration: none;
+	border-bottom: 1px solid rgba(255, 176, 0, 0.3);
+	padding-bottom: 2px;
+}
+.se-fig-link:hover { border-bottom-color: var(--se-amber); }
+
+/* ===== Ownership spec list ===== */
+.se-own {
+	margin: 0;
+	border-top: 1px solid var(--se-rule);
+}
+.se-own-row {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 6px;
+	padding: 22px 0;
+	border-bottom: 1px solid var(--se-rule);
+}
+.se-own dt {
+	font-family: var(--se-font-display);
+	font-size: 17px;
+	font-weight: 600;
+	letter-spacing: -0.01em;
+	color: var(--se-fg);
+	margin: 0;
+}
+.se-own dd {
+	margin: 0;
+	font-size: 16px;
+	line-height: 1.6;
+	color: var(--se-fg-2);
+}
+
+/* ===== Known limits =====
+   Styled as a calm spec block, not an alert. Amber tags only; no red,
+   no warning iconography — the point is matter-of-factness. */
+.se-limits {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 1px;
+	background: var(--se-rule);
+	border: 1px solid var(--se-rule);
+}
+.se-limit {
+	background: var(--se-bg);
+	padding: 22px 22px 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+.se-limit-tag {
+	align-self: flex-start;
+	font-family: var(--se-font-mono);
+	font-size: 10.5px;
+	font-weight: 500;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var(--se-amber);
+	border: 1px solid rgba(255, 176, 0, 0.3);
+	border-radius: 3px;
+	padding: 4px 9px;
+}
+.se-limit p {
+	margin: 0;
+	font-size: 15.5px;
+	line-height: 1.6;
+	color: var(--se-fg-2);
+}
+
+/* ===== CTA signature ===== */
+.se-cta-sig {
+	font-family: var(--se-font-mono);
+	font-size: 12.5px;
+	letter-spacing: 0.04em;
+	color: var(--se-fg-3);
+	margin: 18px 0 0;
+}
+
+/* ===== Wide layouts ===== */
+@media (min-width: 800px) {
+	.se-platforms-inner {
+		grid-template-columns: 150px 1fr;
+		align-items: start;
+		gap: 28px;
+	}
+	.se-platforms-label { padding-top: 17px; }
+	.se-platform-list { grid-column: 2; }
+	.se-platforms-note { grid-column: 2; }
+	.se-own-row {
+		grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+		gap: 32px;
+		align-items: baseline;
+	}
+}
+@media (min-width: 1000px) {
+	.se-fig {
+		grid-template-columns: 1.15fr 1fr;
+		gap: 56px;
+	}
+	.se-fig.se-reverse .se-fig-frame { order: 2; }
 }

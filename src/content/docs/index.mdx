@@ -16,19 +16,15 @@ import Screenshot2 from '../../assets/Screenshot2.png';
     <div class="se-hero-copy">
       <div class="se-hero-meta">
         <span class="se-led"></span>
-        <span>v1.6 — Now on macOS &amp; Windows</span>
+        <span>SynthEdit 1.6</span>
       </div>
-      <h1>Build your own<br/><span class="se-it">audio plugins</span></h1>
+      <h1>I've been building<br/>SynthEdit since <span class="se-year">1987</span>.</h1>
       {/* Keep text on one line inside styled <p> tags: MDX wraps multi-line text in a nested <p>, which the browser auto-closes, leaving the styled element empty */}
-      <p class="se-hero-tag">A visual modular environment for designing professional VST3 and AU instruments and effects. Drag modules. Connect cables. Ship plugins.</p>
+      <p class="se-hero-tag">It's a modular environment for designing synthesizers and effects. You patch modules together on a canvas, draw a front panel, and export a VST3 or Audio Unit plugin. What you build is yours — sell it, give it away, no royalties, no permission needed.</p>
+      <p class="se-hero-news"><span class="se-led"></span> New in 1.6 — SynthEdit now runs natively on macOS.</p>
       <div class="se-hero-actions">
-        <a href="guides/installation/" class="se-btn se-btn-primary">Download Free Demo <span class="se-arrow">→</span></a>
-        <a href="guides/introduction/" class="se-btn se-btn-ghost">Read the Docs</a>
-      </div>
-      <div class="se-hero-fineprint">
-        <span><span class="dot">●</span> Free 60-day demo</span>
-        <span><span class="dot">●</span> Royalty-free output</span>
-        <span><span class="dot">●</span> Win · macOS</span>
+        <a href="guides/installation/" class="se-btn se-btn-primary">Download the 60-day demo <span class="se-arrow">→</span></a>
+        <a href="guides/introduction/" class="se-btn se-btn-ghost">Read the documentation</a>
       </div>
     </div>
 
@@ -42,147 +38,83 @@ import Screenshot2 from '../../assets/Screenshot2.png';
 <script>{`(function(){var v=document.querySelector('.se-hero-shot');if(v&&v.tagName==='VIDEO'&&window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();}})();`}</script>
 
 {/* ============================================================
-    LOGO BAR — DAW compatibility
+    PLATFORM STATUS — honest, unequally weighted
     ============================================================ */}
-<div class="se-logobar">
-  <div class="se-logobar-inner">
-    <span class="se-logobar-label">Works with every major DAW</span>
-    <div class="se-logobar-list">
-      <span>Cubase</span>
-      <span>Ableton Live</span>
-      <span>FL Studio</span>
-      <span>Reaper</span>
-      <span>Studio One</span>
-      <span>Logic Pro</span>
-      <span>Bitwig</span>
-    </div>
-  </div>
-</div>
-
-{/* ============================================================
-    STATS
-    ============================================================ */}
-<section class="se-stats">
-  <div class="se-stats-inner">
-    <div class="se-stat">
-      <div class="se-stat-num">30<span class="se-it">+</span></div>
-      <div class="se-stat-label">Years of Improvements</div>
-    </div>
-    <div class="se-stat">
-      <div class="se-stat-num">1000<span class="se-it">s</span></div>
-      <div class="se-stat-label">Plugins Shipped</div>
-    </div>
-    <div class="se-stat">
-      <div class="se-stat-num">300<span class="se-it">+</span></div>
-      <div class="se-stat-label">Built-in Modules</div>
-    </div>
-    <div class="se-stat">
-      <div class="se-stat-num"><span class="se-it">$</span>0</div>
-      <div class="se-stat-label">Royalties Owed</div>
-    </div>
+<section class="se-platforms">
+  <div class="se-platforms-inner">
+    <div class="se-platforms-label">Platforms</div>
+    <ul class="se-platform-list">
+      <li class="se-platform is-ready">
+        <span class="se-platform-dot"></span>
+        <span class="se-platform-name">Windows</span>
+        <span class="se-platform-state">Native · stable</span>
+      </li>
+      <li class="se-platform is-ready">
+        <span class="se-platform-dot"></span>
+        <span class="se-platform-name">macOS</span>
+        <span class="se-platform-state">Native · new in 1.6</span>
+      </li>
+      <li class="se-platform is-rough">
+        <span class="se-platform-dot"></span>
+        <span class="se-platform-name">Linux</span>
+        <span class="se-platform-state">Rough prototype · not ready</span>
+      </li>
+    </ul>
+    <p class="se-platforms-note">The Linux build runs, but it isn't something I'd ask you to rely on yet. There's no download button here on purpose — it'll get one when it's worth your time.</p>
   </div>
 </section>
 
 {/* ============================================================
-    FEATURE ROWS
+    FIGURES — what it actually is
     ============================================================ */}
 <section class="se-section">
   <div class="se-section-head">
-    <div class="se-eyebrow">— How it works</div>
-    <h2 class="se-section-title">Drag. Connect. <span class="se-it">Ship.</span></h2>
-    <p class="se-section-sub">A complete environment for synthesizer design — from the first sine wave to a finished VST3 or AU plugin in your DAW.</p>
+    <div class="se-eyebrow">What it is</div>
+    <h2 class="se-section-title">Nothing is hidden from you</h2>
+    <p class="se-section-sub">There's no layer underneath that you're not allowed to see. Every oscillator, filter, envelope and bit of arithmetic is a module sitting on the canvas, and every connection is a wire you drew yourself.</p>
   </div>
 
-  <div class="se-feature-row">
-    <div class="se-feature-vis">
-      <div class="se-feature-vis-strip">
-        <span>Modular Canvas</span>
-        <span class="live"><span class="se-led"></span>Playing</span>
+  <figure class="se-fig">
+    <div class="se-fig-frame">
+      <div class="se-fig-strip">
+        <span>Fig. 01</span>
+        <span class="live"><span class="se-led"></span>Structure view</span>
       </div>
       <Image src={Screenshot1} alt="SynthEdit modular canvas with oscillators, filter and envelope modules connected by patch cables" />
     </div>
-    <div>
-      <div class="se-feature-num">— 01 / Visual Patching</div>
-      <h3 class="se-feature-title">Build synths by connecting <span class="se-it">modules.</span></h3>
-      <p class="se-feature-body">Drag oscillators, filters, envelopes and effects onto the canvas. Connect them with virtual patch cables. Hear the results instantly. No programming knowledge needed — just curiosity.</p>
-      <a href="guides/first-synth/" class="se-feature-link">Learn the basics →</a>
-    </div>
-  </div>
+    <figcaption class="se-fig-cap">
+      <h3>Patch it together and listen</h3>
+      <p>Drag modules onto the canvas and wire them up. The engine is running the whole time, so you hear each change as you make it. Hover any pin or wire and a small live scope shows you the signal passing through it.</p>
+      <p>There's no wrong way to wire things up. Hook modules together in your own weird and wonderful ways and the programming turns into exploring — which is the part I still enjoy after all these years.</p>
+      <a href="guides/first-synth/" class="se-fig-link">Build your first synth →</a>
+    </figcaption>
+  </figure>
 
-  <div class="se-feature-row se-reverse">
-    <div class="se-feature-vis">
-      <div class="se-feature-vis-strip">
-        <span>Panel Designer</span>
-        <span class="live"><span class="se-led"></span>Editing</span>
+  <figure class="se-fig se-reverse">
+    <div class="se-fig-frame">
+      <div class="se-fig-strip">
+        <span>Fig. 02</span>
+        <span class="live"><span class="se-led"></span>Panel designer</span>
       </div>
       <Image src={Screenshot2} alt="SynthEdit panel designer showing a custom plugin GUI with filter knobs, ADSR controls and a piano keyboard" />
     </div>
-    <div>
-      <div class="se-feature-num">— 02 / Professional Output</div>
-      <h3 class="se-feature-title">Export as VST3, AU <span class="se-it">and beyond.</span></h3>
-      <p class="se-feature-body">Turn your patches into 64-bit VST3 and AU plugins that run in every major DAW on Windows and macOS — or go further with SE2JUCE and build AAX, CLAP and standalone apps from JUCE-compatible C++ source. Design custom interfaces with knobs, sliders, switches and bitmap graphics.</p>
-      <a href="guides/creating-vst-plugins/" class="se-feature-link">See export options →</a>
-    </div>
-  </div>
+    <figcaption class="se-fig-cap">
+      <h3>Then draw the front panel</h3>
+      <p>Lay out knobs, sliders, switches, graphs and your own bitmap artwork in the panel designer. What you draw is what your users get — the plugin window is yours to design, not a generic host-supplied list of parameters.</p>
+      <p>Export it and you have a 64-bit VST3 or Audio Unit that loads in any major DAW on Windows and macOS.</p>
+      <a href="guides/creating-vst-plugins/" class="se-fig-link">How exporting works →</a>
+    </figcaption>
+  </figure>
 </section>
 
 {/* ============================================================
-    CARDS — Capabilities
+    SPEC — promoted, the substance argument
     ============================================================ */}
 <section class="se-section" style="padding-top: 0">
   <div class="se-section-head">
-    <div class="se-eyebrow">— Capabilities</div>
-    <h2 class="se-section-title">Everything you need <span class="se-it">built in.</span></h2>
-  </div>
-
-  <div class="se-cards">
-    <div class="se-card">
-      <div class="se-card-head"><span>Module 01</span><span class="num">License</span></div>
-      <div class="se-card-icon">$0</div>
-      <h3 class="se-card-title">No Licensing Restrictions</h3>
-      <p class="se-card-body">You own what you create. Sell your plugins commercially, give them away, or bundle them — no royalties, no fees, ever.</p>
-    </div>
-    <div class="se-card">
-      <div class="se-card-head"><span>Module 02</span><span class="num">Library</span></div>
-      <div class="se-card-icon">300+</div>
-      <h3 class="se-card-title">Huge Module Library</h3>
-      <p class="se-card-body">Oscillators, filters, effects, MIDI, math, logic, UI controls — every primitive you need to build a complete instrument.</p>
-    </div>
-    <div class="se-card">
-      <div class="se-card-head"><span>Module 03</span><span class="num">GUI</span></div>
-      <div class="se-card-icon">UI</div>
-      <h3 class="se-card-title">Custom GUI Designer</h3>
-      <p class="se-card-body">Design professional plugin interfaces with a built-in visual editor — knobs, sliders, switches, graphs and bitmap art.</p>
-    </div>
-    <div class="se-card">
-      <div class="se-card-head"><span>Module 04</span><span class="num">Learn</span></div>
-      <div class="se-card-icon">∿</div>
-      <h3 class="se-card-title">Learn Synthesis</h3>
-      <p class="se-card-body">See how synthesizers work from the inside. Perfect for students, educators, and anyone curious about sound design.</p>
-    </div>
-    <div class="se-card">
-      <div class="se-card-head"><span>Module 05</span><span class="num">SDK</span></div>
-      <div class="se-card-icon">C++</div>
-      <h3 class="se-card-title">C++ SDK</h3>
-      <p class="se-card-body">Need more power? Build your own modules in C++ and use them alongside the built-in library in any project.</p>
-    </div>
-    <div class="se-card">
-      <div class="se-card-head"><span>Module 06</span><span class="num">Community</span></div>
-      <div class="se-card-icon">∞</div>
-      <h3 class="se-card-title">Community Modules</h3>
-      <p class="se-card-body">Extend SynthEdit with hundreds of third-party modules from the community — or share your own creations back.</p>
-    </div>
-  </div>
-</section>
-
-{/* ============================================================
-    SPEC SNAPSHOT
-    ============================================================ */}
-<section class="se-section" style="padding-top: 0">
-  <div class="se-section-head">
-    <div class="se-eyebrow">— Under the hood</div>
-    <h2 class="se-section-title">Built for audio <span class="se-it">developers.</span></h2>
-    <p class="se-section-sub">Real DSP under the hood — and when you outgrow the canvas, the C++ and JUCE paths are waiting. <a href="guides/technical-specs/">Full technical specifications →</a></p>
+    <div class="se-eyebrow">Under it</div>
+    <h2 class="se-section-title">Real DSP, and a way out</h2>
+    <p class="se-section-sub">The visual canvas isn't a toy layer over something simpler — it's the whole program. And when you outgrow it, C++ and JUCE are both waiting. <a href="guides/technical-specs/">Full technical specifications →</a></p>
   </div>
   <div class="se-spec-scroll">
     <table class="se-spec-table">
@@ -190,10 +122,10 @@ import Screenshot2 from '../../assets/Screenshot2.png';
         <tr><th>Capability</th><th>Visual patching</th><th>Going deeper</th></tr>
       </thead>
       <tbody>
-        <tr><td>Plugin formats</td><td>Built-in export to 64-bit VST3 (Windows &amp; macOS) and Audio Unit (macOS)</td><td>AAX, CLAP and standalone apps via <a href="guides/faq/#what-is-se2juce">SE2JUCE</a> — exports your whole project as JUCE-compatible C++ source</td></tr>
+        <tr><td>Plugin formats</td><td>Built-in export to 64-bit VST3 (Windows &amp; macOS) and Audio Unit (macOS)</td><td><a href="guides/faq/#what-is-se2juce">SE2JUCE</a> exports your whole project as JUCE-compatible C++ source</td></tr>
         <tr><td>Audio engine</td><td>32-bit floating-point DSP at any sample rate</td><td>Every signal — audio, control voltages, envelopes — runs at full sample rate. No zipper noise</td></tr>
         <tr><td>Polyphony</td><td>Up to 128 voices per instrument</td><td>Idle voices sleep automatically to spare the CPU</td></tr>
-        <tr><td>Modules</td><td>300+ built-in modules</td><td>Write your own DSP in C++ with the <a href="guides/sdk/">open SDK</a>, or draw on hundreds of community modules</td></tr>
+        <tr><td>Modules</td><td>300+ built in</td><td>Write your own DSP in C++ with the <a href="guides/sdk/">open SDK</a>, or draw on hundreds of community modules</td></tr>
         <tr><td>Interfaces</td><td>Drag-and-drop panel designer</td><td>Custom knobs, sliders, switches and bitmap art</td></tr>
         <tr><td>Distribution</td><td>Royalty-free — sell what you build</td><td>Automate builds and releases with <a href="guides/distributing-with-github-actions/">GitHub Actions</a></td></tr>
       </tbody>
@@ -202,13 +134,76 @@ import Screenshot2 from '../../assets/Screenshot2.png';
 </section>
 
 {/* ============================================================
+    OWNERSHIP
+    ============================================================ */}
+<section class="se-section" style="padding-top: 0">
+  <div class="se-section-head">
+    <div class="se-eyebrow">What you own</div>
+    <h2 class="se-section-title">Your work shouldn't depend on me</h2>
+  </div>
+
+  <dl class="se-own">
+    <div class="se-own-row">
+      <dt>Everything you export is royalty-free</dt>
+      <dd>Sell it, bundle it, give it away. I don't take a cut and you don't need my permission.</dd>
+    </div>
+    <div class="se-own-row">
+      <dt>The plugins you ship don't phone home</dt>
+      <dd>The built-in <a href="guides/plugin-registration/">registration modules</a> need no internet connection and no licence server. Your customers never talk to anybody's server — mine included.</dd>
+    </div>
+    <div class="se-own-row">
+      <dt>One licence covers all current versions</dt>
+      <dd>Major versions keep their own settings and don't interfere with each other. You buy it once.</dd>
+    </div>
+    <div class="se-own-row">
+      <dt>SynthEdit itself activates online</dt>
+      <dd>This changed, so I'd rather say it plainly. The editor authorises over the internet, with offline activation available if you work disconnected.</dd>
+    </div>
+    <div class="se-own-row">
+      <dt>There's an unlocked door</dt>
+      <dd>If you ever outgrow SynthEdit — or you simply don't want to depend on it — SE2JUCE hands you your entire project as JUCE-compatible C++ source that you can take anywhere.</dd>
+    </div>
+  </dl>
+</section>
+
+{/* ============================================================
+    HONEST LIMITS
+    ============================================================ */}
+<section class="se-section" style="padding-top: 0">
+  <div class="se-section-head">
+    <div class="se-eyebrow">Known limits</div>
+    <h2 class="se-section-title">What it doesn't do yet</h2>
+    <p class="se-section-sub">Things I'd rather you heard from me now than discovered on day three.</p>
+  </div>
+
+  <ul class="se-limits">
+    <li class="se-limit">
+      <span class="se-limit-tag">MIDI</span>
+      <p>MIDI processing can be awkward. The VST3 format's MIDI support is limited, and that constrains MIDI-effect-style plugins more than I'd like.</p>
+    </li>
+    <li class="se-limit">
+      <span class="se-limit-tag">Standalone</span>
+      <p>Exporting a standalone application isn't supported yet. Today the built-in export targets are VST3 and Audio Unit.</p>
+    </li>
+    <li class="se-limit">
+      <span class="se-limit-tag">CLAP</span>
+      <p>CLAP support isn't ready yet.</p>
+    </li>
+    <li class="se-limit">
+      <span class="se-limit-tag">Linux</span>
+      <p>The Linux port is a rough prototype. It runs, but it isn't ready to be relied on.</p>
+    </li>
+  </ul>
+</section>
+
+{/* ============================================================
     SHOWCASE
     ============================================================ */}
 <section class="se-section" style="padding-top: 0">
   <div class="se-section-head">
-    <div class="se-eyebrow">— In the wild</div>
-    <h2 class="se-section-title">Built with <span class="se-it">SynthEdit.</span></h2>
-    <p class="se-section-sub">Thousands of commercial and free VST plugins, including award-winning instruments used in professional studios.</p>
+    <div class="se-eyebrow">In the wild</div>
+    <h2 class="se-section-title">Built with SynthEdit</h2>
+    <p class="se-section-sub">Thousands of free and commercial plugins have been built with it, including instruments that ended up in professional studios.</p>
   </div>
 
   <div class="se-showcase">
@@ -221,7 +216,6 @@ import Screenshot2 from '../../assets/Screenshot2.png';
       <div class="se-show-info">
         <h3>Phasm</h3>
         <p>A phase-distortion synthesizer with a unique approach to waveform manipulation.</p>
-        <span class="se-show-tag">View case study →</span>
       </div>
     </div>
     <div class="se-show-card">
@@ -232,8 +226,7 @@ import Screenshot2 from '../../assets/Screenshot2.png';
       <img class="se-show-img" src="images/showcase-kx16.png" alt="Kx Synth X16" />
       <div class="se-show-info">
         <h3>Kx Synth X16</h3>
-        <p>A powerful polyphonic synthesizer with extensive modulation capabilities.</p>
-        <span class="se-show-tag">View case study →</span>
+        <p>A polyphonic synthesizer with extensive modulation capabilities.</p>
       </div>
     </div>
     <div class="se-show-card">
@@ -244,22 +237,9 @@ import Screenshot2 from '../../assets/Screenshot2.png';
       <img class="se-show-img" src="images/showcase-phenome.jpg" alt="Phenome" />
       <div class="se-show-info">
         <h3>Phenome</h3>
-        <p>An innovative vocal synthesizer that generates realistic singing voices.</p>
-        <span class="se-show-tag">View case study →</span>
+        <p>A vocal synthesizer that generates realistic singing voices.</p>
       </div>
     </div>
-  </div>
-</section>
-
-{/* ============================================================
-    QUOTE
-    ============================================================ */}
-<section class="se-quote">
-  <div class="se-quote-mark">"</div>
-  <p class="se-quote-text">Unlike traditional programming, there's no 'wrong' way to use SynthEdit. Like 'Lego for sound', you can hook up modules in your own weird and wonderful ways. Programming becomes exploring.</p>
-  <div class="se-quote-attr">
-    <span class="se-quote-name">Jeff McClintock</span>
-    <span class="se-quote-title">Maker · New Zealand · Since 1987</span>
   </div>
 </section>
 
@@ -269,15 +249,15 @@ import Screenshot2 from '../../assets/Screenshot2.png';
 <section class="se-cta">
   <div class="se-cta-card">
     <div>
-      <span class="se-eyebrow se-cta-eyebrow">— Ready to patch?</span>
-      <h2 class="se-cta-title">Download.<br/>Patch. <span class="se-it">Ship.</span></h2>
+      <span class="se-eyebrow se-cta-eyebrow">Try it</span>
+      <h2 class="se-cta-title">The demo is the whole program</h2>
     </div>
     <div class="se-cta-side">
-      <p>Free 60-day demo, fully featured — including VST/AU export. Available for Windows and macOS.</p>
+      <p>Fully featured for 60 days, plugin export included. After that a licence keeps everything working, with no further restrictions.</p>
       <div class="se-cta-actions">
-        <a href="https://synthedit.com/release_1_6/SynthEdit.msix" class="se-btn se-btn-primary">Download for Windows <span class="se-arrow">→</span></a>
-        <a href="https://synthedit.com/release_1_6/SynthEdit-Installer.dmg" class="se-btn se-btn-ghost">Download for macOS <span class="se-arrow">→</span></a>
+        <a href="guides/installation/" class="se-btn se-btn-primary">Download for Windows or macOS <span class="se-arrow">→</span></a>
       </div>
+      <p class="se-cta-sig">— Jeff McClintock, New Zealand</p>
     </div>
   </div>
 </section>
