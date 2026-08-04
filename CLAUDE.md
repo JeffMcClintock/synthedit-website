@@ -49,7 +49,7 @@ netlify.toml               # Netlify build settings
 ## Download Links
 
 - macOS: `https://synthedit.com/release_1_6/SynthEdit-Installer.dmg`
-- Windows: `https://synthedit.com/release_1_6/SynthEdit.msix`
+- Windows: `https://synthedit.com/release_1_6/SynthEdit-Setup.exe`
 
 ## Local Development
 
