@@ -141,6 +141,34 @@ Velocity does not control volume by itself here — Sample Oscillator2 uses it t
 
 See the [Sample Oscillator reference](../../reference/oscillators/sample-oscillator/) for the full pin list on both modules.
 
+## Phase Distortion — a filter sweep with no filter
+
+<div class="se-demo">
+  <div class="se-demo-grid">
+    <img class="se-demo-shot" src="../../images/modules/phase-dist-osc.png" alt="Phase Dist Osc module showing Pitch and Modulation Depth inputs, Wave1 and Wave2 waveform selectors, and an Audio Out pin" />
+    <div>
+      <div class="se-demo-eyebrow">— Demo 06 / Waveform / Phase Distortion</div>
+      <h3 class="se-demo-title">Phase Dist Osc</h3>
+      <p class="se-demo-body">Phase distortion is the Casio CZ trick, and it gets its brightness from somewhere unusual: not from filtering the waveform after the fact, but from the way the oscillator reads its own wavetable. Ordinarily the read position climbs the cycle in a straight line and the stored wave comes out unchanged. Bend that line — race through part of the cycle and crawl through the rest — and the same table emerges with far more harmonics, because the waveform now turns corners it did not have before. Sweep the amount of bend and you get a bright-to-dull sweep that behaves like a filter opening and closing. There is no filter in this patch; the sweep is the oscillator. The amount of bend is the <strong>Modulation Depth</strong> pin, an audio-rate input recalculated every sample, and it has an ADSR of its own, separate from the one on the VCA — so brightness and loudness decay on different curves. <strong>Wave1</strong> and <strong>Wave2</strong> choose which tables get read, and the resonant options put a formant-like peak in the spectrum that travels with the sweep.</p>
+    </div>
+  </div>
+  <audio controls preload="none">
+    <source src="../../audio/phase-distortion-demo.flac" type="audio/flac" />
+    <source src="../../audio/phase-distortion-demo.mp3" type="audio/mpeg" />
+    Your browser does not support embedded audio. <a href="../../audio/phase-distortion-demo.mp3">Download the MP3</a> instead.
+  </audio>
+  <p class="se-demo-listen"><strong>What to listen for:</strong> every note opens bright and collapses quickly into a much darker sustain. That whole movement is the read position bending, not a filter closing — worth remembering while you listen, because it is convincing enough to sound like a filter. Follow the decay for the resonant peak riding on top of it, and listen for the sweep staying continuous rather than stepping, since the depth is resolved every sample.</p>
+  <div class="se-demo-facts">
+    <span>48 kHz · 16-bit stereo</span>
+    <span>0:33</span>
+    <span>Rendered in SynthEdit</span>
+  </div>
+</div>
+
+Because the harmonics are generated as the wave is read rather than removed afterwards, there is no resonant feedback path to run away — the peak can be pushed hard without the module self-oscillating the way a filter would.
+
+See the [Phase Distortion Oscillator reference](../../reference/oscillators/phase-distortion-oscillator/) for the waveform tables, or the [Phase Distortion Synthesis guide](../phase-distortion-synthesis/) for how the technique works.
+
 ## Building these yourself
 
 Every demo here was rendered from an ordinary SynthEdit project using the **Wave Recorder** module, which writes the output straight to a `.wav` file — no external recorder or DAW involved. The [Rendering to Disk guide](../rendering-to-disk/) walks through the process.
