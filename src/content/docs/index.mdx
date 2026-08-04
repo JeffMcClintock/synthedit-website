@@ -26,6 +26,12 @@ import Screenshot2 from '../../assets/Screenshot2.png';
         <a href="guides/installation/" class="se-btn se-btn-primary">Download the 60-day demo <span class="se-arrow">→</span></a>
         <a href="guides/introduction/" class="se-btn se-btn-ghost">Read the documentation</a>
       </div>
+      <a class="se-hero-audio" href="guides/audio-demos/" data-flac="audio/statevar-filter-demo.flac" data-mp3="audio/statevar-filter-demo.mp3">
+        <span class="se-hero-audio-icon" aria-hidden="true"></span>
+        <span>Hear it — a filter sweep, rendered straight out of SynthEdit</span>
+        <span class="se-hero-audio-time">0:36</span>
+        <span class="se-hero-audio-progress"><i></i></span>
+      </a>
     </div>
 
     <video class="se-hero-shot" autoplay muted loop playsinline preload="metadata" poster="videos/hero-poster.jpg" width="1786" height="798" aria-label="SynthEdit structure view — a live modular synthesizer patch with oscillators, filter, MIDI keyboard and animated oscilloscopes connected by signal cables">
@@ -36,6 +42,30 @@ import Screenshot2 from '../../assets/Screenshot2.png';
 </section>
 
 <script>{`(function(){var v=document.querySelector('.se-hero-shot');if(v&&v.tagName==='VIDEO'&&window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();}})();`}</script>
+
+{/* Hero audio teaser: starts life as a plain link to the demos page, so it still works without JS */}
+<script>{`(function(){
+  var el = document.querySelector('.se-hero-audio');
+  if (!el || !window.Audio) return;
+  var snd = new Audio();
+  snd.preload = 'none';
+  snd.src = snd.canPlayType('audio/flac') ? el.getAttribute('data-flac') : el.getAttribute('data-mp3');
+  var fill = el.querySelector('.se-hero-audio-progress i');
+  el.setAttribute('role', 'button');
+  el.setAttribute('aria-label', 'Play a 36 second StateVar Filter audio demo');
+  el.addEventListener('click', function(e){
+    e.preventDefault();
+    if (snd.paused) { snd.play(); el.classList.add('is-playing'); }
+    else { snd.pause(); el.classList.remove('is-playing'); }
+  });
+  snd.addEventListener('timeupdate', function(){
+    if (snd.duration) fill.style.width = (snd.currentTime / snd.duration * 100) + '%';
+  });
+  snd.addEventListener('ended', function(){
+    el.classList.remove('is-playing');
+    fill.style.width = '0%';
+  });
+})();`}</script>
 
 {/* ============================================================
     PLATFORM STATUS — honest, unequally weighted

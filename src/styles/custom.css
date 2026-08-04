@@ -970,6 +970,10 @@ nav.sidebar .top-level > li > details > summary {
 	border-radius: 8px;
 	padding: 10px;
 }
+/* Wider variant — the wavetable display needs room for the waveform detail,
+   and it is already a dark panel so it doesn't want the white matte. */
+.se-demo-grid-wide { grid-template-columns: 220px 1fr; }
+.se-demo-shot-display { background: transparent; padding: 0; }
 .se-demo-eyebrow {
 	font-family: var(--se-font-mono);
 	font-size: 11px;
@@ -1020,6 +1024,7 @@ nav.sidebar .top-level > li > details > summary {
 	.se-demo { padding: 20px; }
 	.se-demo-grid { grid-template-columns: 1fr; gap: 20px; }
 	.se-demo-shot { max-width: 128px; }
+	.se-demo-shot-display { max-width: 220px; }
 }
 
 /* Changelog scroller */
@@ -1103,6 +1108,66 @@ nav.sidebar .top-level > li > details > summary {
 	margin: 0 0 34px;
 }
 .se-hero-news .se-led { flex: none; }
+
+/* ===== Hero audio teaser ===== */
+.se-hero-audio {
+	position: relative;
+	overflow: hidden;
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+	margin-top: 26px;
+	padding: 9px 18px 9px 10px;
+	border: 1px solid var(--se-rule-strong);
+	border-radius: 999px;
+	background: var(--se-bg-2);
+	font-family: var(--se-font-mono);
+	font-size: 12.5px;
+	letter-spacing: 0.02em;
+	line-height: 1.3;
+	color: var(--se-fg-2);
+	text-decoration: none;
+	cursor: pointer;
+	text-align: left;
+	transition: border-color 0.18s ease, color 0.18s ease;
+}
+.se-hero-audio:hover {
+	border-color: var(--se-amber);
+	color: var(--se-fg);
+}
+.se-hero-audio-icon {
+	flex: none;
+	display: grid;
+	place-items: center;
+	width: 26px;
+	height: 26px;
+	border-radius: 50%;
+	background: var(--se-amber);
+	color: #14140f;
+	font-size: 9px;
+	line-height: 1;
+}
+.se-hero-audio-icon::before { content: "\25B6"; margin-left: 2px; }
+.se-hero-audio.is-playing .se-hero-audio-icon::before { content: "\275A\275A"; margin-left: 0; }
+.se-hero-audio-time { flex: none; color: var(--se-fg-3); }
+.se-hero-audio-progress {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 2px;
+}
+.se-hero-audio-progress i {
+	display: block;
+	height: 100%;
+	width: 0;
+	background: var(--se-amber);
+	transition: width 0.15s linear;
+}
+@media (max-width: 520px) {
+	.se-hero-audio { font-size: 11.5px; gap: 10px; }
+	.se-hero-audio-time { display: none; }
+}
 
 /* ===== Platform status ===== */
 .se-platforms {

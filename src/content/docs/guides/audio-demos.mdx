@@ -63,8 +63,34 @@ Because cutoff is an ordinary audio-rate pin, nothing stops you patching an osci
 
 See the [StateVar Filter reference](../../reference/filters/statevar-filter/) for modes and parameters.
 
+## Wavetable Osc — morphing the table
+
+<div class="se-demo">
+  <div class="se-demo-grid se-demo-grid-wide">
+    <img class="se-demo-shot se-demo-shot-display" src="../../images/modules/wavetable-osc.png" alt="Wavetable Osc display showing a stack of single-cycle waveforms, with the currently selected slot highlighted in yellow" />
+    <div>
+      <div class="se-demo-eyebrow">— Demo 03 / Waveform / Wavetable</div>
+      <h3 class="se-demo-title">Wavetable Osc</h3>
+      <p class="se-demo-body">A wavetable oscillator stores a stack of single-cycle waveforms in one file and plays back a position within that stack — the yellow trace in the display is the slot currently sounding. Two things make this awkward to do well. Each slot is a fixed-length cycle being replayed at whatever pitch you ask for, so its stored harmonics transpose along with it and the bright end of the table is where aliasing shows up first. And the position is itself a moving target: jump between neighbouring waves and the discontinuity arrives as a click, or as a stepped grind riding on top of the note. Wavetable Osc takes both <strong>Pitch</strong> and <strong>Slot</strong> as audio-rate inputs, so the position is resolved every sample rather than once per processing block. In this demo the ADSR is patched straight into Slot, so every note travels the depth of the table as it sounds.</p>
+    </div>
+  </div>
+  <audio controls preload="none">
+    <source src="../../audio/wavetable-osc-demo.flac" type="audio/flac" />
+    <source src="../../audio/wavetable-osc-demo.mp3" type="audio/mpeg" />
+    Your browser does not support embedded audio. <a href="../../audio/wavetable-osc-demo.mp3">Download the MP3</a> instead.
+  </audio>
+  <p class="se-demo-listen"><strong>What to listen for:</strong> the timbre morphing continuously as the envelope walks each chord through the table. The movement should be smooth — no clicks where the slot boundaries fall, no stepping or zipper noise riding on the sweep — and the bright end of the table should thin out cleanly rather than breaking into inharmonic fizz. The chords are deliberately unstable and slow, which gives the table time to travel and leaves the morph exposed.</p>
+  <div class="se-demo-facts">
+    <span>48 kHz · 16-bit stereo</span>
+    <span>0:37</span>
+    <span>Rendered in SynthEdit</span>
+  </div>
+</div>
+
+Because Slot is an ordinary audio-rate pin, an LFO — or another oscillator — can drive it as readily as an envelope. The table itself is just a `.wav`; this one is assembled from single-cycle waves out of the free Adventure Kid (AKWF) library.
+
 ## Building these yourself
 
-Both demos were rendered from ordinary SynthEdit projects using the **Wave Recorder** module, which writes the output straight to a `.wav` file — no external recorder or DAW involved. The [Rendering to Disk guide](../rendering-to-disk/) walks through the process.
+All three demos were rendered from ordinary SynthEdit projects using the **Wave Recorder** module, which writes the output straight to a `.wav` file — no external recorder or DAW involved. The [Rendering to Disk guide](../rendering-to-disk/) walks through the process.
 
 More module demos will be added to this page over time.
