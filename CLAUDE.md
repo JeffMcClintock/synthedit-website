@@ -27,6 +27,8 @@ src/
   assets/                  # Images used via Astro imports (hero, logo)
 public/
   images/                  # Images used in raw HTML blocks (features, showcase)
+source-assets/             # Source material (.synthedit/.skin files) used to generate
+                            # site images/audio — not deployed, not referenced by the site
 astro.config.mjs           # Sidebar structure, logo, theme config
 netlify.toml               # Netlify build settings
 ```
@@ -38,6 +40,7 @@ netlify.toml               # Netlify build settings
 - **Images in MDX HTML blocks**: Must go in `public/images/` and be referenced as `/images/filename.jpg`. Astro-imported images (hero, logo) go in `src/assets/`.
 - **Changelog**: Recent entries are manually listed in `installation.mdx` inside a `<div class="se-changelog-scroll">` container. Full changelog links to `https://synthedit.com/release_1_6/changelog.html`.
 - **Styling**: All custom CSS is in `src/styles/custom.css`. Uses CSS custom properties from Starlight's theming system (`--sl-color-*`).
+- **Source material for generated assets**: `.synthedit`/`.skin` project files used to produce a screenshot or audio demo (but not themselves served) go in `source-assets/` at the repo root — never in `public/` (gets deployed as-is) or `src/assets/` (Astro-imported site images only).
 
 ## Download Links
 
