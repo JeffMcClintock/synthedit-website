@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Document file_format="150000" vst_latencyCompensation="1" SelectedViewHandle="94852515" SelectedViewType="256" emulate_ignore_pc="true" vst_preset_count="64" vst_version="1.0.0">
+<Document file_format="150000" vst_latencyCompensation="1" SelectedViewHandle="2127089738" SelectedViewType="256" emulate_ignore_pc="true" vst_preset_count="64" vst_version="1.0.0">
     <master_container type="Container" handle="94852515" name="Main" PanelLocationZoom="1" StructLocationZoom="1.2499999" ViewOpenFlags="256" skin="default3">
         <plugs>
             <plug idx="7"/>
@@ -344,6 +344,7 @@
                         <plugs>
                             <plug default="10" idx="4"/>
                             <plug default="3"/>
+                            <plug default="7"/>
                         </plugs>
                         <structRect l="252" r="324" t="192" b="288"/>
                         <panelRect l="235" r="235" t="149" b="149"/>
