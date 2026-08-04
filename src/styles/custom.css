@@ -1119,6 +1119,38 @@ nav.sidebar .top-level > li > details > summary {
 }
 .se-hero-news .se-led { flex: none; }
 
+/* ===== Hero byline — puts a face to the first-person voice ===== */
+.se-hero-byline {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	margin: 0 0 30px;
+}
+.se-hero-portrait {
+	flex: none;
+	width: 54px;
+	height: 54px;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 1px solid var(--se-rule-strong);
+}
+.se-hero-byline-name {
+	display: block;
+	font-family: var(--se-font-display);
+	font-weight: 600;
+	font-size: 15px;
+	letter-spacing: -0.01em;
+	color: var(--se-fg);
+}
+.se-hero-byline-role {
+	display: block;
+	margin-top: 3px;
+	font-family: var(--se-font-mono);
+	font-size: 11.5px;
+	letter-spacing: 0.05em;
+	color: var(--se-fg-3);
+}
+
 /* ===== Hero audio teaser ===== */
 .se-hero-audio {
 	position: relative;

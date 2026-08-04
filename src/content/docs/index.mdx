@@ -7,6 +7,7 @@ template: splash
 import { Image } from 'astro:assets';
 import Screenshot1 from '../../assets/Screenshot1.png';
 import Screenshot2 from '../../assets/Screenshot2.png';
+import Jeff from '../../assets/jeff-mcclintock.jpg';
 
 {/* ============================================================
     HERO
@@ -19,6 +20,13 @@ import Screenshot2 from '../../assets/Screenshot2.png';
         <span>SynthEdit 1.6</span>
       </div>
       <h1>I've been building<br/>SynthEdit since <span class="se-year">1987</span>.</h1>
+      <div class="se-hero-byline">
+        <Image src={Jeff} alt="Jeff McClintock" width={128} height={128} loading="eager" class="se-hero-portrait" />
+        <div>
+          <span class="se-hero-byline-name">Jeff McClintock</span>
+          <span class="se-hero-byline-role">Maker · New Zealand</span>
+        </div>
+      </div>
       {/* Keep text on one line inside styled <p> tags: MDX wraps multi-line text in a nested <p>, which the browser auto-closes, leaving the styled element empty */}
       <p class="se-hero-tag">It's a modular environment for designing synthesizers and effects. You patch modules together on a canvas, draw a front panel, and export a VST3 or Audio Unit plugin. What you build is yours — sell it, give it away, no royalties, no permission needed.</p>
       <p class="se-hero-news"><span class="se-led"></span> New in 1.6 — SynthEdit now runs natively on macOS.</p>
