@@ -1,0 +1,70 @@
+---
+title: Audio Demos
+description: Rendered audio demonstrations of SynthEdit's DSP modules, with technical notes on what to listen for.
+---
+
+Screenshots can show you what a patch looks like. These demos let you hear what the DSP actually does.
+
+Each one isolates a single module, renders it straight out of SynthEdit to disk, and pairs it with a note on the engineering behind what you're hearing. Every clip is served losslessly (FLAC, with an MP3 fallback) — a demo about fidelity shouldn't be judged through a lossy codec.
+
+## Oscillator HD — waveform purity
+
+<div class="se-demo">
+  <div class="se-demo-grid">
+    <img class="se-demo-shot" src="../../images/modules/osc-hd.png" alt="Oscillator HD module showing Pitch, Pulse Width, Waveform, Sync, Phase Mod, Disable and Reset Mode inputs with an Audio Out pin" />
+    <div>
+      <div class="se-demo-eyebrow">— Demo 01 / Waveform</div>
+      <h3 class="se-demo-title">Oscillator HD</h3>
+      <p class="se-demo-body">A sawtooth is the hardest waveform to synthesise cleanly: it contains every harmonic, not just the odd ones, so its upper partials pile up against the Nyquist limit. A naive digital oscillator folds those partials back down the spectrum as inharmonic tones that drift <em>against</em> the note instead of tracking it — the metallic, faintly detuned grit that gives cheap soft synths away. Oscillator HD generates band-limited waveforms so the harmonic series stays intact all the way up.</p>
+    </div>
+  </div>
+  <audio controls preload="none">
+    <source src="../../audio/oscillator-hd-demo.flac" type="audio/flac" />
+    <source src="../../audio/oscillator-hd-demo.mp3" type="audio/mpeg" />
+    Your browser does not support embedded audio. <a href="../../audio/oscillator-hd-demo.mp3">Download the MP3</a> instead.
+  </audio>
+  <p class="se-demo-listen"><strong>What to listen for:</strong> the demo alternates deep bass notes with mid-register chords. The sustained low notes are the real test — a sawtooth down there packs hundreds of harmonics into the top of the audible band. Listen behind the note for any metallic shimmer that fails to move with the pitch. It should stay clean and stable, the brightness simply thinning out as the harmonics run out of room.</p>
+  <div class="se-demo-facts">
+    <span>48 kHz · 16-bit stereo</span>
+    <span>0:40</span>
+    <span>Rendered in SynthEdit</span>
+  </div>
+</div>
+
+The pitch, pulse width, sync and phase-modulation inputs are all audio-rate, so the oscillator can be driven as fast as the signal feeding it — which is what makes it usable as an FM operator as well as a voice.
+
+See the [Oscillator HD reference](../../reference/oscillators/oscillator-hd/) for the full pin list.
+
+## StateVar Filter — audio-rate modulation
+
+<div class="se-demo">
+  <div class="se-demo-grid">
+    <img class="se-demo-shot" src="../../images/modules/statevar-filter.png" alt="StateVar Filter module showing Signal, Pitch, Resonance, Strength and Mode inputs with an Output pin" />
+    <div>
+      <div class="se-demo-eyebrow">— Demo 02 / Filters / VA</div>
+      <h3 class="se-demo-title">StateVar Filter (TPT)</h3>
+      <p class="se-demo-body">This demo runs the filter where it is least forgiving: two-stage, resonance well up, with an envelope sweeping the cutoff on every note and the cutoff tracking the keyboard as well. High resonance acts as a magnifying glass on the cutoff parameter itself — if the frequency were only recalculated once per processing block, each step would ring the resonant peak and you would hear it as zipper noise or a gritty stair-step in the sweep. The StateVar Filter's Pitch and Resonance are both audio-rate inputs, recalculated every sample, and its topology-preserving transform (TPT) design keeps the filter stable and its tuning accurate while those values move.</p>
+    </div>
+  </div>
+  <audio controls preload="none">
+    <source src="../../audio/statevar-filter-demo.flac" type="audio/flac" />
+    <source src="../../audio/statevar-filter-demo.mp3" type="audio/mpeg" />
+    Your browser does not support embedded audio. <a href="../../audio/statevar-filter-demo.mp3">Download the MP3</a> instead.
+  </audio>
+  <p class="se-demo-listen"><strong>What to listen for:</strong> the resonant peak sweeping through each note. It should glide continuously, with no stepping, buzzing or granularity riding on top of the sweep — and the resonance should stay musical rather than spitting at the extremes.</p>
+  <div class="se-demo-facts">
+    <span>48 kHz · 16-bit stereo</span>
+    <span>0:36</span>
+    <span>Rendered in SynthEdit</span>
+  </div>
+</div>
+
+Because cutoff is an ordinary audio-rate pin, nothing stops you patching an oscillator into it rather than an envelope — the filter will track it at full rate.
+
+See the [StateVar Filter reference](../../reference/filters/statevar-filter/) for modes and parameters.
+
+## Building these yourself
+
+Both demos were rendered from ordinary SynthEdit projects using the **Wave Recorder** module, which writes the output straight to a `.wav` file — no external recorder or DAW involved. The [Rendering to Disk guide](../rendering-to-disk/) walks through the process.
+
+More module demos will be added to this page over time.

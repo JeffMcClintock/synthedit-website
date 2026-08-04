@@ -22,6 +22,7 @@ export default defineConfig({
 					label: 'Getting Started',
 					items: [
 						{ label: 'Introduction', slug: 'guides/introduction' },
+						{ label: 'Audio Demos', slug: 'guides/audio-demos' },
 						{ label: 'Installation', slug: 'guides/installation' },
 						{ label: 'Your First Synth', slug: 'guides/first-synth' },
 					],
