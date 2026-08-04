@@ -89,8 +89,64 @@ See the [StateVar Filter reference](../../reference/filters/statevar-filter/) fo
 
 Because Slot is an ordinary audio-rate pin, an LFO — or another oscillator — can drive it as readily as an envelope. The table itself is just a `.wav`; this one is assembled from single-cycle waves out of the free Adventure Kid (AKWF) library.
 
+## Phase Modulation — FM from two oscillators
+
+<div class="se-demo">
+  <div class="se-demo-grid">
+    <img class="se-demo-shot" src="../../images/modules/osc-hd.png" alt="Oscillator HD module, showing the Phase Mod input used to build an FM pair" />
+    <div>
+      <div class="se-demo-eyebrow">— Demo 04 / Waveform / FM</div>
+      <h3 class="se-demo-title">Phase Mod (2-operator FM)</h3>
+      <p class="se-demo-body">There is no FM module in SynthEdit, and there doesn't need to be. This patch is two Oscillator HDs, both set to sine: one's output runs through a Level Adj into the other's <strong>Phase Mod</strong> input, and that is the whole synthesis engine. What makes it behave like a real FM instrument rather than a noise is that both oscillators take their pitch from the same MIDI to CV, so the modulator:carrier ratio is fixed no matter which key you press — the harmonic relationship is locked to the note instead of drifting against it. The Level Adj in between is the modulation index, and it gets an ADSR of its own, separate from the one on the VCA, so the timbre can evolve on a different curve from the loudness. That split is what makes a struck-and-decaying FM tone possible.</p>
+    </div>
+  </div>
+  <audio controls preload="none">
+    <source src="../../audio/fm-phase-mod-demo.flac" type="audio/flac" />
+    <source src="../../audio/fm-phase-mod-demo.mp3" type="audio/mpeg" />
+    Your browser does not support embedded audio. <a href="../../audio/fm-phase-mod-demo.mp3">Download the MP3</a> instead.
+  </audio>
+  <p class="se-demo-listen"><strong>What to listen for:</strong> the bell-like attack collapsing into a much purer sustain as the index envelope closes — one voice, two envelopes. Partway through, the same root-fifth-ninth shape is played at three octaves in a row; because the ratio is locked to the keyboard, the low, middle and high versions should read as the same instrument moved, not as three different sounds. It ends on a low, middle and high tone struck together and left to ring.</p>
+  <div class="se-demo-facts">
+    <span>48 kHz · 16-bit stereo</span>
+    <span>0:32</span>
+    <span>Rendered in SynthEdit</span>
+  </div>
+</div>
+
+Phase modulation and true frequency modulation produce the same spectra for simple ratios, but PM stays in tune when the index changes — which is why the Phase Mod pin, rather than the Pitch pin, is the one to reach for.
+
+See the [Oscillator HD reference](../../reference/oscillators/oscillator-hd/) for the Phase Mod pin, or the [FM Synthesis guide](../fm-synthesis/) for operator arrangements.
+
+## Sample Oscillator — multisampled playback
+
+<div class="se-demo">
+  <div class="se-demo-grid">
+    <img class="se-demo-shot" src="../../images/modules/sample-oscillator.png" alt="Sample Loader2 wired to Sample Oscillator2 via the Sample ID pin" />
+    <div>
+      <div class="se-demo-eyebrow">— Demo 05 / Oscillators / Sampling</div>
+      <h3 class="se-demo-title">Sample Loader2 + Sample Oscillator2</h3>
+      <p class="se-demo-body">This one is playing a SoundFont — an orchestral violin — through the Sample Loader2 and Sample Oscillator2 pair. A multisampled instrument is not one recording transposed across the keyboard; it is dozens of them, split across key ranges and across velocity layers, and the work is in the joins. Cross a key-zone boundary and the timbre has to stay continuous even though a different recording has just started playing. Cross a velocity boundary and the same applies, on an axis the player is driving expressively rather than in neat steps. On top of that every held note is running a sustain loop that has to be inaudible, and the Loader has to read the SF2's own root keys, loop points and layer splits rather than guessing at them.</p>
+    </div>
+  </div>
+  <audio controls preload="none">
+    <source src="../../audio/sample-oscillator-demo.flac" type="audio/flac" />
+    <source src="../../audio/sample-oscillator-demo.mp3" type="audio/mpeg" />
+    Your browser does not support embedded audio. <a href="../../audio/sample-oscillator-demo.mp3">Download the MP3</a> instead.
+  </audio>
+  <p class="se-demo-listen"><strong>What to listen for:</strong> an expressive violin line covering just over two octaves, with the bow weight moving continuously across the whole velocity range. Follow it up and down and listen for any point where the tone jumps rather than travels — a sudden change of character mid-phrase is a zone boundary showing through. On the long notes, listen for a repeating cycle or a seam in the sustain, which is the loop point failing to hide.</p>
+  <div class="se-demo-facts">
+    <span>48 kHz · 16-bit stereo</span>
+    <span>0:40</span>
+    <span>Rendered in SynthEdit</span>
+  </div>
+</div>
+
+Velocity does not control volume by itself here — Sample Oscillator2 uses it to pick between the SoundFont's velocity layers, so an ADSR and VCA still do the amplitude shaping, exactly as they would for an oscillator.
+
+See the [Sample Oscillator reference](../../reference/oscillators/sample-oscillator/) for the full pin list on both modules.
+
 ## Building these yourself
 
-All three demos were rendered from ordinary SynthEdit projects using the **Wave Recorder** module, which writes the output straight to a `.wav` file — no external recorder or DAW involved. The [Rendering to Disk guide](../rendering-to-disk/) walks through the process.
+Every demo here was rendered from an ordinary SynthEdit project using the **Wave Recorder** module, which writes the output straight to a `.wav` file — no external recorder or DAW involved. The [Rendering to Disk guide](../rendering-to-disk/) walks through the process.
 
 More module demos will be added to this page over time.
