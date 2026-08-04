@@ -1,4 +1,4 @@
-name: Deploy to synthedit.com/new
+name: Deploy to synthedit.com
 
 on:
   push:
@@ -28,6 +28,6 @@ jobs:
           username: synth
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: /domains/synthedit.com/public_html/new/
+          server-dir: /domains/synthedit.com/public_html/_site/
           state-name: .ftp-deploy-sync-state.json
           dangerous-clean-slate: false

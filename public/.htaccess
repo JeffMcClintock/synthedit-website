@@ -1,12 +1,6 @@
+# This file is deployed into the site's folder on the server (public_html/_site/).
+# Routing for the whole domain is handled by public_html/.htaccess — see
+# server/root.htaccess in this repo for the copy under version control.
 <IfModule mod_dir.c>
     DirectoryIndex index.html
-</IfModule>
-
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteBase /new/
-    RewriteRule ^index\.html$ - [L]
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule . index.html [L]
 </IfModule>

@@ -4,10 +4,15 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
-	base: '/new/',
+	site: 'https://synthedit.com',
 	integrations: [
 		starlight({
 			title: 'SynthEdit',
+			components: {
+				// Temporary site-wide notice linking to the old site. Remove this
+				// entry (and src/components/SiteBanner.astro) to drop the banner.
+				Banner: './src/components/SiteBanner.astro',
+			},
 			logo: {
 				alt: 'SynthEdit',
 				src: './src/assets/synthedit-logo.svg',
