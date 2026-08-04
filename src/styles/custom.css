@@ -974,6 +974,16 @@ nav.sidebar .top-level > li > details > summary {
    and it is already a dark panel so it doesn't want the white matte. */
 .se-demo-grid-wide { grid-template-columns: 220px 1fr; }
 .se-demo-shot-display { background: transparent; padding: 0; }
+/* Full-width wiring diagram, for demos where the patch itself is the picture
+   and a 128px column would render the pin labels unreadable. */
+.se-demo-diagram {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin-top: 22px;
+	border: 1px solid var(--se-rule);
+	border-radius: 8px;
+}
 .se-demo-eyebrow {
 	font-family: var(--se-font-mono);
 	font-size: 11px;
