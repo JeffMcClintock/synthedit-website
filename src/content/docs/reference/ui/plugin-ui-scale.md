@@ -9,7 +9,7 @@ description: Read and set the scale factor of an exported plugin's window.
 <!-- module-screenshot:end -->
 
 
-The **Plugin UI Scale** module connects to the host control `Plugin/UIScale` — the zoom factor applied to your exported VST3 / AU plugin's window. Use it to let the user resize the plugin GUI at runtime.
+The **Plugin UI Scale** module connects to the host control `Plugin/UIScale` — the zoom factor applied to your exported VST3 / AU plugin's window. Use it to let the user resize the plugin GUI at runtime, as described in the [Resizable Plugin Windows guide](../../../guides/resizable-plugin-windows/).
 
 Found in the Module Browser under **Special**.
 
