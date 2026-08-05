@@ -60,6 +60,12 @@ Each panel can use a different skin:
 
 The folder name becomes the skin name. Any missing images automatically fall back to the default skin.
 
+## Panel Size and Plugin Window Size
+
+The size of the master container's panel is the size your exported plugin's window opens at. Set it to whatever you want the user to see at 100%.
+
+Your plugin can also let the user scale that window up or down while it's running — see [Resizable Plugin Windows](../resizable-plugin-windows/).
+
 ## Locking the Panel
 
 To prevent accidental changes to your panel layout, use **Edit > Lock Module** or the toolbar lock button. Locked panels prevent control repositioning while still allowing the controls to function normally during playback.

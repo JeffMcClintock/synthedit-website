@@ -18,6 +18,8 @@ Before exporting, you'll want to create a user interface for your plugin:
 3. Connect controls to module parameters
 4. Customize the appearance with colors, images, and layout
 
+The panel's size becomes the plugin window's size. If you want the user to be able to scale that window up or down inside the DAW, see [Resizable Plugin Windows](../resizable-plugin-windows/).
+
 ## Exporting as VST3
 
 1. Go to **File > Export VST Plugin**

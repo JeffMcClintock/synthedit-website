@@ -40,6 +40,7 @@ export default defineConfig({
 						{ label: 'Polyphony', slug: 'guides/polyphony' },
 						{ label: 'Containers & Prefabs', slug: 'guides/containers' },
 						{ label: 'Panel Design', slug: 'guides/panel-design' },
+						{ label: 'Resizable Plugin Windows', slug: 'guides/resizable-plugin-windows' },
 						{ label: 'MIDI Automation', slug: 'guides/midi-automation' },
 						{ label: 'Creating VST Plugins', slug: 'guides/creating-vst-plugins' },
 						{ label: 'Distributing with GitHub Actions', slug: 'guides/distributing-with-github-actions' },

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document file_format="150000" vst_latencyCompensation="1" SelectedViewHandle="94852515" SelectedViewType="256" emulate_ignore_pc="true" vst_preset_count="64" vst_version="1.0.0">
+    <master_container type="Container" handle="94852515" name="Main" PanelLocationZoom="1" StructLocationZoom="1" skin="default3">
+        <plugs>
+            <plug idx="7"/>
+        </plugs>
+        <structRect l="0" r="0" t="0" b="0"/>
+        <PatchManager>
+            <ProgramNames/>
+        </PatchManager>
+        <modules>
+            <module type="SE List Entry4" handle="70768971">
+                <plugs>
+                    <plug default="100"/>
+                    <plug default="50%=50,75%=75,100%=100,150%=150,200%=200"/>
+                </plugs>
+                <structRect l="600" r="600" t="96" b="96"/>
+                <panelRect l="0" r="0" t="0" b="0"/>
+            </module>
+            <module type="SE FloatToInt GUI" handle="34702161">
+                <structRect l="444" r="444" t="96" b="96"/>
+                <panelRect l="0" r="0" t="0" b="0"/>
+            </module>
+            <module type="SE Float Function GUI" handle="1412763883">
+                <plugs>
+                    <plug default="B/100" idx="2"/>
+                    <plug default="A*100"/>
+                </plugs>
+                <structRect l="264" r="264" t="96" b="96"/>
+                <panelRect l="0" r="0" t="0" b="0"/>
+            </module>
+            <module type="SE: Plugin UI Scale" handle="190616161">
+                <structRect l="96" r="96" t="96" b="96"/>
+                <panelRect l="0" r="0" t="0" b="0"/>
+            </module>
+        </modules>
+        <lines>
+            <line type="Line" handle="1590000411" lineType="1" fMod="190616161" tMod="1412763883" fPlg="1"/>
+            <line type="Line" handle="1991779248" lineType="1" fMod="1412763883" tMod="34702161" fPlg="1"/>
+            <line type="Line" handle="185720371" lineType="1" fMod="34702161" tMod="70768971" fPlg="1"/>
+        </lines>
+        <PanelLocationCenter x="3984" y="3984"/>
+        <StructLocationCenter x="3984" y="3984"/>
+        <PanelWndPosition l="0" r="0" t="0" b="0"/>
+        <PanelLocation l="0" r="500" t="0" b="500"/>
+        <StructLocation l="0" r="500" t="0" b="500"/>
+        <PanelScroll x="3734" y="3734"/>
+        <StructScroll x="3734" y="3734"/>
+        <PanelWndOffset cx="-99999" cy="-99999"/>
+        <panel_rect l="3732" r="4212" t="3732" b="4212"/>
+    </master_container>
+    <PluginList>
+        <Plugin id="Container" class="1" name="Container" flags="384" category="">
+            <Audio>
+                <Pin name="Spare" datatype="float" rate="audio" autoRename="true" autoDuplicate="true" isContainerIoPlug="true"/>
+                <Pin name="Polyphony" datatype="enum" default="6" private="true" isMinimised="true" metadata="range 1,128"/>
+                <Pin name="MIDI Automation" datatype="bool" private="true" isMinimised="true"/>
+                <Pin name="Show Controls" datatype="enum" private="true" isMinimised="true" metadata="Off,On Panel,On Module"/>
+            </Audio>
+            <GUI>
+                <Pin name="Controls on Parent" datatype="bool" direction="out" isMinimised="true"/>
+                <Pin name="Controls on Module" datatype="bool" noAutomation="true"/>
+                <Pin name="Visible" datatype="bool"/>
+                <Pin name="Ignore Program Change" datatype="bool" noAutomation="true"/>
+            </GUI>
+        </Plugin>
+        <Plugin id="SE Float Function GUI" name="Float Function" flags="384" category="Sub-Controls/Conversion" helpUrl="synthedit.chm::/mdl_sdk3/FloatFunction.htm">
+            <GUI>
+                <Pin name="A" datatype="float"/>
+                <Pin name="B" datatype="float" direction="out"/>
+                <Pin name="Formula: A=" datatype="string" default="B*2"/>
+                <Pin name="Formula: B=" datatype="string" default="A/2"/>
+            </GUI>
+        </Plugin>
+        <Plugin id="SE FloatToInt GUI" name="Float To Int" flags="33554816" category="Sub-Controls/Conversion" helpUrl="Sub-control-converters.htm">
+            <GUI>
+                <Pin name="Float Val" datatype="float"/>
+                <Pin name="Int Val" datatype="int" direction="out"/>
+            </GUI>
+        </Plugin>
+        <Plugin id="SE List Entry4" name="List Entry4" flags="384" category="Sub-Controls">
+            <GUI graphicsApi="GmpiGui">
+                <Pin name="Choice" datatype="int"/>
+                <Pin name="Item List" datatype="string"/>
+                <Pin name="Style" datatype="string" default="normal"/>
+                <Pin name="Writeable" datatype="bool" default="1"/>
+                <Pin name="Greyed" datatype="bool"/>
+                <Pin name="Hint" datatype="string"/>
+                <Pin name="Menu Items" datatype="string"/>
+                <Pin name="Menu Selection" datatype="int"/>
+            </GUI>
+        </Plugin>
+        <Plugin id="SE: Plugin UI Scale" name="Plugin UI Scale" flags="384" category="Special">
+            <GUI graphicsApi="GmpiGui">
+                <Pin name="Host UI Scale" datatype="float" private="true" hostConnect="Plugin/UIScale"/>
+                <Pin name="UI Scale" datatype="float" direction="out"/>
+            </GUI>
+        </Plugin>
+    </PluginList>
+</Document>
