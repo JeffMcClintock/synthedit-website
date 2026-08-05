@@ -5,6 +5,56 @@ description: Full version history of SynthEdit changes and fixes.
 
 Every release in the v1.6 line. The most recent entries are also embedded on the [installation page](../guides/installation/).
 
+**v1.6.171** — 2026-08-05
+- hand the mac Xcode project the HarfBuzz include path
+- configure failed when synth_ui_tests was skipped
+- breadcrumb bar draws container thumbnails on mac
+
+**v1.6.170** — 2026-08-05
+- more natural auto-line-tracing
+
+**v1.6.169** — 2026-08-05
+- export refuses missing modules instead of crashing
+- audio capture for the Wayland editor
+- a view change severed the side panes' hosts
+- a missing stock module is a broken installation, say so
+- Preferences panel for the Wayland editor
+
+**v1.6.168** — 2026-08-05
+- tab strip for the Wayland editor
+- ship the Selawik font files
+- search box for the module browser
+- say OS-height explicitly in the SDK3 text adapter
+- never discard unsaved changes silently
+- module browser and properties panes for the Wayland editor
+- menu bar for the Wayland editor
+- layout tests render through the CPU backend on Linux
+- keyboard shortcuts for the Wayland editor
+- destroy the editor views before the document, not after
+- define FONTS_DIR for synth_ui_tests
+- cross cursor while click-placing a module
+- canvas scrollbars for the Wayland editor
+- bundle Selawik so text measures the same on every platform
+- async message boxes, and make them visible on linux at all
+- adapt to gmpi_ui's registerBundledFont signature
+- View menu toggles for the side panes
+- SynthEdit on Wayland, no toolkit and no X11
+- Spectrum Analyser - fixed possible crash when changing FFT size
+- Properties browser can now select new (non-existing) files on filename pins.
+- PipeWire audio for the Wayland editor
+- ALSA sequencer MIDI for the Wayland editor
+- --connect rejects bad pin indices instead of crashing
+
+**v1.6.167** — 2026-08-03
+- build on Linux â€” CPU-backend factory and GCC portability fixes
+- SynthEditCL builds and runs headless on Linux
+
+**v1.6.166** — 2026-07-31
+- wavetable 16-bit WAV export wrapped at full scale
+- blank canvas on single-tab documents (first tab auto-selects, so the view rebuild never fired)
+- [0228] xml datatype="audio"
+- JUCE_JACK only where the JACK headers exist (Windows build broke on jack/jack.h)
+
 **v1.6.165** — 2026-07-29
 - show busy cursor while rescanning modules and vsts
 
@@ -45,17 +95,18 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - keep calcReportedLatency in step with calcDelayCompensation overrides
 - fix crash deleting a container the breadcrumb trail remembers
 - add Delay3 - modernised GMPI echo delay
+- Ctrl+D shows debuggers on selected modules of current view
 - Compensated Delay over-reported latency at some sample rates
 - Compensated Delay latches its report at compensation time and snaps it to the delay line's tap count
 
 **v1.6.156** — 2026-07-15
 - add Ctrl+D presenter command to toggle debugger on selection
-- Ctrl+D shows debuggers on selected modules of current view
 
 **v1.6.155** — 2026-07-14
 - Compensated Delay module + decoupled reported-latency pass
 
 **v1.6.154** — 2026-07-14
+- port Oscillator HD to GMPI SDK
 - port Oscillator HD to GMPI SDK
 - new module Lookahead2, adds lookahead without restarting Processor (when 'ms' pin not connected).
 - fix possible crash on closing a document
@@ -447,6 +498,7 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - Better fine control of new sliders
 
 **v1.6.96** — 2026-05-13
+- wire up edit > move to front/back menu items
 - tweaks to new sub-controls
 - removed close icon from main view
 - mac app icon now ships in bundle (was generic placeholder)
@@ -454,7 +506,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - 'Additional Files' dialog layout fixed
 
 **v1.6.95** — 2026-05-12
-- wire up edit > move to front/back menu items
 - right-click on panel module shows context menu again
 
 **v1.6.94** — 2026-05-12
