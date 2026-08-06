@@ -86,7 +86,8 @@ preview, but expect rough edges — see the limitations below.
   client with no toolkit and no X11 path, so it will not start under a legacy
   X11-only session (and there is no XWayland fallback). Any current GNOME, KDE
   Plasma or Sway session is fine.
-- Standard desktop libraries (freetype, fontconfig, ALSA) — preinstalled on any normal desktop distro
+- Standard desktop libraries (libdecor, xkbcommon, harfbuzz, freetype, fontconfig,
+  **PipeWire** for audio, ALSA for MIDI) — preinstalled on any normal desktop distro
 
 **Install and run**
 
@@ -101,10 +102,28 @@ modules are scanned from `~/.local/share/SynthEdit/modules`.
 
 **Audio and MIDI**
 
-Audio plays through the system default output (ALSA, or JACK when a JACK
-server is running) and the engine starts automatically — toggle it with
-**Audio > Run**. All connected MIDI input devices are opened automatically,
-so a plugged-in keyboard just works.
+Audio output goes through **PipeWire**, to the system default device — there is
+no JACK or plain-ALSA audio backend. The engine starts automatically; toggle it
+with **Audio > Run**. MIDI input uses the ALSA sequencer, and every connected
+MIDI device is opened by default, so a plugged-in keyboard just works.
+
+**Edit > Preferences** (Ctrl+,) sets the sample rate, buffer size and MIDI
+input/output. Changes take effect immediately — a running engine is restarted
+for you. The audio device list currently offers only PipeWire's default sink;
+to send SynthEdit somewhere else, route it in your desktop's own sound settings.
+
+**If you hear dropouts**
+
+PipeWire decides the audio period itself, so **Buffer size** is a request rather
+than a guarantee.
+
+- Match SynthEdit's **Sample Rate** to the one PipeWire is using
+  (`pw-metadata -n settings | grep rate`) so nothing has to be resampled.
+- Give audio threads realtime priority — adding yourself to the `pipewire`
+  group is usually enough (`sudo usermod -aG pipewire $USER`, then log out and
+  back in).
+- Audio inside a virtual machine is emulated and glitches regardless of these
+  settings; a larger buffer in your VM's audio settings helps.
 
 **Editing**
 
@@ -116,7 +135,7 @@ shortcuts work (Ctrl+Z/Y, Ctrl+X/C/V, Delete, Ctrl+N/O/S, F5 toggles audio).
 
 **Not working yet**
 
-- Audio/MIDI device selection UI (default output device, all MIDI inputs)
+- Picking a specific audio output device (only PipeWire's default sink is offered)
 - Plugin (VST3/AU) export
 - Multiple windows (tear-out)
 
