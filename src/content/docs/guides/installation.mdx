@@ -73,7 +73,8 @@ Requires Windows 10 version 1809 (build 17763) or newer, 64-bit.
 
 :::caution[Experimental preview]
 The Linux build is an early, **experimental** port and is **not feature-complete**.
-It's free to try while in preview, but expect rough edges — see the limitations below.
+It runs only on **Wayland** — there is no X11 build. It's free to try while in
+preview, but expect rough edges — see the limitations below.
 :::
 
 <a href="https://synthedit.com/release_1_6/SynthEdit-linux-x64.tar.gz" class="se-btn se-btn-primary" style="display:inline-block; margin: 0.5rem 0 1rem;">Download for Linux (.tar.gz)</a>
@@ -81,8 +82,11 @@ It's free to try while in preview, but expect rough edges — see the limitation
 **Requirements**
 
 - 64-bit x86 Linux with **glibc 2.39 or newer** — e.g. **Ubuntu 24.04+**, Fedora 40+, or equivalent
-- An **X11 or XWayland** desktop session
-- Standard desktop libraries (X11, freetype, fontconfig, ALSA) — preinstalled on any normal desktop distro
+- A **Wayland** desktop session — **required**. SynthEdit is a native Wayland
+  client with no toolkit and no X11 path, so it will not start under a legacy
+  X11-only session (and there is no XWayland fallback). Any current GNOME, KDE
+  Plasma or Sway session is fine.
+- Standard desktop libraries (freetype, fontconfig, ALSA) — preinstalled on any normal desktop distro
 
 **Install and run**
 

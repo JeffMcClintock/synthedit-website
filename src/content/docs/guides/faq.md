@@ -7,7 +7,7 @@ description: Common questions and troubleshooting tips for SynthEdit.
 
 ### What platforms does SynthEdit run on?
 
-SynthEdit requires **Windows 10 or later** (64-bit). A **macOS** version is also available. See the [Installation](../installation/) page for download links. Plugins exported from SynthEdit work on Windows 7+ (VST) and macOS 10.8+ (Audio Unit).
+SynthEdit requires **Windows 10 or later** (64-bit). A **macOS** version is also available. There's an experimental **Linux** preview too, which requires a **Wayland** desktop session — it's a native Wayland client, so it won't run under X11. See the [Installation](../installation/) page for download links. Plugins exported from SynthEdit work on Windows 7+ (VST) and macOS 10.8+ (Audio Unit).
 
 ### Can I distribute plugins I create with SynthEdit?
 
