@@ -19,9 +19,10 @@ It's a thin wrapper around the headless `SynthEditCL` command-line tool, exposin
 
 You need three things, all installed normally — **no source checkout, no compilation**:
 
-1. **SynthEdit + the headless `SynthEditCL` tool** — any 1.6.x build.
-   - **macOS:** `SynthEditCL` ships inside `SynthEdit.app`. Just install SynthEdit and you're done — no extra step.
+1. **The headless `SynthEditCL` tool** — any 1.6.x build.
+   - **macOS:** `SynthEditCL` ships inside `SynthEdit.app`. Just install SynthEdit and you're done — no extra step. (A standalone [SynthEditCL_mac.zip](https://synthedit.com/release_1_6/SynthEditCL_mac.zip) exists if you don't want the GUI.)
    - **Windows:** install the separate [SynthEditCL Installer](https://synthedit.com/release_1_6/SynthEditCL-Installer.exe) (small, standalone). See the [installation guide](../installation/#ai-assistant-support) for details.
+   - **Linux:** download and extract [SynthEditCL for Linux](https://synthedit.com/release_1_6/SynthEditCL-linux-x64.tar.gz). Fully headless — no Wayland session or GPU needed, works over ssh and in CI. You'll point `SE_CLI` at the extracted executable (see below).
 2. **[Node.js 18 or later](https://nodejs.org/)** — needed to run the MCP server. The LTS download is fine.
 3. **An MCP host** — e.g. [Claude Code](https://claude.com/claude-code) or [Claude Desktop](https://claude.ai/download).
 
@@ -61,12 +62,14 @@ Any MCP-compatible host accepts the same `command` / `args` shape. Consult the h
 
 ## How the server finds SynthEdit
 
-The MCP server auto-detects your installed SynthEdit. You don't need to point it at anything in the common case:
+On macOS and Windows the MCP server auto-detects your installed SynthEdit. You don't need to point it at anything in the common case:
 
 - **macOS**: `/Applications/SynthEdit.app/Contents/MacOS/SynthEditCL`
 - **Windows**: `%ProgramFiles%\SynthEdit\SynthEditCL.exe` or `%ProgramFiles%\SynthEditCL\SynthEditCL.exe` (whichever the SynthEditCL installer used). Also tries `(x86)` variants.
 
-If your install lives somewhere unusual — a portable copy, a development build, an MSIX-sandboxed install on Windows, etc. — set the `SE_CLI` environment variable in the host config with the full path:
+On **Linux** there is no fixed install location — the tarball extracts wherever you put it — so always set `SE_CLI` to the extracted `SynthEditCL/SynthEditCL` executable.
+
+Likewise, if your install lives somewhere unusual on any platform — a portable copy, a development build, an MSIX-sandboxed install on Windows, etc. — set the `SE_CLI` environment variable in the host config with the full path:
 
 ```json
 {
