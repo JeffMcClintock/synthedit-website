@@ -9,7 +9,7 @@ description: Common questions and troubleshooting tips for SynthEdit.
 
 SynthEdit requires **Windows 10 or later** (64-bit). A **macOS** version is also available. There's an experimental **Linux** preview too, which requires a **Wayland** desktop session — the editor is a native Wayland client, so it won't run under X11. See the [Installation](../installation/) page for download links.
 
-That Wayland requirement covers the editor only. Plugins exported from SynthEdit work on Windows 7+ (VST) and macOS 10.8+ (Audio Unit), and on Linux they load under **both X11 and Wayland** hosts — an X11 DAW like **Ardour** is fine.
+That Wayland requirement covers the editor only. Plugins exported from SynthEdit work on Windows 7+ (VST) and macOS 10.8+ (Audio Unit). Linux export works too, though it's very new — those plugins aren't tied to a display server, so an X11 DAW like **Ardour** and a Wayland one should both load the same build. Test yours before shipping.
 
 ### Can I distribute plugins I create with SynthEdit?
 

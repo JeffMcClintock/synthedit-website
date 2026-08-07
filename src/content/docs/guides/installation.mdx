@@ -137,11 +137,14 @@ shortcuts work (Ctrl+Z/Y, Ctrl+X/C/V, Delete, Ctrl+N/O/S, F5 toggles audio).
 
 **Exported plugins**
 
+Linux export ships, but like the rest of the Linux port it is **very new** — treat
+it as experimental and test your plugin in the hosts you care about.
+
 The Wayland requirement applies to the **editor**, not to what you build with it.
 A plugin exported on Linux carries no dependency on the editor's Wayland backend,
-so it loads under both display servers — an X11 host such as **Ardour** works just
-as well as a Wayland one. Your users don't need a Wayland session to run your
-plugin, and you don't need to ship two builds.
+so it is not tied to one display server: an X11 host such as **Ardour** and a
+Wayland host are both intended to work from the same build. Your users don't need
+a Wayland session to run your plugin.
 
 **Not working yet**
 
