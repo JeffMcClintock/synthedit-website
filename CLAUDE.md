@@ -50,6 +50,13 @@ netlify.toml               # Netlify build settings
 
 - macOS: `https://synthedit.com/release_1_6/SynthEdit-Installer.dmg`
 - Windows: `https://synthedit.com/release_1_6/SynthEdit-Setup.exe`
+- Linux (experimental editor): `https://synthedit.com/release_1_6/SynthEdit-linux-x64.tar.gz`
+
+SynthEditCL (headless CLI, the engine behind the MCP / AI-assistant guide):
+
+- Windows installer: `https://synthedit.com/release_1_6/SynthEditCL-Installer.exe`
+- macOS zip (also bundled inside SynthEdit.app): `https://synthedit.com/release_1_6/SynthEditCL_mac.zip`
+- Linux tarball: `https://synthedit.com/release_1_6/SynthEditCL-linux-x64.tar.gz`
 
 ## Local Development
 

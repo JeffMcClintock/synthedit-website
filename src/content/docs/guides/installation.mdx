@@ -73,8 +73,9 @@ Requires Windows 10 version 1809 (build 17763) or newer, 64-bit.
 
 :::caution[Experimental preview]
 The Linux build is an early, **experimental** port and is **not feature-complete**.
-It runs only on **Wayland** — there is no X11 build. It's free to try while in
-preview, but expect rough edges — see the limitations below.
+The **editor** runs only on **Wayland** — there is no X11 build of it. Plugins you
+**export** carry no such restriction and load in X11 and Wayland hosts alike. It's
+free to try while in preview, but expect rough edges — see the limitations below.
 :::
 
 <a href="https://synthedit.com/release_1_6/SynthEdit-linux-x64.tar.gz" class="se-btn se-btn-primary" style="display:inline-block; margin: 0.5rem 0 1rem;">Download for Linux (.tar.gz)</a>
@@ -82,10 +83,11 @@ preview, but expect rough edges — see the limitations below.
 **Requirements**
 
 - 64-bit x86 Linux with **glibc 2.39 or newer** — e.g. **Ubuntu 24.04+**, Fedora 40+, or equivalent
-- A **Wayland** desktop session — **required**. SynthEdit is a native Wayland
-  client with no toolkit and no X11 path, so it will not start under a legacy
-  X11-only session (and there is no XWayland fallback). Any current GNOME, KDE
-  Plasma or Sway session is fine.
+- A **Wayland** desktop session — **required to run the editor**. SynthEdit is a
+  native Wayland client with no toolkit and no X11 path, so it will not start
+  under a legacy X11-only session (and there is no XWayland fallback). Any
+  current GNOME, KDE Plasma or Sway session is fine. This applies to the editor
+  only — see **Exported plugins** below for what your plugins need.
 - Standard desktop libraries (libdecor, xkbcommon, harfbuzz, freetype, fontconfig,
   **PipeWire** for audio, ALSA for MIDI) — preinstalled on any normal desktop distro
 
@@ -133,10 +135,29 @@ open container view (middle-click closes a tab), the canvas pans via
 scrollbars / mouse wheel and zooms with Ctrl+wheel, and the usual keyboard
 shortcuts work (Ctrl+Z/Y, Ctrl+X/C/V, Delete, Ctrl+N/O/S, F5 toggles audio).
 
+**Exported plugins**
+
+Linux export ships, but like the rest of the Linux port it is **very new** — treat
+it as experimental and test your plugin in the hosts you care about.
+
+The Wayland requirement applies to the **editor**, not to what you build with it.
+A plugin exported on Linux carries no dependency on the editor's Wayland backend.
+It ships with **both** display-server paths in the one binary and picks between
+them when the host opens its window:
+
+- **Wayland** where the host supports it — the `kPlatformTypeWaylandSurfaceID`
+  embedding added in VST3 3.8.0.
+- **X11** everywhere else — the long-standing `kPlatformTypeX11EmbedWindowID`. This is
+  the path an X11 DAW such as **Ardour** takes, and also what a Wayland desktop
+  gets when the host embeds its plugins through XWayland.
+
+The choice is made by asking the host what it supports, not by looking at your
+desktop session — only the host knows which one it actually uses. So there's one
+build to ship, and your users don't need a Wayland session to run your plugin.
+
 **Not working yet**
 
 - Picking a specific audio output device (only PipeWire's default sink is offered)
-- Plugin (VST3/AU) export
 - Multiple windows (tear-out)
 
 You can open, edit, and save projects, and the full structure view renders natively.
@@ -146,7 +167,7 @@ Feedback to [jef@synthedit.com](mailto:jef@synthedit.com) is very welcome.
 
 To drive SynthEdit from Claude Code, Cursor, or any other [MCP-compatible](../ai-mcp-connector/) AI assistant, you need the headless `SynthEditCL` command-line tool. The setup differs slightly by platform:
 
-**macOS** — already done. `SynthEditCL` ships inside `SynthEdit.app`. Skip ahead to the [MCP connector guide](../ai-mcp-connector/) to wire up your AI host.
+**macOS** — already done. `SynthEditCL` ships inside `SynthEdit.app`. Skip ahead to the [MCP connector guide](../ai-mcp-connector/) to wire up your AI host. (Prefer not to install the GUI? A standalone [SynthEditCL_mac.zip](https://synthedit.com/release_1_6/SynthEditCL_mac.zip) is also available — unzip it and point `SE_CLI` at `SynthEditCL.app/Contents/MacOS/SynthEditCL`.)
 
 **Windows** — install the standalone command-line tool. Works with or without the GUI.
 
@@ -155,6 +176,13 @@ To drive SynthEdit from Claude Code, Cursor, or any other [MCP-compatible](../ai
 1. Run the installer
 2. Tick "Add to PATH" if you want `SynthEditCL.exe` available system-wide (recommended)
 3. Continue to the [MCP connector guide](../ai-mcp-connector/) to configure your AI host
+
+**Linux** — download the standalone command-line tool. Fully headless: no Wayland session, no GPU — it works over ssh and in CI, so it isn't limited by the editor's experimental status.
+
+<a href="https://synthedit.com/release_1_6/SynthEditCL-linux-x64.tar.gz" class="se-btn se-btn-primary" style="display:inline-block; margin: 0.5rem 0 1rem;">Download SynthEditCL for Linux (.tar.gz)</a>
+
+1. Extract into `/opt` or your home directory: `tar -xzf SynthEditCL-linux-x64.tar.gz` — the MCP server auto-detects `/opt/SynthEditCL/` and `~/SynthEditCL/`, as well as `SynthEditCL` on your `PATH`. (Extracted somewhere else? Set `SE_CLI` to the extracted `SynthEditCL/SynthEditCL` executable in your MCP host config.)
+2. Continue to the [MCP connector guide](../ai-mcp-connector/) to configure your AI host
 
 ## Common Issues
 
