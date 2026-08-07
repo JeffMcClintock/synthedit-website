@@ -141,10 +141,19 @@ Linux export ships, but like the rest of the Linux port it is **very new** — t
 it as experimental and test your plugin in the hosts you care about.
 
 The Wayland requirement applies to the **editor**, not to what you build with it.
-A plugin exported on Linux carries no dependency on the editor's Wayland backend,
-so it is not tied to one display server: an X11 host such as **Ardour** and a
-Wayland host are both intended to work from the same build. Your users don't need
-a Wayland session to run your plugin.
+A plugin exported on Linux carries no dependency on the editor's Wayland backend.
+It ships with **both** display-server paths in the one binary and picks between
+them when the host opens its window:
+
+- **Wayland** where the host supports it — the `kPlatformTypeWaylandSurfaceID`
+  embedding added in VST3 3.8.0.
+- **X11** everywhere else — the long-standing `kPlatformTypeX11EmbedWindowID`. This is
+  the path an X11 DAW such as **Ardour** takes, and also what a Wayland desktop
+  gets when the host embeds its plugins through XWayland.
+
+The choice is made by asking the host what it supports, not by looking at your
+desktop session — only the host knows which one it actually uses. So there's one
+build to ship, and your users don't need a Wayland session to run your plugin.
 
 **Not working yet**
 

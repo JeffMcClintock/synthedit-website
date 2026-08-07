@@ -101,7 +101,7 @@ import Jeff from '../../assets/jeff-mcclintock.jpg';
         <span class="se-platform-state">Experimental preview · free</span>
       </li>
     </ul>
-    <p class="se-platforms-note">The Linux build is an early preview. The editor itself needs a Wayland session, but the plugins you export from it aren't tied to one display server — they're meant to run in X11 hosts like Ardour and Wayland ones alike. It's all very new, and free while it's in preview. <a href="guides/installation/#linux-experimental">Download it and see how far it gets you →</a></p>
+    <p class="se-platforms-note">The Linux build is an early preview. The editor itself needs a Wayland session, but the plugins you export from it carry both display-server paths in one binary — they run in X11 hosts like Ardour and in Wayland ones. It's all very new, and free while it's in preview. <a href="guides/installation/#linux-experimental">Download it and see how far it gets you →</a></p>
   </div>
 </section>
 
@@ -232,7 +232,7 @@ import Jeff from '../../assets/jeff-mcclintock.jpg';
     </li>
     <li class="se-limit">
       <span class="se-limit-tag">Linux</span>
-      <p>The Linux port is an experimental preview, with PipeWire audio. The editor needs a Wayland session — there's no X11 build of it. Export works, but it's brand new: the plugins aren't tied to a display server and should load in X11 and Wayland hosts alike, so test yours before you ship it. It's free while it's in preview.</p>
+      <p>The Linux port is an experimental preview, with PipeWire audio. The editor needs a Wayland session — there's no X11 build of it. Export works, but it's brand new: the plugins carry both an X11 and a Wayland path in one binary and pick whichever the host offers, so test yours before you ship it. It's free while it's in preview.</p>
     </li>
   </ul>
 </section>
