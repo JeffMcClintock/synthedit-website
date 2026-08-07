@@ -73,8 +73,9 @@ Requires Windows 10 version 1809 (build 17763) or newer, 64-bit.
 
 :::caution[Experimental preview]
 The Linux build is an early, **experimental** port and is **not feature-complete**.
-It runs only on **Wayland** — there is no X11 build. It's free to try while in
-preview, but expect rough edges — see the limitations below.
+The **editor** runs only on **Wayland** — there is no X11 build of it. Plugins you
+**export** carry no such restriction and load in X11 and Wayland hosts alike. It's
+free to try while in preview, but expect rough edges — see the limitations below.
 :::
 
 <a href="https://synthedit.com/release_1_6/SynthEdit-linux-x64.tar.gz" class="se-btn se-btn-primary" style="display:inline-block; margin: 0.5rem 0 1rem;">Download for Linux (.tar.gz)</a>
@@ -82,10 +83,11 @@ preview, but expect rough edges — see the limitations below.
 **Requirements**
 
 - 64-bit x86 Linux with **glibc 2.39 or newer** — e.g. **Ubuntu 24.04+**, Fedora 40+, or equivalent
-- A **Wayland** desktop session — **required**. SynthEdit is a native Wayland
-  client with no toolkit and no X11 path, so it will not start under a legacy
-  X11-only session (and there is no XWayland fallback). Any current GNOME, KDE
-  Plasma or Sway session is fine.
+- A **Wayland** desktop session — **required to run the editor**. SynthEdit is a
+  native Wayland client with no toolkit and no X11 path, so it will not start
+  under a legacy X11-only session (and there is no XWayland fallback). Any
+  current GNOME, KDE Plasma or Sway session is fine. This applies to the editor
+  only — see **Exported plugins** below for what your plugins need.
 - Standard desktop libraries (libdecor, xkbcommon, harfbuzz, freetype, fontconfig,
   **PipeWire** for audio, ALSA for MIDI) — preinstalled on any normal desktop distro
 
@@ -133,10 +135,17 @@ open container view (middle-click closes a tab), the canvas pans via
 scrollbars / mouse wheel and zooms with Ctrl+wheel, and the usual keyboard
 shortcuts work (Ctrl+Z/Y, Ctrl+X/C/V, Delete, Ctrl+N/O/S, F5 toggles audio).
 
+**Exported plugins**
+
+The Wayland requirement applies to the **editor**, not to what you build with it.
+A plugin exported on Linux carries no dependency on the editor's Wayland backend,
+so it loads under both display servers — an X11 host such as **Ardour** works just
+as well as a Wayland one. Your users don't need a Wayland session to run your
+plugin, and you don't need to ship two builds.
+
 **Not working yet**
 
 - Picking a specific audio output device (only PipeWire's default sink is offered)
-- Plugin (VST3/AU) export
 - Multiple windows (tear-out)
 
 You can open, edit, and save projects, and the full structure view renders natively.
