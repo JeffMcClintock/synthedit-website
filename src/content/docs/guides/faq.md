@@ -21,7 +21,15 @@ SynthEdit can export **64-bit VST3** and **Mac Audio Unit (AU)** plugins. Experi
 
 ### Do I need a Mac to create Audio Unit plugins?
 
-No. SynthEdit on Windows can export Audio Unit plugins. However, you should test your plugin on a Mac before distributing it.
+No. SynthEdit on Windows can export Audio Unit plugins. However, you should test your plugin on a Mac before distributing it — and you'll need a Mac (and an Apple Developer account) to code-sign and notarize it, which is required before you can share it. See the question below.
+
+### Do Audio Unit plugins need to be code-signed and notarized?
+
+**Yes — before you distribute one, always.** Any macOS plugin your users download, Audio Unit or VST3, must be signed with an Apple **Developer ID Application** certificate and **notarized** by Apple. macOS quarantines downloaded files, and Gatekeeper won't load an unsigned or un-notarized bundle.
+
+SynthEdit signs your export so it works on your own machine, but that signature doesn't carry to anyone else's. Audio Units fail particularly quietly: sandboxed hosts like **Logic Pro** and **GarageBand** just don't show the plugin at all, and `auval` passing locally tells you nothing about your customer's machine.
+
+You'll need an [Apple Developer Program](https://developer.apple.com/programs/) membership (US$99/year) for the certificate. The practical guide for audio developers is [How to code sign and notarize macOS audio plugins in CI](https://melatonin.dev/blog/how-to-code-sign-and-notarize-macos-audio-plugins-in-ci/); Apple's own reference is [Notarizing macOS software before distribution](https://developer.apple.com/documentation/security/notarizing-macos-software-before-distribution). Full details in [Creating VST Plugins](../creating-vst-plugins/#code-signing-and-notarization-on-macos).
 
 ### Can I install multiple versions of SynthEdit side by side?
 

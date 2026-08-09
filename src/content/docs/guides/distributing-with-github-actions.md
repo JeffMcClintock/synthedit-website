@@ -214,13 +214,28 @@ Because these installers are **unsigned**, the OS will warn the first time:
 
 Then load **Poly Synth** in any VST3 host (or AU on macOS) and play.
 
+:::caution[Unsigned builds are for testing only]
+Those workarounds are fine while you're testing your own build. **Do not ship a macOS
+plugin this way.** Before you distribute, the Audio Unit and VST3 must be signed with an
+Apple *Developer ID Application* certificate and notarized by Apple — otherwise Gatekeeper
+blocks them on your users' machines, and sandboxed AU hosts like Logic Pro and GarageBand
+silently omit your plugin from the list. See [Code-signing and notarization on
+macOS](../creating-vst-plugins/#code-signing-and-notarization-on-macos), and add the steps
+below to this workflow.
+:::
+
 ## Going further
 
-- **Code signing** removes those warnings. On Windows, sign the installer with
+- **Code signing** removes those warnings — and on macOS it's mandatory for distribution,
+  not a polish step. On Windows, sign the installer with
   [Azure Trusted Signing](https://learn.microsoft.com/azure/trusted-signing/) or a
-  standard code‑signing certificate; on macOS, sign with a Developer ID certificate and
-  notarize the `.pkg` with `notarytool`. Both slot into the workflow as extra steps and a
-  few repo secrets.
+  standard code‑signing certificate. On macOS, sign the `.component` and `.vst3` with a
+  Developer ID Application certificate, then notarize the `.pkg` with `notarytool` and
+  staple the ticket. Both slot into the workflow as extra steps and a few repo secrets;
+  [How to code sign and notarize macOS audio plugins in
+  CI](https://melatonin.dev/blog/how-to-code-sign-and-notarize-macos-audio-plugins-in-ci/)
+  walks through the macOS side, including getting the certificate into a GitHub Actions
+  keychain.
 - **Presets** — ship a folder of `.vstpreset` files alongside the plugin.
 - **A custom GUI** — design your panel in SynthEdit; it's baked into the same `.vst3`.
 - **Versioning** — the tag *is* the version. `git tag v1.1.0` ships 1.1.0.

@@ -48,6 +48,28 @@ Skin images and font assets get exported automatically — SynthEdit displays yo
 3. Load the plugin on a track
 4. Test all controls and audio processing
 
+## Code-signing and notarization on macOS
+
+**Before you share a macOS plugin with anyone else, it has to be code-signed and notarized.** This applies to both the Audio Unit (`.component`) and the macOS VST3 — it isn't optional, and it isn't something SynthEdit can do for you.
+
+SynthEdit signs exported plugins so they run **on your own machine** while you're developing. That signature is not enough for distribution. Once a file has been downloaded — from your website, a mailing list, anywhere — macOS attaches a quarantine flag, and Gatekeeper refuses to load anything that isn't signed with a **Developer ID Application** certificate *and* notarized by Apple. For an Audio Unit the failure is especially unhelpful: sandboxed hosts like **Logic Pro** and **GarageBand** simply won't list your plugin, with no error explaining why. `auval` may pass on your machine and still fail on your customer's.
+
+What's involved:
+
+1. **Join the [Apple Developer Program](https://developer.apple.com/programs/)** (currently US$99/year) and create a *Developer ID Application* certificate. There's no free path to a distributable macOS plugin.
+2. **Sign** each bundle with that certificate, using the hardened runtime and a timestamp.
+3. **Notarize** — upload the signed plugin (usually wrapped in a `.pkg` installer or `.dmg`) to Apple with `notarytool`. Apple scans it and returns a ticket.
+4. **Staple** the ticket to the installer with `stapler`, so it validates even offline.
+
+Two references worth reading before you start:
+
+- [**How to code sign and notarize macOS audio plugins in CI**](https://melatonin.dev/blog/how-to-code-sign-and-notarize-macos-audio-plugins-in-ci/) — Sudara's walkthrough, written specifically for audio plugin developers. It covers the certificate types, the exact `codesign` / `notarytool` / `stapler` invocations, and the mistakes that produce silently-missing AUs.
+- [Apple: Notarizing macOS software before distribution](https://developer.apple.com/documentation/security/notarizing-macos-software-before-distribution) — the official reference.
+
+The whole sequence automates well. If you're already publishing releases from CI, see [Distributing plugins with GitHub Actions](../distributing-with-github-actions/) for where the signing and notarization steps slot in.
+
+Windows has a parallel-but-milder problem: nothing blocks an unsigned plugin outright, but SmartScreen and antivirus scanners will flag it. See [the FAQ on virus warnings](../faq/#why-do-my-users-get-virus-warnings-about-my-plugin).
+
 ## Distribution
 
 You own full rights to the plugins you create with the licensed version of SynthEdit. You can:
