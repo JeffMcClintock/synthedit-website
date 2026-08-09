@@ -208,6 +208,31 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
+**Unreleased**
+- clearer activation messages
+
+**v1.6.178** — 2026-08-10
+- SynthEdit2 builds again -- borrow the factory, don't pass the unique_ptr
+
+**v1.6.177** — 2026-08-09
+- mcp - smoke scripts hardcoded a Windows temp path
+- mcp - remove stray C: temp dir that breaks Windows checkout
+- mac - uncaught exceptions crash with no usable diagnostic
+- CLI script paths hardcoded a Windows temp dir
+- CL path-writing verbs create parent dirs and verify the write
+- CL mac bundle stages Resources into Contents/Resources
+
+**v1.6.175** — 2026-08-07
+- mac - open .synthedit files handed to us by the Finder
+- connector forgets its dragged node when the drag ends
+
+**v1.6.174** — 2026-08-07
+- tidy line context menu
+- stop TIDE clobbering the installed SynthEdit's module cache
+- Thumbnails now working.
+- Prefabs now appear in the module list.
+- JUCE host presses the client before the context-menu fallback
+
 **v1.6.173** — 2026-08-06
 - connector hit-test widens with round joins, not miter
 
@@ -273,40 +298,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 **v1.6.162** — 2026-07-27
 - new modules "Sample and Hold2' fixes issue with missing a 'hold' at time zero
 - crash hovering the spare pin of an autoduplicating module after project load
-
-**v1.6.161** — 2026-07-21
-- load wavetables on a background thread in Wavetable Osc
-- limit Wavetable Osc display to 32 evenly-spaced slots
-- hot-reloaded modules now rescan their module description, so pin/parameter changes are picked up
-- fix for possible MIDI driver crash on exit
-- fix a crash in module hot-reloading.
-- change delay 3 default interpolation
-
-**v1.6.159** — 2026-07-17
-- restyled Wavetable Osc Display
-- native MIDI-assignment 'Edit...' dialog for Windows plugins
-- native MIDI-assignment 'Edit...' dialog for Mac plugins
-- add 'Load MIDI' / 'Save MIDI' patch commands
-- add 'Load MIDI' / 'Save MIDI' patch commands
-- ALT + middle-button passes the event to the module under the mouse
-
-**v1.6.158** — 2026-07-16
-- load a wavetable's real slots instead of padding to a fixed 64
-- FFT-resample wavetable frames both ways, drop linear fallback
-
-**v1.6.157** — 2026-07-16
-- simplify Compensated Delay to a pure latency fixer
-- round-trip module latency through ExportModuleInfo
-- round the oversampler's inner->outer report conversion
-- keep calcReportedLatency in step with calcDelayCompensation overrides
-- fix crash deleting a container the breadcrumb trail remembers
-- add Delay3 - modernised GMPI echo delay
-- Compensated Delay over-reported latency at some sample rates
-- Compensated Delay latches its report at compensation time and snaps it to the delay line's tap count
-
-**v1.6.156** — 2026-07-15
-- add Ctrl+D presenter command to toggle debugger on selection
-- Ctrl+D shows debuggers on selected modules of current view
 
 </div>
 ## Demo vs Full Version
