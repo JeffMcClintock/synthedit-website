@@ -57,9 +57,25 @@ SynthEdit signs exported plugins so they run **on your own machine** while you'r
 What's involved:
 
 1. **Join the [Apple Developer Program](https://developer.apple.com/programs/)** (currently US$99/year) and create a *Developer ID Application* certificate. There's no free path to a distributable macOS plugin.
-2. **Sign** each bundle with that certificate, using the hardened runtime and a timestamp.
+2. **Sign** each bundle with that certificate, using the hardened runtime (`--options runtime`) and a secure timestamp (`--timestamp`). Sign **everything inside the bundle too** — see below.
 3. **Notarize** — upload the signed plugin (usually wrapped in a `.pkg` installer or `.dmg`) to Apple with `notarytool`. Apple scans it and returns a ticket.
 4. **Staple** the ticket to the installer with `stapler`, so it validates even offline.
+
+### Sign the embedded modules too, from the inside out
+
+An exported plugin isn't a single binary. Any third-party modules your patch uses are copied **into** the exported `.vst3` / `.component`, and on macOS each one is its own bundle with its own executable. Every one of those is code, and macOS validates all of it.
+
+Signing only the outer bundle is the most common way to get a plugin that works perfectly on your machine and is rejected on everyone else's — the outer signature is valid, notarization fails or Gatekeeper rejects the load because a nested binary is unsigned or signed with the wrong identity.
+
+Sign **inside out**: every nested bundle, framework and `dylib` first, then the outer plugin bundle last. Each nested item needs the same certificate, hardened runtime and timestamp as the outer one. Signing the outer bundle first and the nested code afterwards invalidates the outer signature, so the order matters.
+
+A note on `codesign --deep`: it looks like the shortcut for exactly this, and Apple [recommends against using it to sign](https://developer.apple.com/library/archive/technotes/tn2206/_index.html) — it applies one set of options to everything it signs (nested code often needs different entitlements), and it only finds nested code where the system expects code, so anything tucked into a data location is skipped silently. Apple engineer Quinn's [**"`--deep` Considered Harmful"**](https://developer.apple.com/forums/thread/129980) is the short version. Use `--deep` only to **verify**:
+
+```bash
+codesign --verify --deep --strict --verbose=2 "MySynth.vst3"
+```
+
+That's the check worth running before you notarize — it walks the whole bundle and names any nested item that isn't properly signed. `spctl -a -vvv -t install` on the finished installer confirms Gatekeeper's verdict.
 
 Two references worth reading before you start:
 

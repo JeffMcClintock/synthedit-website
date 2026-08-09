@@ -230,8 +230,9 @@ below to this workflow.
   not a polish step. On Windows, sign the installer with
   [Azure Trusted Signing](https://learn.microsoft.com/azure/trusted-signing/) or a
   standard code‑signing certificate. On macOS, sign the `.component` and `.vst3` with a
-  Developer ID Application certificate, then notarize the `.pkg` with `notarytool` and
-  staple the ticket. Both slot into the workflow as extra steps and a few repo secrets;
+  Developer ID Application certificate — **including every module embedded inside those
+  bundles**, signed inside-out — then notarize the `.pkg` with `notarytool` and staple the
+  ticket. Both slot into the workflow as extra steps and a few repo secrets;
   [How to code sign and notarize macOS audio plugins in
   CI](https://melatonin.dev/blog/how-to-code-sign-and-notarize-macos-audio-plugins-in-ci/)
   walks through the macOS side, including getting the certificate into a GitHub Actions
