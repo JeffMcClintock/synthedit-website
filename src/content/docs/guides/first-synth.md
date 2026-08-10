@@ -146,7 +146,7 @@ Setting the waveform from the properties panel is fine for a fixed value, but it
 
 - Search for `list entry` and click **List Entry** under **Controls**
 - Place it below the slider
-- Connect the list entry's **Value Out** output to the oscillator's **Waveform** input
+- Connect the list entry's **Choice** output to the oscillator's **Waveform** input
 
 <img src="../../images/tutorials/first-synth/05-with-list-entry.png" alt="List Entry connected to the oscillator's waveform input" />
 
