@@ -60,7 +60,7 @@ The first thing every synthesiser needs is a sound source. We'll add an **oscill
 The oscillator has several plugs. The most important ones for now are:
 
 - **Pitch** (input) — controls the frequency
-- **Waveform** (input) — selects the shape of the wave (Sine, Saw, Pulse or Tri)
+- **Waveform** (input) — selects the shape of the wave (Sine, Saw, Ramp, Triangle, Pulse, White Noise or Pink Noise)
 - **Audio Out** (output) — the generated waveform
 
 ## 5. Add a sound out module
@@ -146,11 +146,11 @@ Setting the waveform from the properties panel is fine for a fixed value, but it
 
 - Search for `list entry` and click **List Entry** under **Controls**
 - Place it below the slider
-- Connect the list entry's **Choice** output to the oscillator's **Waveform** input
+- Connect the list entry's output — the plug labelled **Value Out** — to the oscillator's **Waveform** input
 
 <img src="../../images/tutorials/first-synth/05-with-list-entry.png" alt="List Entry connected to the oscillator's waveform input" />
 
-As soon as the cord is connected, the List Entry fills itself in with the oscillator's own choices — Sine, Saw, Pulse and Tri — and you can pick between them from the drop-down. If the module is too small, drag its bottom-right corner to resize it.
+As soon as the cord is connected, the List Entry fills itself in with the oscillator's own choices — Sine, Saw, Ramp, Triangle, Pulse, White Noise and Pink Noise — and you can pick between them from the drop-down. If the module is too small, drag its bottom-right corner to resize it.
 
 Notice that the new patch cord is **green**, not blue. SynthEdit uses different colours for different signal types — green is for list (enum) choices, blue is for audio. SynthEdit won't let you connect mismatched types, which catches a lot of mistakes early.
 
