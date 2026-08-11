@@ -208,6 +208,18 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
+**v1.6.181** — 2026-08-11
+- se_attach reaches a running editor on macOS
+- say which container the live pointer verbs address
+- resize buffers in place on panel resize instead of rebuilding the whole client
+- rename and audio-transport verbs
+- no sound on first use of the Mac app
+- initialize undo/redo descriptions so Edit menu text isn't blank before any command runs
+- correct off-by-one in MIDI Out combo index so saved preference reloads correctly
+- clear additional-files list before reloading it in export dialog view model
+- a live command channel for the Mac editor
+- CL bundle fails codesign on staged Finder detritus
+
 **v1.6.180** — 2026-08-11
 - make Install.ps1 VCLibs error matching locale-independent
 - WaveTable slot-count constants fail to link on x86_64
@@ -301,12 +313,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 **v1.6.165** — 2026-07-29
 - show busy cursor while rescanning modules and vsts
-
-**v1.6.164** — 2026-07-28
-- properties pane live-updates pin names, wire changes and midi learn status
-- layout inspection works in realtime now
-- fix possible crash when hovering audio pins
-- [0236] 'Poly to Mono' fails second time the same voice is allocated
 
 </div>
 ## Demo vs Full Version
