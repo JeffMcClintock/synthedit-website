@@ -208,6 +208,13 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
+**v1.6.185** — 2026-08-14
+- profile structure-view scroll rendering across d2d/cpu backends
+- correct stale IO_base.h include path in CoreMidiDriver.cpp
+
+**v1.6.184** — 2026-08-14
+- cache structure-view brushes for faster scroll redraw
+
 **v1.6.183** — 2026-08-13
 - open a blank project when no MRU file loads at startup
 - bring the Wayland menu bar in line with Windows and macOS
@@ -286,35 +293,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - a view change severed the side panes' hosts
 - a missing stock module is a broken installation, say so
 - Preferences panel for the Wayland editor
-
-**v1.6.168** — 2026-08-05
-- tab strip for the Wayland editor
-- ship the Selawik font files
-- search box for the module browser
-- say OS-height explicitly in the SDK3 text adapter
-- never discard unsaved changes silently
-- module browser and properties panes for the Wayland editor
-- menu bar for the Wayland editor
-- layout tests render through the CPU backend on Linux
-- keyboard shortcuts for the Wayland editor
-- destroy the editor views before the document, not after
-- define FONTS_DIR for synth_ui_tests
-- cross cursor while click-placing a module
-- canvas scrollbars for the Wayland editor
-- bundle Selawik so text measures the same on every platform
-- async message boxes, and make them visible on linux at all
-- adapt to gmpi_ui's registerBundledFont signature
-- View menu toggles for the side panes
-- SynthEdit on Wayland, no toolkit and no X11
-- Spectrum Analyser - fixed possible crash when changing FFT size
-- Properties browser can now select new (non-existing) files on filename pins.
-- PipeWire audio for the Wayland editor
-- ALSA sequencer MIDI for the Wayland editor
-- --connect rejects bad pin indices instead of crashing
-
-**v1.6.167** — 2026-08-03
-- build on Linux â€” CPU-backend factory and GCC portability fixes
-- SynthEditCL builds and runs headless on Linux
 
 </div>
 ## Demo vs Full Version
