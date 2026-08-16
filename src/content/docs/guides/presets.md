@@ -53,7 +53,7 @@ Each version saves presets in its own format — the VST3 plugin writes `.vstpre
 
 A factory preset bank is the set of presets you ship with your plugin. SynthEdit keeps factory presets in the **standard preset folders** — the same places the browser scans and the DAW reads — rather than inside the plugin bundle. That way the DAW lists them in its own preset menu just like any other preset.
 
-**During development.** When you export your plugin (**File > Save As VST**), SynthEdit writes your project's presets into your **per-user** preset folder, so you can audition them in your DAW straight away. It uses the per-user folder because the system folder normally can't be written without administrator rights.
+**During development.** When you export your plugin (**File > Export Plugins...**), SynthEdit writes your project's presets into your **per-user** preset folder, so you can audition them in your DAW straight away. It uses the per-user folder because the system folder normally can't be written without administrator rights.
 
 **Shipping to end users.** Have your installer copy the preset files into the **system (all-users)** preset folder, in the format(s) each host reads:
 

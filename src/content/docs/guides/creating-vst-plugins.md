@@ -5,7 +5,7 @@ description: How to export your SynthEdit project as a VST plugin.
 
 One of SynthEdit's most powerful features is the ability to export your projects as standalone VST3 plugins. These plugins work in any DAW that supports the VST3 format.
 
-<img src="../../images/guides/creating-vst-plugins/01-complete-synth.png" alt="A complete polyphonic synth ready for VST export: MIDI In feeds a Patch Automator (which exposes parameters to the host DAW), then on through MIDI to CV to drive an Oscillator and ADSR; the oscillator passes through an SV Filter and VCA, and a Voice Combiner before reaching Sound Out" />
+<img src="../../images/guides/creating-vst-plugins/01-complete-synth.png" alt="A complete polyphonic synth ready for VST export: MIDI In feeds a Patch Automator (which exposes parameters to the host DAW), then on through MIDI-CV 2 to drive an Oscillator and ADSR; the oscillator passes through an SV Filter and VCA, and a Voice Combiner before reaching Sound Out" />
 
 A patch like this — MIDI In → Patch Automator → voice modules → Voice Combiner → Sound Out — is the typical shape of a VST instrument before export. The **Patch Automator** is what exposes your panel controls to the host DAW as automatable parameters.
 
@@ -22,7 +22,7 @@ The panel's size becomes the plugin window's size. If you want the user to be ab
 
 ## Exporting as VST3
 
-1. Go to **File > Export VST Plugin**
+1. Go to **File > Export Plugins...**
 2. Choose a location to save the plugin
 3. Set the plugin name, manufacturer, and unique ID
 4. Click **Export**

@@ -11,7 +11,7 @@ The Panel View is what your end-user actually sees — only the control modules 
 
 ## Accessing Panel View
 
-Right-click a container and select **Panel Edit**, or use the toolbar button to switch between Structure View and Panel View.
+Right-click a container and select **Panel Edit...**, or use the toolbar button to switch between Structure View and Panel View.
 
 ## Arranging Controls
 
@@ -68,8 +68,8 @@ Your plugin can also let the user scale that window up or down while it's runnin
 
 ## Locking the Panel
 
-To prevent accidental changes to your panel layout, use **Edit > Lock Module** or the toolbar lock button. Locked panels prevent control repositioning while still allowing the controls to function normally during playback.
+To prevent accidental changes to your panel layout, right-click the container and tick **More > Panel Locked**. Locked panels prevent control repositioning while still allowing the controls to function normally during playback.
 
 ## Capturing Screenshots
 
-To save an image of your panel: **Edit > Grab Screenshot**, then choose a save location. The active view is captured as a PNG file.
+The in-editor **Grab Screenshot** command has been removed. To capture a PNG of a panel or structure view now, use the headless `SynthEditCL` command-line tool's screenshot option — or, easiest, just ask an AI assistant connected via the [MCP connector](../ai-mcp-connector/) to grab one for you.

@@ -5,7 +5,7 @@ description: Integrating SynthEdit with external sequencers and DAWs.
 
 SynthEdit is a synthesizer editor, not a sequencer. To compose music, you'll typically use it alongside a DAW (Digital Audio Workstation) or sequencer.
 
-## Two Integration Methods
+## Three Integration Methods
 
 ### 1. MIDI Files (Recommended)
 
@@ -15,7 +15,7 @@ Load a MIDI file directly into SynthEdit using the **MIDI Player** module:
 2. Set its **File Name** property to your `.mid` file
 3. Connect its MIDI output to your synth
 
-<img src="../../images/guides/using-with-daw/01-midi-player-setup.png" alt="A patch with a MIDI Player module on the left, its yellow MIDI Out cable feeding into a MIDI to CV module, which drives an Oscillator's Pitch and an ADSR's Gate. The oscillator runs into a VCA whose Volume is controlled by the envelope, and the VCA's output goes to Sound Out" />
+<img src="../../images/guides/using-with-daw/01-midi-player-setup.png" alt="A patch with a MIDI Player module on the left, its yellow MIDI Out cable feeding into a MIDI-CV 2 module, which drives an Oscillator's Pitch and an ADSR's Gate. The oscillator runs into a VCA whose Volume is controlled by the envelope, and the VCA's output goes to Sound Out" />
 
 **Advantages:**
 - Rock-solid timing — no latency between the sequencer and SynthEdit
@@ -40,7 +40,7 @@ Use a virtual MIDI cable to route MIDI from your DAW into SynthEdit's MIDI input
 For the tightest integration, export your SynthEdit project as a **VST plugin** and load it directly in your DAW:
 
 1. Design your synth in SynthEdit
-2. Export as VST3 via **File > Save As VST**
+2. Export as VST3 via **File > Export Plugins...**
 3. Load the VST plugin in your DAW
 
 This gives you full DAW automation, preset management, and seamless audio routing.

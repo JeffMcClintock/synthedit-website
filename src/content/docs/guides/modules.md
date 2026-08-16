@@ -11,22 +11,15 @@ Each module shows its **pins** as coloured labels — inputs on the left, output
 
 ## Inserting Modules
 
-Right-click on an empty area of the canvas and select **Insert Module** to open the module browser. You can:
+Every module comes from the **Module Browser**, the panel down the left-hand side of the window (toggle it with **View → Module Browser** if it's hidden). It has a search box at the top and a category tree (Oscillators, Filters, Effects, and so on) below it. Adding a module takes two clicks: click its name in the list, then click an empty spot in the Structure View to place it.
 
-- Browse by category (Oscillators, Filters, Effects, etc.)
-- Search by name
-- View a description of what each module does
+See [Your First Synth](../first-synth/#3-the-module-browser) for a walkthrough.
 
 ## Connecting Modules
 
 To connect two modules, click on an **output pin** (right side) and drag to an **input pin** (left side) on another module. A cable appears showing the connection.
 
-**Pin types:**
-- **Audio** (thick lines) — carry audio signals
-- **Control** (thin lines) — carry control values (pitch, gate, etc.)
-- **MIDI** — carry MIDI data
-
-You can only connect pins of compatible types.
+Cable colour indicates signal type — see [Signal Types & Levels](../signal-types/) for the full list. You can only connect pins of compatible types.
 
 ## Module Properties
 
@@ -34,7 +27,8 @@ Click on a module to select it, then view its properties in the properties panel
 
 - **Name** — rename the module for clarity
 - **Default values** — set initial values for unconnected inputs
-- **Polyphony** — configure voice count for polyphonic modules
+
+Containers have their own additional properties, including **Polyphony** — see [Containers & Prefabs](../containers/).
 
 ## Organizing Your Canvas
 

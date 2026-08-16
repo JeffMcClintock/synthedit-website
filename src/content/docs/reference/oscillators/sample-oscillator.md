@@ -11,7 +11,7 @@ description: Plays audio samples (WAV, AIFF, SoundFont 2) at any pitch — Sampl
 
 Sample playback in SynthEdit is split between two modules that work as a pair: **Sample Loader2** reads the audio file from disk and publishes it as a *Sample ID*, and **Sample Oscillator2** consumes that Sample ID and plays it back at a chosen pitch and trigger. Wiring the Loader's **Sample ID** output into the Oscillator's **Sample ID** input is what binds the two halves together.
 
-If you just want sample playback in your patch, drop in the **Examples/Sample Oscillator2** prefab — it ships pre-wired with a MIDI to CV stage and is the recommended starting point. Use the two modules directly when you need finer control (multiple oscillators sharing one loaded sample, custom voice routing, etc.).
+If you just want sample playback in your patch, drop in the **Examples/Sample Oscillator2** prefab — it ships pre-wired with a MIDI-CV 2 stage and is the recommended starting point. Use the two modules directly when you need finer control (multiple oscillators sharing one loaded sample, custom voice routing, etc.).
 
 ## Sample Loader2
 

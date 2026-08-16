@@ -264,7 +264,7 @@ When an LFO modulates a filter's cutoff, the filter receives a continuous signal
 ### Notes are getting "stuck" (playing forever)
 
 This usually happens when an envelope gate signal doesn't close properly:
-- Make sure the **ADSR Gate input** is connected to the MIDI-to-CV module's **Gate output**
+- Make sure the **ADSR Gate input** is connected to the MIDI-CV 2 module's **Gate output**
 - Verify the **VCA** is connected to the envelope — without amplitude control, the oscillator plays continuously
 - Try using the **Trigger to MIDI** module if buttons or triggers are causing stuck notes
 

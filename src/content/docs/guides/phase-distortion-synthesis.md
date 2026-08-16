@@ -36,11 +36,11 @@ SynthEdit's **Phase Dist Osc** module implements this technique:
 
 Wire the oscillator into a complete patch like this:
 
-<img src="../../images/guides/phase-distortion-synthesis/02-pd-patch.png" alt="A PD patch: MIDI to CV provides Pitch to the Phase Dist Osc and Gate to an ADSR envelope; the envelope's Signal Out drives the oscillator's Modulation Depth; the oscillator's Audio Out goes to Sound Out" />
+<img src="../../images/guides/phase-distortion-synthesis/02-pd-patch.png" alt="A PD patch: MIDI-CV 2 provides Pitch to the Phase Dist Osc and Gate to an ADSR envelope; the envelope's Signal Out drives the oscillator's Modulation Depth; the oscillator's Audio Out goes to Sound Out" />
 
 1. Insert a **Phase Dist Osc**
-2. Add a **MIDI to CV** module — connect its **Pitch** output to the oscillator's **Pitch** input so the patch tracks your keyboard
-3. Add an **ADSR** envelope and connect MIDI to CV's **Gate** to the envelope's **Gate** input — this triggers the envelope on each note
+2. Add a **MIDI-CV 2** module (search "MIDI" — don't pick the similarly-named **MIDI to CV** under the **Old** category) — connect its **Pitch** output to the oscillator's **Pitch** input so the patch tracks your keyboard
+3. Add an **ADSR** envelope and connect MIDI-CV 2's **Gate** to the envelope's **Gate** input — this triggers the envelope on each note
 4. Connect the envelope's **Signal Out** to the oscillator's **Modulation Depth** — this sweeps the timbre over time, much like a filter envelope
 5. Connect the oscillator's **Audio Out** to a **Sound Out** module
 
@@ -49,6 +49,6 @@ At zero modulation, the output is a pure sine wave; at full modulation, the wave
 ## Tips
 
 - The Phase Distortion Oscillator is sensitive to sudden changes in modulation. If you hear clicks, filter the modulation signal to smooth out abrupt transitions.
-- Velocity control works naturally here — use MIDI velocity (from MIDI to CV) to scale the envelope amount, giving harder key strikes a brighter, more distorted tone.
+- Velocity control works naturally here — use MIDI velocity (from MIDI-CV 2) to scale the envelope amount, giving harder key strikes a brighter, more distorted tone.
 - PD synthesis uses less CPU than equivalent filter-based patches since no separate filter module is needed.
 - Try different combinations of **Wave1** and **Wave2** — each pair gives a distinctly different harmonic character. The "Reso" shapes mimic resonant filter sweeps especially convincingly.

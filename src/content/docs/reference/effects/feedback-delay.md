@@ -1,5 +1,5 @@
 ---
-title: Feedback Delay
+title: Feedback - Volts
 description: Enables feedback paths between modules by introducing a small delay.
 ---
 
@@ -9,7 +9,7 @@ description: Enables feedback paths between modules by introducing a small delay
 <!-- module-screenshot:end -->
 
 
-The **Feedback Delay** module allows backward signal routing (feedback loops) that would otherwise not be possible due to SynthEdit's block-based processing. It introduces a delay of approximately 100 samples (~2 ms at 44.1 kHz).
+The **Feedback - Volts** module (search for "feedback" — its category is Special/Feedback) allows backward signal routing (feedback loops) that would otherwise not be possible due to SynthEdit's block-based processing. It introduces a delay of approximately 96 samples (~2 ms at 44.1 kHz).
 
 ## Inputs
 

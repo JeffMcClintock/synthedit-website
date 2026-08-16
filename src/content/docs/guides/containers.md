@@ -16,14 +16,14 @@ A **Container** is a special module that groups other modules together. Containe
 
 To create a container from existing modules:
 1. Select the modules you want to group
-2. Choose **Edit > Containerise Selection**
+2. Choose **Edit > Containerize Selection**
 
 This wraps the selected modules into a new container, automatically creating the necessary I/O connections.
 
 ### Navigating Containers
 
 - **Double-click** a container's title bar to open it and see its contents (Structure View)
-- **Right-click** a container and choose **Panel Edit** to see its Panel View
+- **Right-click** a container and choose **Panel Edit...** to see its Panel View
 - Use the breadcrumb navigation or **Structure View** to move between container levels
 
 ### Container I/O
@@ -42,6 +42,10 @@ Once containerised, the modules inside collapse into a single block at the paren
 | **Controls on Parent** | Display this container's panel controls on the parent's panel |
 | **Controls on Module** | Show panel controls directly on the container module in Structure View |
 | **Ignore Program Change** | Prevent MIDI program changes from affecting this container's controls |
+
+**Polyphony** and **Controls on Parent** are minimised by default, so they won't show up in
+the properties panel's PINS list until you reveal minimised pins — they're still there and
+still work, they're just tucked away since most containers never need to touch them.
 
 ## Prefabs
 

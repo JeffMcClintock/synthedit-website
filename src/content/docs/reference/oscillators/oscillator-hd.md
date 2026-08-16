@@ -40,7 +40,7 @@ Hear it in the [audio demos](../../../guides/audio-demos/).
 
 ## Usage
 
-Connect a [MIDI to CV](../../midi/midi-to-cv/) module's pitch output to the **Pitch** input for keyboard tracking, then feed **Audio Out** into a filter or [VCA](../../envelopes/vca/).
+Connect a [MIDI-CV 2](../../midi/midi-cv-2/) module's pitch output to the **Pitch** input for keyboard tracking, then feed **Audio Out** into a filter or [VCA](../../envelopes/vca/).
 
 For FM synthesis, patch a second oscillator's output into **Phase Mod**. See the [FM Synthesis guide](../../../guides/fm-synthesis/).
 

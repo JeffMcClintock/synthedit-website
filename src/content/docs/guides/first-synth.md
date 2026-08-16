@@ -52,7 +52,7 @@ Modules listed under the **Old** category are kept only so that older projects s
 The first thing every synthesiser needs is a sound source. We'll add an **oscillator** — a module that produces a continuous waveform.
 
 - Type `oscillator` into the search box
-- Click **Oscillator (naive)** under the **Waveform** heading
+- Click **Oscillator HD** under the **Waveform** heading
 - Click an empty spot in the Structure View to place it
 
 <img src="../../images/tutorials/first-synth/01-oscillator.png" alt="Oscillator module in the structure view" />
@@ -71,7 +71,7 @@ The oscillator produces a waveform, but to actually hear it you need a **Sound O
 - Click in the Structure View, a little to the right of the oscillator
 - Drag the modules around by their title bars to lay them out neatly
 
-Tip: turn on **Edit → Snap to Grid** to keep things tidy. (This option isn't in the Linux build yet.)
+Tip: turn on **Edit → Snap to Grid** to keep things tidy.
 
 <img src="../../images/tutorials/first-synth/02-osc-and-soundout.png" alt="Oscillator and Sound Out side by side" />
 
@@ -97,7 +97,7 @@ You now have the minimum needed to make some noise.
 - Choose **Audio → Start Audio** to start the audio engine
 - Choose **Audio → Stop Audio** when you've heard enough
 
-On Linux these are combined into a single **Audio → Run / Stop** item that toggles the engine on and off.
+This is the same on Windows, macOS and Linux.
 
 It's not exactly inspiring yet — just a continuous tone — but it's a start. The oscillator is producing a fixed waveform and pumping it straight into Sound Out.
 
@@ -138,7 +138,7 @@ Start the audio engine. The oscillator now produces a pulse wave, which has a mo
 
 Notice that the **Pitch** row has no editable value — that's because the slider is driving it now. A pin fed by a patch cord takes its value from the cord, not from the panel.
 
-If the properties panel isn't visible, use **View → Show Properties** (Linux), or drag the panel's edge back out.
+If the properties panel isn't visible, use **View → Properties Browser** to bring it back, or drag the panel's edge back out.
 
 ## 11. Add a List Entry control for the waveform
 
@@ -159,14 +159,14 @@ Notice that the new patch cord is **green**, not blue. SynthEdit uses different 
 The oscillator on its own is a bit raw. A **filter** sits between the oscillator and the sound out, shaping the tone by removing or emphasising certain frequencies.
 
 - Click the patch cord between the oscillator and sound out, and press **Delete** to remove it
-- Search for `sv filter` and click **SV Filter2** under **Filters**, then place it between the two modules
+- Search for `statevar` and click **StateVar Filter** under **Filters/VA**, then place it between the two modules
 - Wire the oscillator's **Audio Out** → the filter's **Signal** input
 - Wire the filter's **Output** → Sound Out's **Out** input
 - Add a second **Slider2** and wire it to the filter's **Pitch** input so you can sweep the cutoff
 
-<img src="../../images/tutorials/first-synth/06-with-filter.png" alt="Oscillator into SV Filter2 into Sound Out" />
+<img src="../../images/tutorials/first-synth/06-with-filter.png" alt="Oscillator into StateVar Filter into Sound Out" />
 
-SV Filter2 has a single **Output**, and its **Mode** pin chooses what that output carries — Low Pass, High Pass, Band Pass or Band Reject. It starts on **Low Pass**, which is what we want here. (You can wire a second List Entry to **Mode** to switch response while the synth plays, exactly as you did for the waveform.)
+StateVar Filter has a single **Output**, and its **Mode** pin chooses what that output carries — Low Pass, High Pass, Band Pass or Band Reject. It starts on **Low Pass**, which is what we want here. (You can wire a second List Entry to **Mode** to switch response while the synth plays, exactly as you did for the waveform.)
 
 Start the audio engine and experiment. As you move the cutoff slider, the filter sweeps through the harmonic content of the oscillator — that classic synthesiser sound. Try different waveforms with the list entry too.
 

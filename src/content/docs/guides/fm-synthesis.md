@@ -20,16 +20,26 @@ SynthEdit's oscillator uses **phase modulation** (PM) rather than true frequency
 
 ### Simple Two-Operator FM
 
-The smallest useful FM patch chains a modulator into a carrier's **Phase Mod** input, with a slider on **PM Depth** for brightness/timbre control:
+The smallest useful FM patch chains a modulator into a carrier's **Phase Mod** input, with a
+**Level Adj** in between as the depth/brightness control — current oscillators (**Oscillator
+HD**, **Oscillator (naive)**) don't expose a dedicated depth pin of their own, so you scale the
+modulator's own signal instead. This is the same approach the "Phase Mod (2-operator FM)" entry on the [Audio
+Demos](../audio-demos/) page is built with:
 
-<img src="../../images/guides/fm-synthesis/01-two-operator.png" alt="Two-operator FM: modulator oscillator's Audio Out into the carrier's Phase Mod input, a slider into the carrier's PM Depth, and the carrier's Audio Out into Sound Out" />
+<img src="../../images/guides/fm-synthesis/01-two-operator.png" alt="Two-operator FM: modulator Oscillator HD's Audio Out into a Level Adj's Input 1, a Slider into the Level Adj's Input 2, the Level Adj's Output into the carrier Oscillator HD's Phase Mod input, and the carrier's Audio Out into Sound Out" />
 
-1. Insert two **Oscillator** modules
-2. Connect the **modulator**'s **Audio Out** to the **carrier**'s **Phase Mod** input
-3. Add a **Slider** and connect its **Signal Out** to the **carrier**'s **PM Depth** input (this is the timbre control — more depth = more harmonics)
-4. Connect the **carrier**'s **Audio Out** to a **Sound Out** module
-5. (Optional) connect a **MIDI to CV** module's **Pitch** output to both oscillators' **Pitch** inputs so the patch tracks your keyboard
-6. (Optional) replace the slider with an ADSR envelope for a time-varying timbre — high modulation on the attack that fades produces classic FM percussion and bell sounds
+1. Insert two **Oscillator HD** modules
+2. Connect the **modulator**'s **Audio Out** to a **Level Adj** module's **Input 1**
+3. Connect the **Level Adj**'s **Output** to the **carrier**'s **Phase Mod** input
+4. Add a **Slider** and connect its output — labelled **Slider** — to the **Level Adj**'s **Input 2** (this is the timbre control — Level Adj multiplies the two, so more level here means more phase modulation reaches the carrier, and more harmonics)
+5. Connect the **carrier**'s **Audio Out** to a **Sound Out** module
+6. (Optional) connect a **MIDI-CV 2** module's **Pitch** output to both oscillators' **Pitch** inputs so the patch tracks your keyboard and the modulator:carrier ratio stays locked to the note instead of drifting
+7. (Optional) replace the slider with an ADSR envelope for a time-varying timbre, separate from the envelope driving the VCA — high modulation on the attack that fades produces classic FM percussion and bell sounds
+
+> **The classic "Oscillator" (Old category) works differently.** It has its own built-in **PM
+> Depth** pin, so it doesn't need the Level Adj step — wire the modulator straight into it. It's
+> kept only so older projects still load, so the Level Adj approach above is the one to reach
+> for in a new patch.
 
 ### Adjusting the Sound
 

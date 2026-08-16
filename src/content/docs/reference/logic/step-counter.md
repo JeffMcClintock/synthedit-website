@@ -26,4 +26,9 @@ The **Step Counter** activates each output in sequence on every clock pulse. Onl
 
 ## Usage Notes
 
-For reliable step reset, use a **Feedback Delay** module in the reset path to avoid timing issues.
+For reliable step reset, use a **Feedback - Volts** module in the reset path to avoid timing issues.
+
+:::note
+This page describes the original **Step Counter**, kept under the **Debug** category for older
+projects. Newer patches should use **Step Counter2** (category **Logic**) instead.
+:::

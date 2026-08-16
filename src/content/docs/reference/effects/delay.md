@@ -37,4 +37,4 @@ The **Delay** module creates delay and echo effects with adjustable delay time, 
 - For simple echo: set a fixed delay time and adjust feedback for the number of repeats
 - For chorus: use a slow LFO on the Modulation input with a short delay time (10–30 ms)
 - For flanger: use a slow LFO on the Modulation input with a very short delay time (1–10 ms) and moderate feedback
-- The Feedback input handles internal feedback — no need for a Feedback Delay module
+- The Feedback input handles internal feedback — no need for a Feedback - Volts module

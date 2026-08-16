@@ -122,12 +122,18 @@ Each tool maps to one or more `SynthEditCL` verbs. Names are stable across versi
 | `se_new` | Create an empty document. |
 | `se_add_module` | Insert a module by unique ID. |
 | `se_set_pin` | Set a pin's parameter value (filenames, floats, enums). |
+| `se_get_param`, `se_set_param` | Read/write a live parameter value (by module + parameter id) — how you put a plugin into a specific state before rendering or screenshotting it. |
 | `se_connect` | Wire two pins together. |
-| `se_select`, `se_deselect_all`, `se_delete`, `se_containerise` | Document edits. |
-| `se_screenshot` | Render a PNG of the panel or structure view. |
+| `se_select`, `se_deselect_all`, `se_delete`, `se_rename`, `se_containerise` | Document edits. |
+| `se_screenshot` | Render a PNG of the panel, structure view, module browser, or properties pane. |
 | `se_render_audio` | Bounce a WAV file (mono or stereo, any sample rate). |
+| `se_audio` | Start/stop/query the audio engine on a running editor (`se_attach`'d, not the headless CLI, which has no audio device). |
 | `se_dump` | Read out the current document's modules + cables as JSON. |
-| `se_script` | Run a multi-line script of any of the above in one shot — preferred for multi-step flows. |
+| `se_rescan` | Rebuild SynthEdit's plugin cache so a module you just built or installed becomes visible to the other tools. |
+| `se_reset` | Discard the headless session and start fresh — cheap, useful after a crash or to get back to a known-clean state. |
+| `se_attach`, `se_detach` | Point every tool at a *running* editor window instead of the headless session, so edits appear live in front of the user, then hand control back. |
+| `se_hover`, `se_drag`, `se_pointer`, `se_pointer_move`, `se_pointer_up`, `se_key`, `se_type` | Low-level GUI interaction — hover, drag, click and type directly on the live panel, for exercising controls (sliders, dropdowns, in-place editors) the way a user would. |
+| `se_script` | Run a multi-line script of any of the above in one shot. Document state now persists across every tool call in a session automatically (see below) — reach for `se_script` as a batching convenience once a sequence is longer than ~5 calls, or when you need to wire a pin by name (see tip below), not because it's required to share state. |
 
 ## Tips for prompting
 
@@ -135,6 +141,16 @@ Each tool maps to one or more `SynthEditCL` verbs. Names are stable across versi
 - **Ask for stereo when you want it**: "render stereo" → assistant uses both `from` and `from_r` arguments. Otherwise you'll get mono.
 - **High-DPI for documentation**: ask for "2× scale" or "300 DPI" when you need crisp screenshots — the renderer bumps internal resolution rather than upscaling.
 - **Inspect before changing**: ask the assistant to "dump the current document and show me the module list" to learn what's there before asking for edits.
+- **Wire prefabs (Slider2, Knob2, and other Controls) by pin name, via `se_script`**: `se_list_modules` only publishes the pin schema for factory modules, not for prefabs — a placed Slider2 has no listed pins to look an index up in. `se_script`'s `--connect` accepts an exact pin name (e.g. `"$slider:Slider"`), which resolves immediately; the atomic `se_connect` tool only takes numeric indices, which means guessing.
+- **Select more than one module before containerising**: `se_select` adds to the current selection rather than replacing it, so calling it once per module (call `se_deselect_all` first to start clean) and then `se_containerise` groups all of them — there's no separate "multi-select" tool or flag.
+- **A pin's on-screen label isn't always its lookup name**: a few modules render a friendlier caption than their internal pin name (e.g. List Entry's output is captioned "Value Out" in the structure view, but its real name — what `se_connect`/`se_script` need — is "Choice"). If a named connect fails, the error message lists every real pin name, type and direction on that module; use that rather than what a screenshot shows.
+- **A documented pin that's missing from a properties screenshot may just be hidden**: some pins are minimised by default (e.g. a container's own `Polyphony` pin) and never appear in an `se_screenshot` of the Properties pane. You can usually still set them blind with `se_set_pin` using the pin's name from a saved project's XML.
+
+## Known limitations
+
+- **A plugin's own configuration dialog is out of reach.** Something like the Patch Automator's MIDI-learn/assign dialog is drawn and driven by the module itself; synthetic clicks from `se_pointer`/`se_drag` don't reach it (the panel view treats the click as a selection instead). Drive the underlying patch data directly with `se_set_pin`/`se_set_param` rather than trying to operate the dialog.
+- **A native dropdown's open list isn't visible to `se_screenshot`.** Clicking a List Entry's combo box doesn't change the captured bitmap — the expanded option list is a native OS popup rendered outside whatever surface gets captured. To confirm a control's available choices or change its selection, drive the value directly with `se_set_param`/`se_get_param` and screenshot the *closed* control before/after, rather than trying to see the list open.
+- **`se_script`'s batched `--screenshot` doesn't take `--crop`.** The atomic `se_screenshot` tool's `crop`/`crop_margin` options aren't exposed as CLI flags inside a script. Call the atomic `se_screenshot` tool on its own when you need a cropped image.
 
 ## Updating
 
@@ -150,7 +166,7 @@ The wrapper itself only changes when its own behaviour does — a path-resolutio
 
 **`se_screenshot` or `se_render_audio` produces output in the wrong place** — most likely the assistant used a relative path. Always ask for absolute output paths.
 
-**Atomic edit tools say "no document loaded"** — `se_add_module`, `se_connect`, etc. each spawn a fresh CLI process and exit, so they don't share document state across calls. Use `se_script` instead — every verb in the script runs in one CLI process. Modern AI hosts pick `se_script` automatically for multi-step flows.
+**Atomic edit tools say "no document loaded"** — the tools share one long-lived session now, so this shouldn't happen in normal use: `se_new`/`se_load` followed by any number of separate `se_add_module`, `se_connect`, etc. calls all see the same document, even across many individual tool calls with no `se_script` involved. If you do hit this, the session was most likely discarded by an `se_rescan` (which ends it deliberately, so a rebuilt plugin cache doesn't get adopted by a stale process) or by a crash — call `se_new`/`se_load` again to start a fresh session, or `se_reset` to force a clean one.
 
 ## Advanced: build from source
 

@@ -30,7 +30,7 @@ The **ADSR** is a standard four-stage envelope generator (Attack, Decay, Sustain
 
 ## Usage
 
-Connect the Gate input to a **MIDI-to-CV** module's Gate output. The envelope rises during Attack, falls to the Sustain level during Decay, holds at Sustain while the key is held, then falls to zero during Release when the key is released.
+Connect the Gate input to a **MIDI-CV 2** module's Gate output. The envelope rises during Attack, falls to the Sustain level during Decay, holds at Sustain while the key is held, then falls to zero during Release when the key is released.
 
 Envelope times use an exponential voltage scale — each 1V increase approximately doubles the time. Negative voltages produce shorter times.
 
