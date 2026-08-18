@@ -208,14 +208,31 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
+**Unreleased**
+- trust the notary verdict, not the --wait connection
+- compile Dialogs_editor2.cpp into the Mac app, restoring the link
+
+**v1.6.186** — 2026-08-18
+- the three V1-critical rack prefabs, and ship them
+- separate view chrome settings for tear-out windows
+- save the editor window layout in the document
+- restore the real default when a settings attribute is absent
+- restore tear-out windows between sessions
+- independent view chrome for tear-out windows
+- compose the export engine with the GMPI->VST3 wrapper (Linux)
+- answer a zero-size measure() probe with the size we want
+- an absent module database is not an error
+- Export GMPI Plugin from the Wayland editor's File menu
+
 **v1.6.185** — 2026-08-14
-- profile structure-view scroll rendering across d2d/cpu backends
 - correct stale IO_base.h include path in CoreMidiDriver.cpp
 
 **v1.6.184** — 2026-08-14
+- profile structure-view scroll rendering across d2d/cpu backends
 - cache structure-view brushes for faster scroll redraw
 
 **v1.6.183** — 2026-08-13
+- the Preferences sample rate now survives a restart
 - open a blank project when no MRU file loads at startup
 - bring the Wayland menu bar in line with Windows and macOS
 - a module locked by another process crashed the editor on startup
@@ -283,16 +300,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - hand the mac Xcode project the HarfBuzz include path
 - configure failed when synth_ui_tests was skipped
 - breadcrumb bar draws container thumbnails on mac
-
-**v1.6.170** — 2026-08-05
-- more natural auto-line-tracing
-
-**v1.6.169** — 2026-08-05
-- export refuses missing modules instead of crashing
-- audio capture for the Wayland editor
-- a view change severed the side panes' hosts
-- a missing stock module is a broken installation, say so
-- Preferences panel for the Wayland editor
 
 </div>
 ## Demo vs Full Version
