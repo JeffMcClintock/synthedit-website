@@ -29,6 +29,34 @@ The panel's size becomes the plugin window's size. If you want the user to be ab
 
 SynthEdit generates a `.vst3` file that you can install in your DAW's plugin folder.
 
+## Exporting on Linux
+
+The Linux build is an experimental preview, and export works differently there: **VST3 export runs from the command line, not from the editor's menu.** The editor's **File > Export GMPI Plugin...** produces a `.gmpi` bundle, which is SynthEdit's own module format — not something a DAW loads. For a VST3, use `SynthEditCL`, the command-line tool that ships in the same tarball:
+
+```bash
+SynthEditCL MySynth.synthedit --autosavevst3
+```
+
+The plugin is written to **`~/.vst3/MySynth.vst3`** — the per-user folder every Linux VST3 host scans, so there's nothing to copy afterwards. Rescan in your DAW and it's there.
+
+The exported binary carries both a Wayland and an X11 path and picks whichever the host offers, so the same file works in an X11 host like Ardour and in a Wayland one.
+
+### The container's name becomes the plugin's name
+
+There's no plugin-settings dialog in the Linux editor yet, so the name isn't something you type at export time — it's taken from the container you're exporting. Name the container before your first export and the plugin, its bundle and its identifiers all follow from it.
+
+:::caution[Exactly one container at the top level]
+Your patch must sit in a **Container** with *Don't Export* unticked, and it must be the **only** exportable container at the top level. If a stray container is sitting beside it — a Slider2 or Knob2 dragged onto the master canvas rather than inside your synth is the easy way to end up with one — the export either refuses with *"Many Containers in main window"*, or picks the wrong one and names your plugin after it.
+
+This matters more than it looks, because the identifiers a host uses to recognise your plugin are minted on the **first** export and then kept, so that a DAW project which already loaded your plugin still finds it next time. Getting the name right before that first export saves untangling it later.
+:::
+
+### Checking the result
+
+The plugin is a normal VST3 bundle, so the usual tools apply. Steinberg's `validator` from the VST3 SDK is the quickest confidence check — it exercises the whole plugin API and reports what a strict host would object to. Then load it in a DAW and play it: a validator pass proves the plugin is well-formed, not that it makes the sound you meant.
+
+If an export doesn't produce the file you expect, `SynthEditCL` prints the reason and exits non-zero, and `export_log.txt` lists every module the plugin needs and whether it was copied in.
+
 ## Including Audio, MIDI and SoundFont Files
 
 If your project uses external files — a sample loaded by a Wave Player, a MIDI file driving a MIDI Player, a SoundFont — those files need to ship inside the exported plugin too. SynthEdit looks for them in a folder next to your project named **`<project-name>.resources`**.
@@ -43,7 +71,7 @@ Skin images and font assets get exported automatically — SynthEdit displays yo
 
 ## Testing Your Plugin
 
-1. Copy the `.vst3` file to your system's VST3 folder
+1. Copy the `.vst3` file to your system's VST3 folder — `C:\Program Files\Common Files\VST3` on Windows, `~/Library/Audio/Plug-Ins/VST3` on macOS, `~/.vst3` on Linux (where the export already puts it, so there's nothing to copy)
 2. Rescan plugins in your DAW
 3. Load the plugin on a track
 4. Test all controls and audio processing
