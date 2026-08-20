@@ -5,9 +5,31 @@ description: Full version history of SynthEdit changes and fixes.
 
 Every release in the v1.6 line. The most recent entries are also embedded on the [installation page](../guides/installation/).
 
-**Unreleased**
+**v1.6.188** — 2026-08-20
+- the Xcode app follows two headers the carve-out moved
+
+**v1.6.187** — 2026-08-19
 - trust the notary verdict, not the --wait connection
+- substitute a bad host tempo instead of only complaining about it
+- stop trimming away the indent that groups a dialog's lines
+- stop labelling Linux modules "Windows" in the export log
+- stop --add-module losing negative coordinates
+- set-plugin-info â€” plugin identity without the GUI
+- report each module's type id in --dump
+- report each module's pins in --dump, and clean up render-audio's recorder
+- real VST3 export, and survive a second render crash
+- keep a multi-line dialog together on stdout
+- honest panelRectsFinalized, master-space absolutePanelRect in --dump
+- fail when a module could not be copied into the plugin"
+- fail when a module could not be copied into the plugin
+- draw plugin ids from real entropy on Linux
 - compile Dialogs_editor2.cpp into the Mac app, restoring the link
+- an se_export tool
+- accept pin names and $alias handles in the typed tools
+- a centred per-note pitch bend detuned every note +3 semitones
+- a --set-plugin-info verb
+- SynthEditSem tolerates a format gmpi_plugin declined
+- Export Plugins menu item and an export options dialog
 
 **v1.6.186** — 2026-08-18
 - the three V1-critical rack prefabs, and ship them
@@ -586,6 +608,7 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - Better fine control of new sliders
 
 **v1.6.96** — 2026-05-13
+- wire up edit > move to front/back menu items
 - tweaks to new sub-controls
 - removed close icon from main view
 - mac app icon now ships in bundle (was generic placeholder)
@@ -593,7 +616,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - 'Additional Files' dialog layout fixed
 
 **v1.6.95** — 2026-05-12
-- wire up edit > move to front/back menu items
 - right-click on panel module shows context menu again
 
 **v1.6.94** — 2026-05-12
