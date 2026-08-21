@@ -208,6 +208,14 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
+**Unreleased**
+- more consistent calc of view zoom
+- mac bitmapPixels leaked a rep and an NSImage per lock
+- mac SolidColorBrush::SetColor leaked an NSColor per call
+
+**v1.6.189** — 2026-08-21
+- grey "Goto Rack" at the rack instead of omitting it
+
 **v1.6.188** — 2026-08-20
 - the Xcode app follows two headers the carve-out moved
 
@@ -307,16 +315,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 **v1.6.175** — 2026-08-07
 - mac - open .synthedit files handed to us by the Finder
 - connector forgets its dragged node when the drag ends
-
-**v1.6.174** — 2026-08-07
-- tidy line context menu
-- stop TIDE clobbering the installed SynthEdit's module cache
-- Thumbnails now working.
-- Prefabs now appear in the module list.
-- JUCE host presses the client before the context-menu fallback
-
-**v1.6.173** — 2026-08-06
-- connector hit-test widens with round joins, not miter
 
 </div>
 ## Demo vs Full Version
