@@ -208,6 +208,9 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
+**v1.6.192** — 2026-08-23
+- resolve windows file paths in mac and linux plugins
+
 **v1.6.191** — 2026-08-23
 - sign by identity hash, not by name
 
@@ -258,10 +261,10 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - Export GMPI Plugin from the Wayland editor's File menu
 
 **v1.6.185** — 2026-08-14
+- profile structure-view scroll rendering across d2d/cpu backends
 - correct stale IO_base.h include path in CoreMidiDriver.cpp
 
 **v1.6.184** — 2026-08-14
-- profile structure-view scroll rendering across d2d/cpu backends
 - cache structure-view brushes for faster scroll redraw
 
 **v1.6.183** — 2026-08-13
@@ -306,14 +309,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 **v1.6.178** — 2026-08-10
 - SynthEdit2 builds again -- borrow the factory, don't pass the unique_ptr
-
-**v1.6.177** — 2026-08-09
-- mcp - smoke scripts hardcoded a Windows temp path
-- mcp - remove stray C: temp dir that breaks Windows checkout
-- mac - uncaught exceptions crash with no usable diagnostic
-- CLI script paths hardcoded a Windows temp dir
-- CL path-writing verbs create parent dirs and verify the write
-- CL mac bundle stages Resources into Contents/Resources
 
 </div>
 ## Demo vs Full Version
