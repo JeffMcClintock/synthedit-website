@@ -5,7 +5,10 @@ description: Full version history of SynthEdit changes and fixes.
 
 Every release in the v1.6 line. The most recent entries are also embedded on the [installation page](../guides/installation/).
 
-**Unreleased**
+**v1.6.191** — 2026-08-23
+- sign by identity hash, not by name
+
+**v1.6.190** — 2026-08-21
 - more consistent calc of view zoom
 - mac bitmapPixels leaked a rep and an NSImage per lock
 - mac SolidColorBrush::SetColor leaked an NSColor per call
@@ -213,12 +216,12 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - keep calcReportedLatency in step with calcDelayCompensation overrides
 - fix crash deleting a container the breadcrumb trail remembers
 - add Delay3 - modernised GMPI echo delay
-- Ctrl+D shows debuggers on selected modules of current view
 - Compensated Delay over-reported latency at some sample rates
 - Compensated Delay latches its report at compensation time and snaps it to the delay line's tap count
 
 **v1.6.156** — 2026-07-15
 - add Ctrl+D presenter command to toggle debugger on selection
+- Ctrl+D shows debuggers on selected modules of current view
 
 **v1.6.155** — 2026-07-14
 - Compensated Delay module + decoupled reported-latency pass
@@ -616,6 +619,7 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - Better fine control of new sliders
 
 **v1.6.96** — 2026-05-13
+- wire up edit > move to front/back menu items
 - tweaks to new sub-controls
 - removed close icon from main view
 - mac app icon now ships in bundle (was generic placeholder)
@@ -623,7 +627,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - 'Additional Files' dialog layout fixed
 
 **v1.6.95** — 2026-05-12
-- wire up edit > move to front/back menu items
 - right-click on panel module shows context menu again
 
 **v1.6.94** — 2026-05-12
