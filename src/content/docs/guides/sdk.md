@@ -56,6 +56,22 @@ Pins are typed. The SDK supports `float`, `int`, `bool`, `text`, `enum`, `blob` 
 
 See [Signal Types & Levels](../signal-types/) for a refresher on how those types appear in the editor.
 
+### Filename pins
+
+A `text` pin that holds a filename gets a **browse** button next to it in the Properties browser. Mark the pin `isFilename` and put the file extension in `metadata`, so the file picker filters for the right thing:
+
+```xml
+<Pin name="File Name" datatype="string" default="Wavefile" isFilename="true" metadata="wav"/>
+```
+
+SynthEdit assumes by default that your module **reads** that file, and browses with an *Open* dialog: the name has to exist, and nothing is said about overwriting. If your module **writes** the file instead — a recorder, a logger, an exporter — add `isFilenameWritable`:
+
+```xml
+<Pin name="File Name" datatype="string" default="Wavefile" isFilename="true" isFilenameWritable="true" metadata="wav"/>
+```
+
+That browses with a *Save* dialog instead, so the user can type a name that doesn't exist yet, and gets the usual warning before overwriting one that does. The flag only qualifies `isFilename` — on its own it does nothing — and reading is the default, so a module that already works needs no change.
+
 ## Bootstrapping a new module
 
 Rather than write XML and C++ from scratch, let SynthEdit do it for you:
