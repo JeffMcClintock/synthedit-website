@@ -56,6 +56,7 @@
 	--sl-color-bg-inline-code: #18181c;
 	--sl-color-text:          #f5f3ee;
 	--sl-color-text-accent:   #ffb000;
+	--sl-color-text-invert:   #0a0a0b;   /* ink on amber accent fills (banner, current sidebar item) */
 	--sl-color-hairline-light: rgba(255,253,240,0.05);
 	--sl-color-hairline:      rgba(255,253,240,0.10);
 	--sl-color-hairline-shade: rgba(255,253,240,0.16);
@@ -84,6 +85,7 @@
 	--sl-color-bg-inline-code: #f0eadc;
 	--sl-color-text:          #1f1c17;
 	--sl-color-text-accent:   #a85a00;
+	--sl-color-text-invert:   #f8f4ec;   /* linen on the brown accent fill */
 	--sl-color-hairline-light: rgba(31,28,23,0.06);
 	--sl-color-hairline:      rgba(31,28,23,0.10);
 	--sl-color-hairline-shade: rgba(31,28,23,0.20);
@@ -124,6 +126,7 @@ html:not([data-has-sidebar]) {
 	--sl-color-bg-inline-code: #18181c;
 	--sl-color-text:          #f5f3ee;
 	--sl-color-text-accent:   #ffb000;
+	--sl-color-text-invert:   #0a0a0b;   /* ink on amber accent fills (banner, current sidebar item) */
 	--sl-color-hairline-light: rgba(255,253,240,0.05);
 	--sl-color-hairline:      rgba(255,253,240,0.10);
 	--sl-color-hairline-shade: rgba(255,253,240,0.16);
