@@ -5,9 +5,15 @@ description: How to export your SynthEdit project as a VST plugin.
 
 One of SynthEdit's most powerful features is the ability to export your projects as standalone VST3 plugins. These plugins work in any DAW that supports the VST3 format.
 
-<img src="../../images/guides/creating-vst-plugins/01-complete-synth.png" alt="A complete polyphonic synth ready for VST export: MIDI In feeds a Patch Automator (which exposes parameters to the host DAW), then on through MIDI-CV 2 to drive an Oscillator and ADSR; the oscillator passes through an SV Filter and VCA, and a Voice Combiner before reaching Sound Out" />
+<img src="../../images/guides/creating-vst-plugins/01-complete-synth.png" alt="Inside a plugin-ready container: an IO Mod carrying MIDI In feeds MIDI-CV 2, whose Pitch drives an Oscillator HD and whose Gate drives an ADSR2; a List Entry picks the waveform and a slider sets the cutoff; the oscillator runs through a StateVar Filter into a VCA whose Volume comes from the envelope, and the VCA's output leaves through a second IO Mod" />
 
-A patch like this — MIDI In → Patch Automator → voice modules → Voice Combiner → Sound Out — is the typical shape of a VST instrument before export. The **Patch Automator** is what exposes your panel controls to the host DAW as automatable parameters.
+This is the inside of a plugin-ready container: MIDI arrives on the left, audio leaves on the right, and a **MIDI-CV 2** in between turns notes into the pitch and gate that drive the voice. That's the whole shape of a VST instrument — [Your First Synth](../first-synth/) builds exactly this patch step by step.
+
+:::note[You don't need a Patch Automator]
+Your panel controls become the host's automatable parameters on their own, just by being inside the exported container — a **Patch Automator** plays no part in that, and a patch without one exports and automates exactly the same.
+
+It does a different job: mapping *hardware* MIDI controllers onto your controls, and transmitting a MIDI message back out whenever one moves. Add one only if you want that — and wire it across the plugin rather than through it, taking its MIDI as a branch off your MIDI source and sending its **MIDI Out** on to the plugin's MIDI output, never into a MIDI-CV 2 or any other module. See [MIDI Automation](../midi-automation/).
+:::
 
 ## Designing the GUI
 
@@ -19,6 +25,17 @@ Before exporting, you'll want to create a user interface for your plugin:
 4. Customize the appearance with colors, images, and layout
 
 The panel's size becomes the plugin window's size. If you want the user to be able to scale that window up or down inside the DAW, see [Resizable Plugin Windows](../resizable-plugin-windows/).
+
+## What the export needs
+
+Export works on a **container**, not on a loose patch, and it is strict about finding exactly one to export. Before you reach for the menu:
+
+- Your synth must sit inside a container, with **Don't Export** unticked
+- That must be the **only** exportable container at the top level. A Slider2 or Knob2 dropped onto the master canvas instead of inside your synth is itself a container, and is the usual way to end up with a second one.
+- Leave **Sound Out** *outside* the container. It's the patch's connection to your speakers, not part of the plugin — the container's own audio output plug is what becomes the plugin's output.
+- Leave any **Keyboard (MIDI)** module outside too. It's there to play the synth in the editor; keeping it outside is what leaves the container with a **MIDI In** plug, which is where the host delivers its notes once the plugin is loaded in a DAW.
+
+A container wired that way has one MIDI input and one audio output on its exterior — the same two connections a DAW makes to an instrument plugin.
 
 ## Exporting as VST3
 
@@ -46,9 +63,9 @@ The exported binary carries both a Wayland and an X11 path and picks whichever t
 There's no plugin-settings dialog in the Linux editor yet, so the name isn't something you type at export time — it's taken from the container you're exporting. Name the container before your first export and the plugin, its bundle and its identifiers all follow from it.
 
 :::caution[Exactly one container at the top level]
-Your patch must sit in a **Container** with *Don't Export* unticked, and it must be the **only** exportable container at the top level. If a stray container is sitting beside it — a Slider2 or Knob2 dragged onto the master canvas rather than inside your synth is the easy way to end up with one — the export either refuses with *"Many Containers in main window"*, or picks the wrong one and names your plugin after it.
+This is where [what the export needs](#what-the-export-needs) bites hardest. If a stray exportable container is sitting beside your synth, the export either refuses with *"Many Containers in main window"*, or picks the wrong one and names your plugin after it.
 
-This matters more than it looks, because the identifiers a host uses to recognise your plugin are minted on the **first** export and then kept, so that a DAW project which already loaded your plugin still finds it next time. Getting the name right before that first export saves untangling it later.
+It matters more than it looks, because the identifiers a host uses to recognise your plugin are minted on the **first** export and then kept, so that a DAW project which already loaded your plugin still finds it next time. Getting the name right before that first export saves untangling it later.
 :::
 
 ### Checking the result
@@ -59,7 +76,7 @@ If an export doesn't produce the file you expect, `SynthEditCL` prints the reaso
 
 ## Including Audio, MIDI and SoundFont Files
 
-If your project uses external files — a sample loaded by a Wave Player, a MIDI file driving a MIDI Player, a SoundFont — those files need to ship inside the exported plugin too. SynthEdit looks for them in a folder next to your project named **`<project-name>.resources`**.
+If your project uses external files — a sample loaded by a Wave Player, a MIDI file driving a MIDI Player2, a SoundFont — those files need to ship inside the exported plugin too. SynthEdit looks for them in a folder next to your project named **`<project-name>.resources`**.
 
 For example, if your project is `MySynth.synthedit`, create a folder called `MySynth.resources` alongside it and drop your `.wav`, `.mid`, `.sf2`, etc. files in there. When you pick one of those files in a module's File Name pin, SynthEdit will find it in `.resources/` first, then fall back to your global Audio / MIDI / SoundFont folders set in Preferences.
 

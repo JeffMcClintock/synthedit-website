@@ -9,13 +9,13 @@ SynthEdit is a synthesizer editor, not a sequencer. To compose music, you'll typ
 
 ### 1. MIDI Files (Recommended)
 
-Load a MIDI file directly into SynthEdit using the **MIDI Player** module:
+Load a MIDI file directly into SynthEdit using the [**MIDI Player2**](../../reference/midi/midi-player2/) module:
 
-1. Insert a **MIDI Player** module
-2. Set its **File Name** property to your `.mid` file
+1. Insert a **MIDI Player2** module
+2. Set its **File Name** property to your `.mid` file — it plays nothing at all until this points at a file that exists
 3. Connect its MIDI output to your synth
 
-<img src="../../images/guides/using-with-daw/01-midi-player-setup.png" alt="A patch with a MIDI Player module on the left, its yellow MIDI Out cable feeding into a MIDI-CV 2 module, which drives an Oscillator's Pitch and an ADSR's Gate. The oscillator runs into a VCA whose Volume is controlled by the envelope, and the VCA's output goes to Sound Out" />
+<img src="../../images/guides/using-with-daw/01-midi-player-setup.png" alt="A patch with a MIDI Player2 module on the left, its yellow MIDI Out cable feeding into a MIDI-CV 2 module, which drives an Oscillator HD's Pitch and an ADSR2's Gate. The oscillator runs into a VCA whose Volume is controlled by the envelope, and the VCA's output goes to Sound Out" />
 
 **Advantages:**
 - Rock-solid timing — no latency between the sequencer and SynthEdit

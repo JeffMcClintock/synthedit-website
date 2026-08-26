@@ -1,6 +1,6 @@
 ---
 title: Keyboard
-description: On-screen MIDI keyboard playable with mouse or computer keyboard.
+description: On-screen MIDI keyboard, superseded by Keyboard (MIDI).
 ---
 
 
@@ -9,7 +9,15 @@ description: On-screen MIDI keyboard playable with mouse or computer keyboard.
 <!-- module-screenshot:end -->
 
 
-The **Keyboard** module provides an on-screen piano keyboard that can be played with the mouse or computer keyboard.
+:::caution[Legacy module]
+This is the original on-screen keyboard, kept under the **Old** category so older projects still
+load. For new patches use **[Keyboard (MIDI)](../keyboard-midi/)** under **Controls**, which has
+the same two plugs. There is also a **Keyboard (MPE)** for per-note expression, and an Old
+**Keyboard (CV)** that puts out voltages instead of MIDI.
+:::
+
+
+The **Keyboard** module provides an on-screen piano keyboard, played with the mouse.
 
 ## Inputs
 
@@ -23,13 +31,8 @@ The **Keyboard** module provides an on-screen piano keyboard that can be played 
 |-----|------|-------------|
 | MIDI Out | MIDI | MIDI note data |
 
-## Computer Keyboard Mapping
-
-- **Q** row = Middle C octave
-- **Z** row = Two octaves below middle C
-- **T** button = Toggle mode (keys stay held until clicked again)
-
 ## Usage Notes
 
 - The keyboard is resizable
 - Clicking the keyboard starts SynthEdit playback if it isn't already running
+- Playing from the computer keyboard is no longer supported — use the mouse, or a MIDI keyboard through [MIDI In](../midi-in/)

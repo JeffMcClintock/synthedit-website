@@ -9,6 +9,13 @@ description: Generates a random voltage on each trigger.
 <!-- module-screenshot:end -->
 
 
+:::caution[Legacy module]
+Kept under the **Old** category so older projects still load. For new patches use
+**[Random Voltage2](../random-voltage2/)**, which is the same idea with a control-rate output that
+lets downstream modules sleep between triggers.
+:::
+
+
 The **Random Voltage** module generates a new random voltage each time its trigger input goes high. This is a convenient alternative to using a noise source with a Sample and Hold module.
 
 ## Usage

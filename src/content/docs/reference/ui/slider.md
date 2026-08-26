@@ -9,6 +9,13 @@ description: Adjustable slider control for direct voltage output.
 <!-- module-screenshot:end -->
 
 
+:::caution[Legacy module]
+This is the original slider, kept under the **Old** category so older projects still load. For new
+patches use **[Slider2](../slider2/)** under **Controls**, which stores its value as a patch
+parameter — so it saves with presets and a host DAW can automate it.
+:::
+
+
 The **Slider** provides a draggable control for setting a voltage value directly. It can be configured for different visual appearances and can send MIDI controller messages.
 
 ## Outputs

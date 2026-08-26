@@ -9,6 +9,13 @@ description: Plays MIDI files with high-resolution timing.
 <!-- module-screenshot:end -->
 
 
+:::caution[Legacy module]
+Kept under the **Old** category so older projects still load. For new patches use
+**[MIDI Player2](../midi-player2/)**, which follows the host's tempo by default and adds
+**Trigger** and **Gate** inputs for driving playback from the patch.
+:::
+
+
 The **MIDI Player** loads and plays standard MIDI files (.mid) with high-resolution timing accuracy, better than routing through external software.
 
 ## Inputs

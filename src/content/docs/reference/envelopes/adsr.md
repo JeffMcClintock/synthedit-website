@@ -9,6 +9,13 @@ description: Standard four-stage envelope generator.
 <!-- module-screenshot:end -->
 
 
+:::caution[Legacy module]
+This is the original envelope generator, kept under the **Old** category so older projects still
+load. For new patches use **[ADSR2](../adsr2/)** — the same four stages plus a dedicated
+**Trigger** input, which retriggers cleanly on a note played while the gate is still high.
+:::
+
+
 The **ADSR** is a standard four-stage envelope generator (Attack, Decay, Sustain, Release) used to shape how a sound evolves over time.
 
 ## Inputs

@@ -9,6 +9,13 @@ description: Converts gate and pitch voltages to MIDI note messages.
 <!-- module-screenshot:end -->
 
 
+:::caution[Legacy module]
+Kept under the **Old** category so older projects still load. For new patches use
+**[Trigger To MIDI2](../trigger-to-midi2/)**, which adds a separate **Trigger** input for repeated
+notes and takes **Gate** as a boolean.
+:::
+
+
 The **Trigger to MIDI** module converts gate and pitch control voltages back into MIDI note-on and note-off messages.
 
 ## Inputs

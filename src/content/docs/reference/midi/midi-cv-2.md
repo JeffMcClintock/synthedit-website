@@ -3,6 +3,12 @@ title: MIDI-CV 2
 description: Converts MIDI data to control voltages and gate signals, with zero-latency retriggering.
 ---
 
+
+<!-- module-screenshot:begin -->
+<img src="../../../images/modules/se-midi-to-cv-2.png" alt="MIDI-CV 2 module" class="se-module-screenshot" />
+<!-- module-screenshot:end -->
+
+
 The **MIDI-CV 2** module converts incoming MIDI note data into control voltages (CV) and gate
 signals, forming the bridge between MIDI input and the analog-style modular synthesis engine.
 It's the current, recommended module for this — see [MIDI to CV](../midi-to-cv/) for the older

@@ -9,6 +9,13 @@ description: Captures and holds an input voltage on a trigger.
 <!-- module-screenshot:end -->
 
 
+:::caution[Legacy module]
+Kept under the **Old** category so older projects still load. For new patches use
+**[Sample and Hold2](../sample-and-hold2/)**, whose **Hold** input is a boolean rather than a
+voltage, so it wires straight to gates and logic modules.
+:::
+
+
 The **Sample and Hold** captures the input voltage at the moment it receives a trigger and holds that value until the next trigger.
 
 ## Inputs

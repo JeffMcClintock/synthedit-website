@@ -45,7 +45,7 @@ When the ADSR's release phase ends, the VCA's output flatlines at zero. The VCA 
 
 ## Polyphony Optimization
 
-- **Place effects outside the voice container.** Reverb, chorus, and delay should be monophonic (after the Voice Combiner), not cloned for each voice.
+- **Place effects outside the voice container.** Reverb, chorus, and delay should run once on the mixed output, not be cloned for each voice.
 - **Set appropriate voice counts.** Don't set 128 voices if your patch only needs 8. While unused voices sleep, the overhead isn't zero.
 - SynthEdit analyzes signal flow and only clones modules that actually need to be polyphonic.
 

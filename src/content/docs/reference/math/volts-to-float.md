@@ -9,6 +9,12 @@ description: Measures audio signal level and converts to a parameter value.
 <!-- module-screenshot:end -->
 
 
+:::caution[Legacy module]
+Kept under the **Old** category so older projects still load. For new patches use
+**[Volts to Float2](../volts-to-float2/)** under **Conversion** — the plugs are identical.
+:::
+
+
 The **Volts to Float** module measures the level of an audio signal and converts it to a control parameter value. Used internally in VU meters and similar display modules.
 
 ## Usage Notes

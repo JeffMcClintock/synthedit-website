@@ -3,7 +3,7 @@ title: Your First Synth
 description: A step-by-step walkthrough that builds a basic subtractive synthesiser in SynthEdit.
 ---
 
-This tutorial walks you through the basics of SynthEdit by building a simple subtractive synthesiser from scratch. By the end you'll have a patch that produces sound, lets you change the pitch and waveform with on-screen controls, and shapes the tone with a filter.
+This tutorial walks you through the basics of SynthEdit by building a simple subtractive synthesiser from scratch. By the end you'll have a playable instrument: notes from a keyboard, a filter you can sweep, an envelope shaping every note, and the whole thing packed into a container ready to export as a plugin.
 
 Along the way you'll learn how to:
 
@@ -11,6 +11,9 @@ Along the way you'll learn how to:
 - Find your way around the interface
 - Add modules and connect them with patch cords
 - Change parameters with controls and the properties panel
+- Turn MIDI notes into pitch and gate signals
+- Shape each note with an envelope
+- Group a finished voice into a container
 - Save your work
 
 ## 1. Modules, plugs, and patch cords
@@ -172,9 +175,102 @@ Start the audio engine and experiment. As you move the cutoff slider, the filter
 
 Save your work again before moving on.
 
+## 13. Play it from a keyboard
+
+Everything so far has been a drone. The oscillator runs continuously, and its pitch comes from a slider you drag by hand — fine for exploring, but not an instrument. A real synth takes its pitch from notes, and two modules are what turn note messages into something the patch understands.
+
+- Search for `keyboard` and click **[Keyboard (MIDI)](../../reference/midi/keyboard-midi/)** under **Controls**. Place it near the bottom-left. It's an on-screen piano you can play with the mouse, and it starts the audio engine when you click it.
+- Search for `midi` and click **[MIDI-CV 2](../../reference/midi/midi-cv-2/)** under **MIDI** — the current module, not the similarly-named **MIDI to CV** under **Old**. Place it to the right of the keyboard.
+- Connect the keyboard's **MIDI Out** to the MIDI-CV 2's **MIDI In**
+
+That cord is **yellow** — a third signal colour, this one for MIDI.
+
+**MIDI-CV 2** is the bridge between MIDI and the rest of your patch. Notes go in; plain voltages come out, on five separate output plugs:
+
+- **Pitch** — the note's pitch, at **1 volt per octave** (5 V is A440)
+- **Gate** — high for as long as a key is held down, low when it's released
+- **Trigger** — a short pulse at the start of every new note
+- **Velocity** — how hard the key was struck
+- **Aftertouch** — pressure applied after the key is down
+
+Now hand the pitch over to the keyboard:
+
+- Click the cord running from the pitch **Slider2** to the oscillator, and press **Delete**
+- Click the slider itself and delete that too — the keyboard sets the pitch now
+- Connect MIDI-CV 2's **Pitch** output to the oscillator's **Pitch** input
+
+<img src="../../images/tutorials/first-synth/07-with-keyboard.png" alt="Keyboard (MIDI) feeding MIDI-CV 2 with a yellow MIDI cord; MIDI-CV 2's Pitch output drives the oscillator's Pitch input" />
+
+:::caution[Delete the old cord, don't just add the new one]
+An input plug accepts more than one patch cord, and SynthEdit [adds the signals together](../faq/#what-happens-when-i-connect-multiple-signals-to-the-same-pin) when you do that. Leaving the slider wired to **Pitch** alongside the keyboard would stack its voltage on top of every note — at 1 V per octave, a slider sitting mid-travel transposes the whole keyboard five octaves up.
+:::
+
+Start the audio engine and click a few keys. The pitch follows the keyboard, and the cutoff slider still works. But the sound never stops between notes — nothing in the patch yet knows when a note begins and ends. That's the last piece.
+
+## 14. Give each note a beginning and an end
+
+Notes don't switch on and off square; they swell and fade. That shape is the job of two modules working as a pair:
+
+- An **envelope generator** turns the keyboard's gate into a rising-and-falling control voltage
+- A **VCA** (voltage controlled amplifier) multiplies the audio by that voltage, so the note follows the shape
+
+Add them:
+
+- Search for `adsr` and click **ADSR2** under **Waveform**. Place it below the oscillator.
+- Search for `vca` and click **VCA** under **Modifiers**. Place it between the filter and Sound Out.
+- Connect MIDI-CV 2's **Gate** output → ADSR2's **Gate** input
+- Delete the cord from the filter's **Output** to Sound Out
+- Connect the filter's **Output** → the VCA's **Signal** input
+- Connect ADSR2's **Signal Out** → the VCA's **Volume** input
+- Connect the VCA's **Output** → Sound Out's **Out** input
+
+<img src="../../images/tutorials/first-synth/08-with-envelope.png" alt="The full voice: MIDI-CV 2's Gate drives ADSR2, whose Signal Out drives the VCA's Volume; the filter's Output feeds the VCA's Signal, and the VCA's Output goes to Sound Out" />
+
+**ADSR** stands for the four stages the envelope moves through, each with its own input plug:
+
+| Stage | What it does |
+|-------|--------------|
+| **Attack** | How long the note takes to reach full level after the key goes down |
+| **Decay** | How long it then takes to fall back to the sustain level |
+| **Sustain** | The level it holds at while you keep the key held |
+| **Release** | How long it takes to fade to silence after you let go |
+
+Attack, Decay and Release are times expressed as voltages, on an exponential scale — every extra volt roughly doubles the time. Sustain is a level, 0–10 V. Set them from the properties panel, or wire sliders to them exactly as you did for the cutoff.
+
+Start the audio engine and play. Each key press is now a note that starts, sustains while you hold it, and fades when you let go. Try a long **Attack** for a soft pad, or a short **Decay** with **Sustain** at zero for a plucked sound.
+
+:::tip[Use a VCA, not a Level Adj]
+The VCA is built to notice when its volume input reaches zero, and that's what lets SynthEdit put a finished note to sleep — the oscillator and filter upstream of it stop using CPU until the next note. See [Optimizing CPU](../optimizing-cpu/).
+:::
+
+MIDI-CV 2's **Trigger** output is the alternative to **Gate** here: it pulses at the start of every note, even one played while the previous key is still down, so an envelope wired to **Trigger** restarts cleanly on repeated notes instead of waiting for the gate to drop.
+
+## 15. Wrap the voice in a container
+
+Your synth works. One step turns it into something you can export.
+
+A **container** is a module that holds other modules — it collapses a whole section of a patch into a single block. It's also the unit SynthEdit exports as a plugin, and the unit that polyphony works on, so a finished synth normally lives inside one.
+
+- Select every module *except* **Keyboard (MIDI)** and **Sound Out** — drag a box around them, or click each one with **Shift** held
+- Choose **Edit → Containerize Selection**
+- With the new container selected, give it a name in the properties panel — `TutorialSynth` will do. [Exporting](../creating-vst-plugins/) takes the plugin's name from the container, so it's worth setting now.
+
+<img src="../../images/tutorials/first-synth/09-in-container.png" alt="The top level after containerising: Keyboard (MIDI) feeds a single block named TutorialSynth through its MIDI In pin, and the container's Output pin feeds Sound Out" />
+
+The whole synth is now one block, and the two cords that crossed the boundary have become plugs on its outside: a **MIDI In** on the left and an **Output** on the right. That's not a coincidence — it's exactly the pair of connections a DAW makes to an instrument plugin. Double-click the container's title bar to go inside and see your modules; the breadcrumb above the Structure View brings you back out.
+
+Two modules deliberately stayed outside:
+
+- **Sound Out** is how the patch reaches your speakers. It belongs at the top level, above the plugin, not inside it.
+- **Keyboard (MIDI)** is there so *you* can play the synth while you work in the editor. Leaving it outside is what gives the container its **MIDI In** plug — and in a DAW, that's the plug the host delivers its notes to.
+
+Because MIDI-CV 2 is now inside a container, that container can also play more than one note at a time. See [Polyphony](../polyphony/) for how to set its voice count.
+
+Save one last time.
+
 ## Summary
 
-Congratulations — you've just built your first software synthesiser! This patch is a textbook example of **subtractive synthesis**: start with a harmonically rich waveform and use a filter to carve away frequencies.
+Congratulations — you've just built your first software synthesiser! This patch is a textbook example of **subtractive synthesis**: start with a harmonically rich waveform, carve frequencies away with a filter, and shape what's left with an envelope.
 
 You now know how to:
 
@@ -183,12 +279,16 @@ You now know how to:
 - Connect modules with patch cords
 - Set parameters from the properties panel
 - Drive parameters in real time with control modules
-- Use different signal types (audio vs. lists) and let SynthEdit's colour-coding guide your wiring
+- Use different signal types (audio, lists, MIDI) and let SynthEdit's colour-coding guide your wiring
+- Convert MIDI notes into pitch and gate with **MIDI-CV 2**
+- Shape each note with an **ADSR** envelope and a **VCA**
+- Collapse a finished voice into a **container** with MIDI in and audio out
 
 ## Next steps
 
 - Read [Working with Modules](../modules/) for more on inserting, connecting, and configuring modules
 - Learn about [Signal Types & Levels](../signal-types/) to understand SynthEdit's voltage conventions
-- Add an [envelope generator](../modules/) so the filter sweep happens automatically with each note
-- When you're ready to play your synth from a MIDI keyboard, see [MIDI Automation](../midi-automation/)
+- Add a second [ADSR2](../../reference/envelopes/adsr2/) and wire it to the filter's **Pitch** so the tone sweeps by itself on every note
+- Set the container's voice count so it plays chords — see [Polyphony](../polyphony/)
+- To drive your controls from a hardware MIDI controller's knobs, see [MIDI Automation](../midi-automation/)
 - Once it sounds the way you want, [export it as a VST plugin](../creating-vst-plugins/)

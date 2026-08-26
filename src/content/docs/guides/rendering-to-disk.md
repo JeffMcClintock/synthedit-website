@@ -15,13 +15,13 @@ Rendering to disk lets you create Wave files without real-time playback constrai
 ## How to Render
 
 1. Replace the **Sound Out** module with a **Wave Recorder** module
-2. Replace the **MIDI In** module with a **MIDI Player** module (load your `.mid` file)
+2. Replace the **MIDI In** module with a [**MIDI Player2**](../../reference/midi/midi-player2/) module, and set its **File Name** to your `.mid` file
 3. Set the **Wave Recorder** properties:
    - **Time Limit** — Recording duration in seconds
    - **Format** — Audio bit depth
 4. Press **Play** to begin rendering
 
-<img src="../../images/guides/rendering-to-disk/01-render-setup.png" alt="A minimal render setup: a MIDI Player (with a yellow MIDI cable into a MIDI-CV 2 module) drives the oscillator's pitch, and the oscillator's Audio Out goes to a Wave Recorder instead of a Sound Out" />
+<img src="../../images/guides/rendering-to-disk/01-render-setup.png" alt="A minimal render setup: a MIDI Player2 (with a yellow MIDI cable into a MIDI-CV 2 module) drives the oscillator's pitch, and the oscillator's Audio Out goes to a Wave Recorder instead of a Sound Out" />
 
 A progress bar shows the rendering status. The audio is processed as fast as your CPU allows, not limited to real-time speed.
 
@@ -38,6 +38,7 @@ A progress bar shows the rendering status. The audio is processed as fast as you
 ## Tips
 
 - The Wave Recorder supports recording multiple tracks simultaneously
-- Set the MIDI Player to the correct tempo before rendering
+- Check the MIDI Player2's **File Name** points at a file that exists — with nothing loaded it plays silently, with no warning
+- Decide where tempo comes from: the **Tempo from** pin defaults to `Host`, so set it to `MIDI File` if the timing should follow the tempo map in your `.mid`
 - For the highest quality, render at your project's target sample rate
 - You can render unlimited numbers of synths and effects since there is no real-time constraint

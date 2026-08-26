@@ -9,6 +9,14 @@ description: Diagnostic tool to detect denormal numbers in a signal.
 <!-- module-screenshot:end -->
 
 
+:::note[Rarely needed now]
+SynthEdit scrubs denormals automatically, using the CPU's floating-point register flags — the
+processor is simply told to flush these values to zero, across the whole engine, at no cost. You
+should not need to place denormal modules in a patch. They remain for the unusual case of a
+third-party module that manages to produce denormals anyway.
+:::
+
+
 The **Denormal Detector** indicates whether denormal numbers are present in the input signal. Connect its output to an LED Indicator for visual detection.
 
 ## Inputs

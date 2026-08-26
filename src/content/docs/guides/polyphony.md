@@ -11,7 +11,7 @@ By default, SynthEdit provides **6 voices** of polyphony (configurable up to 128
 
 There's also an older module simply named **MIDI to CV**, kept under the **Old** category so older projects still load. It works differently (see the [FAQ](../faq/#what-is-the-difference-between-midi-cv-and-midi-cv2)) and isn't the one to reach for here — search for "MIDI" and pick **MIDI-CV 2** from the current **MIDI** category, not the Old-category match of a similar name.
 
-SynthEdit analyzes the signal flow within a container and only clones the modules that actually need to be polyphonic. Modules after a **Voice Combiner** (such as reverb or chorus effects) remain monophonic, saving CPU.
+SynthEdit analyzes the signal flow within a container and only clones the modules that actually need to be polyphonic. Effects that belong to the instrument as a whole rather than to one note — reverb, chorus, delay — go **outside** the voice container, where they run once on the combined output instead of once per voice.
 
 ## Setting Up Polyphony
 
@@ -21,9 +21,9 @@ SynthEdit analyzes the signal flow within a container and only clones the module
 
 The MIDI-CV 2 module acts as the "voice allocator" — it receives MIDI notes and distributes them across the available voices.
 
-<img src="../../images/guides/polyphony/01-polyphonic-voice.png" alt="A polyphonic voice: MIDI-CV 2's Pitch drives the oscillator, its Gate drives the ADSR; the oscillator goes into a VCA whose Volume is controlled by the ADSR; the VCA's output passes through a Voice Combiner before reaching Sound Out" />
+<img src="../../images/guides/polyphony/01-polyphonic-voice.png" alt="A polyphonic voice: MIDI-CV 2's Pitch drives an Oscillator HD and its Gate drives an ADSR2 envelope; the oscillator runs into a VCA whose Volume is controlled by the envelope, and the VCA's output reaches Sound Out" />
 
-Everything to the **left** of the **Voice Combiner** (oscillator, filter, envelope, VCA) gets cloned per voice. Everything to the **right** (typically effects like reverb and chorus) stays monophonic — that's the per-voice / global split.
+Every module in this chain — oscillator, filter, envelope, VCA — is cloned per voice, because each one has to do something different for each note being held. The voices are mixed back down to a single signal on their way to Sound Out, so anything you place outside the voice container works on that one mix, once. That's the per-voice / global split.
 
 ## Voice Count
 
@@ -49,5 +49,5 @@ For lead synths and bass sounds, you can set polyphony to **1** for monophonic o
 ## Common Pitfalls
 
 - **Place MIDI-CV 2 in the correct container.** It must be inside the container whose modules you want cloned polyphonically.
-- **Keep effects outside the voice container.** Reverb, delay, and chorus should be placed after the Voice Combiner to avoid unnecessary CPU usage from polyphonic cloning.
+- **Keep effects outside the voice container.** Reverb, delay, and chorus should sit outside it, so they aren't cloned — and paid for — once per voice.
 - **Don't put MIDI-CV 2 alone in its own container.** It needs to be alongside the modules it controls.
