@@ -208,6 +208,14 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
+**Unreleased**
+- refuse a VST3/AU export whose container has no audio output; regression-test the tutorial flow
+
+**v1.6.194** — 2026-08-26
+- warn when a panel move lands outside the visible window
+- report export-plugin's output paths; drop render-audio's dead recorder handle
+- add a --move verb, and se_move to the MCP
+
 **v1.6.193** — 2026-08-24
 - synth_ui_tests was missing the derived folder defines
 - right-click on a selected module's outline shows its context menu
@@ -267,10 +275,10 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - Export GMPI Plugin from the Wayland editor's File menu
 
 **v1.6.185** — 2026-08-14
-- profile structure-view scroll rendering across d2d/cpu backends
 - correct stale IO_base.h include path in CoreMidiDriver.cpp
 
 **v1.6.184** — 2026-08-14
+- profile structure-view scroll rendering across d2d/cpu backends
 - cache structure-view brushes for faster scroll redraw
 
 **v1.6.183** — 2026-08-13
@@ -296,22 +304,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - clear additional-files list before reloading it in export dialog view model
 - a live command channel for the Mac editor
 - CL bundle fails codesign on staged Finder detritus
-
-**v1.6.180** — 2026-08-11
-- make Install.ps1 VCLibs error matching locale-independent
-- WaveTable slot-count constants fail to link on x86_64
-
-**v1.6.179** — 2026-08-10
-- synthetic presses carry the NEW flag, like real ones
-- se_attach - point the tools at the running editor
-- run the real verb set against the running editor
-- route the pointer verbs into the live on-screen view
-- list prefabs, and flag deprecated (Debug-only) modules
-- file-based tracing for the pointer path
-- don't let an in-process host block on stdin
-- clearer activation messages
-- a synthetic drag must approach before it presses
-- 'Buy me a coffee' donation link in Help
 
 </div>
 ## Demo vs Full Version
