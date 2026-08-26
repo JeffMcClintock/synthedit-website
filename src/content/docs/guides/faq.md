@@ -72,6 +72,18 @@ The Release version (currently 1.5) receives **only important bug fixes** — no
 
 New features are added to the **next beta version** — currently SynthEdit 1.6. Routing them through the beta means only users who are prepared to encounter the occasional bug opt in to them, while everyone who wants minimal disruption can stay on the stable Release version. On the [issue tracker](https://github.com/JeffMcClintock/SynthEdit-Tracking), feature requests are tagged **enhancement**, and a voting system is planned so you can help influence which enhancements are prioritised.
 
+### Why not backport a single feature from the beta?
+
+This comes up often: "I don't need the whole beta — couldn't just this one feature be added to the Release version?" The answer is almost always no, and the reason is the whole basis of the two-version system.
+
+**The Release version isn't more reliable because it was written more carefully.** It's more reliable because it stopped changing. The bugs it had have mostly been found and fixed by now — by the many people using it, over a fair stretch of time. That accumulated testing is what "stable" actually means, and it belongs to the exact build everyone has been running. Changing the build starts the clock again.
+
+**New features rarely sit off to the side.** A new module or capability usually goes into SynthEdit's core — code that's involved in everything you open. So the risk wouldn't be limited to projects that use the new feature: it would apply to anything opened in 1.5, including the projects that work fine today. You'd be swapping a version many people have used for one that only you are running.
+
+This is the whole reason there's a beta in the first place. Stable and new can't live in the same build, so SynthEdit keeps two: the beta is where new things go and where the rough edges get found, and the Release version stays put so it can stay predictable. Backporting features would collapse the two builds back into one — and 1.5 would stop being the thing you're relying on.
+
+If you want a new feature now, it's in the [beta](../installation/) and you're welcome to it — that's exactly what the beta is for. Just remember the beta is also where the occasional bug turns up first. Whether the newest features or the fewest surprises matter more is your call — and because [versions install side by side](#can-i-install-multiple-versions-of-synthedit-side-by-side), you don't have to choose once and for all: plenty of developers keep the Release version for the plugins they ship and use the beta for new work.
+
 ---
 
 ## VST Plugin Creation & Distribution
