@@ -55,6 +55,10 @@ Select the module and the properties panel shows the parameter behind it:
 **Low** and **High** are the ones you'll reach for most: a slider driving a filter cutoff wants the
 full 0–10 V, while one trimming a level may want a much narrower range.
 
+Slider2 deliberately draws no title on the panel — the parameter's name appears in the host's
+automation list, not on the GUI. Label the control on your panel with a text or image module if
+you want a visible caption; see [Panel Design](../../../guides/panel-design/).
+
 The container's own pins — **Controls on Module**, **Visible** and **Ignore Program Change** —
 appear above the parameters, along with the usual container properties.
 
