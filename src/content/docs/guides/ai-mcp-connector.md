@@ -127,6 +127,7 @@ Each tool maps to one or more `SynthEditCL` verbs. Names are stable across versi
 | `se_select`, `se_deselect_all`, `se_delete`, `se_rename`, `se_containerise` | Document edits. |
 | `se_screenshot` | Render a PNG of the panel, structure view, module browser, or properties pane. |
 | `se_render_audio` | Bounce a WAV file (mono or stereo, any sample rate). |
+| `se_export` | Export the loaded project as a plugin (VST3 by default; GMPI module bundle or JUCE source on request). Same container rules as the editor's export — see [Creating VST Plugins](../creating-vst-plugins/#what-the-export-needs). |
 | `se_audio` | Start/stop/query the audio engine on a running editor (`se_attach`'d, not the headless CLI, which has no audio device). |
 | `se_dump` | Read out the current document's modules + cables as JSON. |
 | `se_rescan` | Rebuild SynthEdit's plugin cache so a module you just built or installed becomes visible to the other tools. |
@@ -150,6 +151,7 @@ Each tool maps to one or more `SynthEditCL` verbs. Names are stable across versi
 
 - **A plugin's own configuration dialog is out of reach.** Something like the Patch Automator's MIDI-learn/assign dialog is drawn and driven by the module itself; synthetic clicks from `se_pointer`/`se_drag` don't reach it (the panel view treats the click as a selection instead). Drive the underlying patch data directly with `se_set_pin`/`se_set_param` rather than trying to operate the dialog.
 - **A native dropdown's open list isn't visible to `se_screenshot`.** Clicking a List Entry's combo box doesn't change the captured bitmap — the expanded option list is a native OS popup rendered outside whatever surface gets captured. To confirm a control's available choices or change its selection, drive the value directly with `se_set_param`/`se_get_param` and screenshot the *closed* control before/after, rather than trying to see the list open.
+- **No verb moves a module.** `se_add_module` places a module at the given position, but nothing repositions one afterwards — `se_drag` drives the *panel* view (operating and selecting controls), not the structure view, so it won't tidy a layout either. Notably, `se_containerise` puts the new container far from the rest of the patch. The workaround for a layout you intend to screenshot: `se_save_as`, edit the module's `<structRect>` in the saved XML, then `se_load` it back.
 - **`se_script`'s batched `--screenshot` doesn't take `--crop`.** The atomic `se_screenshot` tool's `crop`/`crop_margin` options aren't exposed as CLI flags inside a script. Call the atomic `se_screenshot` tool on its own when you need a cropped image.
 
 ## Updating
