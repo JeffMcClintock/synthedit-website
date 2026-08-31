@@ -179,17 +179,17 @@ Save your work again before moving on.
 
 Everything so far has been a drone. The oscillator runs continuously, and its pitch comes from a slider you drag by hand — fine for exploring, but not an instrument. A real synth takes its pitch from notes, and two modules are what turn note messages into something the patch understands.
 
-- Search for `keyboard` and click **[Keyboard (MIDI)](../../reference/midi/keyboard-midi/)** under **Controls**. Place it near the bottom-left. It's an on-screen piano you can play with the mouse, and it starts the audio engine when you click it.
+- Search for `keyboard` and click **[Keyboard (MIDI)](../../reference/midi/keyboard-midi/)** under **Controls**. Place it near the bottom-left. It's an on-screen piano you can play with the mouse — start the audio engine first, the same **Audio → Start Audio** as before.
 - Search for `midi` and click **[MIDI-CV 2](../../reference/midi/midi-cv-2/)** under **MIDI** — the current module, not the similarly-named **MIDI to CV** under **Old**. Place it to the right of the keyboard.
 - Connect the keyboard's **MIDI Out** to the MIDI-CV 2's **MIDI In**
 
 That cord is **yellow** — a third signal colour, this one for MIDI.
 
-**MIDI-CV 2** is the bridge between MIDI and the rest of your patch. Notes go in; plain voltages come out, on five separate output plugs:
+**MIDI-CV 2** is the bridge between MIDI and the rest of your patch. Notes go in; plain voltages come out, on five separate output plugs — top to bottom on the module:
 
-- **Pitch** — the note's pitch, at **1 volt per octave** (5 V is A440)
-- **Gate** — high for as long as a key is held down, low when it's released
 - **Trigger** — a short pulse at the start of every new note
+- **Gate** — high for as long as a key is held down, low when it's released
+- **Pitch** — the note's pitch, at **1 volt per octave** (5 V is A440)
 - **Velocity** — how hard the key was struck
 - **Aftertouch** — pressure applied after the key is down
 
