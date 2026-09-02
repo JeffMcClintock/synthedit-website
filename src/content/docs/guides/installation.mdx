@@ -208,6 +208,24 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
+**v1.6.196** — 2026-09-02
+- tests for the consolidated module-scan report
+- stock dialog freed while still on screen; any button press crashed
+- sequential handle allocator assumed a sorted map and returned taken keys (#72)
+- say so when an exported plugin cannot read factory.se.xml
+- release the stock-dialog completion callback, which leaked
+- one dialog per module scan, not one per problem
+- fail the build on a stale prebuilt library, don't corrupt memory
+- ctrl+wheel zoom anchored to the pane's midpoint via new canvasCenter() helper (#75)
+- crash clicking a module in the browser after closing the last tab
+- copy/paste working in text-edit on mac
+- blank the properties pane when its container dies (#71)
+- area above the top rail draws garbage instead of background (#69)
+- an unrecognised preset returns before calcHash(), leaving hash 0
+- a text edit outliving its module commits into freed memory (#70)
+- a diverted prompt answers a response constant, not MB_OK (#73)
+- SE_NO_EXTERNAL_MODULES compiles the third-party binary loader out (#74)
+
 **v1.6.195** — 2026-08-27
 - refuse a VST3/AU export whose container has no audio output; regression-test the tutorial flow
 - new Manufacturer field on the Export dialog sets the developer name hosts display (was always "SynthEdit")
@@ -277,10 +295,10 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - Export GMPI Plugin from the Wayland editor's File menu
 
 **v1.6.185** — 2026-08-14
+- profile structure-view scroll rendering across d2d/cpu backends
 - correct stale IO_base.h include path in CoreMidiDriver.cpp
 
 **v1.6.184** — 2026-08-14
-- profile structure-view scroll rendering across d2d/cpu backends
 - cache structure-view brushes for faster scroll redraw
 
 **v1.6.183** — 2026-08-13
@@ -294,18 +312,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 **v1.6.182** — 2026-08-12
 - serialise \<PatchPoints>, so patch cables survive save/reload
-
-**v1.6.181** — 2026-08-11
-- se_attach reaches a running editor on macOS
-- say which container the live pointer verbs address
-- resize buffers in place on panel resize instead of rebuilding the whole client
-- rename and audio-transport verbs
-- no sound on first use of the Mac app
-- initialize undo/redo descriptions so Edit menu text isn't blank before any command runs
-- correct off-by-one in MIDI Out combo index so saved preference reloads correctly
-- clear additional-files list before reloading it in export dialog view model
-- a live command channel for the Mac editor
-- CL bundle fails codesign on staged Finder detritus
 
 </div>
 ## Demo vs Full Version
