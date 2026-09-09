@@ -208,6 +208,26 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
+**Unreleased**
+- add missing CMakeLists.txt for Diagnostics2 module
+
+**v1.6.198** — 2026-09-09
+- MIDI-CV2 new pin 'Disable Bender' 
+- 'MIDI Message' module now sends long multi-part messages individually
+
+**v1.6.197** — 2026-09-09
+- use se_fs in the XML/scan reports so old-macOS targets build
+- route BundledFonts_se.h through se_fs too
+- parameters that learned Bender / Channel Pressure are automated again
+- new bENDER PREFAB
+- fix crash in Reaper when plugin has less than 2 inputs.
+- exported plugin builds - no HarfBuzz, and compile the editor
+- export JUCE plugin from a never-exported project
+- PitchBender, HoldPedal, ChannelPressure parameters reach the voice modules again
+- New improved Pitch Bender prefab
+- BenderRange parameter no longer reached the voice modules
+- BenderRange defaulted to 0 on the direct-path fanout
+
 **v1.6.196** — 2026-09-02
 - tests for the consolidated module-scan report
 - stock dialog freed while still on screen; any button press crashed
@@ -295,23 +315,7 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - Export GMPI Plugin from the Wayland editor's File menu
 
 **v1.6.185** — 2026-08-14
-- profile structure-view scroll rendering across d2d/cpu backends
 - correct stale IO_base.h include path in CoreMidiDriver.cpp
-
-**v1.6.184** — 2026-08-14
-- cache structure-view brushes for faster scroll redraw
-
-**v1.6.183** — 2026-08-13
-- the Preferences sample rate now survives a restart
-- open a blank project when no MRU file loads at startup
-- bring the Wayland menu bar in line with Windows and macOS
-- a module locked by another process crashed the editor on startup
-- a View menu to show or hide the editor's panes and bars
-- --get-param could not read the editor it was attached to
-- --delete reported success without deleting anything
-
-**v1.6.182** — 2026-08-12
-- serialise \<PatchPoints>, so patch cables survive save/reload
 
 </div>
 ## Demo vs Full Version
