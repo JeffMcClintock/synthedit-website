@@ -6,7 +6,14 @@ description: Full version history of SynthEdit changes and fixes.
 Every release in the v1.6 line. The most recent entries are also embedded on the [installation page](../guides/installation/).
 
 **Unreleased**
+- OS Rate module - remove Windows-only _RPTN trace (Linux build)
+
+**v1.6.199** — 2026-09-10
+- fix crash when containerising
 - add missing CMakeLists.txt for Diagnostics2 module
+- [0251] improved contrast of Properties Browser (light mode)
+- Per-note Controllers now include MPE note bender
+- Fix Text Entry crashing when clicking on Properties Browser
 
 **v1.6.198** — 2026-09-09
 - MIDI-CV2 new pin 'Disable Bender' 
@@ -273,12 +280,12 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - keep calcReportedLatency in step with calcDelayCompensation overrides
 - fix crash deleting a container the breadcrumb trail remembers
 - add Delay3 - modernised GMPI echo delay
-- Ctrl+D shows debuggers on selected modules of current view
 - Compensated Delay over-reported latency at some sample rates
 - Compensated Delay latches its report at compensation time and snaps it to the delay line's tap count
 
 **v1.6.156** — 2026-07-15
 - add Ctrl+D presenter command to toggle debugger on selection
+- Ctrl+D shows debuggers on selected modules of current view
 
 **v1.6.155** — 2026-07-14
 - Compensated Delay module + decoupled reported-latency pass
@@ -317,15 +324,15 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - right-click context menu now works on panel-view modules
 - resize the Properties Browser columns by dragging the divider
 - left-align all value fields and tick boxes in Properties Browser
+- keep in-place edit alive across a caret-reposition click
 - keep TopStripLayout routing in sync with logical capture (pickup-drag auto-scroll)
 - highlight the hovered row in the Properties Browser
+- headless mouse + keyboard injection for panel GUI testing
 - add a Layout section (X/Y/W/H) to the Properties Browser in panel view
 
 **v1.6.148** — 2026-07-01
 - suppress leading context-menu separator in WinUI menu
 - migrate Mac MIDI automation dialog to RawView SetValue
-- keep in-place edit alive across a caret-reposition click
-- headless mouse + keyboard injection for panel GUI testing
 - fix crash when attempting to open non-wav file in waveplayer
 - double-click a MouseTarget to edit the NumberEntry beneath it
 - click to position the caret while editing a NumberEntry
