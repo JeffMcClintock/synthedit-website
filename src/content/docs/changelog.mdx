@@ -5,6 +5,12 @@ description: Full version history of SynthEdit changes and fixes.
 
 Every release in the v1.6 line. The most recent entries are also embedded on the [installation page](../guides/installation/).
 
+**v1.6.204** — 2026-09-16
+- mac plugin GUI left a container unpainted when a sibling module invalidated during render
+- [0262] fix Polyphony Control audio pin (should be float)
+- MPE per-note expression follows the latest note on the channel, not every stale key
+- MPE key rotation no longer sticks to a spare key; All Notes Off releases the mapper
+
 **v1.6.202** — 2026-09-15
 - fix crash when loading projects containing ROY_MPACK_LTE.sem
 - GUI strings lost through 'String Concat GUI' on auto-duplicated pins
@@ -284,12 +290,12 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - keep calcReportedLatency in step with calcDelayCompensation overrides
 - fix crash deleting a container the breadcrumb trail remembers
 - add Delay3 - modernised GMPI echo delay
+- Ctrl+D shows debuggers on selected modules of current view
 - Compensated Delay over-reported latency at some sample rates
 - Compensated Delay latches its report at compensation time and snaps it to the delay line's tap count
 
 **v1.6.156** — 2026-07-15
 - add Ctrl+D presenter command to toggle debugger on selection
-- Ctrl+D shows debuggers on selected modules of current view
 
 **v1.6.155** — 2026-07-14
 - Compensated Delay module + decoupled reported-latency pass
@@ -328,6 +334,7 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - right-click context menu now works on panel-view modules
 - resize the Properties Browser columns by dragging the divider
 - left-align all value fields and tick boxes in Properties Browser
+- keep in-place edit alive across a caret-reposition click
 - keep TopStripLayout routing in sync with logical capture (pickup-drag auto-scroll)
 - highlight the hovered row in the Properties Browser
 - headless mouse + keyboard injection for panel GUI testing
@@ -336,7 +343,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 **v1.6.148** — 2026-07-01
 - suppress leading context-menu separator in WinUI menu
 - migrate Mac MIDI automation dialog to RawView SetValue
-- keep in-place edit alive across a caret-reposition click
 - fix crash when attempting to open non-wav file in waveplayer
 - double-click a MouseTarget to edit the NumberEntry beneath it
 - click to position the caret while editing a NumberEntry
