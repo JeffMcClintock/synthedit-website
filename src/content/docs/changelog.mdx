@@ -5,8 +5,24 @@ description: Full version history of SynthEdit changes and fixes.
 
 Every release in the v1.6 line. The most recent entries are also embedded on the [installation page](../guides/installation/).
 
+- GMPI module controllers run in exported plugins
+
 **Unreleased**
+- WorkSemaphore default constructor on Windows/Linux
+- GUI float wired to a text pin showed garbage (e.g. a CJK character)
+
+**v1.6.208** — 2026-09-23
+- WavetableLoader builds for macOS 10.15 (no std::counting_semaphore)
+- SubControls4 GmpiUiTest builds for macOS 10.15 (no float std::format)
+- Randomise Parameters module, controllers use ControllerBase
+- Last Parameter Update module, Diagnostics2 modules under 'SDK Examples'
+
+**v1.6.206** — 2026-09-23
+- skip exporting a patch parameter that has neither module nor host control
+- scope and analyser backgrounds ignored the display's DPI scale
 - Voice/Active no longer makes its target module polyphonic
+- Ctrl+X / Ctrl+C / Ctrl+V in the editor view
+- Ctrl+A / Ctrl+Z / Ctrl+Y / Ctrl+D, and guard Undo/Redo
 
 **v1.6.204** — 2026-09-16
 - mac plugin GUI left a container unpainted when a sibling module invalidated during render
@@ -132,10 +148,10 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - Export GMPI Plugin from the Wayland editor's File menu
 
 **v1.6.185** — 2026-08-14
+- profile structure-view scroll rendering across d2d/cpu backends
 - correct stale IO_base.h include path in CoreMidiDriver.cpp
 
 **v1.6.184** — 2026-08-14
-- profile structure-view scroll rendering across d2d/cpu backends
 - cache structure-view brushes for faster scroll redraw
 
 **v1.6.183** — 2026-08-13
@@ -464,12 +480,12 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - middle-button drag to pan document views
 - middle-button drag to pan document views
 - hide the Ctrl+W key-tip that followed the mouse
+- give ExportFormatType an explicit underlying type (enables forward declaration)
 - close tabs reliably via Ctrl+W and middle-click
 - ModWheel shadow fused to the wheel outline (real sheared-silhouette geometry, not a detached blob); squarer slot corners
 
 **v1.6.127** — 2026-06-11
 - suppress hover-scopes and connector highlights while dragging a module
-- give ExportFormatType an explicit underlying type (enables forward declaration)
 - forward-declare ExportFormatType with explicit underlying type (fixes macOS clang build)
 
 **v1.6.126** — 2026-06-11
@@ -696,6 +712,7 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - Better fine control of new sliders
 
 **v1.6.96** — 2026-05-13
+- wire up edit > move to front/back menu items
 - tweaks to new sub-controls
 - removed close icon from main view
 - mac app icon now ships in bundle (was generic placeholder)
@@ -703,7 +720,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - 'Additional Files' dialog layout fixed
 
 **v1.6.95** — 2026-05-12
-- wire up edit > move to front/back menu items
 - right-click on panel module shows context menu again
 
 **v1.6.94** — 2026-05-12

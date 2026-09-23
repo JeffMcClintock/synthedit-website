@@ -208,8 +208,24 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
+- GMPI module controllers run in exported plugins
+
 **Unreleased**
+- WorkSemaphore default constructor on Windows/Linux
+- GUI float wired to a text pin showed garbage (e.g. a CJK character)
+
+**v1.6.208** — 2026-09-23
+- WavetableLoader builds for macOS 10.15 (no std::counting_semaphore)
+- SubControls4 GmpiUiTest builds for macOS 10.15 (no float std::format)
+- Randomise Parameters module, controllers use ControllerBase
+- Last Parameter Update module, Diagnostics2 modules under 'SDK Examples'
+
+**v1.6.206** — 2026-09-23
+- skip exporting a patch parameter that has neither module nor host control
+- scope and analyser backgrounds ignored the display's DPI scale
 - Voice/Active no longer makes its target module polyphonic
+- Ctrl+X / Ctrl+C / Ctrl+V in the editor view
+- Ctrl+A / Ctrl+Z / Ctrl+Y / Ctrl+D, and guard Undo/Redo
 
 **v1.6.204** — 2026-09-16
 - mac plugin GUI left a container unpainted when a sibling module invalidated during render
@@ -284,17 +300,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 **v1.6.192** — 2026-08-23
 - resolve windows file paths in mac and linux plugins
-
-**v1.6.191** — 2026-08-23
-- sign by identity hash, not by name
-
-**v1.6.190** — 2026-08-21
-- more consistent calc of view zoom
-- mac bitmapPixels leaked a rep and an NSImage per lock
-- mac SolidColorBrush::SetColor leaked an NSColor per call
-
-**v1.6.189** — 2026-08-21
-- grey "Goto Rack" at the rack instead of omitting it
 
 </div>
 ## Demo vs Full Version
