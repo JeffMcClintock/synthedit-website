@@ -253,6 +253,10 @@ This is how meters, scopes, and any "DSP-driven display" widget work. The framew
 
 For unusual cases — large blobs, custom protocols — the SDK exposes a raw message pipe in both directions (`sendMessageToAudio`, `receiveMessageFromGui`). Use it sparingly; parameters are the right answer 95% of the time.
 
+## Working with the whole patch: Controllers
+
+A module's GUI can only see its own pins. To read, watch or set the parameters of **other** modules — a *Randomise* button, a parameter browser, a debug readout — a GMPI module adds a third part, the **Controller**, built on the `ControllerBase` class. See **[Controllers and Patch Parameters](../sdk-controllers/)**, which walks through three example modules you'll find under **SDK Examples** in the editor.
+
 ## Graphics
 
 GUI modules draw with an API closely modelled on **Microsoft Direct2D**. The same drawing code compiles and runs on both Windows (native Direct2D) and Mac (an emulation layer that maps to Core Graphics) — so you write your widget once and it works on both platforms with no `#ifdef`s.
