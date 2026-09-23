@@ -15,8 +15,8 @@ This page explains how Controllers work, using three example modules that ship w
 
 The full source of all three is in [`modules/Diagnostics2`](https://github.com/JeffMcClintock/SynthEditLib/tree/main/modules/Diagnostics2) of the SynthEditLib repo. They're short — under 200 lines each — and worth reading alongside this page.
 
-:::caution[Editor only, for now]
-GMPI Controllers currently run inside the SynthEdit editor only. They're ideal for editing tools and diagnostics, but a Controller does **not** run inside an exported VST3 plugin yet.
+:::note[Editor and plugin]
+Controllers run both in the SynthEdit editor and in the VST3 and AU plugins you export, so a *Randomise* button works for your plugin's users too. The one difference: in a plugin, a parameter's long name is just its name, without the container path the editor shows. Plugins built with the separate SE2JUCE SDK don't host GMPI Controllers yet.
 :::
 
 If you haven't built a module before, start with the [C++ SDK guide](../sdk/) — it covers the build setup this page assumes.
@@ -85,7 +85,7 @@ for (auto& param : info.parameters)
     // param.handle         unique id within the patch
     // param.datatype       gmpi::PinDatatype of the value
     // param.shortName      e.g. "Cutoff"
-    // param.longName       slash-separated path, e.g. "Filter/Cutoff"
+    // param.longName       slash-separated path, e.g. "Filter/Cutoff" (just the name in a plugin)
     // param.isHostControl  true for parameters SynthEdit drives itself
 }
 ```
