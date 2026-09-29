@@ -209,14 +209,17 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 <div class="se-changelog-scroll">
 
 **Unreleased**
+- crash on exit after MIDI Out device failed to open
+- better hit testing no resize nodes
+
+**v1.6.213** — 2026-09-29
 - fix unneeded 'save changes'
+- crash on exit after MIDI Out device failed to open
+- MIDI Out driver not started unless it's in use
 
 **v1.6.212** — 2026-09-28
 - MIDI output working again in VST3 plugins
-- MIDI output working again in VST3 plugins
 - MIDI learn save/recall in VST3 plugins
-- MIDI learn save/recall in VST3 plugins
-- MIDI Out working in editor
 - MIDI Out working in editor
 
 **v1.6.211** — 2026-09-25
@@ -263,7 +266,7 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - Fix Text Entry crashing when clicking on Properties Browser
 
 **v1.6.198** — 2026-09-09
-- MIDI-CV2 new pin 'Disable Bender' 
+- MIDI-CV2 new pin 'Disable Bender'
 - 'MIDI Message' module now sends long multi-part messages individually
 
 **v1.6.197** — 2026-09-09
@@ -301,11 +304,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - refuse a VST3/AU export whose container has no audio output; regression-test the tutorial flow
 - new Manufacturer field on the Export dialog sets the developer name hosts display (was always "SynthEdit")
 - Website and Copyright are remembered between projects, like Manufacturer
-
-**v1.6.194** — 2026-08-26
-- warn when a panel move lands outside the visible window
-- report export-plugin's output paths; drop render-audio's dead recorder handle
-- add a --move verb, and se_move to the MCP
 
 </div>
 ## Demo vs Full Version

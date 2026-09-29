@@ -6,14 +6,17 @@ description: Full version history of SynthEdit changes and fixes.
 Every release in the v1.6 line. The most recent entries are also embedded on the [installation page](../guides/installation/).
 
 **Unreleased**
+- crash on exit after MIDI Out device failed to open
+- better hit testing no resize nodes
+
+**v1.6.213** — 2026-09-29
 - fix unneeded 'save changes'
+- crash on exit after MIDI Out device failed to open
+- MIDI Out driver not started unless it's in use
 
 **v1.6.212** — 2026-09-28
 - MIDI output working again in VST3 plugins
-- MIDI output working again in VST3 plugins
 - MIDI learn save/recall in VST3 plugins
-- MIDI learn save/recall in VST3 plugins
-- MIDI Out working in editor
 - MIDI Out working in editor
 
 **v1.6.211** — 2026-09-25
@@ -60,7 +63,7 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - Fix Text Entry crashing when clicking on Properties Browser
 
 **v1.6.198** — 2026-09-09
-- MIDI-CV2 new pin 'Disable Bender' 
+- MIDI-CV2 new pin 'Disable Bender'
 - 'MIDI Message' module now sends long multi-part messages individually
 
 **v1.6.197** — 2026-09-09
@@ -163,10 +166,10 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - Export GMPI Plugin from the Wayland editor's File menu
 
 **v1.6.185** — 2026-08-14
-- profile structure-view scroll rendering across d2d/cpu backends
 - correct stale IO_base.h include path in CoreMidiDriver.cpp
 
 **v1.6.184** — 2026-08-14
+- profile structure-view scroll rendering across d2d/cpu backends
 - cache structure-view brushes for faster scroll redraw
 
 **v1.6.183** — 2026-08-13
@@ -310,7 +313,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - native MIDI-assignment 'Edit...' dialog for Windows plugins
 - native MIDI-assignment 'Edit...' dialog for Mac plugins
 - add 'Load MIDI' / 'Save MIDI' patch commands
-- add 'Load MIDI' / 'Save MIDI' patch commands
 - ALT + middle-button passes the event to the module under the mouse
 
 **v1.6.158** — 2026-07-16
@@ -324,18 +326,17 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - keep calcReportedLatency in step with calcDelayCompensation overrides
 - fix crash deleting a container the breadcrumb trail remembers
 - add Delay3 - modernised GMPI echo delay
-- Ctrl+D shows debuggers on selected modules of current view
 - Compensated Delay over-reported latency at some sample rates
 - Compensated Delay latches its report at compensation time and snaps it to the delay line's tap count
 
 **v1.6.156** — 2026-07-15
 - add Ctrl+D presenter command to toggle debugger on selection
+- Ctrl+D shows debuggers on selected modules of current view
 
 **v1.6.155** — 2026-07-14
 - Compensated Delay module + decoupled reported-latency pass
 
 **v1.6.154** — 2026-07-14
-- port Oscillator HD to GMPI SDK
 - port Oscillator HD to GMPI SDK
 - new module Lookahead2, adds lookahead without restarting Processor (when 'ms' pin not connected).
 - fix possible crash on closing a document
@@ -441,7 +442,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - pass DIPs to popup menu factory (it now scales internally)
 - keep active tab when rescanning modules
 - ensure the modules required for automatic GUI pin conversions are always exported
-- ensure the modules required for automatic GUI pin conversions are always exported
 - consolidate module upgrade warnings into a single dialog
 
 **v1.6.136** — 2026-06-19
@@ -492,7 +492,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - ug_gmpi implements IElapsedTime extension (elapsed render time in samples)
 - three-way connector line style (Default / Curvey / Straight)
 - rounded U-turns on doubled-back connector lines
-- middle-button drag to pan document views
 - middle-button drag to pan document views
 - hide the Ctrl+W key-tip that followed the mouse
 - close tabs reliably via Ctrl+W and middle-click
@@ -623,7 +622,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 **v1.6.110** — 2026-05-26
 - actually copy mac vst3/au bundles into store msix
 - [0214] Changing container name should update tab
-- [0214] Changing container name should update tab
 
 **v1.6.109** — 2026-05-25
 - warn and abort export if VST3 plugins folder is missing
@@ -727,7 +725,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - Better fine control of new sliders
 
 **v1.6.96** — 2026-05-13
-- wire up edit > move to front/back menu items
 - tweaks to new sub-controls
 - removed close icon from main view
 - mac app icon now ships in bundle (was generic placeholder)
@@ -735,6 +732,7 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - 'Additional Files' dialog layout fixed
 
 **v1.6.95** — 2026-05-12
+- wire up edit > move to front/back menu items
 - right-click on panel module shows context menu again
 
 **v1.6.94** — 2026-05-12
@@ -939,7 +937,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 **v1.6.70** — 2026-04-21
 - fix slider text height
 - PSS skin working on export
-- PSS skin working on export
 
 **v1.6.69** — 2026-04-21
 - mac now export font names correctl
@@ -959,7 +956,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - fix VST3 plugin viewport (mac)
 - SynthEdit mac reloads project after export
 - Hoverscopes now work on IO Modules
-- Hoverscopes now work on IO Modules
 
 **v1.6.65** — 2026-04-16
 - panel ResizeAdorner repaint - getClipArea coord space
@@ -971,7 +967,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - fix crash when hovering IO Mod pins while audio on
 - fix crash after pasting BPM module from another project then starting audio.
 - better cancellation workflow
-- better cancellation workflow
 - Wave Recorder better error messages
 - VST3 panel now panned correctly
 
@@ -980,7 +975,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 
 **v1.6.63** — 2026-04-15
 - se rescan modules on first run after updating
-- fix processor watchdog in editor
 - fix processor watchdog in editor
 - CPU display now in front of other modules
 
@@ -1002,13 +996,12 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 
 **v1.6.58** — 2026-04-13
 - pan/zoomed notification improvement
-- pan/zoom retained correctly. 
+- pan/zoom retained correctly.
 - no blue highlight over hovered modules in exported plugins
 - mac textedit now respects \<ESC> and losing focus.
 - fix view centering annoyingly when inserting modules
 - compatible window positions when going from SE 1.5 to 1.6 or back
 - blue highlight not shown on modules in plugins
-- SE now searches for skins in project-specific folder next to project file first. e.g. mysynth.skin
 - SE now searches for skins in project-specific folder next to project file first. e.g. mysynth.skin
 - SE command-line can now capture screenshots
 
@@ -1085,9 +1078,9 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - strip trailing zero from pin defaults in XML project file.
 - more robust list-entry bounds invalidation (fixes 'missed first click' in editor)
 - less false update 'noise' notifications from Properties Browser
-- implemented Sdk3Helper::invalidateMeasure() 
+- implemented Sdk3Helper::invalidateMeasure()
 - hover outlines working in GUI
-- fixed-values - now saving value of pins 
+- fixed-values - now saving value of pins
 - fix for expression evaluator on macOS
 - fix doubled up mouse move events
 - fix default values being written to project file for output pins.
@@ -1120,8 +1113,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - modules show hover state
 - however-scopes on GUI pins update live
 - hoverscopes working on GUI modules
-- hoverscopes working on GUI modules
-- better interactivity on pins and lines
 - better interactivity on pins and lines
 - better hit-testing on pins
 - [0164] Patch-cables disappearing when others added/removed.
@@ -1131,10 +1122,9 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 
 **v1.6.36** — 2026-03-03
 - fuzzy hit testing
-- fuzzy hit testing
 - crash clicking line
 - [0193] fix lines disappearing when nodes overlap.
-- [0192] Patch Cable Diag drawing outside bounds 
+- [0192] Patch Cable Diag drawing outside bounds
 - Added 'Export' toolbar item
 
 **v1.6.35** — 2026-02-27
@@ -1166,9 +1156,8 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - typing in properties browser don't affect structure view
 - removed use of std::regex, had compile error on Azure pipelines
 - refactor to simplify plugin file paths
-- refactor to simplify plugin file paths
 - new module - Operating System Detect
-- new DSP text module "First Non Empty" 
+- new DSP text module "First Non Empty"
 - made ModuleFactory_RegisterModule function visibility hidden on macOS. Prevents SE plugins incorrectly calling this function in their host.
 - incorrect indexes from it_enum_list2()
 - implement dark mode
@@ -1178,7 +1167,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - fix keystrokes escaping text-edit boxes
 - fix from SDK3 SEMs with file-browsers
 - fix freeze/slowdown when resizing main window
-- fix for nested plugins on macOS
 - fix for nested plugins on macOS
 - fix for nested instantiation on macOS
 - fix for module scanning
@@ -1214,7 +1202,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - SynthEditCL - Added -factorysemsfolder override flag
 - SECL now scans system modules from itâ€™s own bundle
 - SECL macOS now scans modules from within own bundle
-- Run button working without glitches
 - Run button working without glitches
 - Recent Files menu now updated when Saving a project during export as plugin.
 - Properties browser file dialogs working
