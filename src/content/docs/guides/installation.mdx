@@ -208,9 +208,15 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
-**Unreleased**
+**v1.6.214** — 2026-09-30
+- oversampler upsampling filter matches the FIR quality setting
+- notify the DAW when plugin state changes outside its parameters
+- improvements to CPU graph accuracy and responsiveness
 - crash on exit after MIDI Out device failed to open
 - better hit testing no resize nodes
+- VST3 marks the DAW project dirty on non-parameter state changes
+- AU state-change notification throttled by timer ticks
+- AU notifies the DAW of non-parameter state changes
 
 **v1.6.213** — 2026-09-29
 - fix unneeded 'save changes'
