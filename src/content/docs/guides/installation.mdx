@@ -208,6 +208,9 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
+**v1.6.215** — 2026-10-01
+- keep editor panes off DWM overlay planes, to stop monitor flicker
+
 **v1.6.214** — 2026-09-30
 - oversampler upsampling filter matches the FIR quality setting
 - notify the DAW when plugin state changes outside its parameters
@@ -305,11 +308,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - a text edit outliving its module commits into freed memory (#70)
 - a diverted prompt answers a response constant, not MB_OK (#73)
 - SE_NO_EXTERNAL_MODULES compiles the third-party binary loader out (#74)
-
-**v1.6.195** — 2026-08-27
-- refuse a VST3/AU export whose container has no audio output; regression-test the tutorial flow
-- new Manufacturer field on the Export dialog sets the developer name hosts display (was always "SynthEdit")
-- Website and Copyright are remembered between projects, like Manufacturer
 
 </div>
 ## Demo vs Full Version
