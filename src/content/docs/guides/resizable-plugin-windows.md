@@ -11,7 +11,7 @@ The mechanism is a single **scale factor**. SynthEdit doesn't re-flow your panel
 panel size (as designed) × UI scale × the system/host DPI factor
 ```
 
-So at a UI scale of `1.5` a 600 × 400 panel becomes a 900 × 600 window, with every knob, font and background image redrawn crisply at the larger size. Because it's a zoom, your layout can't break — everything stays exactly where you put it.
+So at a UI scale of `1.5` a 600 × 400 panel becomes a 900 × 600 window, with every knob, font and background image redrawn crisply at the larger size. Because it's a zoom, your layout can't break — everything stays where you put it.
 
 ## The Plugin UI Scale module
 
@@ -19,7 +19,7 @@ The scale factor lives in a host control called `Plugin/UIScale`. You reach it w
 
 It has one visible pin, **UI Scale**, a float where `1.0` means 100%. Read it to find out how big the window currently is; **write to it to resize the window**.
 
-That "write to it" is the part worth pausing on. `UI Scale` is drawn as an output pin, but like all GUI sub-control pins it carries values in *both* directions. The arrows in Structure View tell you how SynthEdit lays the cable out; they don't stop a value travelling back up the chain. This is what makes the recipe below work.
+That "write to it" is the part worth pausing on. `UI Scale` is drawn as an output pin, but like all GUI sub-control pins it carries values in *both* directions.
 
 ## Adding a size menu
 
