@@ -208,6 +208,27 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
+**Unreleased**
+- same-type GUI wires no longer round-trip through text
+- Voice Allocator strategies - Round Robin, with Glide, Mono, Highest Note Glides
+- RenderBitmap draws 8-bit masks
+- Mask2Bitmap reads any input format, not just an 8-bit mask
+- GUI value sent from a GMPI editor's initialize() reaches its wire
+- GUI modules upstream of an auto-duplicated input are processed first
+- 'Value' (PatchMemGet) outputs the patch value on the DSP side too
+- 'Text to Mask' x2 pin renders at twice the DPI
+- 'Text to Mask' GUI module - text rendered to an 8-bit mask bitmap
+- 'Style Switch' GUI module - an int picks one of its auto-duplicating Style inputs
+- 'Point' and 'Multiline' GUI modules
+- 'Path to Mask' GUI module - a path rendered to an 8-bit mask
+- 'Meter Value' (PatchMemMeter) - a DSP float input drives the parameter, for meters
+- 'Blur2' GUI module - blurs an 8-bit mask into an 8-bit mask
+- 'Bits To Int' GUI module - auto-duplicating bool inputs, one bit each
+
+**v1.6.216** — 2026-10-01
+- MIDI message to steal a physical voice, fading it out in 20ms
+- MIDI 2.0 note-on can pick its physical voice, and carry a per-note glide start
+
 **v1.6.215** — 2026-10-01
 - keep editor panes off DWM overlay planes, to stop monitor flicker
 
@@ -277,37 +298,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 **v1.6.198** — 2026-09-09
 - MIDI-CV2 new pin 'Disable Bender'
 - 'MIDI Message' module now sends long multi-part messages individually
-
-**v1.6.197** — 2026-09-09
-- use se_fs in the XML/scan reports so old-macOS targets build
-- route BundledFonts_se.h through se_fs too
-- parameters that learned Bender / Channel Pressure are automated again
-- new bENDER PREFAB
-- fix crash in Reaper when plugin has less than 2 inputs.
-- exported plugin builds - no HarfBuzz, and compile the editor
-- export JUCE plugin from a never-exported project
-- PitchBender, HoldPedal, ChannelPressure parameters reach the voice modules again
-- New improved Pitch Bender prefab
-- BenderRange parameter no longer reached the voice modules
-- BenderRange defaulted to 0 on the direct-path fanout
-
-**v1.6.196** — 2026-09-02
-- tests for the consolidated module-scan report
-- stock dialog freed while still on screen; any button press crashed
-- sequential handle allocator assumed a sorted map and returned taken keys (#72)
-- say so when an exported plugin cannot read factory.se.xml
-- release the stock-dialog completion callback, which leaked
-- one dialog per module scan, not one per problem
-- fail the build on a stale prebuilt library, don't corrupt memory
-- ctrl+wheel zoom anchored to the pane's midpoint via new canvasCenter() helper (#75)
-- crash clicking a module in the browser after closing the last tab
-- copy/paste working in text-edit on mac
-- blank the properties pane when its container dies (#71)
-- area above the top rail draws garbage instead of background (#69)
-- an unrecognised preset returns before calcHash(), leaving hash 0
-- a text edit outliving its module commits into freed memory (#70)
-- a diverted prompt answers a response constant, not MB_OK (#73)
-- SE_NO_EXTERNAL_MODULES compiles the third-party binary loader out (#74)
 
 </div>
 ## Demo vs Full Version
