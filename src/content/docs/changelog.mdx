@@ -6,8 +6,19 @@ description: Full version history of SynthEdit changes and fixes.
 Every release in the v1.6 line. The most recent entries are also embedded on the [installation page](../guides/installation/).
 
 **Unreleased**
+- Style objects carry a glow radius
+- Render, Render Instances, Render Each and Text Render draw the Style's glow
+- Number Entry lays out correctly after a resize
+- Number Entry draws the Style's glow behind its number and units
+- Number Entry 'Edit Style' pin - the number's style while it's being edited
+- MouseTarget 'Wheel' output - scroll-wheel movement in notches
+- 'Text Edit' and 'Text Render' GUI modules - TextEntry4 split in two
+
+**v1.6.217** — 2026-10-06
 - same-type GUI wires no longer round-trip through text
+- recent-files list holds only files a person chose
 - Voice Allocator strategies - Round Robin, with Glide, Mono, Highest Note Glides
+- SynthEditCL and synth_ui_tests never write the settings file
 - RenderBitmap draws 8-bit masks
 - Mask2Bitmap reads any input format, not just an 8-bit mask
 - GUI value sent from a GMPI editor's initialize() reaches its wire
@@ -399,15 +410,15 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - right-click context menu now works on panel-view modules
 - resize the Properties Browser columns by dragging the divider
 - left-align all value fields and tick boxes in Properties Browser
-- keep in-place edit alive across a caret-reposition click
 - keep TopStripLayout routing in sync with logical capture (pickup-drag auto-scroll)
 - highlight the hovered row in the Properties Browser
-- headless mouse + keyboard injection for panel GUI testing
 - add a Layout section (X/Y/W/H) to the Properties Browser in panel view
 
 **v1.6.148** — 2026-07-01
 - suppress leading context-menu separator in WinUI menu
 - migrate Mac MIDI automation dialog to RawView SetValue
+- keep in-place edit alive across a caret-reposition click
+- headless mouse + keyboard injection for panel GUI testing
 - fix crash when attempting to open non-wav file in waveplayer
 - double-click a MouseTarget to edit the NumberEntry beneath it
 - click to position the caret while editing a NumberEntry

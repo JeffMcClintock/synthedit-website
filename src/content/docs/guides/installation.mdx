@@ -209,8 +209,19 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 <div class="se-changelog-scroll">
 
 **Unreleased**
+- Style objects carry a glow radius
+- Render, Render Instances, Render Each and Text Render draw the Style's glow
+- Number Entry lays out correctly after a resize
+- Number Entry draws the Style's glow behind its number and units
+- Number Entry 'Edit Style' pin - the number's style while it's being edited
+- MouseTarget 'Wheel' output - scroll-wheel movement in notches
+- 'Text Edit' and 'Text Render' GUI modules - TextEntry4 split in two
+
+**v1.6.217** — 2026-10-06
 - same-type GUI wires no longer round-trip through text
+- recent-files list holds only files a person chose
 - Voice Allocator strategies - Round Robin, with Glide, Mono, Highest Note Glides
+- SynthEditCL and synth_ui_tests never write the settings file
 - RenderBitmap draws 8-bit masks
 - Mask2Bitmap reads any input format, not just an 8-bit mask
 - GUI value sent from a GMPI editor's initialize() reaches its wire
@@ -294,10 +305,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - [0251] improved contrast of Properties Browser (light mode)
 - Per-note Controllers now include MPE note bender
 - Fix Text Entry crashing when clicking on Properties Browser
-
-**v1.6.198** — 2026-09-09
-- MIDI-CV2 new pin 'Disable Bender'
-- 'MIDI Message' module now sends long multi-part messages individually
 
 </div>
 ## Demo vs Full Version
