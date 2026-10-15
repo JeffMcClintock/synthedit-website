@@ -208,6 +208,35 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
+**Unreleased**
+- the export's own \<Controller/> owns MpController; the engine preset rides a blob parameter
+- qualify Rect and Point in ViewBase.cpp, which macOS's MacTypes.h also declares
+
+**v1.6.222** — 2026-10-16
+- the editor answers its panel size from measure(), so a CLAP host no longer gets 1x1
+- the Linux export honours the host's offline render mode
+- tempo validity follows what the wrapper delivered, keep the host's bar phase
+- state reads survive short and corrupt streams
+- report each parameter's real default to the DAW
+- one parameters.se.xml description per process (seParameterInfo)
+- note expression reaches notes on every MIDI channel
+- include BundleInfo.h in ViewBase.cpp
+- accept an instrument's own bus layout in setBusArrangements
+- a reused note ID no longer sends note-offs to a released key
+- SE_GMPI_TRACE, an env-gated stderr trace of what reaches the engine and the controller
+- SE_GMPI_TRACE in the editor reports the view transform, the clip, and the pixels the children drew
+- SE_GMPI_TRACE in the editor (pointer, panel build, child layout, first renders, image load) and the controller's panel-to-host and DspMessages sends
+- Number Entry and Text Edit open on Trigger's falling edge
+- MpParameter::getDefaultNormalized
+- MpController::Initialize tolerates a plugin with no parameters.se.xml
+- MIDI output from the Linux VST3/GMPI export
+- ApplicationBase::onSavedStateChanged when a saved parameter changes
+
+**v1.6.221** — 2026-10-14
+- drop SeGmpiEditor's g_pendingEditorGuiHost definition
+- don't PSS-prefix every resource when the project is unsaved
+- define g_pendingEditorGuiHost once, beside its declaration
+
 **v1.6.219** — 2026-10-13
 - set currentVst3SkinName on the JSON/GMPI export path too
 
@@ -299,19 +328,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - Voice/Active no longer makes its target module polyphonic
 - Ctrl+X / Ctrl+C / Ctrl+V in the editor view
 - Ctrl+A / Ctrl+Z / Ctrl+Y / Ctrl+D, and guard Undo/Redo
-
-**v1.6.204** — 2026-09-16
-- mac plugin GUI left a container unpainted when a sibling module invalidated during render
-- [0262] fix Polyphony Control audio pin (should be float)
-- MPE per-note expression follows the latest note on the channel, not every stale key
-- MPE key rotation no longer sticks to a spare key; All Notes Off releases the mapper
-
-**v1.6.202** — 2026-09-15
-- fix crash when loading projects containing ROY_MPACK_LTE.sem
-- GUI strings lost through 'String Concat GUI' on auto-duplicated pins
-
-**v1.6.201** — 2026-09-10
-- OS Rate module - remove Windows-only _RPTN trace (Linux build)
 
 </div>
 ## Demo vs Full Version
