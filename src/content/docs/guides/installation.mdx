@@ -208,11 +208,16 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
-**Unreleased**
-- the export's own \<Controller/> owns MpController; the engine preset rides a blob parameter
+**v1.6.223** — 2026-10-16
+- the GMPI-wrapper VST3 path is compiled out of Release builds on Windows/mac
+- the GMPI plugin XML carries the vendor URL and email
 - qualify Rect and Point in ViewBase.cpp, which macOS's MacTypes.h also declares
+- developer-only 'Use GMPI Wrappers' checkbox composes the Windows VST3 from the GMPI bundle
+- apply every automation point in a parameter queue, not only the last
+- CContainer's friend declaration follows ExportAsPlugin's new useGmpiWrappers parameter
 
 **v1.6.222** — 2026-10-16
+- the export's own \<Controller/> owns MpController; the engine preset rides a blob parameter
 - the editor answers its panel size from measure(), so a CLAP host no longer gets 1x1
 - the Linux export honours the host's offline render mode
 - tempo validity follows what the wrapper delivered, keep the host's bar phase
