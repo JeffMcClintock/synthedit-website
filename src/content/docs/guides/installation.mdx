@@ -96,8 +96,20 @@ free to try while in preview, but expect rough edges — see the limitations bel
 ```bash
 tar -xzf SynthEdit-linux-x64.tar.gz
 cd SynthEdit
-./SynthEdit
+./SynthEditWayland
 ```
+
+To add SynthEdit to your application menu, with its icon and `.synthedit` files
+associated with it, run the installer from the extracted folder instead. It
+installs for your user only and needs no root:
+
+```bash
+./install.sh
+```
+
+It copies SynthEdit to `~/.local/opt/SynthEdit`, and you can remove it again with
+`~/.local/opt/SynthEdit/uninstall.sh` (your projects and modules are kept). You
+may need to log out and back in once before the menu entry appears.
 
 The `PlugIns/` folder next to the executable holds the factory modules; third-party
 modules are scanned from `~/.local/share/SynthEdit/modules`.
