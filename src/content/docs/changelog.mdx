@@ -5,6 +5,11 @@ description: Full version history of SynthEdit changes and fixes.
 
 Every release in the v1.6 line. The most recent entries are also embedded on the [installation page](../guides/installation/).
 
+**v1.6.227** — 2026-10-19
+- audio drivers outlive the runtime that uses them
+- Stop Audio no longer hangs when PipeWire stops calling back
+- Close > Save closes once the save completes
+
 **v1.6.226** — 2026-10-18
 - VST3 editors drew at 1/scale since HWND frames moved to composition swap chains
 
@@ -24,15 +29,18 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - Export Plugins opens in its own modal window on Linux
 
 **v1.6.223** — 2026-10-16
+- the export's own \<Controller/> owns MpController; the engine preset rides a blob parameter
 - the GMPI-wrapper VST3 path is compiled out of Release builds on Windows/mac
 - the GMPI plugin XML carries the vendor URL and email
 - qualify Rect and Point in ViewBase.cpp, which macOS's MacTypes.h also declares
 - developer-only 'Use GMPI Wrappers' checkbox composes the Windows VST3 from the GMPI bundle
 - apply every automation point in a parameter queue, not only the last
+- SE_GMPI_TRACE, an env-gated stderr trace of what reaches the engine and the controller
+- SE_GMPI_TRACE in the editor reports the view transform, the clip, and the pixels the children drew
+- SE_GMPI_TRACE in the editor (pointer, panel build, child layout, first renders, image load) and the controller's panel-to-host and DspMessages sends
 - CContainer's friend declaration follows ExportAsPlugin's new useGmpiWrappers parameter
 
 **v1.6.222** — 2026-10-16
-- the export's own \<Controller/> owns MpController; the engine preset rides a blob parameter
 - the editor answers its panel size from measure(), so a CLAP host no longer gets 1x1
 - the Linux export honours the host's offline render mode
 - tempo validity follows what the wrapper delivered, keep the host's bar phase
@@ -43,9 +51,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - include BundleInfo.h in ViewBase.cpp
 - accept an instrument's own bus layout in setBusArrangements
 - a reused note ID no longer sends note-offs to a released key
-- SE_GMPI_TRACE, an env-gated stderr trace of what reaches the engine and the controller
-- SE_GMPI_TRACE in the editor reports the view transform, the clip, and the pixels the children drew
-- SE_GMPI_TRACE in the editor (pointer, panel build, child layout, first renders, image load) and the controller's panel-to-host and DspMessages sends
 - Number Entry and Text Edit open on Trigger's falling edge
 - MpParameter::getDefaultNormalized
 - MpController::Initialize tolerates a plugin with no parameters.se.xml
@@ -479,12 +484,12 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - keep in-place edit alive across a caret-reposition click
 - keep TopStripLayout routing in sync with logical capture (pickup-drag auto-scroll)
 - highlight the hovered row in the Properties Browser
-- headless mouse + keyboard injection for panel GUI testing
 - add a Layout section (X/Y/W/H) to the Properties Browser in panel view
 
 **v1.6.148** — 2026-07-01
 - suppress leading context-menu separator in WinUI menu
 - migrate Mac MIDI automation dialog to RawView SetValue
+- headless mouse + keyboard injection for panel GUI testing
 - fix crash when attempting to open non-wav file in waveplayer
 - double-click a MouseTarget to edit the NumberEntry beneath it
 - click to position the caret while editing a NumberEntry
@@ -832,6 +837,7 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - Better fine control of new sliders
 
 **v1.6.96** — 2026-05-13
+- wire up edit > move to front/back menu items
 - tweaks to new sub-controls
 - removed close icon from main view
 - mac app icon now ships in bundle (was generic placeholder)
@@ -839,7 +845,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - 'Additional Files' dialog layout fixed
 
 **v1.6.95** — 2026-05-12
-- wire up edit > move to front/back menu items
 - right-click on panel module shows context menu again
 
 **v1.6.94** — 2026-05-12
