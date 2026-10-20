@@ -208,6 +208,10 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
+**v1.6.228** — 2026-10-20
+- menu bar titles no longer pile up at x=0 after Save As
+- SynthEditCL keeps its own module cache
+
 **v1.6.227** — 2026-10-19
 - audio drivers outlive the runtime that uses them
 - Stop Audio no longer hangs when PipeWire stops calling back
@@ -232,18 +236,16 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - Export Plugins opens in its own modal window on Linux
 
 **v1.6.223** — 2026-10-16
-- the export's own \<Controller/> owns MpController; the engine preset rides a blob parameter
 - the GMPI-wrapper VST3 path is compiled out of Release builds on Windows/mac
 - the GMPI plugin XML carries the vendor URL and email
 - qualify Rect and Point in ViewBase.cpp, which macOS's MacTypes.h also declares
 - developer-only 'Use GMPI Wrappers' checkbox composes the Windows VST3 from the GMPI bundle
 - apply every automation point in a parameter queue, not only the last
 - SE_GMPI_TRACE, an env-gated stderr trace of what reaches the engine and the controller
-- SE_GMPI_TRACE in the editor reports the view transform, the clip, and the pixels the children drew
-- SE_GMPI_TRACE in the editor (pointer, panel build, child layout, first renders, image load) and the controller's panel-to-host and DspMessages sends
 - CContainer's friend declaration follows ExportAsPlugin's new useGmpiWrappers parameter
 
 **v1.6.222** — 2026-10-16
+- the export's own \<Controller/> owns MpController; the engine preset rides a blob parameter
 - the editor answers its panel size from measure(), so a CLAP host no longer gets 1x1
 - the Linux export honours the host's offline render mode
 - tempo validity follows what the wrapper delivered, keep the host's bar phase
@@ -254,6 +256,8 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - include BundleInfo.h in ViewBase.cpp
 - accept an instrument's own bus layout in setBusArrangements
 - a reused note ID no longer sends note-offs to a released key
+- SE_GMPI_TRACE in the editor reports the view transform, the clip, and the pixels the children drew
+- SE_GMPI_TRACE in the editor (pointer, panel build, child layout, first renders, image load) and the controller's panel-to-host and DspMessages sends
 - Number Entry and Text Edit open on Trigger's falling edge
 - MpParameter::getDefaultNormalized
 - MpController::Initialize tolerates a plugin with no parameters.se.xml
@@ -328,11 +332,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - fix unneeded 'save changes'
 - crash on exit after MIDI Out device failed to open
 - MIDI Out driver not started unless it's in use
-
-**v1.6.212** — 2026-09-28
-- MIDI output working again in VST3 plugins
-- MIDI learn save/recall in VST3 plugins
-- MIDI Out working in editor
 
 </div>
 ## Demo vs Full Version
