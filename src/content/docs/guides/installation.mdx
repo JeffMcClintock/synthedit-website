@@ -208,6 +208,13 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
+**v1.6.229** — 2026-10-21
+- resize the panes when the monitor's scale changes
+- re-set the pane's inverse composition scale after every resize
+- keep editor panes off overlay planes without tinting them
+- Graphics Frame Rate counted render calls, not frames
+- Better options to make the GUI faster
+
 **v1.6.228** — 2026-10-20
 - menu bar titles no longer pile up at x=0 after Save As
 - SynthEditCL keeps its own module cache
@@ -236,6 +243,7 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - Export Plugins opens in its own modal window on Linux
 
 **v1.6.223** — 2026-10-16
+- the export's own \<Controller/> owns MpController; the engine preset rides a blob parameter
 - the GMPI-wrapper VST3 path is compiled out of Release builds on Windows/mac
 - the GMPI plugin XML carries the vendor URL and email
 - qualify Rect and Point in ViewBase.cpp, which macOS's MacTypes.h also declares
@@ -245,7 +253,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - CContainer's friend declaration follows ExportAsPlugin's new useGmpiWrappers parameter
 
 **v1.6.222** — 2026-10-16
-- the export's own \<Controller/> owns MpController; the engine preset rides a blob parameter
 - the editor answers its panel size from measure(), so a CLAP host no longer gets 1x1
 - the Linux export honours the host's offline render mode
 - tempo validity follows what the wrapper delivered, keep the host's bar phase
@@ -327,11 +334,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - VST3 marks the DAW project dirty on non-parameter state changes
 - AU state-change notification throttled by timer ticks
 - AU notifies the DAW of non-parameter state changes
-
-**v1.6.213** — 2026-09-29
-- fix unneeded 'save changes'
-- crash on exit after MIDI Out device failed to open
-- MIDI Out driver not started unless it's in use
 
 </div>
 ## Demo vs Full Version
