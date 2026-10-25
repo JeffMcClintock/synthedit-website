@@ -41,6 +41,16 @@ Yes. Major versions maintain separate settings and do not interfere with each ot
 
 Yes. A single license covers all current versions.
 
+### Why are Save and Save As greyed out?
+
+SynthEdit disables Save, Save As and the toolbar Save button when it can't find an active license for your copy — for example if it was never activated, or the 60-day demo has run out. They're also greyed out when no project is open.
+
+To fix it, open the registration settings and click **Activate**. Once your license shows as active, Save and Save As enable straight away, with no restart. See [Activation](../installation/#activation) for the steps.
+
+If you had a license from an earlier version, create a **Moonbase** account (the **Activate** button takes you there) using the email address you originally registered with. Most existing customers' addresses are already imported, so it usually works at once. If it doesn't, email [jef@synthedit.com](mailto:jef@synthedit.com) with the address you used and your license will be added to your account.
+
+In the meantime you won't lose your work: closing the project still offers a **Save** prompt.
+
 ### How much does SynthEdit cost?
 
 A license is **€170** — a single payment, not a subscription, and it covers all current versions. Plugins you export are royalty-free, so there's nothing further to pay on what you build and sell. You can use the full program free for 60 days before deciding, and the experimental Linux build is free while it's in preview.
