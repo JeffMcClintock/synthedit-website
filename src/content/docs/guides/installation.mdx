@@ -220,6 +220,10 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
+**v1.6.230** — 2026-10-24
+- [0271] pin and parameter edits keep full precision, rounding only for display
+- [0271] Fixed Values (Volts) rounds values below 0.001 V to zero
+
 **v1.6.229** — 2026-10-21
 - resize the panes when the monitor's scale changes
 - re-set the pane's inverse composition scale after every resize
@@ -238,10 +242,10 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 **v1.6.226** — 2026-10-18
 - VST3 editors drew at 1/scale since HWND frames moved to composition swap chains
+- --containerise acts on the container that owns the selection
 
 **v1.6.225** — 2026-10-19
 - a destroyed ModuleView unlinks itself from every connected module
-- --containerise acts on the container that owns the selection
 
 **v1.6.224** — 2026-10-16
 - reload the project after export on Linux; one result dialog
@@ -262,6 +266,8 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - developer-only 'Use GMPI Wrappers' checkbox composes the Windows VST3 from the GMPI bundle
 - apply every automation point in a parameter queue, not only the last
 - SE_GMPI_TRACE, an env-gated stderr trace of what reaches the engine and the controller
+- SE_GMPI_TRACE in the editor reports the view transform, the clip, and the pixels the children drew
+- SE_GMPI_TRACE in the editor (pointer, panel build, child layout, first renders, image load) and the controller's panel-to-host and DspMessages sends
 - CContainer's friend declaration follows ExportAsPlugin's new useGmpiWrappers parameter
 
 **v1.6.222** — 2026-10-16
@@ -275,8 +281,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - include BundleInfo.h in ViewBase.cpp
 - accept an instrument's own bus layout in setBusArrangements
 - a reused note ID no longer sends note-offs to a released key
-- SE_GMPI_TRACE in the editor reports the view transform, the clip, and the pixels the children drew
-- SE_GMPI_TRACE in the editor (pointer, panel build, child layout, first renders, image load) and the controller's panel-to-host and DspMessages sends
 - Number Entry and Text Edit open on Trigger's falling edge
 - MpParameter::getDefaultNormalized
 - MpController::Initialize tolerates a plugin with no parameters.se.xml
@@ -336,16 +340,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 **v1.6.215** — 2026-10-01
 - keep editor panes off DWM overlay planes, to stop monitor flicker
-
-**v1.6.214** — 2026-09-30
-- oversampler upsampling filter matches the FIR quality setting
-- notify the DAW when plugin state changes outside its parameters
-- improvements to CPU graph accuracy and responsiveness
-- crash on exit after MIDI Out device failed to open
-- better hit testing no resize nodes
-- VST3 marks the DAW project dirty on non-parameter state changes
-- AU state-change notification throttled by timer ticks
-- AU notifies the DAW of non-parameter state changes
 
 </div>
 ## Demo vs Full Version
