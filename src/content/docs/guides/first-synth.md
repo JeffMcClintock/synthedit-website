@@ -46,7 +46,7 @@ Adding a module takes two clicks:
 1. Click the module's name in the list. The pointer changes to a crosshair to show a module is ready to place.
 2. Click an empty spot in the Structure View. The module is inserted there.
 
-Searching is usually quicker than browsing the tree. Type into the search box and the list narrows as you type, with each result labelled by the category it came from. Press **Escape** to clear the search.
+Searching is usually quicker than browsing the tree. Type into the search box and the list narrows as you type, with each result labelled by the category it came from. Delete the text to see the full list again.
 
 Modules listed under the **Old** category are kept only so that older projects still load. Always prefer the current module of the same name — this tutorial uses those throughout.
 
@@ -180,7 +180,7 @@ Save your work again before moving on.
 Everything so far has been a drone. The oscillator runs continuously, and its pitch comes from a slider you drag by hand — fine for exploring, but not an instrument. A real synth takes its pitch from notes, and two modules are what turn note messages into something the patch understands.
 
 - Search for `keyboard` and click **[Keyboard (MIDI)](../../reference/midi/keyboard-midi/)** under **Controls**. Place it near the bottom-left. It's an on-screen piano you can play with the mouse — start the audio engine first, the same **Audio → Start Audio** as before.
-- Search for `midi` and click **[MIDI-CV 2](../../reference/midi/midi-cv-2/)** under **MIDI** — the current module, not the similarly-named **MIDI to CV** under **Old**. Place it to the right of the keyboard.
+- Search for `midi-cv` and click **[MIDI-CV 2](../../reference/midi/midi-cv-2/)** under **MIDI** — the current module, not the similarly-named **MIDI to CV** under **Old**. Place it to the right of the keyboard.
 - Connect the keyboard's **MIDI Out** to the MIDI-CV 2's **MIDI In**
 
 That cord is **yellow** — a third signal colour, this one for MIDI.
