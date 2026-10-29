@@ -5,6 +5,23 @@ description: Full version history of SynthEdit changes and fixes.
 
 Every release in the v1.6 line. The most recent entries are also embedded on the [installation page](../guides/installation/).
 
+**v1.6.232** — 2026-10-27
+- dsp_tests links the font provider's library; the font test holds on Linux
+- a new engine never reads the previous engine's UI->DSP messages
+- Fret Plucked Oscillator, a baked plucked-string multisample with a built-in VCA
+- Fret Plucked Oscillator gains Unison, pick noise and body; normalise on the sustain
+- Fret Plucked Oscillator detunes in Hz and gains Stiffness
+- Fret Plucked Oscillator demo patch; fix the output at note end
+- --load and --new drop the live panel session before replacing the document
+
+**v1.6.231** — 2026-10-27
+- the render thread owns the editor's engine; the UI no longer touches `generator`
+- test start/stop on a live engine; stop the engine before the document goes
+- clear the remaining sanitizer findings (UB, a leak, a race, a dead path)
+- Preferences > Drawing backend (debug): Direct2D, software, or GPU
+- Debug builds can draw with gmpi_ui's GPU backend, like the software renderer
+- CreateTextFormat on the CPU backends no longer fails for a missing font family
+
 **v1.6.230** — 2026-10-24
 - [0271] pin and parameter edits keep full precision, rounding only for display
 - [0271] Fixed Values (Volts) rounds values below 0.001 V to zero
@@ -44,18 +61,15 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - Export Plugins opens in its own modal window on Linux
 
 **v1.6.223** — 2026-10-16
-- the export's own \<Controller/> owns MpController; the engine preset rides a blob parameter
 - the GMPI-wrapper VST3 path is compiled out of Release builds on Windows/mac
 - the GMPI plugin XML carries the vendor URL and email
 - qualify Rect and Point in ViewBase.cpp, which macOS's MacTypes.h also declares
 - developer-only 'Use GMPI Wrappers' checkbox composes the Windows VST3 from the GMPI bundle
 - apply every automation point in a parameter queue, not only the last
-- SE_GMPI_TRACE, an env-gated stderr trace of what reaches the engine and the controller
-- SE_GMPI_TRACE in the editor reports the view transform, the clip, and the pixels the children drew
-- SE_GMPI_TRACE in the editor (pointer, panel build, child layout, first renders, image load) and the controller's panel-to-host and DspMessages sends
 - CContainer's friend declaration follows ExportAsPlugin's new useGmpiWrappers parameter
 
 **v1.6.222** — 2026-10-16
+- the export's own \<Controller/> owns MpController; the engine preset rides a blob parameter
 - the editor answers its panel size from measure(), so a CLAP host no longer gets 1x1
 - the Linux export honours the host's offline render mode
 - tempo validity follows what the wrapper delivered, keep the host's bar phase
@@ -66,6 +80,9 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - include BundleInfo.h in ViewBase.cpp
 - accept an instrument's own bus layout in setBusArrangements
 - a reused note ID no longer sends note-offs to a released key
+- SE_GMPI_TRACE, an env-gated stderr trace of what reaches the engine and the controller
+- SE_GMPI_TRACE in the editor reports the view transform, the clip, and the pixels the children drew
+- SE_GMPI_TRACE in the editor (pointer, panel build, child layout, first renders, image load) and the controller's panel-to-host and DspMessages sends
 - Number Entry and Text Edit open on Trigger's falling edge
 - MpParameter::getDefaultNormalized
 - MpController::Initialize tolerates a plugin with no parameters.se.xml
@@ -293,10 +310,10 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - Export GMPI Plugin from the Wayland editor's File menu
 
 **v1.6.185** — 2026-08-14
-- profile structure-view scroll rendering across d2d/cpu backends
 - correct stale IO_base.h include path in CoreMidiDriver.cpp
 
 **v1.6.184** — 2026-08-14
+- profile structure-view scroll rendering across d2d/cpu backends
 - cache structure-view brushes for faster scroll redraw
 
 **v1.6.183** — 2026-08-13
@@ -453,12 +470,12 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - keep calcReportedLatency in step with calcDelayCompensation overrides
 - fix crash deleting a container the breadcrumb trail remembers
 - add Delay3 - modernised GMPI echo delay
-- Ctrl+D shows debuggers on selected modules of current view
 - Compensated Delay over-reported latency at some sample rates
 - Compensated Delay latches its report at compensation time and snaps it to the delay line's tap count
 
 **v1.6.156** — 2026-07-15
 - add Ctrl+D presenter command to toggle debugger on selection
+- Ctrl+D shows debuggers on selected modules of current view
 
 **v1.6.155** — 2026-07-14
 - Compensated Delay module + decoupled reported-latency pass
@@ -852,6 +869,7 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - Better fine control of new sliders
 
 **v1.6.96** — 2026-05-13
+- wire up edit > move to front/back menu items
 - tweaks to new sub-controls
 - removed close icon from main view
 - mac app icon now ships in bundle (was generic placeholder)
@@ -859,7 +877,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - 'Additional Files' dialog layout fixed
 
 **v1.6.95** — 2026-05-12
-- wire up edit > move to front/back menu items
 - right-click on panel module shows context menu again
 
 **v1.6.94** — 2026-05-12

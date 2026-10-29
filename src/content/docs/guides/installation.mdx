@@ -220,6 +220,23 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
+**v1.6.232** — 2026-10-27
+- dsp_tests links the font provider's library; the font test holds on Linux
+- a new engine never reads the previous engine's UI->DSP messages
+- Fret Plucked Oscillator, a baked plucked-string multisample with a built-in VCA
+- Fret Plucked Oscillator gains Unison, pick noise and body; normalise on the sustain
+- Fret Plucked Oscillator detunes in Hz and gains Stiffness
+- Fret Plucked Oscillator demo patch; fix the output at note end
+- --load and --new drop the live panel session before replacing the document
+
+**v1.6.231** — 2026-10-27
+- the render thread owns the editor's engine; the UI no longer touches `generator`
+- test start/stop on a live engine; stop the engine before the document goes
+- clear the remaining sanitizer findings (UB, a leak, a race, a dead path)
+- Preferences > Drawing backend (debug): Direct2D, software, or GPU
+- Debug builds can draw with gmpi_ui's GPU backend, like the software renderer
+- CreateTextFormat on the CPU backends no longer fails for a missing font family
+
 **v1.6.230** — 2026-10-24
 - [0271] pin and parameter edits keep full precision, rounding only for display
 - [0271] Fixed Values (Volts) rounds values below 0.001 V to zero
@@ -259,18 +276,15 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - Export Plugins opens in its own modal window on Linux
 
 **v1.6.223** — 2026-10-16
-- the export's own \<Controller/> owns MpController; the engine preset rides a blob parameter
 - the GMPI-wrapper VST3 path is compiled out of Release builds on Windows/mac
 - the GMPI plugin XML carries the vendor URL and email
 - qualify Rect and Point in ViewBase.cpp, which macOS's MacTypes.h also declares
 - developer-only 'Use GMPI Wrappers' checkbox composes the Windows VST3 from the GMPI bundle
 - apply every automation point in a parameter queue, not only the last
-- SE_GMPI_TRACE, an env-gated stderr trace of what reaches the engine and the controller
-- SE_GMPI_TRACE in the editor reports the view transform, the clip, and the pixels the children drew
-- SE_GMPI_TRACE in the editor (pointer, panel build, child layout, first renders, image load) and the controller's panel-to-host and DspMessages sends
 - CContainer's friend declaration follows ExportAsPlugin's new useGmpiWrappers parameter
 
 **v1.6.222** — 2026-10-16
+- the export's own \<Controller/> owns MpController; the engine preset rides a blob parameter
 - the editor answers its panel size from measure(), so a CLAP host no longer gets 1x1
 - the Linux export honours the host's offline render mode
 - tempo validity follows what the wrapper delivered, keep the host's bar phase
@@ -281,6 +295,9 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - include BundleInfo.h in ViewBase.cpp
 - accept an instrument's own bus layout in setBusArrangements
 - a reused note ID no longer sends note-offs to a released key
+- SE_GMPI_TRACE, an env-gated stderr trace of what reaches the engine and the controller
+- SE_GMPI_TRACE in the editor reports the view transform, the clip, and the pixels the children drew
+- SE_GMPI_TRACE in the editor (pointer, panel build, child layout, first renders, image load) and the controller's panel-to-host and DspMessages sends
 - Number Entry and Text Edit open on Trigger's falling edge
 - MpParameter::getDefaultNormalized
 - MpController::Initialize tolerates a plugin with no parameters.se.xml
@@ -333,13 +350,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - 'Meter Value' (PatchMemMeter) - a DSP float input drives the parameter, for meters
 - 'Blur2' GUI module - blurs an 8-bit mask into an 8-bit mask
 - 'Bits To Int' GUI module - auto-duplicating bool inputs, one bit each
-
-**v1.6.216** — 2026-10-01
-- MIDI message to steal a physical voice, fading it out in 20ms
-- MIDI 2.0 note-on can pick its physical voice, and carry a per-note glide start
-
-**v1.6.215** — 2026-10-01
-- keep editor panes off DWM overlay planes, to stop monitor flicker
 
 </div>
 ## Demo vs Full Version
