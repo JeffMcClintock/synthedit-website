@@ -5,8 +5,11 @@ description: Full version history of SynthEdit changes and fixes.
 
 Every release in the v1.6 line. The most recent entries are also embedded on the [installation page](../guides/installation/).
 
-**Unreleased**
+**v1.6.237** — 2026-11-02
+- modules with no graphics and no pins now draw as a small square
+- fix crash on right-click a 'torn out' window tab
 - Renderer Report module; CPU Meter works again
+- Fix module browser not working in tear-out tab
 
 **v1.6.232** — 2026-10-27
 - dsp_tests links the font provider's library; the font test holds on Linux
@@ -47,10 +50,10 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 
 **v1.6.226** — 2026-10-18
 - VST3 editors drew at 1/scale since HWND frames moved to composition swap chains
-- --containerise acts on the container that owns the selection
 
 **v1.6.225** — 2026-10-19
 - a destroyed ModuleView unlinks itself from every connected module
+- --containerise acts on the container that owns the selection
 
 **v1.6.224** — 2026-10-16
 - reload the project after export on Linux; one result dialog
@@ -872,6 +875,7 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - Better fine control of new sliders
 
 **v1.6.96** — 2026-05-13
+- wire up edit > move to front/back menu items
 - tweaks to new sub-controls
 - removed close icon from main view
 - mac app icon now ships in bundle (was generic placeholder)
@@ -879,7 +883,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - 'Additional Files' dialog layout fixed
 
 **v1.6.95** — 2026-05-12
-- wire up edit > move to front/back menu items
 - right-click on panel module shows context menu again
 
 **v1.6.94** — 2026-05-12

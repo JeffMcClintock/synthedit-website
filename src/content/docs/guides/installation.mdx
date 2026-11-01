@@ -220,8 +220,11 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
-**Unreleased**
+**v1.6.237** — 2026-11-02
+- modules with no graphics and no pins now draw as a small square
+- fix crash on right-click a 'torn out' window tab
 - Renderer Report module; CPU Meter works again
+- Fix module browser not working in tear-out tab
 
 **v1.6.232** — 2026-10-27
 - dsp_tests links the font provider's library; the font test holds on Linux
@@ -262,10 +265,10 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 **v1.6.226** — 2026-10-18
 - VST3 editors drew at 1/scale since HWND frames moved to composition swap chains
-- --containerise acts on the container that owns the selection
 
 **v1.6.225** — 2026-10-19
 - a destroyed ModuleView unlinks itself from every connected module
+- --containerise acts on the container that owns the selection
 
 **v1.6.224** — 2026-10-16
 - reload the project after export on Linux; one result dialog
