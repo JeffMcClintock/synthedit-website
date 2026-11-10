@@ -220,6 +220,18 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 <div class="se-changelog-scroll">
 
+**v1.6.238** — 2026-11-11
+- re-exporting a Linux CLAP no longer fails and empties its folder
+- a relative -factorysemsfolder no longer loses every .gmpi module
+- a live command channel, so SynthEditMcp can drive the Linux editor
+
+**Unreleased**
+- trace specs pair across nested sub-views
+- push each module's trace spec to the panel beneath it
+- keep .syntheditprefab name when a prefab is opened as a document
+- Linux export writes a CLAP beside the VST3
+- Export of MIDI-only plugins now allowed
+
 **v1.6.237** — 2026-11-02
 - modules with no graphics and no pins now draw as a small square
 - fix crash on right-click a 'torn out' window tab
@@ -265,10 +277,10 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 
 **v1.6.226** — 2026-10-18
 - VST3 editors drew at 1/scale since HWND frames moved to composition swap chains
+- --containerise acts on the container that owns the selection
 
 **v1.6.225** — 2026-10-19
 - a destroyed ModuleView unlinks itself from every connected module
-- --containerise acts on the container that owns the selection
 
 **v1.6.224** — 2026-10-16
 - reload the project after export on Linux; one result dialog
@@ -287,6 +299,8 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - qualify Rect and Point in ViewBase.cpp, which macOS's MacTypes.h also declares
 - developer-only 'Use GMPI Wrappers' checkbox composes the Windows VST3 from the GMPI bundle
 - apply every automation point in a parameter queue, not only the last
+- SE_GMPI_TRACE in the editor reports the view transform, the clip, and the pixels the children drew
+- SE_GMPI_TRACE in the editor (pointer, panel build, child layout, first renders, image load) and the controller's panel-to-host and DspMessages sends
 - CContainer's friend declaration follows ExportAsPlugin's new useGmpiWrappers parameter
 
 **v1.6.222** — 2026-10-16
@@ -302,8 +316,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - accept an instrument's own bus layout in setBusArrangements
 - a reused note ID no longer sends note-offs to a released key
 - SE_GMPI_TRACE, an env-gated stderr trace of what reaches the engine and the controller
-- SE_GMPI_TRACE in the editor reports the view transform, the clip, and the pixels the children drew
-- SE_GMPI_TRACE in the editor (pointer, panel build, child layout, first renders, image load) and the controller's panel-to-host and DspMessages sends
 - Number Entry and Text Edit open on Trigger's falling edge
 - MpParameter::getDefaultNormalized
 - MpController::Initialize tolerates a plugin with no parameters.se.xml
@@ -314,29 +326,6 @@ Recent changes and fixes. [View full changelog](../../changelog/)
 - drop SeGmpiEditor's g_pendingEditorGuiHost definition
 - don't PSS-prefix every resource when the project is unsaved
 - define g_pendingEditorGuiHost once, beside its declaration
-
-**v1.6.219** — 2026-10-13
-- set currentVst3SkinName on the JSON/GMPI export path too
-
-**v1.6.218** — 2026-10-14
-- panel renders at its real size, correctly centered
-- no set-default message to the DSP for an unused spare plug
-- fix skin case-sensitivity on Linux
-- clear parentSizeClients when a view destroys its children
-- Value Set modules no longer clobber the tempo before their parameter ID arrives
-- SynthEditCL's fakeUi actually opens the panel view on export
-- Style objects carry a glow radius
-- SeGmpiEditor uses the real MpController when offered one
-- Render, Render Instances, Render Each and Text Render draw the Style's glow
-- Number Entry lays out correctly after a resize
-- Number Entry draws the Style's glow behind its number and units
-- Number Entry 'Edit Style' pin - the number's style while it's being edited
-- MouseTarget 'Wheel' output - scroll-wheel movement in notches
-- IGuiHost2 handoff for GMPI editor construction
-- Editor subtype stub, proves X11 and Wayland both attach and paint
-- Editor hosts the exported document's real panel
-- Alt+double-click number edit ignored digits until an arrow key
-- 'Text Edit' and 'Text Render' GUI modules - TextEntry4 split in two
 
 </div>
 ## Demo vs Full Version
