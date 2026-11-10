@@ -107,7 +107,8 @@ body {
    sets the body background, so even if the user toggles to
    light theme the homepage stays fully dark.
    ============================================================ */
-html:not([data-has-sidebar]) {
+/* :root, not html: must match the specificity of :root[data-theme='light'] */
+:root:not([data-has-sidebar]) {
 	--sl-color-accent-low:    rgba(255,176,0,0.12);
 	--sl-color-accent:        #ffb000;
 	--sl-color-accent-high:   #ffd06a;
@@ -172,37 +173,13 @@ html:not([data-has-sidebar]) main {
 
 /* Hide Starlight's default hero and page title — we render our own */
 html:not([data-has-sidebar]) .hero { display: none; }
-html:not([data-has-sidebar]) main > div:first-child { display: none; }
+html:not([data-has-sidebar]) main > .sl-banner,
+html:not([data-has-sidebar]) main > .content-panel:has(h1#_top) { display: none; }
 
 /* ============================================================
    HOMEPAGE — Studio Rack design
    All classes prefixed `.se-` to avoid colliding with Starlight
    ============================================================ */
-
-.se-eyebrow {
-	font-family: var(--se-font-mono);
-	font-size: 11px;
-	font-weight: 500;
-	letter-spacing: 0.22em;
-	text-transform: uppercase;
-	color: var(--se-amber);
-}
-
-.se-led {
-	display: inline-block;
-	width: 7px;
-	height: 7px;
-	border-radius: 50%;
-	background: var(--se-amber);
-	box-shadow: 0 0 10px var(--se-amber-glow);
-	vertical-align: middle;
-	margin-right: 0.7em;
-	animation: se-pulse 2.4s ease-in-out infinite;
-}
-@keyframes se-pulse {
-	0%, 100% { opacity: 1; box-shadow: 0 0 10px var(--se-amber-glow); }
-	50%      { opacity: 0.65; box-shadow: 0 0 6px var(--se-amber-glow); }
-}
 
 /* ===== HERO ===== */
 
@@ -236,20 +213,6 @@ html:not([data-has-sidebar]) main > div:first-child { display: none; }
 /* Left-aligned, ragged right — a manual page, not a centred landing hero. */
 .se-hero-copy { text-align: left; }
 .se-hero-copy .se-hero-tag { max-width: 34em; }
-.se-hero-meta {
-	display: inline-flex;
-	align-items: center;
-	gap: 12px;
-	padding: 7px 14px;
-	background: var(--se-bg-2);
-	border: 1px solid var(--se-rule-strong);
-	border-radius: 999px;
-	font-family: var(--se-font-mono);
-	font-size: 11px;
-	letter-spacing: 0.1em;
-	color: var(--se-fg-2);
-	margin-bottom: 32px;
-}
 .se-hero h1 {
 	font-family: var(--se-font-display);
 	font-weight: 600;
@@ -259,15 +222,6 @@ html:not([data-has-sidebar]) main > div:first-child { display: none; }
 	margin-top: 0; /* Starlight's content styles add 1.5em (~130px) otherwise */
 	margin-bottom: 28px;
 	color: var(--se-fg);
-}
-/* The year reads as an LED readout rather than a decorative flourish */
-.se-hero h1 .se-year {
-	font-family: var(--se-font-mono);
-	font-weight: 500;
-	font-size: 0.86em;
-	letter-spacing: 0.01em;
-	color: var(--se-amber);
-	text-shadow: 0 0 22px var(--se-amber-glow);
 }
 .se-hero-tag {
 	font-size: 19px;
@@ -328,7 +282,6 @@ html:not([data-has-sidebar]) main > div:first-child { display: none; }
 	border-color: var(--se-rule-strong);
 }
 .se-btn-ghost:hover { background: var(--se-bg-3); border-color: var(--se-fg-3); color: var(--se-fg); }
-.se-btn .se-arrow { font-size: 18px; line-height: 1; }
 
 /* Eurorack panel */
 .se-rack {
@@ -504,7 +457,6 @@ html:not([data-has-sidebar]) main > div:first-child { display: none; }
 /* Wide enough for a display-size title to set on one line; the sub-paragraph
    is re-narrowed below so measure stays readable. */
 .se-section-head { margin-bottom: 64px; max-width: 50em; }
-.se-section-head .se-eyebrow { margin-bottom: 20px; display: inline-block; }
 .se-section-title {
 	font-family: var(--se-font-display);
 	font-weight: 700;
@@ -746,20 +698,6 @@ table.se-spec-table {
 	transform: translateY(-3px);
 	box-shadow: 0 30px 60px -30px rgba(0,0,0,0.6);
 }
-.se-show-strip {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 12px 18px;
-	border-bottom: 1px solid var(--se-rule);
-	font-family: var(--se-font-mono);
-	font-size: 10.5px;
-	letter-spacing: 0.16em;
-	text-transform: uppercase;
-	color: var(--se-fg-3);
-	background: var(--se-bg-1);
-}
-.se-show-strip .name { color: var(--se-fg); }
 .se-show-img {
 	aspect-ratio: 16/10;
 	width: 100%;
@@ -873,7 +811,6 @@ table.se-spec-table {
 	background: linear-gradient(90deg, transparent, var(--se-amber), transparent);
 	opacity: 0.6;
 }
-.se-cta-eyebrow { margin-bottom: 24px; display: block; }
 .se-cta-title {
 	font-family: var(--se-font-display);
 	font-weight: 700;
@@ -1120,7 +1057,6 @@ nav.sidebar .top-level > li > details > summary {
 	padding: 9px 15px;
 	margin: 0 0 34px;
 }
-.se-hero-news .se-led { flex: none; }
 
 /* ===== Hero byline — puts a face to the first-person voice ===== */
 .se-hero-byline {
@@ -1175,11 +1111,6 @@ nav.sidebar .top-level > li > details > summary {
 	transition: color 0.18s ease;
 }
 .se-hero-audio-more:hover { color: var(--se-amber); }
-.se-hero-audio-more .se-arrow {
-	display: inline-block;
-	transition: transform 0.18s ease;
-}
-.se-hero-audio-more:hover .se-arrow { transform: translateX(3px); }
 
 .se-hero-audio {
 	position: relative;
@@ -1346,25 +1277,6 @@ nav.sidebar .top-level > li > details > summary {
 	width: 100%;
 	height: auto;
 }
-.se-fig-strip {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 16px;
-	padding: 10px 14px;
-	border-bottom: 1px solid var(--se-rule);
-	background: var(--se-bg-2);
-	font-family: var(--se-font-mono);
-	font-size: 11px;
-	letter-spacing: 0.14em;
-	text-transform: uppercase;
-	color: var(--se-fg-3);
-}
-.se-fig-strip .live {
-	display: inline-flex;
-	align-items: center;
-	color: var(--se-fg-2);
-}
 .se-fig-cap h3 {
 	font-family: var(--se-font-display);
 	font-size: clamp(24px, 2.6vw, 31px);
@@ -1418,9 +1330,7 @@ nav.sidebar .top-level > li > details > summary {
 	color: var(--se-fg-2);
 }
 
-/* ===== Known limits =====
-   Styled as a calm spec block, not an alert. Amber tags only; no red,
-   no warning iconography — the point is matter-of-factness. */
+/* ===== Known limits ===== */
 .se-limits {
 	list-style: none;
 	margin: 0;
@@ -1439,16 +1349,11 @@ nav.sidebar .top-level > li > details > summary {
 	gap: 12px;
 }
 .se-limit-tag {
-	align-self: flex-start;
-	font-family: var(--se-font-mono);
-	font-size: 10.5px;
-	font-weight: 500;
-	letter-spacing: 0.16em;
-	text-transform: uppercase;
-	color: var(--se-amber);
-	border: 1px solid rgba(255, 176, 0, 0.3);
-	border-radius: 3px;
-	padding: 4px 9px;
+	font-family: var(--se-font-display);
+	font-size: 17px;
+	font-weight: 600;
+	letter-spacing: -0.01em;
+	color: var(--se-fg);
 }
 .se-limit p {
 	margin: 0;

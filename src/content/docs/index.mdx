@@ -1,5 +1,5 @@
 ---
-title: SynthEdit — Build Your Own Synth
+title: Build your own synth plugins
 description: SynthEdit is a visual modular environment for building synthesizers and VST plugins.
 template: splash
 ---
@@ -15,37 +15,33 @@ import Jeff from '../../assets/jeff-mcclintock.jpg';
 <section class="se-hero">
   <div class="se-hero-grid">
     <div class="se-hero-copy">
-      <div class="se-hero-meta">
-        <span class="se-led"></span>
-        <span>SynthEdit 1.6</span>
-      </div>
-      <h1>I've been building<br/>SynthEdit since <span class="se-year">1987</span>.</h1>
+      <h1>I've been building<br/>SynthEdit since 1987.</h1>
       <div class="se-hero-byline">
         <Image src={Jeff} alt="Jeff McClintock" width={128} height={128} loading="eager" class="se-hero-portrait" />
         <div>
           <span class="se-hero-byline-name">Jeff McClintock</span>
-          <span class="se-hero-byline-role">Maker · New Zealand</span>
+          <span class="se-hero-byline-role">Maker, New Zealand</span>
         </div>
       </div>
       {/* Keep text on one line inside styled <p> tags: MDX wraps multi-line text in a nested <p>, which the browser auto-closes, leaving the styled element empty */}
-      <p class="se-hero-tag">It's a modular environment for designing synthesizers and effects. You patch modules together on a canvas, draw a front panel, and export a VST3 or Audio Unit plugin. What you build is yours — sell it, give it away, no royalties, no permission needed.</p>
-      <p class="se-hero-news"><span class="se-led"></span> New in 1.6 — SynthEdit now runs natively on macOS.</p>
+      <p class="se-hero-tag">It's a modular environment for designing synthesizers and effects. You patch modules together on a canvas, draw a front panel, and export a VST3 or Audio Unit plugin. What you build is yours to sell or give away, with no royalties and no permission needed.</p>
+      <p class="se-hero-news">New in 1.6: SynthEdit now runs natively on macOS.</p>
       <div class="se-hero-actions">
-        <a href="guides/installation/" class="se-btn se-btn-primary">Download the 60-day demo <span class="se-arrow">→</span></a>
+        <a href="guides/installation/" class="se-btn se-btn-primary">Download the 60-day demo</a>
         <a href="guides/introduction/" class="se-btn se-btn-ghost">Read the documentation</a>
       </div>
       <div class="se-hero-audio-row">
         <a class="se-hero-audio" href="guides/audio-demos/" data-flac="audio/statevar-filter-demo.flac" data-mp3="audio/statevar-filter-demo.mp3">
           <span class="se-hero-audio-icon" aria-hidden="true"></span>
-          <span>Hear it — smooth, sample-accurate filters, rendered straight out of SynthEdit</span>
+          <span>Hear smooth, sample-accurate filters, rendered straight out of SynthEdit</span>
           <span class="se-hero-audio-time">0:36</span>
           <span class="se-hero-audio-progress"><i></i></span>
         </a>
-        <a class="se-hero-audio-more" href="guides/audio-demos/">More audio <span class="se-arrow">→</span></a>
+        <a class="se-hero-audio-more" href="guides/audio-demos/">More audio</a>
       </div>
     </div>
 
-    <video class="se-hero-shot" autoplay muted loop playsinline preload="metadata" poster="videos/hero-poster.jpg" width="1786" height="798" aria-label="SynthEdit structure view — a live modular synthesizer patch with oscillators, filter, MIDI keyboard and animated oscilloscopes connected by signal cables">
+    <video class="se-hero-shot" autoplay muted loop playsinline preload="metadata" poster="videos/hero-poster.jpg" width="1786" height="798" aria-label="SynthEdit structure view: a live modular synthesizer patch with oscillators, filter, MIDI keyboard and animated oscilloscopes connected by signal cables">
       <source src="videos/hero-structure.webm" type="video/webm" />
       <source src="videos/hero-structure.mp4" type="video/mp4" />
     </video>
@@ -88,20 +84,20 @@ import Jeff from '../../assets/jeff-mcclintock.jpg';
       <li class="se-platform is-ready">
         <span class="se-platform-dot"></span>
         <span class="se-platform-name">Windows</span>
-        <span class="se-platform-state">Native · stable</span>
+        <span class="se-platform-state">Native, stable</span>
       </li>
       <li class="se-platform is-ready">
         <span class="se-platform-dot"></span>
         <span class="se-platform-name">macOS</span>
-        <span class="se-platform-state">Native · new in 1.6</span>
+        <span class="se-platform-state">Native, new in 1.6</span>
       </li>
       <li class="se-platform is-rough">
         <span class="se-platform-dot"></span>
         <span class="se-platform-name">Linux</span>
-        <span class="se-platform-state">Experimental preview · free</span>
+        <span class="se-platform-state">Experimental preview, free</span>
       </li>
     </ul>
-    <p class="se-platforms-note">The Linux build is an early preview. The editor itself needs a Wayland session, but the plugins you export from it carry both display-server paths in one binary — they run in X11 hosts like Ardour and in Wayland ones. It's all very new, and free while it's in preview. <a href="guides/installation/#linux-experimental">Download it and see how far it gets you →</a></p>
+    <p class="se-platforms-note">The Linux build is an early preview. The editor itself needs a Wayland session, but the plugins you export from it carry both display-server paths in one binary, so they run in X11 hosts like Ardour and in Wayland ones. It's all very new, and free while it's in preview. <a href="guides/installation/#linux-experimental">Download it and see how far it gets you</a>.</p>
   </div>
 </section>
 
@@ -110,40 +106,31 @@ import Jeff from '../../assets/jeff-mcclintock.jpg';
     ============================================================ */}
 <section class="se-section">
   <div class="se-section-head">
-    <div class="se-eyebrow">What it is</div>
     <h2 class="se-section-title">Nothing is hidden from you</h2>
     <p class="se-section-sub">There's no layer underneath that you're not allowed to see. Every oscillator, filter, envelope and bit of arithmetic is a module sitting on the canvas, and every connection is a wire you drew yourself.</p>
   </div>
 
   <figure class="se-fig">
     <div class="se-fig-frame">
-      <div class="se-fig-strip">
-        <span>Fig. 01</span>
-        <span class="live"><span class="se-led"></span>Structure view</span>
-      </div>
       <Image src={Screenshot1} alt="SynthEdit modular canvas with oscillators, filter and envelope modules connected by patch cables" />
     </div>
     <figcaption class="se-fig-cap">
       <h3>Patch it together and listen</h3>
       <p>Drag modules onto the canvas and wire them up. The engine is running the whole time, so you hear each change as you make it. Hover any pin or wire and a small live scope shows you the signal passing through it.</p>
-      <p>There's no wrong way to wire things up. Hook modules together in your own weird and wonderful ways and the programming turns into exploring — which is the part I still enjoy after all these years.</p>
-      <a href="guides/first-synth/" class="se-fig-link">Build your first synth →</a>
+      <p>There's no wrong way to wire things up. Hook modules together in your own weird and wonderful ways and the programming turns into exploring, which is the part I still enjoy after all these years.</p>
+      <a href="guides/first-synth/" class="se-fig-link">Build your first synth</a>
     </figcaption>
   </figure>
 
   <figure class="se-fig se-reverse">
     <div class="se-fig-frame">
-      <div class="se-fig-strip">
-        <span>Fig. 02</span>
-        <span class="live"><span class="se-led"></span>Panel designer</span>
-      </div>
       <Image src={Screenshot2} alt="SynthEdit panel designer showing a custom plugin GUI with filter knobs, ADSR controls and a piano keyboard" />
     </div>
     <figcaption class="se-fig-cap">
       <h3>Then draw the front panel</h3>
-      <p>Lay out knobs, sliders, switches, graphs and your own bitmap artwork in the panel designer. What you draw is what your users get — the plugin window is yours to design, not a generic host-supplied list of parameters.</p>
+      <p>Lay out knobs, sliders, switches, graphs and your own bitmap artwork in the panel designer. What you draw is the window your users get when they open the plugin.</p>
       <p>Export it and you have a 64-bit VST3 or Audio Unit that loads in any major DAW on Windows and macOS.</p>
-      <a href="guides/creating-vst-plugins/" class="se-fig-link">How exporting works →</a>
+      <a href="guides/creating-vst-plugins/" class="se-fig-link">How exporting works</a>
     </figcaption>
   </figure>
 </section>
@@ -153,9 +140,8 @@ import Jeff from '../../assets/jeff-mcclintock.jpg';
     ============================================================ */}
 <section class="se-section" style="padding-top: 0">
   <div class="se-section-head">
-    <div class="se-eyebrow">Under it</div>
     <h2 class="se-section-title">Real DSP, and a way out</h2>
-    <p class="se-section-sub">The visual canvas isn't a toy layer over something simpler — it's the whole program. Exporting a VST3 or Audio Unit takes one step. Going further than that takes real C++ experience, and I'd rather be straight about which is which. <a href="guides/technical-specs/">Full technical specifications →</a></p>
+    <p class="se-section-sub">The visual canvas is the whole program. Exporting a VST3 or Audio Unit takes one step. Going further than that takes real C++ experience, and the table shows which is which. <a href="guides/technical-specs/">Full technical specifications</a>.</p>
   </div>
   <div class="se-spec-scroll">
     <table class="se-spec-table">
@@ -163,12 +149,12 @@ import Jeff from '../../assets/jeff-mcclintock.jpg';
         <tr><th>Capability</th><th>Visual patching</th><th>Going deeper</th></tr>
       </thead>
       <tbody>
-        <tr><td>Plugin formats</td><td>One-step export to 64-bit VST3 (Windows &amp; macOS) and Audio Unit (macOS). No extra tooling, no build system to learn</td><td>Experienced C++ developers can take a third route: <a href="guides/faq/#what-is-se2juce">SE2JUCE</a> exports the project as JUCE-compatible source, and JUCE reaches further formats. This is real software development, not a checkbox</td></tr>
-        <tr><td>Audio engine</td><td>32-bit floating-point DSP at any sample rate</td><td>Every signal — audio, control voltages, envelopes — runs at full sample rate. No zipper noise</td></tr>
+        <tr><td>Plugin formats</td><td>One-step export to 64-bit VST3 (Windows &amp; macOS) and Audio Unit (macOS). No extra tooling, no build system to learn</td><td>Experienced C++ developers can take a third route: <a href="guides/faq/#what-is-se2juce">SE2JUCE</a> exports the project as JUCE-compatible source, and JUCE reaches further formats. That route is real software development</td></tr>
+        <tr><td>Audio engine</td><td>32-bit floating-point DSP at any sample rate</td><td>Every signal (audio, control voltages, envelopes) runs at full sample rate. No zipper noise</td></tr>
         <tr><td>Polyphony</td><td>Up to 128 voices per instrument</td><td>Idle voices sleep automatically to spare the CPU</td></tr>
         <tr><td>Modules</td><td>300+ built in</td><td>Write your own DSP in C++ with the <a href="guides/sdk/">open SDK</a>, or draw on hundreds of community modules</td></tr>
         <tr><td>Interfaces</td><td>Drag-and-drop panel designer</td><td>Custom knobs, sliders, switches and bitmap art</td></tr>
-        <tr><td>Distribution</td><td>Royalty-free — sell what you build</td><td>Automate builds and releases with <a href="guides/distributing-with-github-actions/">GitHub Actions</a></td></tr>
+        <tr><td>Distribution</td><td>Royalty-free: sell what you build</td><td>Automate builds and releases with <a href="guides/distributing-with-github-actions/">GitHub Actions</a></td></tr>
       </tbody>
     </table>
   </div>
@@ -179,7 +165,6 @@ import Jeff from '../../assets/jeff-mcclintock.jpg';
     ============================================================ */}
 <section class="se-section" style="padding-top: 0">
   <div class="se-section-head">
-    <div class="se-eyebrow">What you own</div>
     <h2 class="se-section-title">Your work shouldn't depend on me</h2>
   </div>
 
@@ -190,7 +175,7 @@ import Jeff from '../../assets/jeff-mcclintock.jpg';
     </div>
     <div class="se-own-row">
       <dt>The plugins you ship don't phone home</dt>
-      <dd>The built-in <a href="guides/plugin-registration/">registration modules</a> need no internet connection and no licence server. Your customers never talk to anybody's server — mine included.</dd>
+      <dd>The built-in <a href="guides/plugin-registration/">registration modules</a> need no internet connection and no licence server. Your customers never talk to anybody's server, mine included.</dd>
     </div>
     <div class="se-own-row">
       <dt>One licence covers all current versions</dt>
@@ -198,11 +183,11 @@ import Jeff from '../../assets/jeff-mcclintock.jpg';
     </div>
     <div class="se-own-row">
       <dt>SynthEdit itself activates online</dt>
-      <dd>This changed, so I'd rather say it plainly. The editor authorises over the internet, with offline activation available if you work disconnected.</dd>
+      <dd>This is a change from earlier versions. The editor authorises over the internet, with offline activation available if you work disconnected.</dd>
     </div>
     <div class="se-own-row">
       <dt>The door is unlocked, but it isn't automatic</dt>
-      <dd>If you outgrow SynthEdit — or simply don't want to depend on it — SE2JUCE exports your whole project as JUCE-compatible C++ source. Walking through that door takes genuine software development experience, so I won't pretend it's seamless. It does mean your work isn't trapped in my file format.</dd>
+      <dd>If you outgrow SynthEdit, or simply don't want to depend on it, SE2JUCE exports your whole project as JUCE-compatible C++ source. Walking through that door takes genuine software development experience. It does mean your work isn't trapped in my file format.</dd>
     </div>
   </dl>
 </section>
@@ -212,7 +197,6 @@ import Jeff from '../../assets/jeff-mcclintock.jpg';
     ============================================================ */}
 <section class="se-section" style="padding-top: 0">
   <div class="se-section-head">
-    <div class="se-eyebrow">Known limits</div>
     <h2 class="se-section-title">What it doesn't do yet</h2>
     <p class="se-section-sub">Things I'd rather you heard from me now than discovered on day three.</p>
   </div>
@@ -232,7 +216,7 @@ import Jeff from '../../assets/jeff-mcclintock.jpg';
     </li>
     <li class="se-limit">
       <span class="se-limit-tag">Linux</span>
-      <p>The Linux port is an experimental preview, with PipeWire audio. The editor needs a Wayland session — there's no X11 build of it. Export works, but it's brand new: the plugins carry both an X11 and a Wayland path in one binary and pick whichever the host offers, so test yours before you ship it. It's free while it's in preview.</p>
+      <p>The Linux port is an experimental preview, with PipeWire audio. The editor needs a Wayland session. There's no X11 build of it. Export works, but it's brand new: the plugins carry both an X11 and a Wayland path in one binary and pick whichever the host offers, so test yours before you ship it. It's free while it's in preview.</p>
     </li>
   </ul>
 </section>
@@ -242,43 +226,30 @@ import Jeff from '../../assets/jeff-mcclintock.jpg';
     ============================================================ */}
 <section class="se-section" style="padding-top: 0">
   <div class="se-section-head">
-    <div class="se-eyebrow">In the wild</div>
     <h2 class="se-section-title">Built with SynthEdit</h2>
     <p class="se-section-sub">Thousands of free and commercial plugins have been built with it, including instruments that ended up in professional studios.</p>
   </div>
 
   <div class="se-showcase">
     <div class="se-show-card">
-      <div class="se-show-strip">
-        <span class="name">Phasm</span>
-        <span>2024 · Synth</span>
-      </div>
-      <img class="se-show-img" src="images/showcase-phasm.jpg" alt="Phasm" />
+      <img class="se-show-img" src="images/showcase-phasm.jpg" alt="Phasm front panel" />
       <div class="se-show-info">
         <h3>Phasm</h3>
-        <p>A phase-distortion synthesizer with a unique approach to waveform manipulation.</p>
+        <p>Three oscillators with FM modes, two filters, distortion and an XY pad.</p>
       </div>
     </div>
     <div class="se-show-card">
-      <div class="se-show-strip">
-        <span class="name">Kx Synth X16</span>
-        <span>2023 · Polysynth</span>
-      </div>
-      <img class="se-show-img" src="images/showcase-kx16.png" alt="Kx Synth X16" />
+      <img class="se-show-img" src="images/showcase-kx16.png" alt="Kx-Synth-X16 front panel with its pin matrix" />
       <div class="se-show-info">
-        <h3>Kx Synth X16</h3>
-        <p>A polyphonic synthesizer with extensive modulation capabilities.</p>
+        <h3>Kx-Synth-X16</h3>
+        <p>A free modular synth by KX77FREE (Xavier Kalensky), modelled on the EMS VCS3 and patched through a pin matrix.</p>
       </div>
     </div>
     <div class="se-show-card">
-      <div class="se-show-strip">
-        <span class="name">Phenome</span>
-        <span>2022 · Vocal</span>
-      </div>
-      <img class="se-show-img" src="images/showcase-phenome.jpg" alt="Phenome" />
+      <img class="se-show-img" src="images/showcase-phenome.jpg" alt="Phenome front panel" />
       <div class="se-show-info">
         <h3>Phenome</h3>
-        <p>A vocal synthesizer that generates realistic singing voices.</p>
+        <p>Prodyon's free SoundFont player. It layers up to eight SF2 instruments, each on its own MIDI channel.</p>
       </div>
     </div>
   </div>
@@ -290,15 +261,14 @@ import Jeff from '../../assets/jeff-mcclintock.jpg';
 <section class="se-cta">
   <div class="se-cta-card">
     <div>
-      <span class="se-eyebrow se-cta-eyebrow">Try it</span>
       <h2 class="se-cta-title">The demo is the whole program</h2>
     </div>
     <div class="se-cta-side">
-      <p>Fully featured for 60 days, plugin export included. After that a licence — <strong>€170</strong>, paid once — keeps everything working, with no further restrictions.</p>
+      <p>Fully featured for 60 days, plugin export included. After that a licence (<strong>€170</strong>, paid once) keeps everything working, with no further restrictions.</p>
       <div class="se-cta-actions">
-        <a href="guides/installation/" class="se-btn se-btn-primary">Download for Windows or macOS <span class="se-arrow">→</span></a>
+        <a href="guides/installation/" class="se-btn se-btn-primary">Download for Windows or macOS</a>
       </div>
-      <p class="se-cta-sig">— Jeff McClintock, New Zealand</p>
+      <p class="se-cta-sig">Jeff McClintock, New Zealand</p>
     </div>
   </div>
 </section>
