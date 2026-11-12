@@ -98,6 +98,15 @@ If you want a new feature now, it's in the [beta](../installation/) and you're w
 
 ## VST Plugin Creation & Distribution
 
+### Where does SynthEdit save my exported plugin? I can't find the Mac version.
+
+You don't choose a folder; the **Exported OK** message lists every file the export wrote. One export makes both the Windows and the macOS plugin:
+
+- **Exporting on Windows:** the Windows VST3 is installed in `C:\Program Files\Common Files\VST3`. The **macOS** VST3 and Audio Unit are *not* installed anywhere. They're saved in **`Documents\SynthEdit Projects\Mac Export`** for you to copy to the Mac.
+- **Exporting on a Mac:** the VST3 goes to **`~/Library/Audio/Plug-Ins/VST3`** and the Audio Unit to `~/Library/Audio/Plug-Ins/Components`. That's the Library in your *home* folder, not `/Library` at the top of the disk, and Finder hides it. Press **Cmd+Shift+G** in Finder and paste the path to open it.
+
+See [Creating VST Plugins](../creating-vst-plugins/#where-the-exported-plugins-go) for the full table.
+
 ### Can SynthEdit make effect plugins, not just synthesizers?
 
 Yes. SynthEdit can create both instrument (VSTi) and effect (VST) plugins. If your project has no MIDI input, it will export as an effect plugin.

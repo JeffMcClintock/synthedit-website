@@ -40,11 +40,28 @@ A container wired that way has one MIDI input and one audio output on its exteri
 ## Exporting as VST3
 
 1. Go to **File > Export Plugins...**
-2. Choose a location to save the plugin
-3. Set the plugin name, manufacturer, and unique ID
-4. Click **Export**
+2. Set the plugin name, manufacturer, and unique ID
+3. Click **Export**
 
-SynthEdit generates a `.vst3` file that you can install in your DAW's plugin folder.
+There's no save location to pick: SynthEdit writes each format to a fixed folder, and the **Exported OK** message at the end lists the exact path of every file it wrote.
+
+### Where the exported plugins go
+
+One export produces the plugin for **both** Windows and macOS. The version for the computer you're exporting on is installed straight into that system's plugin folder, ready for your DAW to find. The version for the other platform is saved in your Documents folder for you to copy across.
+
+| Exporting on | Plugin | Saved to |
+|---|---|---|
+| **Windows** | Windows VST3 | `C:\Program Files\Common Files\VST3\MySynth.vst3` |
+| | macOS VST3 | `Documents\SynthEdit Projects\Mac Export\MySynth.vst3` |
+| | Audio Unit | `Documents\SynthEdit Projects\Mac Export\MySynth.component` |
+| **macOS** | macOS VST3 | `~/Library/Audio/Plug-Ins/VST3/MySynth.vst3` |
+| | Audio Unit | `~/Library/Audio/Plug-Ins/Components/MySynth.component` |
+| | Windows VST3 | `~/SynthEdit Projects/Windows Export/MySynth.vst3` |
+
+:::tip[Can't find your Mac plugin?]
+- **Exported on Windows?** It's not on your Mac yet. Look in **Documents\SynthEdit Projects\Mac Export** on the PC, then copy the `.vst3` to `~/Library/Audio/Plug-Ins/VST3` and the `.component` to `~/Library/Audio/Plug-Ins/Components` on the Mac.
+- **Exported on a Mac?** It's in the Library folder inside your **home** folder (`~/Library`), not the top-level `/Library` on the system drive. The folder is `Plug-Ins/VST3`, not just `VST3`. Finder hides `~/Library`: press **Cmd+Shift+G** in Finder and paste `~/Library/Audio/Plug-Ins/VST3`.
+:::
 
 ## Exporting on Linux
 
@@ -88,7 +105,7 @@ Skin images and font assets get exported automatically — SynthEdit displays yo
 
 ## Testing Your Plugin
 
-1. Copy the `.vst3` file to your system's VST3 folder — `C:\Program Files\Common Files\VST3` on Windows, `~/Library/Audio/Plug-Ins/VST3` on macOS, `~/.vst3` on Linux (where the export already puts it, so there's nothing to copy)
+1. On the machine you exported on, the plugin is already installed (see [where the exported plugins go](#where-the-exported-plugins-go)). To test on the other platform, copy the `.vst3` file to its VST3 folder: `C:\Program Files\Common Files\VST3` on Windows, `~/Library/Audio/Plug-Ins/VST3` on macOS
 2. Rescan plugins in your DAW
 3. Load the plugin on a track
 4. Test all controls and audio processing
