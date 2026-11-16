@@ -328,10 +328,10 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - Export GMPI Plugin from the Wayland editor's File menu
 
 **v1.6.185** — 2026-08-14
-- profile structure-view scroll rendering across d2d/cpu backends
 - correct stale IO_base.h include path in CoreMidiDriver.cpp
 
 **v1.6.184** — 2026-08-14
+- profile structure-view scroll rendering across d2d/cpu backends
 - cache structure-view brushes for faster scroll redraw
 
 **v1.6.183** — 2026-08-13
@@ -488,12 +488,12 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - keep calcReportedLatency in step with calcDelayCompensation overrides
 - fix crash deleting a container the breadcrumb trail remembers
 - add Delay3 - modernised GMPI echo delay
+- Ctrl+D shows debuggers on selected modules of current view
 - Compensated Delay over-reported latency at some sample rates
 - Compensated Delay latches its report at compensation time and snaps it to the delay line's tap count
 
 **v1.6.156** — 2026-07-15
 - add Ctrl+D presenter command to toggle debugger on selection
-- Ctrl+D shows debuggers on selected modules of current view
 
 **v1.6.155** — 2026-07-14
 - Compensated Delay module + decoupled reported-latency pass
@@ -656,12 +656,12 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - rounded U-turns on doubled-back connector lines
 - middle-button drag to pan document views
 - hide the Ctrl+W key-tip that followed the mouse
-- give ExportFormatType an explicit underlying type (enables forward declaration)
 - close tabs reliably via Ctrl+W and middle-click
 - ModWheel shadow fused to the wheel outline (real sheared-silhouette geometry, not a detached blob); squarer slot corners
 
 **v1.6.127** — 2026-06-11
 - suppress hover-scopes and connector highlights while dragging a module
+- give ExportFormatType an explicit underlying type (enables forward declaration)
 - forward-declare ExportFormatType with explicit underlying type (fixes macOS clang build)
 
 **v1.6.126** — 2026-06-11
