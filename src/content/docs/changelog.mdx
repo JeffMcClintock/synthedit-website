@@ -5,6 +5,13 @@ description: Full version history of SynthEdit changes and fixes.
 
 Every release in the v1.6 line. The most recent entries are also embedded on the [installation page](../guides/installation/).
 
+**Unreleased**
+- File Dialog 'save' mode fixed
+
+**v1.6.243** — 2026-11-23
+- File Dialog ignores extensions the picker rejects, reports failures
+- File Dialog 'save' mode fixed
+
 **v1.6.242** — 2026-11-19
 - Debug JUCE plugins no longer assert staticInitCheck2.empty() on unload"
 - Debug JUCE plugins no longer assert staticInitCheck2.empty() on unload
@@ -66,10 +73,10 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 
 **v1.6.226** — 2026-10-18
 - VST3 editors drew at 1/scale since HWND frames moved to composition swap chains
-- --containerise acts on the container that owns the selection
 
 **v1.6.225** — 2026-10-19
 - a destroyed ModuleView unlinks itself from every connected module
+- --containerise acts on the container that owns the selection
 
 **v1.6.224** — 2026-10-16
 - reload the project after export on Linux; one result dialog
@@ -89,7 +96,7 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - qualify Rect and Point in ViewBase.cpp, which macOS's MacTypes.h also declares
 - developer-only 'Use GMPI Wrappers' checkbox composes the Windows VST3 from the GMPI bundle
 - apply every automation point in a parameter queue, not only the last
-- SE_GMPI_TRACE, an env-gated stderr trace of what reaches the engine and the controller
+- SE_GMPI_TRACE in the editor reports the view transform, the clip, and the pixels the children drew
 - CContainer's friend declaration follows ExportAsPlugin's new useGmpiWrappers parameter
 
 **v1.6.222** — 2026-10-16
@@ -103,7 +110,7 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - include BundleInfo.h in ViewBase.cpp
 - accept an instrument's own bus layout in setBusArrangements
 - a reused note ID no longer sends note-offs to a released key
-- SE_GMPI_TRACE in the editor reports the view transform, the clip, and the pixels the children drew
+- SE_GMPI_TRACE, an env-gated stderr trace of what reaches the engine and the controller
 - SE_GMPI_TRACE in the editor (pointer, panel build, child layout, first renders, image load) and the controller's panel-to-host and DspMessages sends
 - Number Entry and Text Edit open on Trigger's falling edge
 - MpParameter::getDefaultNormalized
@@ -492,12 +499,12 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - keep calcReportedLatency in step with calcDelayCompensation overrides
 - fix crash deleting a container the breadcrumb trail remembers
 - add Delay3 - modernised GMPI echo delay
+- Ctrl+D shows debuggers on selected modules of current view
 - Compensated Delay over-reported latency at some sample rates
 - Compensated Delay latches its report at compensation time and snaps it to the delay line's tap count
 
 **v1.6.156** — 2026-07-15
 - add Ctrl+D presenter command to toggle debugger on selection
-- Ctrl+D shows debuggers on selected modules of current view
 
 **v1.6.155** — 2026-07-14
 - Compensated Delay module + decoupled reported-latency pass
@@ -891,6 +898,7 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - Better fine control of new sliders
 
 **v1.6.96** — 2026-05-13
+- wire up edit > move to front/back menu items
 - tweaks to new sub-controls
 - removed close icon from main view
 - mac app icon now ships in bundle (was generic placeholder)
@@ -898,7 +906,6 @@ Every release in the v1.6 line. The most recent entries are also embedded on the
 - 'Additional Files' dialog layout fixed
 
 **v1.6.95** — 2026-05-12
-- wire up edit > move to front/back menu items
 - right-click on panel module shows context menu again
 
 **v1.6.94** — 2026-05-12
