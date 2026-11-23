@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document file_format="150000" vst_latencyCompensation="1" SelectedViewHandle="94852515" SelectedViewType="256" emulate_ignore_pc="true" vst_preset_count="64" vst_version="1.0.0">
+    <master_container type="Container" handle="94852515" name="Main" PanelLocationZoom="1" StructLocationZoom="1" ViewOpenFlags="256" skin="default3">
+        <plugs>
+            <plug idx="7"/>
+        </plugs>
+        <structRect l="0" r="0" t="0" b="0"/>
+        <PatchManager>
+            <ProgramNames/>
+            <Parameters>
+                <param type="1" handle="13007926" shortName="Wavetable Osc WaveTableFile" module="732585325" moduleParamId="0" MetaData="wav">
+                    <patch-list>
+                        <s>C:/SE/synthedit-website/source-assets/WavetableDemo AKWF.wav</s>
+                        <s repeat="127"></s>
+                    </patch-list>
+                </param>
+                <param type="6" handle="1105680368" ignorePC="true" stateful="false" module="306011854" moduleParamId="0"/>
+                <param type="10" handle="1257603951" private="true" hostControl="49">
+                    <patch-list>
+                        <s repeat="128"></s>
+                    </patch-list>
+                </param>
+            </Parameters>
+        </PatchManager>
+        <modules>
+            <module type="SE Wavetable Osc" handle="1419300469">
+                <structRect l="564" r="648" t="444" b="492"/>
+                <panelRect l="0" r="0" t="0" b="0"/>
+            </module>
+            <module type="SE PatchMemory Float Out" handle="306011854">
+                <structRect l="624" r="720" t="168" b="252"/>
+                <panelRect l="0" r="0" t="0" b="0"/>
+            </module>
+            <module type="SE Poly to Mono" handle="1101575451">
+                <structRect l="480" r="528" t="324" b="348"/>
+            </module>
+            <module type="SE Wavetable Display" handle="407755986">
+                <structRect l="816" r="1140" t="120" b="324"/>
+                <panelRect l="3934" r="4168" t="3934" b="4104"/>
+            </module>
+            <module type="Image3" handle="1730994779" name="Load Button">
+                <plugs>
+                    <plug default="button_sm" idx="1"/>
+                </plugs>
+                <structRect l="432" r="528" t="156" b="264"/>
+                <panelRect l="3974" r="3994" t="3974" b="3994"/>
+            </module>
+            <module type="SE FileDialog" handle="840371022">
+                <structRect l="264" r="348" t="192" b="240"/>
+                <panelRect l="0" r="0" t="0" b="0"/>
+            </module>
+            <module type="SE PatchMemory Text2" handle="732585325" name="Wavetable File">
+                <structRect l="96" r="180" t="96" b="180"/>
+                <panelRect l="0" r="0" t="0" b="0"/>
+            </module>
+            <module type="Sound Out" handle="1991779248">
+                <plugs>
+                    <plug name="Output"/>
+                    <plug/>
+                </plugs>
+                <structRect l="960" r="1008" t="552" b="576"/>
+            </module>
+            <module type="VCA" handle="1590000411">
+                <structRect l="768" r="864" t="552" b="600"/>
+            </module>
+            <module type="SynthEdit ADSR" handle="34702161" name="Amp Envelope">
+                <structRect l="288" r="360" t="612" b="708"/>
+                <panelRect l="0" r="0" t="0" b="0"/>
+            </module>
+            <module type="SynthEdit ADSR" handle="1412763883" name="Slot Envelope">
+                <structRect l="288" r="360" t="396" b="492"/>
+                <panelRect l="0" r="0" t="0" b="0"/>
+            </module>
+            <module type="SE MIDI to CV 2" handle="190616161">
+                <structRect l="96" r="156" t="516" b="600"/>
+                <panelRect l="0" r="0" t="0" b="0"/>
+            </module>
+        </modules>
+        <lines>
+            <line type="Line" handle="185720371" lineType="1" fMod="190616161" tMod="1412763883" fPlg="2"/>
+            <line type="Line" handle="1311285963" lineType="1" fMod="190616161" tMod="1412763883" fPlg="3" tPlg="1"/>
+            <line type="Line" handle="4224648" lineType="1" fMod="190616161" tMod="34702161" fPlg="2"/>
+            <line type="Line" handle="2064520790" lineType="1" fMod="190616161" tMod="34702161" fPlg="3" tPlg="1"/>
+            <line type="Line" handle="258587584" lineType="1" fMod="34702161" tMod="1590000411" fPlg="7" tPlg="1"/>
+            <line type="Line" handle="1106310900" lineType="1" fMod="1590000411" tMod="1991779248" fPlg="2"/>
+            <line type="Line" handle="2029632505" lineType="1" fMod="190616161" tMod="1419300469" fPlg="4"/>
+            <line type="Line" handle="2039189068" lineType="1" fMod="1412763883" tMod="1419300469" fPlg="7" tPlg="1"/>
+            <line type="Line" handle="1635057536" lineType="1" fMod="1419300469" tMod="1590000411" fPlg="2"/>
+            <line type="Line" handle="1543325712" lineType="1" fMod="732585325" tMod="1419300469" fPlg="13" tPlg="4"/>
+            <line type="Line" handle="1667729522" lineType="1" fMod="732585325" tMod="407755986" fPlg="6"/>
+            <line type="Line" handle="252281373" lineType="1" fMod="732585325" tMod="840371022" fPlg="6"/>
+            <line type="Line" handle="1641877593" lineType="1" fMod="732585325" tMod="840371022" fPlg="7" tPlg="1"/>
+            <line type="Line" handle="41815521" lineType="1" fMod="840371022" tMod="1730994779" fPlg="2" tPlg="6"/>
+            <line type="Line" handle="1989869658" lineType="1" fMod="1412763883" tMod="1101575451" fPlg="7" tPlg="2"/>
+            <line type="Line" handle="349698302" lineType="1" fMod="1101575451" tMod="306011854" tPlg="13"/>
+            <line type="Line" handle="1065270422" lineType="1" fMod="306011854" tMod="407755986" fPlg="8" tPlg="1"/>
+        </lines>
+        <PanelLocationCenter x="3984" y="3984"/>
+        <StructLocationCenter x="3984" y="3984"/>
+        <PanelWndPosition l="0" r="0" t="0" b="0"/>
+        <PanelLocation l="0" r="500" t="0" b="500"/>
+        <StructLocation l="0" r="500" t="0" b="500"/>
+        <PanelScroll x="3734" y="3734"/>
+        <StructScroll x="3734" y="3734"/>
+        <PanelWndOffset cx="-99999" cy="-99999"/>
+        <panel_rect l="3732" r="4212" t="3732" b="4212"/>
+    </master_container>
+    <PluginList>
+        <Plugin id="Container" class="1" name="Container" flags="384" category="">
+            <Audio>
+                <Pin name="Spare" datatype="float" rate="audio" autoRename="true" autoDuplicate="true" isContainerIoPlug="true"/>
+                <Pin name="Polyphony" datatype="enum" default="6" private="true" isMinimised="true" metadata="range 1,128"/>
+                <Pin name="MIDI Automation" datatype="bool" private="true" isMinimised="true"/>
+                <Pin name="Show Controls" datatype="enum" private="true" isMinimised="true" metadata="Off,On Panel,On Module"/>
+            </Audio>
+            <GUI>
+                <Pin name="Controls on Parent" datatype="bool" direction="out" isMinimised="true"/>
+                <Pin name="Controls on Module" datatype="bool" noAutomation="true"/>
+                <Pin name="Visible" datatype="bool"/>
+                <Pin name="Ignore Program Change" datatype="bool" noAutomation="true"/>
+            </GUI>
+        </Plugin>
+        <Plugin id="Image3" name="Image2" flags="384" category="Sub-Controls">
+            <GUI graphicsApi="GmpiGui">
+                <Pin name="Animation Position" datatype="float"/>
+                <Pin name="Filename" datatype="string" default="knob_sm" isFilename="true" metadata="bmp"/>
+                <Pin name="Hint" datatype="string"/>
+                <Pin name="Menu Items" datatype="string"/>
+                <Pin name="Menu Selection" datatype="int"/>
+                <Pin name="Mouse Down" datatype="bool" direction="out" private="true"/>
+                <Pin name="Mouse Down" datatype="bool"/>
+                <Pin name="Frame Count" datatype="int" private="true"/>
+                <Pin name="Frame Count" datatype="int" direction="out"/>
+                <Pin name="Mouse Response" datatype="enum" default="-1" isMinimised="true" metadata="off=-2, auto=-1, vertical=0, horizontal=1, clicks=2, rotary=3, step=4"/>
+            </GUI>
+        </Plugin>
+        <Plugin id="SE FileDialog" name="File Dialog" flags="384" category="Sub-Controls">
+            <GUI>
+                <Pin name="File Name" datatype="string"/>
+                <Pin name="File Extension" datatype="string"/>
+                <Pin name="Trigger" datatype="bool" direction="out"/>
+                <Pin name="Save Mode" datatype="bool"/>
+            </GUI>
+        </Plugin>
+        <Plugin id="SE MIDI to CV 2" class="2" name="MIDI-CV 2" flags="352" category="MIDI" polyphonicSource="true" polyphonic="true" cloned="true">
+            <Audio>
+                <Pin name="MIDI In" datatype="midi"/>
+                <Pin name="Channel" datatype="enum" default="-1" ignorePatchChange="true" metadata="All=-1,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16"/>
+                <Pin name="Trigger" datatype="float" rate="audio" direction="out"/>
+                <Pin name="Gate" datatype="float" rate="audio" direction="out"/>
+                <Pin name="Pitch" datatype="float" rate="audio" direction="out"/>
+                <Pin name="Velocity" datatype="float" rate="audio" direction="out"/>
+                <Pin name="Aftertouch" datatype="float" rate="audio" direction="out"/>
+                <Pin name="Voice/Active" datatype="float" private="true" isPolyphonic="true" hostConnect="Voice/Active"/>
+                <Pin name="Voice/Gate" datatype="float" private="true" isPolyphonic="true" hostConnect="Voice/Gate"/>
+                <Pin name="Voice/Trigger" datatype="float" private="true" isPolyphonic="true" hostConnect="Voice/Trigger"/>
+                <Pin name="Voice/VelocityKeyOn" datatype="float" private="true" isPolyphonic="true" hostConnect="Voice/VelocityKeyOn"/>
+                <Pin name="Voice/Pitch" datatype="float" private="true" isPolyphonic="true" hostConnect="Voice/Pitch"/>
+                <Pin name="Voice/VirtualVoiceId" datatype="int" private="true" isPolyphonic="true" hostConnect="Voice/VirtualVoiceId"/>
+                <Pin name="Bender" datatype="float" private="true" hostConnect="Bender"/>
+                <Pin name="HoldPedal" datatype="float" private="true" hostConnect="HoldPedal"/>
+                <Pin name="SostenutoPedal" datatype="float" private="true" isPolyphonic="true" hostConnect="SostenutoPedal"/>
+                <Pin name="GlideStartPitch" datatype="float" private="true" isPolyphonic="true" hostConnect="Voice/GlideStartPitch"/>
+                <Pin name="VoiceAllocationMode" datatype="int" private="true" hostConnect="VoiceAllocationMode"/>
+                <Pin name="Portamento" datatype="float" private="true" hostConnect="Portamento"/>
+                <Pin name="BenderRange" datatype="float" private="true" hostConnect="BenderRange"/>
+                <Pin name="Voice/Aftertouch" datatype="float" private="true" isPolyphonic="true" hostConnect="Voice/Aftertouch"/>
+                <Pin name="ChannelPressure" datatype="float" private="true" isPolyphonic="true" hostConnect="Channel Pressure"/>
+                <Pin name="Voice/Bender" datatype="float" private="true" isPolyphonic="true" hostConnect="Voice/Bender"/>
+                <Pin name="Disable Bender" datatype="bool" isMinimised="true"/>
+            </Audio>
+        </Plugin>
+        <Plugin id="SE PatchMemory Float Out" name="PatchMemory Float Out3" flags="384" category="Sub-Controls" helpUrl="Patchmemory.htm">
+            <Parameters>
+                <Parameter id="0" datatype="float" name="" ignorePatchChange="true" persistant="false"/>
+            </Parameters>
+            <Audio>
+                <Pin name="Value In" datatype="float"/>
+                <Pin name="PM Value Out" datatype="float" direction="out" private="true" parameterId="0"/>
+            </Audio>
+            <GUI>
+                <Pin name="PM Value In" datatype="float" private="true" parameterId="0"/>
+                <Pin name="PM Name In" datatype="string" private="true" parameterId="0" parameterField="ShortName"/>
+                <Pin name="PM Menu Items" datatype="string" private="true" parameterId="0" parameterField="MenuItems"/>
+                <Pin name="PM Menu Selection" datatype="int" private="true" parameterId="0" parameterField="MenuSelection"/>
+                <Pin name="AnimationIn" datatype="float" private="true" parameterId="0" parameterField="Normalized"/>
+                <Pin name="Name" datatype="string" direction="out"/>
+                <Pin name="Value" datatype="float" direction="out"/>
+                <Pin name="Value Out" datatype="float" isMinimised="true"/>
+                <Pin name="Animation Position" datatype="float" direction="out"/>
+                <Pin name="Menu Items" datatype="string" direction="out"/>
+                <Pin name="Menu Selection" datatype="int" direction="out"/>
+                <Pin name="PM Hint In" datatype="string_utf8" private="true" parameterId="0" parameterField="Hint"/>
+                <Pin name="Hint" datatype="string_utf8" direction="out"/>
+            </GUI>
+        </Plugin>
+        <Plugin id="SE PatchMemory Text2" name="PatchMemory Text2" flags="384" category="Sub-Controls" helpUrl="Patchmemory.htm">
+            <Parameters>
+                <Parameter id="0" datatype="string" name=""/>
+            </Parameters>
+            <Audio>
+                <Pin name="Value In" datatype="string" private="true" parameterId="0"/>
+                <Pin name="Value Out" datatype="string" direction="out" autoConfigureParameter="true"/>
+            </Audio>
+            <GUI>
+                <Pin name="Value In" datatype="string" private="true" parameterId="0"/>
+                <Pin name="Name In" datatype="string" private="true" parameterId="0" parameterField="ShortName"/>
+                <Pin name="File Extension" datatype="string" private="true" parameterId="0" parameterField="FileExtension"/>
+                <Pin name="Menu Items" datatype="string" private="true" parameterId="0" parameterField="MenuItems"/>
+                <Pin name="Menu Selection" datatype="int" private="true" parameterId="0" parameterField="MenuSelection"/>
+                <Pin name="Name" datatype="string" direction="out"/>
+                <Pin name="Value" datatype="string" direction="out"/>
+                <Pin name="File Extension" datatype="string" direction="out"/>
+                <Pin name="Menu Items" datatype="string" direction="out"/>
+                <Pin name="Menu Selection" datatype="int" direction="out"/>
+                <Pin name="Hint In" datatype="string_utf8" private="true" parameterId="0" parameterField="Hint"/>
+                <Pin name="Hint" datatype="string_utf8" direction="out"/>
+            </GUI>
+        </Plugin>
+        <Plugin id="SE Poly to Mono" class="1" name="Poly to Mono" flags="256" category="Special">
+            <Audio>
+                <Pin name="Output" datatype="float" rate="audio" direction="out"/>
+                <Pin name="LastVoice" datatype="midi" private="true"/>
+                <Pin name="Input" datatype="float" rate="audio"/>
+            </Audio>
+        </Plugin>
+        <Plugin id="SE Wavetable Display" name="Wavetable Display" flags="384" category="Waveform">
+            <GUI>
+                <Pin name="WaveTableFile" datatype="string_utf8" isFilename="true" metadata="wav"/>
+                <Pin name="Slot" datatype="float"/>
+            </GUI>
+        </Plugin>
+        <Plugin id="SE Wavetable Osc" name="Wavetable Osc" flags="256" category="Waveform" helpUrl="WavetableOsc.htm">
+            <Audio>
+                <Pin name="Pitch" datatype="float" rate="audio" default="0.5"/>
+                <Pin name="Slot" datatype="float" rate="audio"/>
+                <Pin name="Signal Out" datatype="float" rate="audio" direction="out"/>
+                <Pin name="VoiceActive" datatype="float" default="1" private="true" isPolyphonic="true" hostConnect="Voice/Active"/>
+                <Pin name="WaveTableFile" datatype="string_utf8" isFilename="true" metadata="wav"/>
+                <Pin name="RenderMode" datatype="int" private="true" hostConnect="Processor/OfflineRenderMode"/>
+            </Audio>
+        </Plugin>
+        <Plugin id="Sound Out" class="1" name="Sound Out" flags="4352" category="Input-Output">
+            <Audio>
+                <Pin name="Out" datatype="float" rate="audio" autoRename="true" linearInput="true" autoDuplicate="true"/>
+            </Audio>
+        </Plugin>
+        <Plugin id="SynthEdit ADSR" name="ADSR2" flags="256" category="Waveform" helpUrl="EnveloperAdsr.htm">
+            <Audio>
+                <Pin name="Trigger" datatype="float" rate="audio" default="0.1"/>
+                <Pin name="Gate" datatype="float" rate="audio" default="0.1"/>
+                <Pin name="Attack" datatype="float" rate="audio"/>
+                <Pin name="Decay" datatype="float" rate="audio" default="0.5"/>
+                <Pin name="Sustain" datatype="float" rate="audio" default="0.7"/>
+                <Pin name="Release" datatype="float" rate="audio" default="0.4"/>
+                <Pin name="Overall Level" datatype="float" rate="audio" default="1"/>
+                <Pin name="Signal Out" datatype="float" rate="audio" direction="out"/>
+                <Pin name="VoiceReset" datatype="float" private="true" isPolyphonic="true" hostConnect="Voice/Active"/>
+            </Audio>
+        </Plugin>
+        <Plugin id="VCA" class="1" name="VCA" flags="4352" category="Modifiers">
+            <Audio>
+                <Pin name="Signal" datatype="float" rate="audio" linearInput="true"/>
+                <Pin name="Volume" datatype="float" rate="audio" default="0.8"/>
+                <Pin name="Output" datatype="float" rate="audio" direction="out"/>
+                <Pin name="Response Curve" datatype="enum" default="1" metadata="Exponential=1,Linear,Decibel,Decibel (old)=0"/>
+            </Audio>
+        </Plugin>
+    </PluginList>
+    <PrefabList>
+        <Prefab id="*P=Controls\Bar Meter.syntheditprefab" name="Bar Meter" category="Controls" file="Controls\Bar Meter.syntheditprefab"/>
+        <Prefab id="*P=Controls\Bender.seprefab" name="Bender" category="Controls" file="Controls\Bender.seprefab"/>
+        <Prefab id="*P=Controls\Bender.syntheditprefab" name="Bender" category="Controls" file="Controls\Bender.syntheditprefab"/>
+        <Prefab id="*P=Controls\Button Small2.syntheditprefab" name="Button Small2" category="Controls" file="Controls\Button Small2.syntheditprefab"/>
+        <Prefab id="*P=Controls\Button2.syntheditprefab" name="Button2" category="Controls" file="Controls\Button2.syntheditprefab"/>
+        <Prefab id="*P=Controls\Detuner.syntheditprefab" name="Detuner" category="Controls" file="Controls\Detuner.syntheditprefab"/>
+        <Prefab id="*P=Controls\HSlider2.syntheditprefab" name="HSlider2" category="Controls" file="Controls\HSlider2.syntheditprefab"/>
+        <Prefab id="*P=Controls\Joystick.syntheditprefab" name="Joystick" category="Controls" file="Controls\Joystick.syntheditprefab"/>
+        <Prefab id="*P=Controls\Knob.syntheditprefab" name="Knob" category="Controls" file="Controls\Knob.syntheditprefab"/>
+        <Prefab id="*P=Controls\Knob2.syntheditprefab" name="Knob2" category="Controls" file="Controls\Knob2.syntheditprefab"/>
+        <Prefab id="*P=Controls\Knob_Sm.syntheditprefab" name="Knob_Sm" category="Controls" file="Controls\Knob_Sm.syntheditprefab"/>
+        <Prefab id="*P=Controls\LED (blue).syntheditprefab" name="LED (blue)" category="Controls" file="Controls\LED (blue).syntheditprefab"/>
+        <Prefab id="*P=Controls\LED (green).syntheditprefab" name="LED (green)" category="Controls" file="Controls\LED (green).syntheditprefab"/>
+        <Prefab id="*P=Controls\LED (red).syntheditprefab" name="LED (red)" category="Controls" file="Controls\LED (red).syntheditprefab"/>
+        <Prefab id="*P=Controls\LED2.syntheditprefab" name="LED2" category="Controls" file="Controls\LED2.syntheditprefab"/>
+        <Prefab id="*P=Controls\Mod Wheel.syntheditprefab" name="Mod Wheel" category="Controls" file="Controls\Mod Wheel.syntheditprefab"/>
+        <Prefab id="*P=Controls\Peak Meter2.syntheditprefab" name="Peak Meter2" category="Controls" file="Controls\Peak Meter2.syntheditprefab"/>
+        <Prefab id="*P=Controls\Pitch Bender.syntheditprefab.synthedit" name="Pitch Bender.syntheditprefab" category="Controls" file="Controls\Pitch Bender.syntheditprefab.synthedit"/>
+        <Prefab id="*P=Controls\Slider2.syntheditprefab" name="Slider2" category="Controls" file="Controls\Slider2.syntheditprefab"/>
+        <Prefab id="*P=Controls\Switch.syntheditprefab" name="Switch" category="Controls" file="Controls\Switch.syntheditprefab"/>
+        <Prefab id="*P=Controls\VU_meter.syntheditprefab" name="VU_meter" category="Controls" file="Controls\VU_meter.syntheditprefab"/>
+        <Prefab id="*P=Effects\Echo.syntheditprefab.synthedit" name="Echo.syntheditprefab" category="Effects" file="Effects\Echo.syntheditprefab.synthedit"/>
+        <Prefab id="*P=Effects\Flanger.syntheditprefab.synthedit" name="Flanger.syntheditprefab" category="Effects" file="Effects\Flanger.syntheditprefab.synthedit"/>
+        <Prefab id="*P=Examples\Delayed LFO.syntheditprefab" name="Delayed LFO" category="Examples" file="Examples\Delayed LFO.syntheditprefab"/>
+        <Prefab id="*P=Examples\GammaTest.syntheditprefab" name="GammaTest" category="Examples" file="Examples\GammaTest.syntheditprefab"/>
+        <Prefab id="*P=Examples\Open Web Page.syntheditprefab" name="Open Web Page" category="Examples" file="Examples\Open Web Page.syntheditprefab"/>
+        <Prefab id="*P=Examples\Paged Panels2.syntheditprefab" name="Paged Panels2" category="Examples" file="Examples\Paged Panels2.syntheditprefab"/>
+        <Prefab id="*P=Examples\Radio Button.syntheditprefab" name="Radio Button" category="Examples" file="Examples\Radio Button.syntheditprefab"/>
+        <Prefab id="*P=Examples\Sample Oscillator2.syntheditprefab" name="Sample Oscillator2" category="Examples" file="Examples\Sample Oscillator2.syntheditprefab"/>
+        <Prefab id="*P=Examples\Step Sequencing.syntheditprefab" name="Step Sequencing" category="Examples" file="Examples\Step Sequencing.syntheditprefab"/>
+        <Prefab id="*P=Examples\Tempo_sync_LFO.syntheditprefab" name="Tempo_sync_LFO" category="Examples" file="Examples\Tempo_sync_LFO.syntheditprefab"/>
+        <Prefab id="*P=Synths\Fm_synth.syntheditprefab" name="Fm_synth" category="Synths" file="Synths\Fm_synth.syntheditprefab"/>
+        <Prefab id="*P=Synths\Minimal.syntheditprefab" name="Minimal" category="Synths" file="Synths\Minimal.syntheditprefab"/>
+        <Prefab id="*P=Synths\PD303.syntheditprefab" name="PD303" category="Synths" file="Synths\PD303.syntheditprefab"/>
+        <Prefab id="*P=Synths\Poly Synth.synthedit" name="Poly Synth" category="Synths" file="Synths\Poly Synth.synthedit"/>
+        <Prefab id="*P=Synths\Poly Synth.syntheditprefab" name="Poly Synth" category="Synths" file="Synths\Poly Synth.syntheditprefab"/>
+        <Prefab id="*P=Synths\Sample-based Instrument.syntheditprefab" name="Sample-based Instrument" category="Synths" file="Synths\Sample-based Instrument.syntheditprefab"/>
+    </PrefabList>
+</Document>
