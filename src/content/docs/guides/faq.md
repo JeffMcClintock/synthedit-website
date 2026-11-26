@@ -53,7 +53,7 @@ In the meantime you won't lose your work: closing the project still offers a **S
 
 ### How much does SynthEdit cost?
 
-A license is **€170** — a single payment, not a subscription, and it covers all current versions. Plugins you export are royalty-free, so there's nothing further to pay on what you build and sell. You can use the full program free for 60 days before deciding, and the experimental Linux build is free while it's in preview.
+A license is **€170** — a single payment, not a subscription, and it covers all current versions. Plugins you export are royalty-free, so there's nothing further to pay on what you build and sell. See [Buying a licence](../installation/#buying-a-licence) for how to pay. You can use the full program free for 60 days before deciding, and the experimental Linux build is free while it's in preview.
 
 ### What keyboard shortcuts are useful?
 

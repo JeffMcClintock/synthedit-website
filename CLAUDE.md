@@ -74,8 +74,8 @@ Push to `main` — the `Deploy to synthedit.com` GitHub Actions workflow runs `n
 
 `public_html/` still contains the previous site — a SilverStripe PHP CMS. Both run side by side:
 
-- `public_html/.htaccess` (see `server/root.htaccess`) maps a URL onto `_site/` **only when a matching file exists there**. Everything else falls through to SilverStripe, so the old pages — `/purchase/`, `/demo/`, `/members/`, `/contact/`, `/downloads/`, `/software-development-kit/`, `/modules/` — keep working at their original URLs, unchanged and still dynamic.
+- `public_html/.htaccess` (see `server/root.htaccess`) maps a URL onto `_site/` **only when a matching file exists there**. Everything else falls through to SilverStripe, so the old pages — `/demo/`, `/members/`, `/contact/`, `/downloads/`, `/software-development-kit/`, `/modules/` — keep working at their original URLs, unchanged and still dynamic.
 - The old home page is at `/old/`. It can't stay at `/` (that's this site now), and SilverStripe 301s `/home/` to `/`, so the rule targets `/home/index/`, which it serves without redirecting.
-- Adding a page here **shadows** any old page at the same URL. `/community/` already exists on both; the new one wins.
+- Adding a page here **shadows** any old page at the same URL. `/community/` already exists on both; the new one wins. `/purchase/` is shadowed on purpose: `redirects` in `astro.config.mjs` sends it to the installation page's "Buying a licence" section, because the old page forwarded to a dead Microsoft Store listing.
 - A 404 under a new-site path falls through and renders SilverStripe's 404 page, not Astro's `404.html`. That's a side effect of the fallthrough being what keeps the old site alive.
 - CI never writes outside `_site/`, so a deploy can't touch the CMS. Edits to `server/root.htaccess` must be uploaded by hand.

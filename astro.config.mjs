@@ -5,6 +5,10 @@ import starlight from '@astrojs/starlight';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://synthedit.com',
+	redirects: {
+		// Shadows the old CMS /purchase/ page, whose Microsoft Store link is dead.
+		'/purchase': '/guides/installation/#buying-a-licence',
+	},
 	integrations: [
 		starlight({
 			title: 'SynthEdit',
